@@ -1,0 +1,23 @@
+{
+  "name": "kamperhub-landing",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "lucide-react": "^0.263.1",
+    "next": "14.2.35",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/node": "20.19.27",
+    "@types/react": "18.3.27",
+    "@types/react-dom": "^18",
+    "typescript": "5.9.3"
+  }
+}
