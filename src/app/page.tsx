@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import {
   Map,
   Scale,
@@ -19,7 +20,6 @@ import {
   Thermometer,
   Clock,
   Gauge,
-  Compass,
   ArrowRight
 } from 'lucide-react';
 
@@ -193,21 +193,14 @@ export default function LandingPage() {
           justifyContent: 'space-between'
         }}>
           {/* Logo */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <div style={{
-              width: '40px',
-              height: '40px',
-              backgroundColor: colors.primary,
-              borderRadius: '10px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center'
-            }}>
-              <Compass size={24} color={colors.white} />
-            </div>
-            <span style={{ fontSize: '24px', fontWeight: '700', color: colors.primary }}>
-              KamperHub
-            </span>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <Image
+              src="/logo-horizontal.svg"
+              alt="KamperHub"
+              width={160}
+              height={40}
+              priority
+            />
           </div>
 
           {/* Desktop Nav */}
@@ -215,6 +208,7 @@ export default function LandingPage() {
             <a href="#features" style={{ color: colors.gray[600], textDecoration: 'none', fontWeight: '500' }}>Features</a>
             <a href="#pricing" style={{ color: colors.gray[600], textDecoration: 'none', fontWeight: '500' }}>Pricing</a>
             <a href="#faq" style={{ color: colors.gray[600], textDecoration: 'none', fontWeight: '500' }}>FAQ</a>
+            <a href="/resources" style={{ color: colors.gray[600], textDecoration: 'none', fontWeight: '500' }}>Resources</a>
           </div>
 
           {/* CTA Buttons */}
@@ -249,6 +243,7 @@ export default function LandingPage() {
             <a href="#features" style={{ display: 'block', padding: '12px 0', color: colors.gray[700], textDecoration: 'none' }}>Features</a>
             <a href="#pricing" style={{ display: 'block', padding: '12px 0', color: colors.gray[700], textDecoration: 'none' }}>Pricing</a>
             <a href="#faq" style={{ display: 'block', padding: '12px 0', color: colors.gray[700], textDecoration: 'none' }}>FAQ</a>
+            <a href="/resources" style={{ display: 'block', padding: '12px 0', color: colors.gray[700], textDecoration: 'none' }}>Resources</a>
             <a href={`${APP_URL}/login`} style={{ display: 'block', padding: '12px 0', color: colors.gray[700], textDecoration: 'none' }}>Log In</a>
           </div>
         )}
@@ -571,19 +566,14 @@ export default function LandingPage() {
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '48px', marginBottom: '48px' }}>
             {/* Brand */}
             <div style={{ maxWidth: '300px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
-                <div style={{
-                  width: '36px',
-                  height: '36px',
-                  backgroundColor: colors.primary,
-                  borderRadius: '8px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center'
-                }}>
-                  <Compass size={20} color={colors.white} />
-                </div>
-                <span style={{ fontSize: '20px', fontWeight: '700', color: colors.white }}>KamperHub</span>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
+                <Image
+                  src="/logo-horizontal.svg"
+                  alt="KamperHub"
+                  width={140}
+                  height={35}
+                  style={{ filter: 'brightness(0) invert(1)' }}
+                />
               </div>
               <p style={{ color: colors.gray[400], lineHeight: '1.6', fontSize: '14px' }}>
                 The all-in-one app for Australian caravan travellers. Plan smarter, tow safer, travel further.
@@ -596,16 +586,17 @@ export default function LandingPage() {
                 <h4 style={{ color: colors.white, fontSize: '14px', fontWeight: '600', marginBottom: '16px' }}>Product</h4>
                 <a href="#features" style={{ display: 'block', color: colors.gray[400], textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Features</a>
                 <a href="#pricing" style={{ display: 'block', color: colors.gray[400], textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Pricing</a>
-                <a href="#faq" style={{ display: 'block', color: colors.gray[400], textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>FAQ</a>
+                <a href="/resources" style={{ display: 'block', color: colors.gray[400], textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Resources</a>
               </div>
               <div>
                 <h4 style={{ color: colors.white, fontSize: '14px', fontWeight: '600', marginBottom: '16px' }}>Legal</h4>
-                <a href={`${APP_URL}/legal/privacy`} style={{ display: 'block', color: colors.gray[400], textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Privacy Policy</a>
-                <a href={`${APP_URL}/legal/terms`} style={{ display: 'block', color: colors.gray[400], textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Terms of Service</a>
-                <a href={`${APP_URL}/legal/refunds`} style={{ display: 'block', color: colors.gray[400], textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Refund Policy</a>
+                <a href="/legal/privacy" style={{ display: 'block', color: colors.gray[400], textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Privacy Policy</a>
+                <a href="/legal/terms" style={{ display: 'block', color: colors.gray[400], textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Terms of Service</a>
+                <a href="/legal/refunds" style={{ display: 'block', color: colors.gray[400], textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Refund Policy</a>
               </div>
               <div>
                 <h4 style={{ color: colors.white, fontSize: '14px', fontWeight: '600', marginBottom: '16px' }}>Contact</h4>
+                <a href={`${APP_URL}/contact`} style={{ display: 'block', color: colors.gray[400], textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Contact Us</a>
                 <a href="mailto:info@kamperhub.com" style={{ display: 'block', color: colors.gray[400], textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>info@kamperhub.com</a>
               </div>
             </div>
