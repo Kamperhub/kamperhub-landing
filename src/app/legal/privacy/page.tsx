@@ -1,37 +1,57 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowLeft } from 'lucide-react';
+
+const colors = {
+  primary: '#386641',
+  white: '#FFFFFF',
+  gray: { 200: '#e5e7eb', 500: '#6b7280', 700: '#374151' }
+};
 
 export default function PrivacyPolicyPage() {
   const lastUpdated = '25 December 2025';
 
   return (
     <div style={{ minHeight: '100vh', backgroundColor: 'white' }}>
+      {/* Navigation */}
+      <nav style={{ position: 'fixed', top: 0, left: 0, right: 0, backgroundColor: colors.primary, zIndex: 1000 }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '16px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <Link href="/"><Image src="/logo-horizontal.svg" alt="KamperHub" width={160} height={40} priority style={{ filter: 'brightness(0) invert(1)' }} /></Link>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <a href="https://app.kamperhub.com/login" style={{ padding: '10px 20px', color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500' }}>Log In</a>
+            <a href="https://app.kamperhub.com/signup" style={{ padding: '10px 24px', backgroundColor: colors.white, color: colors.primary, textDecoration: 'none', fontWeight: '600', borderRadius: '10px', fontSize: '14px' }}>Start Free Trial</a>
+          </div>
+        </div>
+      </nav>
+
       {/* Header */}
       <div style={{
-        padding: '48px 20px 24px',
+        padding: '100px 20px 24px',
         borderBottom: '1px solid #f3f4f6'
       }}>
-        <Link href="/" style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '8px',
-          color: '#386641',
-          textDecoration: 'none',
-          fontSize: '14px',
-          fontWeight: '500',
-          marginBottom: '16px'
-        }}>
-          <ArrowLeft size={18} />
-          Back to Home
-        </Link>
-        <h1 style={{ fontSize: '28px', fontWeight: '700', color: '#111827', margin: 0 }}>
-          Privacy Policy
-        </h1>
-        <p style={{ fontSize: '14px', color: '#6b7280', marginTop: '8px' }}>
-          Last updated: {lastUpdated}
-        </p>
+        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <Link href="/" style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '8px',
+            color: '#386641',
+            textDecoration: 'none',
+            fontSize: '14px',
+            fontWeight: '500',
+            marginBottom: '16px'
+          }}>
+            <ArrowLeft size={18} />
+            Back to Home
+          </Link>
+          <h1 style={{ fontSize: '28px', fontWeight: '700', color: '#111827', margin: 0 }}>
+            Privacy Policy
+          </h1>
+          <p style={{ fontSize: '14px', color: '#6b7280', marginTop: '8px' }}>
+            Last updated: {lastUpdated}
+          </p>
+        </div>
       </div>
 
       {/* Content */}
@@ -280,6 +300,15 @@ export default function PrivacyPolicyPage() {
 
         </div>
       </div>
+
+      {/* Footer */}
+      <footer style={{ padding: '48px 0', backgroundColor: colors.primary }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px', textAlign: 'center' }}>
+          <Image src="/logo-horizontal.svg" alt="KamperHub" width={140} height={35} style={{ filter: 'brightness(0) invert(1)', marginBottom: '16px' }} />
+          <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '14px' }}>The all-in-one app for caravan travellers.</p>
+          <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', marginTop: '24px' }}>© {new Date().getFullYear()} KamperHub. All rights reserved.</p>
+        </div>
+      </footer>
     </div>
   );
 }

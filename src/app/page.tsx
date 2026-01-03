@@ -179,9 +179,7 @@ export default function LandingPage() {
         top: 0,
         left: 0,
         right: 0,
-        backgroundColor: 'rgba(255,255,255,0.95)',
-        backdropFilter: 'blur(8px)',
-        borderBottom: `1px solid ${colors.gray[200]}`,
+        backgroundColor: colors.primary,
         zIndex: 1000
       }}>
         <div style={{
@@ -200,26 +198,27 @@ export default function LandingPage() {
               width={160}
               height={40}
               priority
+              style={{ filter: 'brightness(0) invert(1)' }}
             />
           </div>
 
           {/* Desktop Nav */}
           <div className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
-            <a href="#features" style={{ color: colors.gray[600], textDecoration: 'none', fontWeight: '500' }}>Features</a>
-            <a href="#pricing" style={{ color: colors.gray[600], textDecoration: 'none', fontWeight: '500' }}>Pricing</a>
-            <a href="#faq" style={{ color: colors.gray[600], textDecoration: 'none', fontWeight: '500' }}>FAQ</a>
-            <a href="/resources" style={{ color: colors.gray[600], textDecoration: 'none', fontWeight: '500' }}>Resources</a>
+            <a href="#features" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500' }}>Features</a>
+            <a href="#pricing" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500' }}>Pricing</a>
+            <a href="#faq" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500' }}>FAQ</a>
+            <a href="/resources" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500' }}>Resources</a>
           </div>
 
           {/* CTA Buttons */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <a href={`${APP_URL}/login`} className="desktop-nav" style={{ padding: '10px 20px', color: colors.gray[700], textDecoration: 'none', fontWeight: '500' }}>
+            <a href={`${APP_URL}/login`} className="desktop-nav" style={{ padding: '10px 20px', color: colors.white, textDecoration: 'none', fontWeight: '500' }}>
               Log In
             </a>
             <a href={`${APP_URL}/signup`} style={{
               padding: '10px 24px',
-              backgroundColor: colors.primary,
-              color: colors.white,
+              backgroundColor: colors.white,
+              color: colors.primary,
               textDecoration: 'none',
               fontWeight: '600',
               borderRadius: '10px',
@@ -230,21 +229,21 @@ export default function LandingPage() {
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="mobile-menu-btn"
-              style={{ padding: '8px', backgroundColor: 'transparent', border: 'none', cursor: 'pointer' }}
+              style={{ padding: '8px', backgroundColor: 'transparent', border: 'none', cursor: 'pointer', color: colors.white }}
             >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {mobileMenuOpen ? <X size={24} color={colors.white} /> : <Menu size={24} color={colors.white} />}
             </button>
           </div>
         </div>
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div style={{ padding: '16px 24px', borderTop: `1px solid ${colors.gray[200]}`, backgroundColor: colors.white }}>
-            <a href="#features" style={{ display: 'block', padding: '12px 0', color: colors.gray[700], textDecoration: 'none' }}>Features</a>
-            <a href="#pricing" style={{ display: 'block', padding: '12px 0', color: colors.gray[700], textDecoration: 'none' }}>Pricing</a>
-            <a href="#faq" style={{ display: 'block', padding: '12px 0', color: colors.gray[700], textDecoration: 'none' }}>FAQ</a>
-            <a href="/resources" style={{ display: 'block', padding: '12px 0', color: colors.gray[700], textDecoration: 'none' }}>Resources</a>
-            <a href={`${APP_URL}/login`} style={{ display: 'block', padding: '12px 0', color: colors.gray[700], textDecoration: 'none' }}>Log In</a>
+          <div style={{ padding: '16px 24px', borderTop: '1px solid rgba(255,255,255,0.2)', backgroundColor: colors.primary }}>
+            <a href="#features" style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Features</a>
+            <a href="#pricing" style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Pricing</a>
+            <a href="#faq" style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>FAQ</a>
+            <a href="/resources" style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Resources</a>
+            <a href={`${APP_URL}/login`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Log In</a>
           </div>
         )}
       </nav>
@@ -561,7 +560,7 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer style={{ padding: '48px 0', backgroundColor: colors.gray[900] }}>
+      <footer style={{ padding: '48px 0', backgroundColor: colors.primary }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '48px', marginBottom: '48px' }}>
             {/* Brand */}
@@ -575,7 +574,7 @@ export default function LandingPage() {
                   style={{ filter: 'brightness(0) invert(1)' }}
                 />
               </div>
-              <p style={{ color: colors.gray[400], lineHeight: '1.6', fontSize: '14px' }}>
+              <p style={{ color: 'rgba(255,255,255,0.8)', lineHeight: '1.6', fontSize: '14px' }}>
                 The all-in-one app for caravan travellers. Plan smarter, tow safer, travel further.
               </p>
             </div>
@@ -584,28 +583,28 @@ export default function LandingPage() {
             <div style={{ display: 'flex', gap: '64px', flexWrap: 'wrap' }}>
               <div>
                 <h4 style={{ color: colors.white, fontSize: '14px', fontWeight: '600', marginBottom: '16px' }}>Product</h4>
-                <a href="#features" style={{ display: 'block', color: colors.gray[400], textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Features</a>
-                <a href="#pricing" style={{ display: 'block', color: colors.gray[400], textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Pricing</a>
-                <a href="/resources" style={{ display: 'block', color: colors.gray[400], textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Resources</a>
+                <a href="#features" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Features</a>
+                <a href="#pricing" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Pricing</a>
+                <a href="/resources" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Resources</a>
               </div>
               <div>
                 <h4 style={{ color: colors.white, fontSize: '14px', fontWeight: '600', marginBottom: '16px' }}>Legal</h4>
-                <a href="/legal/privacy" style={{ display: 'block', color: colors.gray[400], textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Privacy Policy</a>
-                <a href="/legal/terms" style={{ display: 'block', color: colors.gray[400], textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Terms of Service</a>
-                <a href="/legal/refunds" style={{ display: 'block', color: colors.gray[400], textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Refund Policy</a>
+                <a href="/legal/privacy" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Privacy Policy</a>
+                <a href="/legal/terms" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Terms of Service</a>
+                <a href="/legal/refunds" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Refund Policy</a>
               </div>
               <div>
                 <h4 style={{ color: colors.white, fontSize: '14px', fontWeight: '600', marginBottom: '16px' }}>Contact</h4>
-                <a href={`${APP_URL}/contact`} style={{ display: 'block', color: colors.gray[400], textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Contact Us</a>
-                <a href="mailto:info@kamperhub.com" style={{ display: 'block', color: colors.gray[400], textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>info@kamperhub.com</a>
+                <a href={`${APP_URL}/contact`} style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Contact Us</a>
+                <a href="mailto:info@kamperhub.com" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>info@kamperhub.com</a>
               </div>
             </div>
           </div>
           <div style={{
-            borderTop: `1px solid ${colors.gray[800]}`,
+            borderTop: '1px solid rgba(255,255,255,0.2)',
             paddingTop: '24px',
             textAlign: 'center',
-            color: colors.gray[500],
+            color: 'rgba(255,255,255,0.7)',
             fontSize: '14px'
           }}>
             © {new Date().getFullYear()} KamperHub. All rights reserved.
