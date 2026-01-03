@@ -576,7 +576,7 @@ export default function LandingPage() {
                 />
               </div>
               <p style={{ color: colors.gray[400], lineHeight: '1.6', fontSize: '14px' }}>
-                The all-in-one app for Australian caravan travellers. Plan smarter, tow safer, travel further.
+                The all-in-one app for caravan travellers. Plan smarter, tow safer, travel further.
               </p>
             </div>
 

@@ -155,7 +155,7 @@ export default function CommunityPage() {
       <footer style={{ padding: '48px 0', backgroundColor: colors.gray[900] }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px', textAlign: 'center' }}>
           <Image src="/logo-horizontal.svg" alt="KamperHub" width={140} height={35} style={{ filter: 'brightness(0) invert(1)', marginBottom: '16px' }} />
-          <p style={{ color: colors.gray[400], fontSize: '14px' }}>The all-in-one app for Australian caravan travellers.</p>
+          <p style={{ color: colors.gray[400], fontSize: '14px' }}>The all-in-one app for caravan travellers.</p>
           <p style={{ color: colors.gray[500], fontSize: '14px', marginTop: '24px' }}>© {new Date().getFullYear()} KamperHub. All rights reserved.</p>
         </div>
       </footer>
