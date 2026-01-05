@@ -57,62 +57,86 @@ export default function LandingPage() {
     {
       icon: Map,
       title: 'Smart Trip Planning',
-      description: 'Plan routes with fuel stops, weather forecasts, and realistic travel times. Save trips and access them anywhere.'
+      description: 'Plan routes with fuel stops, weather forecasts, and realistic travel times. Save trips and access them anywhere.',
+      color: '#ec4899',
+      bg: '#fdf2f8'
     },
     {
       icon: LayoutDashboard,
       title: 'Trip Readiness at a Glance',
-      description: 'See your overall trip readiness percentage. Track planning progress, pre-departure tasks, and know exactly what\'s left to do.'
+      description: 'See your overall trip readiness percentage. Track planning progress, pre-departure tasks, and know exactly what\'s left to do.',
+      color: '#386641',
+      bg: '#f0fdf4'
     },
     {
       icon: Scale,
       title: 'Weight Compliance Made Easy',
-      description: 'Know your limits before you leave. Calculate tow ball weight, ATM, GVM, and GCM with our Trip Weight Calculator.'
+      description: 'Know your limits before you leave. Calculate tow ball weight, ATM, GVM, and GCM with our Trip Weight Calculator.',
+      color: '#3b82f6',
+      bg: '#eff6ff'
     },
     {
       icon: Car,
       title: 'Your Digital Garage',
-      description: 'Store vehicle and caravan specs, track kit items and standard gear, and monitor rego and insurance expiry dates.'
+      description: 'Store vehicle and caravan specs, track kit items and standard gear, and monitor rego and insurance expiry dates.',
+      color: '#64748b',
+      bg: '#f1f5f9'
     },
     {
       icon: Fuel,
       title: 'Never Run Dry',
-      description: 'Get low fuel warnings for outback travel with our Fuel Gap Warning System. Find stations and auto-calculate fuel budgets.'
+      description: 'Get low fuel warnings for outback travel with our Fuel Gap Warning System. Find stations and auto-calculate fuel budgets.',
+      color: '#f59e0b',
+      bg: '#fef9c3'
     },
     {
       icon: CheckSquare,
       title: 'Packing Lists & Checklists',
-      description: '50+ packing templates, weather-based suggestions, and traveller assignments. Pack smarter, not harder.'
+      description: '50+ packing templates, weather-based suggestions, and traveller assignments. Pack smarter, not harder.',
+      color: '#8b5cf6',
+      bg: '#f5f3ff'
     },
     {
       icon: ClipboardCheck,
       title: 'Pre-Departure Checklist',
-      description: '60+ industry-standard checks across 12 categories. Tyres, coupling, lights, brakes, gas, water - never miss a critical item.'
+      description: '60+ industry-standard checks across 12 categories. Tyres, coupling, lights, brakes, gas, water - never miss a critical item.',
+      color: '#f59e0b',
+      bg: '#fef9c3'
     },
     {
       icon: DollarSign,
       title: 'Trip Budgets & Expenses',
-      description: 'Set trip budgets by category with auto fuel estimates. Track expenses and see where your money goes.'
+      description: 'Set trip budgets by category with auto fuel estimates. Track expenses and see where your money goes.',
+      color: '#22c55e',
+      bg: '#f0fdf4'
     },
     {
       icon: Shield,
       title: 'Stay Compliant',
-      description: 'Get warnings for expiring registration, insurance, gas bottle certification, and upcoming service intervals.'
+      description: 'Get warnings for expiring registration, insurance, gas bottle certification, and upcoming service intervals.',
+      color: '#dc2626',
+      bg: '#fef2f2'
     },
     {
       icon: Users,
       title: 'Traveller Profiles',
-      description: 'Add travellers with weights for accurate compliance. Track pets, assign packing items, and send trip reminder emails.'
+      description: 'Add travellers with weights for accurate compliance. Track pets, assign packing items, and send trip reminder emails.',
+      color: '#0891b2',
+      bg: '#ecfeff'
     },
     {
       icon: BookOpen,
       title: 'Comprehensive Resources',
-      description: 'Access towing regulations, find dump points, locate gas refills, discover pet-friendly parks, and more.'
+      description: 'Access towing regulations, find dump points, locate gas refills, discover pet-friendly parks, and more.',
+      color: '#6366f1',
+      bg: '#eef2ff'
     },
     {
       icon: BarChart3,
       title: 'Track Your Adventures',
-      description: 'See your travel stats - total kilometres, trips completed, nights on the road, and more.'
+      description: 'See your travel stats - total kilometres, trips completed, nights on the road, and more.',
+      color: '#7c3aed',
+      bg: '#f5f3ff'
     }
   ];
 
@@ -346,22 +370,22 @@ export default function LandingPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
             {features.map((feature, index) => (
               <div key={index} style={{
-                backgroundColor: colors.gray[50],
+                backgroundColor: feature.bg,
                 borderRadius: '16px',
                 padding: '28px',
-                border: `1px solid ${colors.gray[200]}`
+                border: `1px solid ${feature.bg}`
               }}>
                 <div style={{
                   width: '48px',
                   height: '48px',
-                  backgroundColor: `${colors.primary}15`,
+                  backgroundColor: `${feature.color}20`,
                   borderRadius: '12px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   marginBottom: '16px'
                 }}>
-                  <feature.icon size={24} color={colors.primary} />
+                  <feature.icon size={24} color={feature.color} />
                 </div>
                 <h3 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '8px', color: colors.gray[900] }}>
                   {feature.title}
