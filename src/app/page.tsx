@@ -20,7 +20,11 @@ import {
   Thermometer,
   Clock,
   Gauge,
-  ArrowRight
+  ArrowRight,
+  LayoutDashboard,
+  ClipboardCheck,
+  Shield,
+  BarChart3
 } from 'lucide-react';
 
 // Brand Colors
@@ -53,32 +57,52 @@ export default function LandingPage() {
     {
       icon: Map,
       title: 'Smart Trip Planning',
-      description: 'Plan routes with fuel stops, find campsites, and get weather forecasts. Save trips and access them anywhere.'
+      description: 'Plan routes with fuel stops, weather forecasts, and realistic travel times. Save trips and access them anywhere.'
+    },
+    {
+      icon: LayoutDashboard,
+      title: 'Trip Readiness at a Glance',
+      description: 'See your overall trip readiness percentage. Track planning progress, pre-departure tasks, and know exactly what\'s left to do.'
     },
     {
       icon: Scale,
       title: 'Weight Compliance Made Easy',
-      description: 'Know your limits before you leave. Calculate tow ball weight, ATM, GVM, and GCM to stay legal and safe.'
+      description: 'Know your limits before you leave. Calculate tow ball weight, ATM, GVM, and GCM with our Trip Weight Calculator.'
     },
     {
       icon: Car,
       title: 'Your Digital Garage',
-      description: 'Store all your vehicle and caravan specs in one place. Towing capacity, tank sizes, and dimensions at your fingertips.'
+      description: 'Store vehicle and caravan specs, track kit items and standard gear, and monitor rego and insurance expiry dates.'
     },
     {
       icon: Fuel,
       title: 'Never Run Dry',
-      description: 'Get low fuel warnings for outback travel. Find fuel stations along your route and calculate trip fuel costs.'
+      description: 'Get low fuel warnings for outback travel with our Fuel Gap Warning System. Find stations and auto-calculate fuel budgets.'
     },
     {
       icon: CheckSquare,
       title: 'Packing Lists & Checklists',
-      description: 'Pre-departure checklists, packing lists by trip type, and weather-based suggestions. Never forget the essentials.'
+      description: '50+ packing templates, weather-based suggestions, and traveller assignments. Pack smarter, not harder.'
+    },
+    {
+      icon: ClipboardCheck,
+      title: 'Pre-Departure Checklist',
+      description: '60+ industry-standard checks across 12 categories. Tyres, coupling, lights, brakes, gas, water - never miss a critical item.'
     },
     {
       icon: DollarSign,
       title: 'Trip Budgets & Expenses',
-      description: "Set trip budgets, track expenses by category, and see where your money goes. No more holiday bill shock."
+      description: 'Set trip budgets by category with auto fuel estimates. Track expenses and see where your money goes.'
+    },
+    {
+      icon: Shield,
+      title: 'Stay Compliant',
+      description: 'Get warnings for expiring registration, insurance, gas bottle certification, and upcoming service intervals.'
+    },
+    {
+      icon: Users,
+      title: 'Traveller Profiles',
+      description: 'Add travellers with weights for accurate compliance. Track pets, assign packing items, and send trip reminder emails.'
     },
     {
       icon: BookOpen,
@@ -86,9 +110,9 @@ export default function LandingPage() {
       description: 'Access towing regulations, find dump points, locate gas refills, discover pet-friendly parks, and more.'
     },
     {
-      icon: Users,
-      title: 'Join the Community',
-      description: 'Connect with thousands of Aussie travellers on Facebook, Instagram, and YouTube. Share tips and find inspiration.'
+      icon: BarChart3,
+      title: 'Track Your Adventures',
+      description: 'See your travel stats - total kilometres, trips completed, nights on the road, and more.'
     }
   ];
 
@@ -122,16 +146,22 @@ export default function LandingPage() {
   ];
 
   const pricingFeatures = [
-    'Unlimited trip planning',
-    'Vehicle & caravan garage',
-    'Weight compliance calculator',
+    'Unlimited trip planning with fuel stops',
+    'Trip Dashboard with readiness tracking',
+    'Vehicle & caravan garage with kit items',
+    'Trip Weight Calculator (GVM, ATM, GCM, towball)',
     'All 11 calculator tools',
-    'Expense tracking & budgets',
-    'Inventory management',
-    'Packing lists & checklists',
+    '60+ pre-departure checklist items',
+    '50+ packing list templates',
+    'Weather-based packing suggestions',
+    'Trip budgets with auto fuel estimates',
+    'Expense tracking by category',
+    'Compliance alerts (rego, insurance, service)',
+    'Traveller profiles with weight tracking',
+    'Pet support & assignment',
+    'Email trip reminders',
     'Travel statistics',
-    'Traveller profiles',
-    'Email trip reminders'
+    'Inventory management'
   ];
 
   const faqs = [
@@ -148,16 +178,16 @@ export default function LandingPage() {
       a: 'Yes, you can cancel your subscription at any time from your account settings. Your access will continue until the end of your billing period.'
     },
     {
-      q: 'Does it work offline?',
-      a: 'KamperHub is primarily an online app, but your saved trips and vehicle details are cached for viewing when you have limited connectivity.'
+      q: 'What vehicles and caravans are supported?',
+      a: 'Our database includes 150+ popular Australian tow vehicles and 160+ caravans with full specifications including weights, towing capacity, and tank sizes. You can also manually enter your own specs if your rig isn\'t listed.'
+    },
+    {
+      q: 'What\'s included in the pre-departure checklist?',
+      a: 'We\'ve compiled 60+ industry-standard checks across 12 categories: tyres, coupling & hitch, lights, brakes, gas, water, interior security, external security, vehicle checks, safety equipment, documents, and personal items.'
     },
     {
       q: 'Is my data secure?',
       a: 'Absolutely. We use industry-standard encryption and secure authentication. Your data is stored safely and never shared with third parties.'
-    },
-    {
-      q: 'Can I add multiple vehicles?',
-      a: 'Yes! Add as many tow vehicles, caravans, and camper trailers as you like. Perfect for families with multiple rigs.'
     },
     {
       q: 'Is there a mobile app?',
