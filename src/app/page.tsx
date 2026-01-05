@@ -141,14 +141,14 @@ export default function LandingPage() {
   ];
 
   const calculators = [
-    { name: 'Weight Distribution', icon: Scale },
-    { name: 'Towing Capacity', icon: Car },
-    { name: 'Fuel Cost', icon: Fuel },
-    { name: 'Tyre Pressure', icon: Gauge },
-    { name: 'Water Tank', icon: Droplets },
-    { name: 'Solar & Battery', icon: Battery },
-    { name: 'Gas/LPG Usage', icon: Thermometer },
-    { name: 'Travel Time', icon: Clock },
+    { name: 'Weight Distribution', icon: Scale, color: '#3b82f6', bg: '#eff6ff' },
+    { name: 'Towing Capacity', icon: Car, color: '#64748b', bg: '#f1f5f9' },
+    { name: 'Fuel Cost', icon: Fuel, color: '#f59e0b', bg: '#fef9c3' },
+    { name: 'Tyre Pressure', icon: Gauge, color: '#ec4899', bg: '#fdf2f8' },
+    { name: 'Water Tank', icon: Droplets, color: '#0891b2', bg: '#ecfeff' },
+    { name: 'Solar & Battery', icon: Battery, color: '#22c55e', bg: '#f0fdf4' },
+    { name: 'Gas/LPG Usage', icon: Thermometer, color: '#f97316', bg: '#fff7ed' },
+    { name: 'Travel Time', icon: Clock, color: '#8b5cf6', bg: '#f5f3ff' },
   ];
 
   const steps = [
@@ -451,13 +451,13 @@ export default function LandingPage() {
                 alignItems: 'center',
                 gap: '8px',
                 padding: '12px 20px',
-                backgroundColor: colors.gray[100],
+                backgroundColor: calc.bg,
                 borderRadius: '100px',
                 fontSize: '14px',
                 fontWeight: '500',
                 color: colors.gray[700]
               }}>
-                <calc.icon size={18} color={colors.primary} />
+                <calc.icon size={18} color={calc.color} />
                 {calc.name}
               </div>
             ))}
