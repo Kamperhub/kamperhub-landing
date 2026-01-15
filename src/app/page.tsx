@@ -169,29 +169,61 @@ export default function LandingPage() {
     }
   ];
 
-  const pricingFeatures = [
-    'Unlimited trip planning with fuel stops',
-    'Trip Dashboard with readiness tracking',
-    'Vehicle & caravan garage with kit items',
-    'Trip Weight Calculator (GVM, ATM, GCM, towball)',
+  const sharedFeatures = [
+    'Unlimited trip planning',
+    'Vehicle & caravan garage',
+    'Trip Weight Calculator',
     'All 11 calculator tools',
-    '60+ pre-departure checklist items',
-    '50+ packing list templates',
-    'Weather-based packing suggestions',
-    'Trip budgets with auto fuel estimates',
-    'Expense tracking by category',
-    'Compliance alerts (rego, insurance, service)',
-    'Traveller profiles with weight tracking',
-    'Pet support & assignment',
-    'Email trip reminders',
-    'Travel statistics',
-    'Inventory management'
+    '60+ pre-departure checks',
+    '50+ packing templates',
+    'Trip budgets & expenses',
+    'Compliance alerts',
+    'Email reminders',
+  ];
+
+  const pricingTiers = [
+    {
+      name: 'Solo',
+      price: 9,
+      description: 'Perfect for solo travellers',
+      members: '1 user',
+      popular: false,
+      features: [
+        ...sharedFeatures,
+      ],
+    },
+    {
+      name: 'Couple',
+      price: 15,
+      description: 'Travel together, plan together',
+      members: '2 users',
+      popular: true,
+      features: [
+        ...sharedFeatures,
+        'Shared trip access',
+        'POI suggestions',
+        'Packing assignments',
+      ],
+    },
+    {
+      name: 'Family',
+      price: 29,
+      description: 'The whole crew on one plan',
+      members: 'Up to 5 users',
+      popular: false,
+      features: [
+        ...sharedFeatures,
+        'Shared trip access',
+        'POI suggestions',
+        'Packing assignments',
+      ],
+    },
   ];
 
   const faqs = [
     {
       q: 'Is there a free plan?',
-      a: 'We offer a 7-day free trial with full access to all features. After that, it\'s just $9/month to continue.'
+      a: 'We offer a 7-day free trial with full access to all features. After that, plans start at just $9/month for Solo, $15/month for Couple (2 users), or $29/month for Family (up to 5 users).'
     },
     {
       q: 'Do I need a credit card to start the trial?',
@@ -467,71 +499,108 @@ export default function LandingPage() {
 
       {/* Pricing Section */}
       <section id="pricing" style={{ padding: '80px 0', backgroundColor: colors.cream }}>
-        <div style={{ maxWidth: '600px', margin: '0 auto', padding: '0 24px' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 24px' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', textAlign: 'center', marginBottom: '16px', color: colors.gray[900] }}>
             Simple, Affordable Pricing
           </h2>
-          <p style={{ textAlign: 'center', color: colors.gray[500], marginBottom: '40px', fontSize: '18px' }}>
-            One plan. Full access. No hidden fees.
+          <p style={{ textAlign: 'center', color: colors.gray[500], marginBottom: '48px', fontSize: '18px' }}>
+            Choose the plan that fits your travel crew
           </p>
           <div style={{
-            backgroundColor: colors.white,
-            borderRadius: '24px',
-            padding: '40px',
-            boxShadow: '0 10px 40px rgba(0,0,0,0.1)',
-            border: `2px solid ${colors.primary}`
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gap: '24px',
+            alignItems: 'stretch'
           }}>
-            <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-              <p style={{
-                fontSize: '14px',
-                fontWeight: '600',
-                color: colors.primary,
-                textTransform: 'uppercase',
-                letterSpacing: '1px',
-                marginBottom: '8px'
-              }}>
-                KamperHub Premium
-              </p>
-              <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'center', gap: '4px' }}>
-                <span style={{ fontSize: '56px', fontWeight: '800', color: colors.gray[900] }}>$9</span>
-                <span style={{ fontSize: '18px', color: colors.gray[500] }}>/month AUD</span>
-              </div>
-              <p style={{ color: colors.gray[500], fontSize: '14px', marginTop: '8px' }}>
-                That&apos;s less than $2.10 per week – cheaper than a flat white!
-              </p>
-            </div>
-            <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 32px' }}>
-              {pricingFeatures.map((feature, index) => (
-                <li key={index} style={{
+            {pricingTiers.map((tier, tierIndex) => (
+              <div
+                key={tierIndex}
+                style={{
+                  backgroundColor: colors.white,
+                  borderRadius: '24px',
+                  padding: '32px',
+                  boxShadow: tier.popular ? '0 10px 40px rgba(56, 102, 65, 0.2)' : '0 4px 20px rgba(0,0,0,0.08)',
+                  border: tier.popular ? `3px solid ${colors.primary}` : `1px solid ${colors.gray[200]}`,
+                  position: 'relative',
                   display: 'flex',
-                  alignItems: 'center',
-                  gap: '12px',
-                  padding: '12px 0',
-                  borderBottom: index < pricingFeatures.length - 1 ? `1px solid ${colors.gray[100]}` : 'none'
+                  flexDirection: 'column'
+                }}
+              >
+                {tier.popular && (
+                  <div style={{
+                    position: 'absolute',
+                    top: '-14px',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    backgroundColor: colors.primary,
+                    color: colors.white,
+                    padding: '6px 20px',
+                    borderRadius: '100px',
+                    fontSize: '12px',
+                    fontWeight: '700',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.5px'
+                  }}>
+                    Most Popular
+                  </div>
+                )}
+                <div style={{ textAlign: 'center', marginBottom: '24px' }}>
+                  <p style={{
+                    fontSize: '14px',
+                    fontWeight: '600',
+                    color: tier.popular ? colors.primary : colors.gray[600],
+                    textTransform: 'uppercase',
+                    letterSpacing: '1px',
+                    marginBottom: '4px'
+                  }}>
+                    {tier.name}
+                  </p>
+                  <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'center', gap: '4px' }}>
+                    <span style={{ fontSize: '48px', fontWeight: '800', color: colors.gray[900] }}>${tier.price}</span>
+                    <span style={{ fontSize: '16px', color: colors.gray[500] }}>/month</span>
+                  </div>
+                  <p style={{ color: colors.gray[500], fontSize: '14px', marginTop: '4px' }}>
+                    {tier.members}
+                  </p>
+                  <p style={{ color: colors.gray[600], fontSize: '13px', marginTop: '8px', fontStyle: 'italic' }}>
+                    {tier.description}
+                  </p>
+                </div>
+                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px', flex: 1 }}>
+                  {tier.features.map((feature, index) => (
+                    <li key={index} style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '10px',
+                      padding: '8px 0',
+                      fontSize: '14px'
+                    }}>
+                      <Check size={18} color={colors.primary} style={{ flexShrink: 0 }} />
+                      <span style={{ color: colors.gray[700] }}>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <a href={`${APP_URL}/signup`} style={{
+                  display: 'block',
+                  width: '100%',
+                  padding: '14px',
+                  backgroundColor: tier.popular ? colors.primary : colors.white,
+                  color: tier.popular ? colors.white : colors.primary,
+                  textAlign: 'center',
+                  textDecoration: 'none',
+                  fontWeight: '600',
+                  borderRadius: '12px',
+                  fontSize: '15px',
+                  border: tier.popular ? 'none' : `2px solid ${colors.primary}`
                 }}>
-                  <Check size={20} color={colors.primary} />
-                  <span style={{ color: colors.gray[700] }}>{feature}</span>
-                </li>
-              ))}
-            </ul>
-            <a href={`${APP_URL}/signup`} style={{
-              display: 'block',
-              width: '100%',
-              padding: '16px',
-              backgroundColor: colors.primary,
-              color: colors.white,
-              textAlign: 'center',
-              textDecoration: 'none',
-              fontWeight: '600',
-              borderRadius: '12px',
-              fontSize: '16px'
-            }}>
-              Start Your Free 7-Day Trial
-            </a>
-            <p style={{ textAlign: 'center', color: colors.gray[500], fontSize: '13px', marginTop: '16px' }}>
-              No credit card required • Cancel anytime
-            </p>
+                  Start Free Trial
+                </a>
+              </div>
+            ))}
           </div>
+          <p style={{ textAlign: 'center', color: colors.gray[500], fontSize: '14px', marginTop: '32px' }}>
+            All plans include a free 7-day trial • No credit card required • Cancel anytime
+          </p>
         </div>
       </section>
 
