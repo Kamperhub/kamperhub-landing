@@ -188,6 +188,7 @@ export default function LandingPage() {
       description: 'Perfect for solo travellers',
       members: '1 user',
       popular: false,
+      isTeam: false,
       features: [
         ...sharedFeatures,
       ],
@@ -198,6 +199,7 @@ export default function LandingPage() {
       description: 'Travel together, plan together',
       members: '2 users',
       popular: true,
+      isTeam: false,
       features: [
         ...sharedFeatures,
         'Shared trip access',
@@ -211,11 +213,28 @@ export default function LandingPage() {
       description: 'The whole crew on one plan',
       members: 'Up to 5 users',
       popular: false,
+      isTeam: false,
       features: [
         ...sharedFeatures,
         'Shared trip access',
         'POI suggestions',
         'Packing assignments',
+      ],
+    },
+    {
+      name: 'Team',
+      price: null,
+      description: 'For caravan clubs & tour groups',
+      members: 'Up to 20 users',
+      popular: false,
+      isTeam: true,
+      features: [
+        ...sharedFeatures,
+        'Shared trip access',
+        'POI suggestions',
+        'Packing assignments',
+        'Team trip management',
+        'Dedicated support',
       ],
     },
   ];
@@ -508,8 +527,8 @@ export default function LandingPage() {
           </p>
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '24px',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+            gap: '20px',
             alignItems: 'stretch'
           }}>
             {pricingTiers.map((tier, tierIndex) => (
@@ -548,7 +567,7 @@ export default function LandingPage() {
                   <p style={{
                     fontSize: '14px',
                     fontWeight: '600',
-                    color: tier.popular ? colors.primary : colors.gray[600],
+                    color: tier.popular ? colors.primary : tier.isTeam ? '#0369a1' : colors.gray[600],
                     textTransform: 'uppercase',
                     letterSpacing: '1px',
                     marginBottom: '4px'
@@ -556,8 +575,14 @@ export default function LandingPage() {
                     {tier.name}
                   </p>
                   <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'center', gap: '4px' }}>
-                    <span style={{ fontSize: '48px', fontWeight: '800', color: colors.gray[900] }}>${tier.price}</span>
-                    <span style={{ fontSize: '16px', color: colors.gray[500] }}>/month</span>
+                    {tier.price !== null ? (
+                      <>
+                        <span style={{ fontSize: '48px', fontWeight: '800', color: colors.gray[900] }}>${tier.price}</span>
+                        <span style={{ fontSize: '16px', color: colors.gray[500] }}>/month</span>
+                      </>
+                    ) : (
+                      <span style={{ fontSize: '36px', fontWeight: '800', color: colors.gray[900] }}>Custom</span>
+                    )}
                   </div>
                   <p style={{ color: colors.gray[500], fontSize: '14px', marginTop: '4px' }}>
                     {tier.members}
@@ -580,20 +605,20 @@ export default function LandingPage() {
                     </li>
                   ))}
                 </ul>
-                <a href={`${APP_URL}/signup`} style={{
+                <a href={tier.isTeam ? 'mailto:info@kamperhub.com?subject=Team%20Subscription%20Enquiry' : `${APP_URL}/signup`} style={{
                   display: 'block',
                   width: '100%',
                   padding: '14px',
-                  backgroundColor: tier.popular ? colors.primary : colors.white,
-                  color: tier.popular ? colors.white : colors.primary,
+                  backgroundColor: tier.popular ? colors.primary : tier.isTeam ? '#0369a1' : colors.white,
+                  color: tier.popular || tier.isTeam ? colors.white : colors.primary,
                   textAlign: 'center',
                   textDecoration: 'none',
                   fontWeight: '600',
                   borderRadius: '12px',
                   fontSize: '15px',
-                  border: tier.popular ? 'none' : `2px solid ${colors.primary}`
+                  border: tier.popular || tier.isTeam ? 'none' : `2px solid ${colors.primary}`
                 }}>
-                  Start Free Trial
+                  {tier.isTeam ? 'Contact Us' : 'Start Free Trial'}
                 </a>
               </div>
             ))}

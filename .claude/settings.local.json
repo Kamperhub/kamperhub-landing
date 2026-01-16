@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm:*)",
+      "Bash(npx vercel:*)",
+      "Bash(dir /b \"%APPDATA%\\\\com.vercel.cli\")",
+      "Bash(dir /b \"%USERPROFILE%\\\\.vercel\")",
+      "Bash(dir \"%LOCALAPPDATA%\\\\com.vercel.cli\" /b)",
+      "Bash(curl:*)",
+      "Bash(npm run build:*)",
+      "Bash(GIT_AUTHOR_EMAIL=info@kamperhub.com GIT_COMMITTER_EMAIL=info@kamperhub.com npx vercel:*)",
+      "Bash(ls:*)",
+      "Bash(node -e:*)",
+      "Bash(npx tsc:*)",
+      "Bash(cat:*)",
+      "Bash(npm install:*)"
+    ]
+  }
+}
