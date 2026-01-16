@@ -125,6 +125,13 @@ export default function LandingPage() {
       bg: '#ecfeff'
     },
     {
+      icon: Droplets,
+      title: 'Find Utilities Anywhere',
+      description: 'Locate water fill points, dump stations, LPG refills, public toilets, and laundry facilities near you or along your route.',
+      color: '#3b82f6',
+      bg: '#eff6ff'
+    },
+    {
       icon: BookOpen,
       title: 'Comprehensive Resources',
       description: 'Access towing regulations, find dump points, locate gas refills, discover pet-friendly parks, and more.',
@@ -174,6 +181,7 @@ export default function LandingPage() {
     'Vehicle & caravan garage',
     'Trip Weight Calculator',
     'All 11 calculator tools',
+    'Utilities finder (water, dump, LPG)',
     '60+ pre-departure checks',
     '50+ packing templates',
     'Trip budgets & expenses',
@@ -259,6 +267,10 @@ export default function LandingPage() {
     {
       q: 'What\'s included in the pre-departure checklist?',
       a: 'We\'ve compiled 60+ industry-standard checks across 12 categories: tyres, coupling & hitch, lights, brakes, gas, water, interior security, external security, vehicle checks, safety equipment, documents, and personal items.'
+    },
+    {
+      q: 'How does the Utilities finder work?',
+      a: 'The Utilities page helps you find essential services like potable water fill points, dump stations, LPG refills, public toilets, and laundromats. Search by town or use your current location. Data comes from OpenStreetMap - a free, community-maintained database updated by volunteers worldwide.'
     },
     {
       q: 'Is my data secure?',
