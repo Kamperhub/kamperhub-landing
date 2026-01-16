@@ -119,8 +119,8 @@ export default function LandingPage() {
     },
     {
       icon: Users,
-      title: 'Traveller Profiles',
-      description: 'Add travellers with weights for accurate compliance. Track pets, assign packing items, and send trip reminder emails.',
+      title: 'Share with Your Crew',
+      description: 'Couple and Family plans let household members share trips. Each member can view, edit, and collaborate on shared trips together.',
       color: '#0891b2',
       bg: '#ecfeff'
     },
@@ -259,6 +259,10 @@ export default function LandingPage() {
     {
       q: 'Can I cancel anytime?',
       a: 'Yes, you can cancel your subscription at any time from your account settings. Your access will continue until the end of your billing period.'
+    },
+    {
+      q: 'How does trip sharing work with Couple and Family plans?',
+      a: 'With multi-user plans, the subscription owner can invite household members via email. Once accepted, members get full app access. Trip owners can selectively share individual trips - shared trips appear in each member\'s trip list with a "Shared" badge, and everyone can view and edit the trip details together.'
     },
     {
       q: 'What vehicles and caravans are supported?',
