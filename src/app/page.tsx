@@ -329,6 +329,7 @@ export default function LandingPage() {
             <a href="#pricing" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500' }}>Pricing</a>
             <a href="#faq" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500' }}>FAQ</a>
             <a href="/resources" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500' }}>Resources</a>
+            <a href={`${APP_URL}/shop`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500' }}>Shop</a>
           </div>
 
           {/* CTA Buttons */}
@@ -364,6 +365,7 @@ export default function LandingPage() {
             <a href="#pricing" style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Pricing</a>
             <a href="#faq" style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>FAQ</a>
             <a href="/resources" style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Resources</a>
+            <a href={`${APP_URL}/shop`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Shop</a>
             <a href={`${APP_URL}/login`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Log In</a>
           </div>
         )}
@@ -750,6 +752,7 @@ export default function LandingPage() {
                 <a href="#features" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Features</a>
                 <a href="#pricing" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Pricing</a>
                 <a href="/resources" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Resources</a>
+                <a href={`${APP_URL}/shop`} style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Shop</a>
               </div>
               <div>
                 <h4 style={{ color: colors.white, fontSize: '14px', fontWeight: '600', marginBottom: '16px' }}>Legal</h4>
