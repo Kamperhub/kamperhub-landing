@@ -40,6 +40,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="p:domain_verify" content="4d429f3d699c275f37e9fc85bdb0cabe" />
+      </head>
       <body>{children}</body>
     </html>
   );
