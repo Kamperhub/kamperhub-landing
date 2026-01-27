@@ -735,13 +735,12 @@ export default function LandingPage() {
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '48px', marginBottom: '48px' }}>
             {/* Brand */}
             <div style={{ maxWidth: '300px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '16px', backgroundColor: 'rgba(255,255,255,0.95)', padding: '8px 12px', borderRadius: '8px' }}>
                 <Image
                   src="/logo.png"
                   alt="KamperHub"
                   width={120}
                   height={42}
-                  style={{ filter: 'brightness(0) invert(1)' }}
                 />
               </div>
               <p style={{ color: 'rgba(255,255,255,0.8)', lineHeight: '1.6', fontSize: '14px' }}>
