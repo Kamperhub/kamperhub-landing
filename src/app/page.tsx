@@ -319,12 +319,11 @@ export default function LandingPage() {
           {/* Logo */}
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <Image
-              src="/logo-horizontal.svg"
+              src="/logo.png"
               alt="KamperHub"
-              width={160}
-              height={40}
+              width={140}
+              height={50}
               priority
-              style={{ filter: 'brightness(0) invert(1)' }}
             />
           </div>
 
@@ -738,10 +737,10 @@ export default function LandingPage() {
             <div style={{ maxWidth: '300px' }}>
               <div style={{ display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
                 <Image
-                  src="/logo-horizontal.svg"
+                  src="/logo.png"
                   alt="KamperHub"
-                  width={140}
-                  height={35}
+                  width={120}
+                  height={42}
                   style={{ filter: 'brightness(0) invert(1)' }}
                 />
               </div>
