@@ -9,10 +9,14 @@ import {
 } from 'lucide-react';
 
 const colors = {
-  primary: '#386641',
-  cream: '#FAF8F1',
+  primary: '#6b8e6b',
+  secondary: '#3d8b8b',
+  accent: '#c97b5d',
+  cream: '#fdfbf7',
+  sand: '#e8dcc4',
+  darkEarth: '#3d3229',
   white: '#FFFFFF',
-  gray: { 50: '#f9fafb', 100: '#f3f4f6', 200: '#e5e7eb', 400: '#9ca3af', 500: '#6b7280', 600: '#4b5563', 700: '#374151', 900: '#111827' }
+  gray: { 50: '#fdfbf7', 100: '#e8dcc4', 200: '#d4c9b0', 400: '#a68b6a', 500: '#5a6672', 600: '#4a5560', 700: '#3d3229', 900: '#1a1512' }
 };
 
 import type { LucideIcon } from 'lucide-react';

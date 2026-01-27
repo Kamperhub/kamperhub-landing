@@ -27,25 +27,30 @@ import {
   BarChart3
 } from 'lucide-react';
 
-// Brand Colors
+// Brand Colors - Bush Meets Coast palette
 const colors = {
-  primary: '#386641',
-  primaryLight: '#4a7c59',
-  primaryDark: '#2d5235',
-  accent: '#BC4749',
-  cream: '#FAF8F1',
+  primary: '#6b8e6b',       // Sage Green
+  primaryLight: '#7fa37f',
+  primaryDark: '#5a7a5a',
+  secondary: '#3d8b8b',     // Ocean Teal
+  accent: '#c97b5d',        // Terracotta
+  cream: '#fdfbf7',         // Beach Cream
+  sand: '#e8dcc4',          // Sandstone
+  driftwood: '#a68b6a',     // Driftwood
+  darkEarth: '#3d3229',     // Dark Earth
+  slate: '#5a6672',         // Slate
   white: '#FFFFFF',
   gray: {
-    50: '#f9fafb',
-    100: '#f3f4f6',
-    200: '#e5e7eb',
-    300: '#d1d5db',
-    400: '#9ca3af',
-    500: '#6b7280',
-    600: '#4b5563',
-    700: '#374151',
-    800: '#1f2937',
-    900: '#111827',
+    50: '#fdfbf7',
+    100: '#e8dcc4',
+    200: '#d4c9b0',
+    300: '#a68b6a',
+    400: '#8a7a62',
+    500: '#5a6672',
+    600: '#4a5560',
+    700: '#3d3229',
+    800: '#2d2520',
+    900: '#1a1512',
   }
 };
 
@@ -65,8 +70,8 @@ export default function LandingPage() {
       icon: LayoutDashboard,
       title: 'Trip Readiness at a Glance',
       description: 'See your overall trip readiness percentage. Track planning progress, pre-departure tasks, and know exactly what\'s left to do.',
-      color: '#386641',
-      bg: '#f0fdf4'
+      color: '#6b8e6b',
+      bg: '#f0f7f2'
     },
     {
       icon: Scale,

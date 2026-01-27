@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { ArrowLeft, XCircle } from 'lucide-react';
 
 const colors = {
-  primary: '#386641',
+  primary: '#6b8e6b',
   white: '#FFFFFF',
   gray: { 200: '#e5e7eb', 500: '#6b7280', 700: '#374151' }
 };
@@ -36,7 +36,7 @@ export default function RefundPolicyPage() {
             display: 'inline-flex',
             alignItems: 'center',
             gap: '8px',
-            color: '#386641',
+            color: '#6b8e6b',
             textDecoration: 'none',
             fontSize: '14px',
             fontWeight: '500',
@@ -154,7 +154,7 @@ export default function RefundPolicyPage() {
             <ul style={{ color: '#374151', lineHeight: '1.7', margin: '0 0 16px 0', paddingLeft: '24px' }}>
               <li>Logging into your account and navigating to Account Settings</li>
               <li>Clicking "Manage Subscription" and selecting "Cancel Subscription"</li>
-              <li>Or by emailing us at <a href="mailto:info@kamperhub.com" style={{ color: '#386641' }}>info@kamperhub.com</a></li>
+              <li>Or by emailing us at <a href="mailto:info@kamperhub.com" style={{ color: '#6b8e6b' }}>info@kamperhub.com</a></li>
             </ul>
             <div style={{
               backgroundColor: '#eff6ff',
@@ -195,7 +195,7 @@ export default function RefundPolicyPage() {
               6.1 Billing Errors
             </h3>
             <p style={{ color: '#374151', lineHeight: '1.7', margin: '0 0 16px 0' }}>
-              If you believe you were charged in error (e.g., duplicate charge, incorrect amount), please contact us immediately at <a href="mailto:info@kamperhub.com" style={{ color: '#386641' }}>info@kamperhub.com</a> with details of the transaction. We will investigate and resolve genuine billing errors.
+              If you believe you were charged in error (e.g., duplicate charge, incorrect amount), please contact us immediately at <a href="mailto:info@kamperhub.com" style={{ color: '#6b8e6b' }}>info@kamperhub.com</a> with details of the transaction. We will investigate and resolve genuine billing errors.
             </p>
 
             <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#111827', marginBottom: '12px' }}>
@@ -264,7 +264,7 @@ export default function RefundPolicyPage() {
               <p style={{ color: '#111827', fontWeight: '600', margin: '0 0 8px 0' }}>KamperHub Support</p>
               <p style={{ color: '#374151', margin: '0 0 4px 0' }}>Operated by: Scott Carlton</p>
               <p style={{ color: '#374151', margin: '0 0 4px 0' }}>
-                Email: <a href="mailto:info@kamperhub.com" style={{ color: '#386641' }}>info@kamperhub.com</a>
+                Email: <a href="mailto:info@kamperhub.com" style={{ color: '#6b8e6b' }}>info@kamperhub.com</a>
               </p>
               <p style={{ color: '#374151', margin: 0 }}>
                 Postal Address: PO Box 5219, Algester QLD 4115, Australia
@@ -285,10 +285,10 @@ export default function RefundPolicyPage() {
               Related Policies
             </h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <Link href="/legal/terms" style={{ color: '#386641', textDecoration: 'none' }}>
+              <Link href="/legal/terms" style={{ color: '#6b8e6b', textDecoration: 'none' }}>
                 Terms of Service →
               </Link>
-              <Link href="/legal/privacy" style={{ color: '#386641', textDecoration: 'none' }}>
+              <Link href="/legal/privacy" style={{ color: '#6b8e6b', textDecoration: 'none' }}>
                 Privacy Policy →
               </Link>
             </div>

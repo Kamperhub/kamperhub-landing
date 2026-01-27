@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { ArrowLeft } from 'lucide-react';
 
 const colors = {
-  primary: '#386641',
+  primary: '#6b8e6b',
   white: '#FFFFFF',
   gray: { 200: '#e5e7eb', 500: '#6b7280', 700: '#374151' }
 };
@@ -36,7 +36,7 @@ export default function TermsOfServicePage() {
             display: 'inline-flex',
             alignItems: 'center',
             gap: '8px',
-            color: '#386641',
+            color: '#6b8e6b',
             textDecoration: 'none',
             fontSize: '14px',
             fontWeight: '500',
@@ -158,7 +158,7 @@ export default function TermsOfServicePage() {
               3.1 How to Cancel
             </h3>
             <p style={{ color: '#374151', lineHeight: '1.7', margin: '0 0 16px 0' }}>
-              You may cancel your subscription at any time through your account settings or by contacting us at <a href="mailto:info@kamperhub.com" style={{ color: '#386641' }}>info@kamperhub.com</a>. Cancellations are effective at the end of the current billing period.
+              You may cancel your subscription at any time through your account settings or by contacting us at <a href="mailto:info@kamperhub.com" style={{ color: '#6b8e6b' }}>info@kamperhub.com</a>. Cancellations are effective at the end of the current billing period.
             </p>
 
             <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#111827', marginBottom: '12px' }}>
@@ -334,7 +334,7 @@ export default function TermsOfServicePage() {
               12.1 Termination by You
             </h3>
             <p style={{ color: '#374151', lineHeight: '1.7', margin: '0 0 16px 0' }}>
-              You may terminate your account at any time by contacting us at <a href="mailto:info@kamperhub.com" style={{ color: '#386641' }}>info@kamperhub.com</a>. Upon termination, your data will be deleted within 30 days, subject to legal retention requirements.
+              You may terminate your account at any time by contacting us at <a href="mailto:info@kamperhub.com" style={{ color: '#6b8e6b' }}>info@kamperhub.com</a>. Upon termination, your data will be deleted within 30 days, subject to legal retention requirements.
             </p>
 
             <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#111827', marginBottom: '12px' }}>
@@ -364,7 +364,7 @@ export default function TermsOfServicePage() {
               These Terms are governed by the laws of Queensland, Australia. Any disputes arising from these Terms or your use of KamperHub shall be subject to the exclusive jurisdiction of the courts of Queensland, Australia.
             </p>
             <p style={{ color: '#374151', lineHeight: '1.7', margin: 0 }}>
-              Before commencing legal proceedings, you agree to first attempt to resolve any dispute informally by contacting us at <a href="mailto:info@kamperhub.com" style={{ color: '#386641' }}>info@kamperhub.com</a>.
+              Before commencing legal proceedings, you agree to first attempt to resolve any dispute informally by contacting us at <a href="mailto:info@kamperhub.com" style={{ color: '#6b8e6b' }}>info@kamperhub.com</a>.
             </p>
           </section>
 
@@ -395,7 +395,7 @@ export default function TermsOfServicePage() {
               <p style={{ color: '#111827', fontWeight: '600', margin: '0 0 8px 0' }}>KamperHub</p>
               <p style={{ color: '#374151', margin: '0 0 4px 0' }}>Operated by: Scott Carlton</p>
               <p style={{ color: '#374151', margin: '0 0 4px 0' }}>
-                Email: <a href="mailto:info@kamperhub.com" style={{ color: '#386641' }}>info@kamperhub.com</a>
+                Email: <a href="mailto:info@kamperhub.com" style={{ color: '#6b8e6b' }}>info@kamperhub.com</a>
               </p>
               <p style={{ color: '#374151', margin: 0 }}>
                 Postal Address: PO Box 5219, Algester QLD 4115, Australia
@@ -413,10 +413,10 @@ export default function TermsOfServicePage() {
               Related Policies
             </h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <Link href="/legal/privacy" style={{ color: '#386641', textDecoration: 'none' }}>
+              <Link href="/legal/privacy" style={{ color: '#6b8e6b', textDecoration: 'none' }}>
                 Privacy Policy →
               </Link>
-              <Link href="/legal/refunds" style={{ color: '#386641', textDecoration: 'none' }}>
+              <Link href="/legal/refunds" style={{ color: '#6b8e6b', textDecoration: 'none' }}>
                 Refund Policy →
               </Link>
             </div>

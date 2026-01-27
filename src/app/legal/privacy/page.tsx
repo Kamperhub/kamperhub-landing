@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { ArrowLeft } from 'lucide-react';
 
 const colors = {
-  primary: '#386641',
+  primary: '#6b8e6b',
   white: '#FFFFFF',
   gray: { 200: '#e5e7eb', 500: '#6b7280', 700: '#374151' }
 };
@@ -36,7 +36,7 @@ export default function PrivacyPolicyPage() {
             display: 'inline-flex',
             alignItems: 'center',
             gap: '8px',
-            color: '#386641',
+            color: '#6b8e6b',
             textDecoration: 'none',
             fontSize: '14px',
             fontWeight: '500',
@@ -141,21 +141,21 @@ export default function PrivacyPolicyPage() {
               Supabase
             </h3>
             <p style={{ color: '#374151', lineHeight: '1.7', margin: '0 0 16px 0' }}>
-              We use Supabase for authentication and database services. Your data is stored securely on Supabase's infrastructure. View their privacy policy at <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer" style={{ color: '#386641' }}>supabase.com/privacy</a>.
+              We use Supabase for authentication and database services. Your data is stored securely on Supabase's infrastructure. View their privacy policy at <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer" style={{ color: '#6b8e6b' }}>supabase.com/privacy</a>.
             </p>
 
             <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#111827', marginBottom: '8px' }}>
               Stripe
             </h3>
             <p style={{ color: '#374151', lineHeight: '1.7', margin: '0 0 16px 0' }}>
-              We use Stripe to process payments. We do not store your credit card details. Stripe handles all payment information securely. View their privacy policy at <a href="https://stripe.com/privacy" target="_blank" rel="noopener noreferrer" style={{ color: '#386641' }}>stripe.com/privacy</a>.
+              We use Stripe to process payments. We do not store your credit card details. Stripe handles all payment information securely. View their privacy policy at <a href="https://stripe.com/privacy" target="_blank" rel="noopener noreferrer" style={{ color: '#6b8e6b' }}>stripe.com/privacy</a>.
             </p>
 
             <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#111827', marginBottom: '8px' }}>
               Google Maps
             </h3>
             <p style={{ color: '#374151', lineHeight: '1.7', margin: '0 0 16px 0' }}>
-              We use Google Maps for route planning and location services. View Google's privacy policy at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style={{ color: '#386641' }}>policies.google.com/privacy</a>.
+              We use Google Maps for route planning and location services. View Google's privacy policy at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style={{ color: '#6b8e6b' }}>policies.google.com/privacy</a>.
             </p>
 
             <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#111827', marginBottom: '8px' }}>
@@ -231,7 +231,7 @@ export default function PrivacyPolicyPage() {
               <li>Lodge a complaint with the Office of the Australian Information Commissioner (OAIC)</li>
             </ul>
             <p style={{ color: '#374151', lineHeight: '1.7', margin: 0 }}>
-              To exercise these rights, please contact us at <a href="mailto:info@kamperhub.com" style={{ color: '#386641' }}>info@kamperhub.com</a>.
+              To exercise these rights, please contact us at <a href="mailto:info@kamperhub.com" style={{ color: '#6b8e6b' }}>info@kamperhub.com</a>.
             </p>
           </section>
 
@@ -271,7 +271,7 @@ export default function PrivacyPolicyPage() {
             }}>
               <p style={{ color: '#111827', fontWeight: '600', margin: '0 0 8px 0' }}>KamperHub</p>
               <p style={{ color: '#374151', margin: '0 0 4px 0' }}>
-                Email: <a href="mailto:info@kamperhub.com" style={{ color: '#386641' }}>info@kamperhub.com</a>
+                Email: <a href="mailto:info@kamperhub.com" style={{ color: '#6b8e6b' }}>info@kamperhub.com</a>
               </p>
               <p style={{ color: '#374151', margin: 0 }}>
                 Postal Address: PO Box 5219, Algester QLD 4115, Australia
@@ -289,10 +289,10 @@ export default function PrivacyPolicyPage() {
               Related Policies
             </h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <Link href="/legal/terms" style={{ color: '#386641', textDecoration: 'none' }}>
+              <Link href="/legal/terms" style={{ color: '#6b8e6b', textDecoration: 'none' }}>
                 Terms of Service →
               </Link>
-              <Link href="/legal/refunds" style={{ color: '#386641', textDecoration: 'none' }}>
+              <Link href="/legal/refunds" style={{ color: '#6b8e6b', textDecoration: 'none' }}>
                 Refund Policy →
               </Link>
             </div>

@@ -1,48 +1,55 @@
 // KamperHub Design Tokens - Landing Page
-// Consistent with main app branding
+// Bush Meets Coast colour palette
 
 export const colors = {
   // Primary brand colours
   primary: {
-    main: '#386641',      // Forest Green
-    light: '#4a7c54',
-    dark: '#2d5235',
+    main: '#6b8e6b',      // Sage Green
+    light: '#7fa37f',
+    dark: '#5a7a5a',
+  },
+
+  // Secondary colour
+  secondary: {
+    main: '#3d8b8b',      // Ocean Teal
+    light: '#4fa3a3',
+    dark: '#327373',
   },
 
   // Accent colour
   accent: {
-    main: '#BC4749',      // Burnt Orange/Red
-    light: '#d15a5c',
-    dark: '#9a3a3c',
+    main: '#c97b5d',      // Terracotta
+    light: '#d99478',
+    dark: '#b5684a',
   },
 
   // Backgrounds
   background: {
-    cream: '#FAF8F1',     // Light Beige
+    cream: '#fdfbf7',     // Beach Cream
+    sand: '#e8dcc4',      // Sandstone
     white: '#ffffff',
-    dark: '#1a1a1a',
-    green: '#f0f7f1',
+    dark: '#3d3229',      // Dark Earth
   },
 
   // Text colours
   text: {
-    primary: '#1a1a1a',
-    secondary: '#374151',
-    muted: '#6b7280',
-    inverse: '#ffffff',
+    primary: '#3d3229',   // Dark Earth
+    secondary: '#5a6672', // Slate
+    muted: '#a68b6a',     // Driftwood
+    inverse: '#fdfbf7',   // Beach Cream
   },
 
   // Borders
   border: {
-    light: '#e5e5e5',
-    medium: '#d1d5db',
+    light: '#e8dcc4',     // Sandstone
+    medium: '#a68b6a',    // Driftwood
   },
 
   // Status colours
   status: {
-    success: '#22c55e',
-    warning: '#f59e0b',
-    error: '#dc2626',
+    success: '#6b8e6b',   // Sage Green
+    warning: '#c97b5d',   // Terracotta
+    error: '#b54a4a',
   },
 };
 
@@ -101,10 +108,10 @@ export const borderRadius = {
 };
 
 export const shadows = {
-  sm: '0 1px 2px rgba(0, 0, 0, 0.05)',
-  md: '0 4px 6px rgba(0, 0, 0, 0.07)',
-  lg: '0 10px 15px rgba(0, 0, 0, 0.1)',
-  xl: '0 20px 25px rgba(0, 0, 0, 0.15)',
+  sm: '0 1px 2px rgba(61, 50, 41, 0.05)',
+  md: '0 4px 6px rgba(61, 50, 41, 0.07)',
+  lg: '0 10px 15px rgba(61, 50, 41, 0.1)',
+  xl: '0 20px 25px rgba(61, 50, 41, 0.15)',
 };
 
 export const breakpoints = {
