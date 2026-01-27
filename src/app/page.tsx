@@ -739,8 +739,8 @@ export default function LandingPage() {
                 <Image
                   src="/logo.png"
                   alt="KamperHub"
-                  width={120}
-                  height={42}
+                  width={140}
+                  height={50}
                 />
               </div>
               <p style={{ color: 'rgba(255,255,255,0.8)', lineHeight: '1.6', fontSize: '14px' }}>
