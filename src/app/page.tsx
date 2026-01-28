@@ -25,7 +25,9 @@ import {
   ClipboardCheck,
   Shield,
   BarChart3,
-  Tent
+  Tent,
+  Refrigerator,
+  MapPin
 } from 'lucide-react';
 
 // Brand Colors - Bush Meets Coast palette
@@ -168,7 +170,10 @@ export default function LandingPage() {
     { name: 'Water Tank', icon: Droplets, color: '#0891b2', bg: '#ecfeff' },
     { name: 'Solar & Battery', icon: Battery, color: '#22c55e', bg: '#f0fdf4' },
     { name: 'Gas/LPG Usage', icon: Thermometer, color: '#f97316', bg: '#fff7ed' },
+    { name: 'Fridge Runtime', icon: Refrigerator, color: '#06b6d4', bg: '#ecfeff' },
+    { name: 'Trip Cost', icon: DollarSign, color: '#10b981', bg: '#ecfdf5' },
     { name: 'Travel Time', icon: Clock, color: '#8b5cf6', bg: '#f5f3ff' },
+    { name: 'Fuel Stops', icon: MapPin, color: '#ef4444', bg: '#fef2f2' },
   ];
 
   const steps = [
