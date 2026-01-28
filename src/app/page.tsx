@@ -24,7 +24,8 @@ import {
   LayoutDashboard,
   ClipboardCheck,
   Shield,
-  BarChart3
+  BarChart3,
+  Tent
 } from 'lucide-react';
 
 // Brand Colors - Bush Meets Coast palette
@@ -137,6 +138,13 @@ export default function LandingPage() {
       bg: '#eff6ff'
     },
     {
+      icon: Tent,
+      title: 'Free Camping Finder',
+      description: 'Discover free and low-cost campsites across Australia. Filter by amenities like toilets, water, pet-friendly, and powered sites.',
+      color: '#059669',
+      bg: '#ecfdf5'
+    },
+    {
       icon: BookOpen,
       title: 'Comprehensive Resources',
       description: 'Access towing regulations, find dump points, locate gas refills, discover pet-friendly parks, and more.',
@@ -186,6 +194,7 @@ export default function LandingPage() {
     'Vehicle & caravan garage',
     'Trip Weight Calculator',
     'All 11 calculator tools',
+    'Free camping finder',
     'Utilities finder (water, dump, LPG)',
     '60+ pre-departure checks',
     '50+ packing templates',
@@ -282,6 +291,10 @@ export default function LandingPage() {
       a: 'The Utilities page helps you find essential services like potable water fill points, dump stations, LPG refills, public toilets, and laundromats. Search by town or use your current location. Data comes from OpenStreetMap - a free, community-maintained database updated by volunteers worldwide.'
     },
     {
+      q: 'How does the Free Camping finder work?',
+      a: 'Our Free Camping page helps you discover free and low-cost campsites across Australia. Filter by amenities like toilets, water, pet-friendly, powered sites, and caravan-suitable. We use community-sourced data from OpenStreetMap, so you\'re seeing real places that fellow travellers have mapped. You can even add campsites directly to your trip plans.'
+    },
+    {
       q: 'Is my data secure?',
       a: 'Absolutely. We use industry-standard encryption and secure authentication. Your data is stored safely and never shared with third parties.'
     },
@@ -332,7 +345,7 @@ export default function LandingPage() {
             <a href="#features" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500' }}>Features</a>
             <a href="#pricing" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500' }}>Pricing</a>
             <a href="#faq" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500' }}>FAQ</a>
-            <a href="/resources" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500' }}>Resources</a>
+            <a href={`${APP_URL}/free-camping`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500' }}>Free Camping</a>
             <a href={`${APP_URL}/shop`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500' }}>Shop</a>
           </div>
 
@@ -368,7 +381,7 @@ export default function LandingPage() {
             <a href="#features" style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Features</a>
             <a href="#pricing" style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Pricing</a>
             <a href="#faq" style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>FAQ</a>
-            <a href="/resources" style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Resources</a>
+            <a href={`${APP_URL}/free-camping`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Free Camping</a>
             <a href={`${APP_URL}/shop`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Shop</a>
             <a href={`${APP_URL}/login`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Log In</a>
           </div>
@@ -754,7 +767,7 @@ export default function LandingPage() {
                 <h4 style={{ color: colors.white, fontSize: '14px', fontWeight: '600', marginBottom: '16px' }}>Product</h4>
                 <a href="#features" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Features</a>
                 <a href="#pricing" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Pricing</a>
-                <a href="/resources" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Resources</a>
+                <a href={`${APP_URL}/free-camping`} style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Free Camping</a>
                 <a href={`${APP_URL}/shop`} style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Shop</a>
               </div>
               <div>
