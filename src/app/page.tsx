@@ -27,7 +27,9 @@ import {
   BarChart3,
   Tent,
   Refrigerator,
-  MapPin
+  MapPin,
+  Star,
+  Quote
 } from 'lucide-react';
 
 // Brand Colors - Bush Meets Coast palette
@@ -407,8 +409,8 @@ export default function LandingPage() {
             marginBottom: '24px',
             lineHeight: '1.1'
           }}>
-            Plan Smarter. Tow Safer.<br />
-            <span style={{ color: colors.primary }}>Travel Further.</span>
+            Your Caravan Trip Planner +<br />
+            <span style={{ color: colors.primary }}>Towing Weights Tracker</span>
           </h1>
           <p style={{
             fontSize: '18px',
@@ -417,8 +419,8 @@ export default function LandingPage() {
             margin: '0 auto 40px',
             lineHeight: '1.6'
           }}>
-            Plan trips, manage your rig, track weights, and hit the road with confidence. 
-            Built by Aussie travellers, for Aussie travellers.
+            Plan routes, check weight compliance, and get your rig road-ready — all in one app.
+            Built for Australian caravan and RV travellers.
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
             <a href={`${APP_URL}/signup`} style={{
@@ -550,6 +552,101 @@ export default function LandingPage() {
               }}>
                 <calc.icon size={18} color={calc.color} />
                 {calc.name}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section style={{ padding: '80px 0', backgroundColor: colors.white }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+          <h2 style={{ fontSize: '32px', fontWeight: '700', textAlign: 'center', marginBottom: '16px', color: colors.gray[900] }}>
+            What Travellers Are Saying
+          </h2>
+          <p style={{ fontSize: '18px', color: colors.gray[500], textAlign: 'center', marginBottom: '48px' }}>
+            Real feedback from Australian caravan travellers
+          </p>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '24px'
+          }}>
+            {[
+              {
+                name: 'Anthony',
+                location: 'VIC',
+                quote: 'Finally stopped guessing our payload. The weight tracker showed we were 120kg over before we even left the driveway.',
+              },
+              {
+                name: 'Ben',
+                location: 'QLD',
+                quote: 'Planned our whole Cairns to Brisbane trip in about 10 minutes. Fuel stops, overnight stays — all sorted before we hitched up.',
+              },
+              {
+                name: 'Kaitlyn',
+                location: 'NSW',
+                quote: 'The pre-departure checklist alone is worth it. 60+ checks across 12 categories — we don\'t miss anything now.',
+              },
+              {
+                name: 'Kerry',
+                location: 'SA',
+                quote: 'I never really understood towball weight until I used the calculators here. Now I actually know our rig is legal.',
+              },
+              {
+                name: 'Craig',
+                location: 'VIC',
+                quote: 'We used to plan trips on a spreadsheet. This does everything that did and more — plus the weight compliance stuff is a game changer.',
+              },
+              {
+                name: 'Matthew',
+                location: 'QLD',
+                quote: 'The garage feature is brilliant. All our vehicle and van specs in one place, and it feeds straight into the trip planner.',
+              },
+              {
+                name: 'Alex',
+                location: 'WA',
+                quote: 'Being able to share the trip with my partner so we can both add stops and tick off packing items — that\'s what sold us.',
+              },
+              {
+                name: 'Connor',
+                location: 'NSW',
+                quote: 'The fuel planner warned us about a 280km stretch with no servo. Would\'ve been stranded without it.',
+              },
+            ].map((testimonial, index) => (
+              <div key={index} style={{
+                padding: '28px',
+                borderRadius: '16px',
+                backgroundColor: colors.cream,
+                border: `1px solid ${colors.sand}`,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '16px'
+              }}>
+                <Quote size={24} color={colors.primary} style={{ opacity: 0.4 }} />
+                <p style={{
+                  fontSize: '15px',
+                  color: colors.gray[700],
+                  lineHeight: '1.7',
+                  flex: 1
+                }}>
+                  &ldquo;{testimonial.quote}&rdquo;
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <div>
+                    <p style={{ fontWeight: '600', color: colors.gray[900], fontSize: '15px', marginBottom: '2px' }}>
+                      {testimonial.name}
+                    </p>
+                    <p style={{ fontSize: '13px', color: colors.gray[500] }}>
+                      {testimonial.location}
+                    </p>
+                  </div>
+                  <div style={{ display: 'flex', gap: '2px' }}>
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={14} fill={colors.accent} color={colors.accent} />
+                    ))}
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -727,7 +824,7 @@ export default function LandingPage() {
             Ready to Plan Your Next Adventure?
           </h2>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.85)', marginBottom: '32px' }}>
-            Join thousands of Aussie travellers who trust KamperHub
+            Start your free 7-day trial — no credit card required
           </p>
           <a href={`${APP_URL}/signup`} style={{
             display: 'inline-flex',

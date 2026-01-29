@@ -55,7 +55,7 @@ export default function CommunityPage() {
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: colors.gray[500], textDecoration: 'none', marginBottom: '24px', fontSize: '14px' }}><ArrowLeft size={16} /> Back to Home</Link>
           <h1 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: '800', color: colors.gray[900], marginBottom: '16px' }}>Join the KamperHub Community</h1>
-          <p style={{ fontSize: '18px', color: colors.gray[600], maxWidth: '600px', lineHeight: '1.6' }}>Connect with thousands of Australian caravan travellers. Share tips, ask questions, and find your next adventure.</p>
+          <p style={{ fontSize: '18px', color: colors.gray[600], maxWidth: '600px', lineHeight: '1.6' }}>Connect with Australian caravan travellers. Share tips, ask questions, and find your next adventure.</p>
         </div>
       </section>
 
