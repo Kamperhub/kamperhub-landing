@@ -584,7 +584,7 @@ export default function LandingPage() {
                 quote: 'Planned our whole Cairns to Brisbane trip in about 10 minutes. Fuel stops, overnight stays — all sorted before we hitched up.',
               },
               {
-                name: 'Kaitlyn',
+                name: 'Porche',
                 location: 'NSW',
                 quote: 'The pre-departure checklist alone is worth it. 60+ checks across 12 categories — we don\'t miss anything now.',
               },
@@ -609,7 +609,7 @@ export default function LandingPage() {
                 quote: 'Being able to share the trip with my partner so we can both add stops and tick off packing items — that\'s what sold us.',
               },
               {
-                name: 'Connor',
+                name: 'Steven',
                 location: 'NSW',
                 quote: 'The fuel planner warned us about a 280km stretch with no servo. Would\'ve been stranded without it.',
               },
