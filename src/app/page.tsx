@@ -679,6 +679,52 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Mid-Page CTA */}
+      <section style={{
+        padding: '64px 0',
+        background: `linear-gradient(135deg, ${colors.primary} 0%, ${colors.secondary} 100%)`,
+      }}>
+        <div style={{
+          maxWidth: '800px',
+          margin: '0 auto',
+          padding: '0 24px',
+          textAlign: 'center',
+        }}>
+          <h2 style={{
+            fontSize: '30px',
+            fontWeight: '700',
+            color: colors.white,
+            marginBottom: '12px',
+          }}>
+            Plan Smarter. Tow Safer. Travel Further.
+          </h2>
+          <p style={{
+            fontSize: '17px',
+            color: 'rgba(255,255,255,0.85)',
+            marginBottom: '28px',
+            lineHeight: '1.6',
+          }}>
+            Join Australian caravanners who use KamperHub to plan trips, track weights, and hit the road with confidence.
+          </p>
+          <a href={`${APP_URL}/signup`} style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '8px',
+            padding: '14px 36px',
+            backgroundColor: colors.white,
+            color: colors.primary,
+            textDecoration: 'none',
+            fontWeight: '600',
+            borderRadius: '12px',
+            fontSize: '16px',
+            boxShadow: '0 4px 14px rgba(0,0,0,0.15)',
+          }}>
+            Try Free for 7 Days
+            <ArrowRight size={18} />
+          </a>
+        </div>
+      </section>
+
       {/* How It Works */}
       <section style={{ padding: '80px 0', backgroundColor: colors.cream }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
