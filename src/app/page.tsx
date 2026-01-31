@@ -385,6 +385,7 @@ export default function LandingPage() {
             <a href="#features" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500' }}>Features</a>
             <a href="#pricing" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500' }}>Pricing</a>
             <a href="#faq" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500' }}>FAQ</a>
+            <a href={`${APP_URL}/blog`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500' }}>Blog</a>
             <a href={`${APP_URL}/free-camping`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500' }}>Free Camping</a>
             <a href={`${APP_URL}/shop`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500' }}>Shop</a>
           </div>
@@ -421,6 +422,7 @@ export default function LandingPage() {
             <a href="#features" style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Features</a>
             <a href="#pricing" style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Pricing</a>
             <a href="#faq" style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>FAQ</a>
+            <a href={`${APP_URL}/blog`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Blog</a>
             <a href={`${APP_URL}/free-camping`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Free Camping</a>
             <a href={`${APP_URL}/shop`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Shop</a>
             <a href={`${APP_URL}/login`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Log In</a>
