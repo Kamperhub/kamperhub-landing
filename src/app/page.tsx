@@ -73,6 +73,8 @@ export default function LandingPage() {
     { src: '/screenshots/free-camping.png', title: 'Free Camping Finder', desc: 'Filter by amenities, search by location, with map view', w: 600, h: 400 },
     { src: '/screenshots/garage-vehicle.png', title: 'Your Digital Garage', desc: 'Full specs, accessories, rego tracking, and service reminders', w: 600, h: 400 },
     { src: '/screenshots/trip-summary.png', title: 'Trip Summary', desc: 'Review your complete trip details before hitting the road', w: 400, h: 300 },
+    { src: '/screenshots/blog.png', title: 'Caravan Blog', desc: 'Buying guides, tips, and expert advice for Australian travellers', w: 400, h: 300 },
+    { src: '/screenshots/shop.png', title: 'Gear Shop', desc: 'Curated products we actually use — scales, chargers, and more', w: 600, h: 400 },
     { src: '/screenshots/dashboard.png', title: 'Trip Dashboard', desc: 'Your trip planning hub — readiness, tasks, and status at a glance', w: 1000, h: 600 },
   ];
 
