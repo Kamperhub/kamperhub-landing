@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/next';
+import { PageViewTracker } from './PageViewTracker';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -47,6 +48,7 @@ export default function RootLayout({
       <body>
         {children}
         <Analytics />
+        <PageViewTracker />
       </body>
     </html>
   );
