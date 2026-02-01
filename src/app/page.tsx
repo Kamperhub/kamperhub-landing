@@ -507,6 +507,59 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* NEXT25 Promo Banner */}
+      <section style={{
+        padding: '0 24px',
+        backgroundColor: colors.white,
+      }}>
+        <div style={{
+          maxWidth: '800px',
+          margin: '0 auto',
+          padding: '20px 28px',
+          borderRadius: '16px',
+          background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: '20px',
+          flexWrap: 'wrap',
+          position: 'relative',
+          overflow: 'hidden',
+          transform: 'translateY(-32px)',
+          boxShadow: '0 8px 30px rgba(99, 102, 241, 0.3)',
+        }}>
+          <div style={{
+            position: 'absolute',
+            top: '-30px',
+            right: '-30px',
+            width: '100px',
+            height: '100px',
+            borderRadius: '50%',
+            background: 'rgba(255,255,255,0.1)',
+          }} />
+          <div style={{ flex: 1, minWidth: '200px' }}>
+            <div style={{ fontSize: '18px', fontWeight: '700', color: 'white', marginBottom: '4px' }}>
+              50% OFF for 6 Months
+            </div>
+            <p style={{ margin: 0, fontSize: '14px', color: 'rgba(255,255,255,0.85)', lineHeight: '1.4' }}>
+              Use code <strong style={{ color: '#fbbf24', letterSpacing: '1px' }}>NEXT25</strong> at checkout — limited spots available
+            </p>
+          </div>
+          <a href={`${APP_URL}/signup`} style={{
+            padding: '10px 24px',
+            backgroundColor: 'white',
+            color: '#6366f1',
+            textDecoration: 'none',
+            fontWeight: '600',
+            borderRadius: '10px',
+            fontSize: '14px',
+            whiteSpace: 'nowrap',
+          }}>
+            Claim Offer
+          </a>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section id="features" style={{ padding: '80px 0', backgroundColor: colors.white }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
