@@ -29,7 +29,8 @@ import {
   BarChart3,
   Tent,
   Refrigerator,
-  MapPin
+  MapPin,
+  Warehouse
 } from 'lucide-react';
 
 // Brand Colors - Bush Meets Coast palette
@@ -165,7 +166,7 @@ export default function LandingPage() {
     {
       icon: Users,
       title: 'Share with Your Crew',
-      description: 'Couple and Family plans let household members share trips. Each member can view, edit, and collaborate on shared trips together.',
+      description: 'Add the Crew pack to share trips with up to 5 household members. Each member can view, edit, and collaborate on shared trips.',
       color: '#0891b2',
       bg: '#ecfeff'
     },
@@ -231,74 +232,67 @@ export default function LandingPage() {
     }
   ];
 
-  const sharedFeatures = [
+  const explorerFeatures = [
     'Unlimited trip planning',
-    'Vehicle & caravan garage',
-    'Trip Weight Calculator',
-    'All 11 calculator tools',
+    'Route planner with Trip Advisor',
     'Free camping finder',
-    'Utilities finder (water, dump, LPG)',
-    '60+ pre-departure checks',
-    '50+ packing templates',
-    'Trip budgets & expenses',
-    'Compliance alerts',
-    'Email reminders',
+    'Explore & POI search',
+    'Packing lists & 50+ templates',
+    'Blog & guides',
+    'Basic garage (1 vehicle + 1 caravan)',
+    '8 calculator tools (fridge, solar, gas, tanks, tyres, travel time & more)',
+    'Travel statistics',
+    'Traveller profiles (up to 2)',
   ];
 
-  const pricingTiers = [
+  const packs = [
     {
-      name: 'Solo',
-      price: 9,
-      description: 'Perfect for solo travellers',
-      members: '1 user',
-      popular: false,
-      isTeam: false,
+      name: 'TowReady',
+      icon: Scale,
+      color: '#3b82f6',
+      bg: '#eff6ff',
       features: [
-        ...sharedFeatures,
+        'Weight compliance calculator',
+        'Towing capacity calculator',
+        'Tow simulator',
+        'Trip weight tracking',
+        'Pre-departure checklists',
       ],
     },
     {
-      name: 'Couple',
-      price: 15,
-      description: 'Travel together, plan together',
-      members: '2 users',
-      popular: true,
-      isTeam: false,
+      name: 'Crew',
+      icon: Users,
+      color: '#0891b2',
+      bg: '#ecfeff',
       features: [
-        ...sharedFeatures,
-        'Shared trip access',
-        'POI suggestions',
-        'Packing assignments',
+        'Household members (up to 5)',
+        'Multi-user shared access',
+        'Invite family members',
       ],
     },
     {
-      name: 'Family',
-      price: 29,
-      description: 'The whole crew on one plan',
-      members: 'Up to 5 users',
-      popular: false,
-      isTeam: false,
+      name: 'Logbook',
+      icon: DollarSign,
+      color: '#22c55e',
+      bg: '#f0fdf4',
       features: [
-        ...sharedFeatures,
-        'Shared trip access',
-        'POI suggestions',
-        'Packing assignments',
+        'Expense tracking',
+        'Trip budgets',
+        'Fuel cost calculator',
+        'Fuel stop planner',
+        'Trip cost estimator',
       ],
     },
     {
-      name: 'Team',
-      price: null,
-      description: 'For caravan clubs & tour groups',
-      members: 'Up to 20 users',
-      popular: false,
-      isTeam: true,
+      name: 'Shed',
+      icon: Warehouse,
+      color: '#f59e0b',
+      bg: '#fef9c3',
       features: [
-        ...sharedFeatures,
-        'Shared trip access',
-        'POI suggestions',
-        'Packing assignments',
-        'Team trip management',
-        'Dedicated support',
+        'Full inventory management',
+        'Unlimited vehicles & caravans',
+        'Aftermarket accessories',
+        'Cargo weight distribution',
       ],
     },
   ];
@@ -306,7 +300,7 @@ export default function LandingPage() {
   const faqs = [
     {
       q: 'Is there a free plan?',
-      a: 'We offer a 7-day free trial with full access to all features. After that, plans start at just $9/month for Solo, $15/month for Couple (2 users), or $29/month for Family (up to 5 users).'
+      a: 'We offer a 3-day free trial with Explorer. After that, Explorer is just $0.99/month (billed yearly at $11.88). Add optional packs like TowReady, Crew, Logbook, or Shed for $4.99/quarter each.'
     },
     {
       q: 'Do I need a credit card to start the trial?',
@@ -317,8 +311,12 @@ export default function LandingPage() {
       a: 'Yes, you can cancel your subscription at any time from your account settings. Your access will continue until the end of your billing period.'
     },
     {
-      q: 'How does trip sharing work with Couple and Family plans?',
-      a: 'With multi-user plans, the subscription owner can invite household members via email. Once accepted, members get full app access. Trip owners can selectively share individual trips - shared trips appear in each member\'s trip list with a "Shared" badge, and everyone can view and edit the trip details together.'
+      q: 'How does trip sharing work?',
+      a: 'Add the Crew pack ($4.99/quarter) to invite up to 5 household members. They get full app access. Trip owners can share individual trips — shared trips appear in each member\'s trip list.'
+    },
+    {
+      q: 'What are packs and how do they work?',
+      a: 'Packs are optional add-ons that unlock extra features on top of your Explorer base plan. Choose TowReady for weight compliance, Crew for household sharing, Logbook for expense tracking, or Shed for full inventory management. Each pack is $4.99/quarter — only pay for what you need.'
     },
     {
       q: 'What vehicles and caravans are supported?',
@@ -326,7 +324,7 @@ export default function LandingPage() {
     },
     {
       q: 'What\'s included in the pre-departure checklist?',
-      a: 'We\'ve compiled 60+ industry-standard checks across 12 categories: tyres, coupling & hitch, lights, brakes, gas, water, interior security, external security, vehicle checks, safety equipment, documents, and personal items.'
+      a: 'Pre-departure checklists are part of the TowReady pack. We\'ve compiled 60+ industry-standard checks across 12 categories: tyres, coupling & hitch, lights, brakes, gas, water, interior security, external security, vehicle checks, safety equipment, documents, and personal items.'
     },
     {
       q: 'How does the Utilities finder work?',
@@ -473,7 +471,7 @@ export default function LandingPage() {
               gap: '8px',
               boxShadow: '0 4px 14px rgba(56, 102, 65, 0.3)'
             }}>
-              Start Your Free 7-Day Trial
+              Start Your Free 3-Day Trial
               <ArrowRight size={20} />
             </a>
             <div style={{ display: 'flex', alignItems: 'center', gap: '24px', color: colors.gray[500], fontSize: '14px' }}>
@@ -799,111 +797,174 @@ export default function LandingPage() {
       <section id="pricing" style={{ padding: '80px 0', backgroundColor: colors.cream }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 24px' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', textAlign: 'center', marginBottom: '16px', color: colors.gray[900] }}>
-            Simple, Affordable Pricing
+            Flexible, Affordable Pricing
           </h2>
           <p style={{ textAlign: 'center', color: colors.gray[500], marginBottom: '48px', fontSize: '18px' }}>
-            Choose the plan that fits your travel crew
+            Start with Explorer, add packs as you need them
           </p>
+
+          {/* Explorer Card - Full Width */}
+          <div style={{
+            backgroundColor: colors.white,
+            borderRadius: '24px',
+            padding: '40px',
+            boxShadow: '0 10px 40px rgba(56, 102, 65, 0.2)',
+            border: `3px solid ${colors.primary}`,
+            position: 'relative',
+            marginBottom: '32px'
+          }}>
+            <div style={{
+              position: 'absolute',
+              top: '-14px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              backgroundColor: colors.primary,
+              color: colors.white,
+              padding: '6px 20px',
+              borderRadius: '100px',
+              fontSize: '12px',
+              fontWeight: '700',
+              textTransform: 'uppercase',
+              letterSpacing: '0.5px'
+            }}>
+              Base Plan
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '24px' }}>
+              <div style={{ textAlign: 'center' }}>
+                <p style={{
+                  fontSize: '14px',
+                  fontWeight: '600',
+                  color: colors.primary,
+                  textTransform: 'uppercase',
+                  letterSpacing: '1px',
+                  marginBottom: '4px'
+                }}>
+                  Explorer
+                </p>
+                <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'center', gap: '4px' }}>
+                  <span style={{ fontSize: '48px', fontWeight: '800', color: colors.gray[900] }}>$0.99</span>
+                  <span style={{ fontSize: '16px', color: colors.gray[500] }}>/month</span>
+                </div>
+                <p style={{ color: colors.gray[500], fontSize: '14px', marginTop: '4px' }}>
+                  Billed yearly at $11.88
+                </p>
+              </div>
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+                gap: '8px 32px',
+                width: '100%',
+                maxWidth: '700px'
+              }}>
+                {explorerFeatures.map((feature, index) => (
+                  <div key={index} style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '10px',
+                    padding: '6px 0',
+                    fontSize: '14px'
+                  }}>
+                    <Check size={18} color={colors.primary} style={{ flexShrink: 0 }} />
+                    <span style={{ color: colors.gray[700] }}>{feature}</span>
+                  </div>
+                ))}
+              </div>
+              <a href={`${APP_URL}/signup`} style={{
+                display: 'inline-block',
+                padding: '14px 40px',
+                backgroundColor: colors.primary,
+                color: colors.white,
+                textAlign: 'center',
+                textDecoration: 'none',
+                fontWeight: '600',
+                borderRadius: '12px',
+                fontSize: '16px'
+              }}>
+                Start 3-Day Free Trial
+              </a>
+            </div>
+          </div>
+
+          {/* Pack Cards - Grid */}
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
             gap: '20px',
             alignItems: 'stretch'
           }}>
-            {pricingTiers.map((tier, tierIndex) => (
+            {packs.map((pack, packIndex) => (
               <div
-                key={tierIndex}
+                key={packIndex}
                 style={{
                   backgroundColor: colors.white,
                   borderRadius: '24px',
                   padding: '32px',
-                  boxShadow: tier.popular ? '0 10px 40px rgba(56, 102, 65, 0.2)' : '0 4px 20px rgba(0,0,0,0.08)',
-                  border: tier.popular ? `3px solid ${colors.primary}` : `1px solid ${colors.gray[200]}`,
-                  position: 'relative',
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+                  border: `1px solid ${colors.gray[200]}`,
                   display: 'flex',
                   flexDirection: 'column'
                 }}
               >
-                {tier.popular && (
+                <div style={{ textAlign: 'center', marginBottom: '20px' }}>
                   <div style={{
-                    position: 'absolute',
-                    top: '-14px',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    backgroundColor: colors.primary,
-                    color: colors.white,
-                    padding: '6px 20px',
-                    borderRadius: '100px',
-                    fontSize: '12px',
-                    fontWeight: '700',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.5px'
+                    width: '48px',
+                    height: '48px',
+                    borderRadius: '12px',
+                    backgroundColor: pack.bg,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    margin: '0 auto 12px'
                   }}>
-                    Most Popular
+                    <pack.icon size={24} color={pack.color} />
                   </div>
-                )}
-                <div style={{ textAlign: 'center', marginBottom: '24px' }}>
                   <p style={{
-                    fontSize: '14px',
-                    fontWeight: '600',
-                    color: tier.popular ? colors.primary : tier.isTeam ? '#0369a1' : colors.gray[600],
-                    textTransform: 'uppercase',
-                    letterSpacing: '1px',
+                    fontSize: '16px',
+                    fontWeight: '700',
+                    color: colors.gray[900],
                     marginBottom: '4px'
                   }}>
-                    {tier.name}
+                    {pack.name}
                   </p>
                   <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'center', gap: '4px' }}>
-                    {tier.price !== null ? (
-                      <>
-                        <span style={{ fontSize: '48px', fontWeight: '800', color: colors.gray[900] }}>${tier.price}</span>
-                        <span style={{ fontSize: '16px', color: colors.gray[500] }}>/month</span>
-                      </>
-                    ) : (
-                      <span style={{ fontSize: '36px', fontWeight: '800', color: colors.gray[900] }}>Custom</span>
-                    )}
+                    <span style={{ fontSize: '32px', fontWeight: '800', color: colors.gray[900] }}>$4.99</span>
+                    <span style={{ fontSize: '14px', color: colors.gray[500] }}>/quarter</span>
                   </div>
-                  <p style={{ color: colors.gray[500], fontSize: '14px', marginTop: '4px' }}>
-                    {tier.members}
-                  </p>
-                  <p style={{ color: colors.gray[600], fontSize: '13px', marginTop: '8px', fontStyle: 'italic' }}>
-                    {tier.description}
+                  <p style={{ color: colors.gray[500], fontSize: '13px', marginTop: '2px' }}>
+                    ~$1.66/month
                   </p>
                 </div>
-                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px', flex: 1 }}>
-                  {tier.features.map((feature, index) => (
+                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 20px', flex: 1 }}>
+                  {pack.features.map((feature, index) => (
                     <li key={index} style={{
                       display: 'flex',
                       alignItems: 'center',
                       gap: '10px',
-                      padding: '8px 0',
+                      padding: '6px 0',
                       fontSize: '14px'
                     }}>
-                      <Check size={18} color={colors.primary} style={{ flexShrink: 0 }} />
+                      <Check size={16} color={pack.color} style={{ flexShrink: 0 }} />
                       <span style={{ color: colors.gray[700] }}>{feature}</span>
                     </li>
                   ))}
                 </ul>
-                <a href={tier.isTeam ? 'mailto:info@kamperhub.com?subject=Team%20Subscription%20Enquiry' : `${APP_URL}/signup`} style={{
-                  display: 'block',
-                  width: '100%',
-                  padding: '14px',
-                  backgroundColor: tier.popular ? colors.primary : tier.isTeam ? '#0369a1' : colors.white,
-                  color: tier.popular || tier.isTeam ? colors.white : colors.primary,
+                <div style={{
+                  padding: '10px 14px',
+                  backgroundColor: pack.bg,
+                  color: pack.color,
                   textAlign: 'center',
-                  textDecoration: 'none',
                   fontWeight: '600',
-                  borderRadius: '12px',
-                  fontSize: '15px',
-                  border: tier.popular || tier.isTeam ? 'none' : `2px solid ${colors.primary}`
+                  borderRadius: '10px',
+                  fontSize: '13px'
                 }}>
-                  {tier.isTeam ? 'Contact Us' : 'Start Free Trial'}
-                </a>
+                  Add to Explorer
+                </div>
               </div>
             ))}
           </div>
+
           <p style={{ textAlign: 'center', color: colors.gray[500], fontSize: '14px', marginTop: '32px' }}>
-            All plans include a free 7-day trial • No credit card required • Cancel anytime
+            Explorer includes a 3-day free trial · No credit card required · Cancel anytime
           </p>
         </div>
       </section>
@@ -966,7 +1027,7 @@ export default function LandingPage() {
             Ready to Plan Your Next Adventure?
           </h2>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.85)', marginBottom: '32px' }}>
-            Start your free 7-day trial — no credit card required
+            Start your free 3-day trial — no credit card required
           </p>
           <a href={`${APP_URL}/signup`} style={{
             display: 'inline-flex',
