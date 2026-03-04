@@ -721,7 +721,7 @@ export default function LandingPage() {
             fontSize: '16px',
             boxShadow: '0 4px 14px rgba(0,0,0,0.15)',
           }}>
-            Try Free for 7 Days
+            Try Free for 3 Days
             <ArrowRight size={18} />
           </a>
         </div>

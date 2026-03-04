@@ -110,19 +110,18 @@ export default function TermsOfServicePage() {
               2.1 Free Trial
             </h3>
             <p style={{ color: '#374151', lineHeight: '1.7', margin: '0 0 16px 0' }}>
-              New users receive a <strong>7-day free trial</strong> with full access to all KamperHub features. Your trial begins immediately upon account creation. No payment is required during the trial period.
+              New users receive a <strong>3-day free trial</strong> of the Explorer plan with access to core KamperHub features. Your trial begins immediately upon account creation. No payment is required during the trial period.
             </p>
 
             <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#111827', marginBottom: '12px' }}>
               2.2 Premium Subscription
             </h3>
             <p style={{ color: '#374151', lineHeight: '1.7', margin: '0 0 12px 0' }}>
-              After your free trial expires, you may subscribe to KamperHub Premium for:
+              After your free trial expires, you may subscribe to KamperHub:
             </p>
             <ul style={{ color: '#374151', lineHeight: '1.7', margin: '0 0 16px 0', paddingLeft: '24px' }}>
-              <li><strong>$9.00 AUD per month</strong></li>
-              <li>Billed monthly on a recurring basis</li>
-              <li>Unlimited access to all features</li>
+              <li><strong>Explorer</strong> — $0.99 AUD per month (billed yearly at $11.88)</li>
+              <li><strong>Optional Packs</strong> (TowReady, Crew, Logbook, Shed) — $4.99 AUD per quarter each</li>
               <li>No long-term contract required</li>
             </ul>
 
@@ -165,7 +164,7 @@ export default function TermsOfServicePage() {
               3.2 Access After Cancellation
             </h3>
             <p style={{ color: '#374151', lineHeight: '1.7', margin: '0 0 16px 0' }}>
-              If you cancel, you will continue to have access to Premium features until the end of your current billing period. After that, your account will revert to a free trial status or be restricted, and you will lose access to Premium features.
+              If you cancel, you will continue to have access until the end of your current billing period. After that, your account will be restricted, and you will lose access to subscribed features.
             </p>
 
             <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#111827', marginBottom: '12px' }}>
@@ -300,7 +299,7 @@ export default function TermsOfServicePage() {
               To the maximum extent permitted by Australian law, Scott Carlton and KamperHub shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits, revenue, data, or use arising out of or related to your use of the Service.
             </p>
             <p style={{ color: '#374151', lineHeight: '1.7', margin: 0 }}>
-              Our total liability to you for any claims arising from these Terms or your use of the Service shall not exceed the amount you paid us in the 12 months preceding the claim, or $9.00 AUD, whichever is greater.
+              Our total liability to you for any claims arising from these Terms or your use of the Service shall not exceed the amount you paid us in the 12 months preceding the claim, or $11.88 AUD, whichever is greater.
             </p>
           </section>
 

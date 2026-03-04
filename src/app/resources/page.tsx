@@ -174,7 +174,7 @@ export default function ResourcesPage() {
               Unlock All Resources
             </h2>
             <p style={{ fontSize: '16px', color: colors.gray[600], marginBottom: '24px', lineHeight: '1.6' }}>
-              Start your free 7-day trial to access our complete resource library including:
+              Start your free 3-day trial to access our complete resource library including:
             </p>
             <div style={{
               display: 'grid',
