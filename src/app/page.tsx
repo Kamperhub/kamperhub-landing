@@ -927,11 +927,11 @@ export default function LandingPage() {
                     {pack.name}
                   </p>
                   <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'center', gap: '4px' }}>
-                    <span style={{ fontSize: '32px', fontWeight: '800', color: colors.gray[900] }}>$4.99</span>
-                    <span style={{ fontSize: '14px', color: colors.gray[500] }}>/quarter</span>
+                    <span style={{ fontSize: '32px', fontWeight: '800', color: colors.gray[900] }}>$1.66</span>
+                    <span style={{ fontSize: '14px', color: colors.gray[500] }}>/month</span>
                   </div>
                   <p style={{ color: colors.gray[500], fontSize: '13px', marginTop: '2px' }}>
-                    ~$1.66/month
+                    Billed quarterly at $4.99
                   </p>
                 </div>
                 <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 20px', flex: 1 }}>
