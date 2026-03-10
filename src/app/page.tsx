@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import {
   Map,
@@ -12,8 +12,6 @@ import {
   BookOpen,
   Users,
   ChevronDown,
-  ChevronLeft,
-  ChevronRight,
   Check,
   Menu,
   X,
@@ -63,41 +61,6 @@ const colors = {
 export default function LandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [activeSlide, setActiveSlide] = useState(0);
-
-  const screenshots = [
-    { src: '/screenshots/route-planner.png', title: 'Smart Route Planning', desc: 'Plan multi-stop routes with fuel, accommodation, and overnight stops', w: 600, h: 400 },
-    { src: '/screenshots/trip-advisor.png', title: 'Built-in Trip Advisor', desc: 'Fatigue analysis, fuel estimates, and overnight stop suggestions', w: 600, h: 400 },
-    { src: '/screenshots/weight-check.png', title: 'Weight Compliance', desc: 'Live GVM, ATM, and GCM checks', w: 400, h: 300 },
-    { src: '/screenshots/caravan-selection.png', title: 'Towing Compatibility', desc: 'Knows if your rig can tow safely', w: 400, h: 300 },
-    { src: '/screenshots/packing-categories.png', title: 'Smart Packing', desc: '50+ templates across 12 categories', w: 400, h: 300 },
-    { src: '/screenshots/free-camping.png', title: 'Free Camping Finder', desc: 'Filter by amenities, search by location, with map view', w: 600, h: 400 },
-    { src: '/screenshots/garage-vehicle.png', title: 'Your Digital Garage', desc: 'Full specs, accessories, rego tracking, and service reminders', w: 600, h: 400 },
-    { src: '/screenshots/trip-summary.png', title: 'Trip Summary', desc: 'Review your complete trip details before hitting the road', w: 400, h: 300 },
-    { src: '/screenshots/blog.png', title: 'Caravan Blog', desc: 'Buying guides, tips, and expert advice for Australian travellers', w: 400, h: 300 },
-    { src: '/screenshots/shop.png', title: 'Gear Shop', desc: 'Curated products we actually use — scales, chargers, and more', w: 600, h: 400 },
-    { src: '/screenshots/dashboard.png', title: 'Trip Dashboard', desc: 'Your trip planning hub — readiness, tasks, and status at a glance', w: 1000, h: 600 },
-  ];
-
-  const maxSlide = screenshots.length - 3; // 3 visible on desktop
-
-  const goToSlide = useCallback((index: number) => {
-    setActiveSlide(Math.max(0, Math.min(index, maxSlide)));
-  }, [maxSlide]);
-
-  const nextSlide = useCallback(() => {
-    setActiveSlide(prev => prev >= maxSlide ? 0 : prev + 1);
-  }, [maxSlide]);
-
-  const prevSlide = useCallback(() => {
-    setActiveSlide(prev => prev <= 0 ? maxSlide : prev - 1);
-  }, [maxSlide]);
-
-  // Auto-advance carousel
-  useEffect(() => {
-    const timer = setInterval(nextSlide, 4000);
-    return () => clearInterval(timer);
-  }, [nextSlide]);
 
   const features = [
     {
@@ -484,7 +447,7 @@ export default function LandingPage() {
             </div>
           </div>
 
-          {/* Hero Screenshot */}
+          {/* Hero Video */}
           <div style={{
             marginTop: '48px',
             maxWidth: '1000px',
@@ -494,13 +457,15 @@ export default function LandingPage() {
             boxShadow: '0 20px 60px rgba(0,0,0,0.15)',
             border: '1px solid rgba(0,0,0,0.08)'
           }}>
-            <Image
-              src="/screenshots/dashboard.png"
-              alt="KamperHub Dashboard - Your trip planning hub"
-              width={1000}
-              height={600}
+            <video
+              controls
+              playsInline
+              poster="/screenshots/dashboard.png"
               style={{ width: '100%', height: 'auto', display: 'block' }}
-            />
+            >
+              <source src="/videos/KamperHub_Landing_Page_Video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </section>
@@ -546,140 +511,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* App Screenshots Showcase — Carousel */}
-      <section style={{ padding: '80px 0', backgroundColor: colors.cream }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
-          <h2 style={{ fontSize: '32px', fontWeight: '700', textAlign: 'center', marginBottom: '16px', color: colors.gray[900] }}>
-            See It In Action
-          </h2>
-          <p style={{ textAlign: 'center', color: colors.gray[500], marginBottom: '48px', fontSize: '18px' }}>
-            Built by caravan travellers, for caravan travellers
-          </p>
-
-          {/* Carousel */}
-          <div style={{ position: 'relative' }}>
-            {/* Arrow — Left */}
-            <button
-              onClick={prevSlide}
-              aria-label="Previous screenshot"
-              style={{
-                position: 'absolute',
-                left: '-20px',
-                top: '50%',
-                transform: 'translateY(-70%)',
-                zIndex: 10,
-                width: '44px',
-                height: '44px',
-                borderRadius: '50%',
-                backgroundColor: colors.white,
-                border: `1px solid ${colors.gray[200]}`,
-                boxShadow: '0 2px 8px rgba(0,0,0,0.12)',
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <ChevronLeft size={22} color={colors.gray[700]} />
-            </button>
-
-            {/* Arrow — Right */}
-            <button
-              onClick={nextSlide}
-              aria-label="Next screenshot"
-              style={{
-                position: 'absolute',
-                right: '-20px',
-                top: '50%',
-                transform: 'translateY(-70%)',
-                zIndex: 10,
-                width: '44px',
-                height: '44px',
-                borderRadius: '50%',
-                backgroundColor: colors.white,
-                border: `1px solid ${colors.gray[200]}`,
-                boxShadow: '0 2px 8px rgba(0,0,0,0.12)',
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <ChevronRight size={22} color={colors.gray[700]} />
-            </button>
-
-            {/* Track */}
-            <div style={{ overflow: 'hidden', borderRadius: '16px' }}>
-              <div
-                className="carousel-track"
-                style={{
-                  display: 'flex',
-                  gap: '24px',
-                  transform: `translateX(calc(-${activeSlide} * (var(--card-width) + 24px)))`,
-                  transition: 'transform 0.5s ease',
-                }}
-              >
-                {screenshots.map((shot, index) => (
-                  <div
-                    key={index}
-                    className="carousel-card"
-                    style={{
-                      flexShrink: 0,
-                      borderRadius: '16px',
-                      overflow: 'hidden',
-                      boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
-                      border: '1px solid rgba(0,0,0,0.06)',
-                      backgroundColor: colors.white,
-                    }}
-                  >
-                    <Image
-                      src={shot.src}
-                      alt={shot.title}
-                      width={shot.w}
-                      height={shot.h}
-                      style={{ width: '100%', height: 'auto', display: 'block' }}
-                    />
-                    <div style={{ padding: '16px' }}>
-                      <h3 style={{ margin: '0 0 4px', fontSize: '16px', fontWeight: '600', color: colors.gray[900] }}>
-                        {shot.title}
-                      </h3>
-                      <p style={{ margin: 0, fontSize: '14px', color: colors.gray[500] }}>
-                        {shot.desc}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Dot indicators */}
-            <div style={{
-              display: 'flex',
-              justifyContent: 'center',
-              gap: '8px',
-              marginTop: '28px',
-            }}>
-              {screenshots.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => goToSlide(index)}
-                  aria-label={`Go to screenshot ${index + 1}`}
-                  style={{
-                    width: activeSlide === index ? '28px' : '10px',
-                    height: '10px',
-                    borderRadius: '5px',
-                    backgroundColor: activeSlide === index ? colors.primary : colors.gray[200],
-                    border: 'none',
-                    cursor: 'pointer',
-                    padding: 0,
-                    transition: 'all 0.3s ease',
-                  }}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* See It In Action — replaced by hero video */}
 
       {/* Mid-Page CTA */}
       <section style={{
@@ -1101,7 +933,7 @@ export default function LandingPage() {
         </div>
       </footer>
 
-      {/* CSS for responsive nav + carousel */}
+      {/* CSS for responsive nav */}
       <style jsx global>{`
         @media (min-width: 768px) {
           .desktop-nav { display: flex !important; }
@@ -1110,19 +942,6 @@ export default function LandingPage() {
         @media (max-width: 767px) {
           .desktop-nav { display: none !important; }
           .mobile-menu-btn { display: block !important; }
-        }
-        /* Carousel card sizing */
-        :root {
-          --card-width: calc((100vw - 48px));
-        }
-        @media (min-width: 768px) {
-          :root {
-            --card-width: calc((min(1200px, 100vw - 48px) - 48px) / 3);
-          }
-        }
-        .carousel-card {
-          width: var(--card-width);
-          min-width: var(--card-width);
         }
       `}</style>
     </div>
