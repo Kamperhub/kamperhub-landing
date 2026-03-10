@@ -450,7 +450,7 @@ export default function LandingPage() {
           {/* Hero Video */}
           <div style={{
             marginTop: '48px',
-            maxWidth: '1000px',
+            maxWidth: '500px',
             margin: '48px auto 0',
             borderRadius: '16px',
             overflow: 'hidden',
