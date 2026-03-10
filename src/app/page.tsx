@@ -460,7 +460,7 @@ export default function LandingPage() {
             <video
               controls
               playsInline
-              poster="/screenshots/dashboard.png"
+              poster="/videos/video-thumbnail.png"
               style={{ width: '100%', height: 'auto', display: 'block' }}
             >
               <source src="/videos/KamperHub_Landing_Page_Video.mp4" type="video/mp4" />
