@@ -551,7 +551,7 @@ export default function LandingPage() {
       {/* Free Guide Lead Magnet */}
       <section id="free-guide" style={{
         padding: '80px 0',
-        background: colors.darkEarth,
+        background: `linear-gradient(135deg, ${colors.primaryDark} 0%, #2d6b6b 100%)`,
         borderTop: `4px solid ${colors.accent}`,
         borderBottom: `4px solid ${colors.accent}`,
       }}>
