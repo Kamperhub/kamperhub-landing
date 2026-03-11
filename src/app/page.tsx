@@ -9,7 +9,6 @@ import {
   Fuel,
   CheckSquare,
   DollarSign,
-  BookOpen,
   Users,
   ChevronDown,
   Check,
@@ -23,10 +22,6 @@ import {
   ArrowRight,
   Mail,
   Download,
-  LayoutDashboard,
-  ClipboardCheck,
-  Shield,
-  BarChart3,
   Tent,
   Refrigerator,
   MapPin,
@@ -106,13 +101,6 @@ export default function LandingPage() {
       bg: '#fdf2f8'
     },
     {
-      icon: LayoutDashboard,
-      title: 'Trip Readiness at a Glance',
-      description: 'See your overall trip readiness percentage. Track planning progress, pre-departure tasks, and know exactly what\'s left to do.',
-      color: '#6b8e6b',
-      bg: '#f0f7f2'
-    },
-    {
       icon: Scale,
       title: 'Towing Safety Checks',
       description: 'Get a clear pass/fail safety score for your vehicle and caravan combo before you leave. Know your limits, tow with confidence.',
@@ -135,17 +123,10 @@ export default function LandingPage() {
     },
     {
       icon: CheckSquare,
-      title: 'Packing Lists & Checklists',
-      description: '50+ packing templates, weather-based suggestions, and traveller assignments. Pack smarter, not harder.',
+      title: 'Packing & Pre-Departure',
+      description: '50+ packing templates, 60+ pre-departure checks across 12 categories. Tyres, coupling, lights, brakes — never miss a critical item.',
       color: '#8b5cf6',
       bg: '#f5f3ff'
-    },
-    {
-      icon: ClipboardCheck,
-      title: 'Pre-Departure Checklist',
-      description: '60+ industry-standard checks across 12 categories. Tyres, coupling, lights, brakes, gas, water - never miss a critical item.',
-      color: '#f59e0b',
-      bg: '#fef9c3'
     },
     {
       icon: DollarSign,
@@ -155,18 +136,11 @@ export default function LandingPage() {
       bg: '#f0fdf4'
     },
     {
-      icon: Shield,
-      title: 'Stay Compliant',
-      description: 'Get warnings for expiring registration, insurance, gas bottle certification, and upcoming service intervals.',
-      color: '#dc2626',
-      bg: '#fef2f2'
-    },
-    {
-      icon: Users,
-      title: 'Share with Your Crew',
-      description: 'Add the Crew pack to share trips with up to 5 household members. Each member can view, edit, and collaborate on shared trips.',
-      color: '#0891b2',
-      bg: '#ecfeff'
+      icon: Tent,
+      title: 'Free Camping Finder',
+      description: 'Discover free and low-cost campsites across Australia. Filter by amenities like toilets, water, pet-friendly, and powered sites.',
+      color: '#059669',
+      bg: '#ecfdf5'
     },
     {
       icon: Droplets,
@@ -175,27 +149,6 @@ export default function LandingPage() {
       color: '#3b82f6',
       bg: '#eff6ff'
     },
-    {
-      icon: Tent,
-      title: 'Free Camping Finder',
-      description: 'Discover free and low-cost campsites across Australia. Filter by amenities like toilets, water, pet-friendly, and powered sites.',
-      color: '#059669',
-      bg: '#ecfdf5'
-    },
-    {
-      icon: BookOpen,
-      title: 'Comprehensive Resources',
-      description: 'Access towing regulations, find dump points, locate gas refills, discover pet-friendly parks, and more.',
-      color: '#6366f1',
-      bg: '#eef2ff'
-    },
-    {
-      icon: BarChart3,
-      title: 'Track Your Adventures',
-      description: 'See your travel stats - total kilometres, trips completed, nights on the road, and more.',
-      color: '#7c3aed',
-      bg: '#f5f3ff'
-    }
   ];
 
   const calculators = [
@@ -528,49 +481,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section id="features" style={{ padding: '80px 0', backgroundColor: colors.white }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
-          <h2 style={{ fontSize: '32px', fontWeight: '700', textAlign: 'center', marginBottom: '16px', color: colors.gray[900] }}>
-            Everything You Need for Stress-Free Caravan Travel
-          </h2>
-          <p style={{ textAlign: 'center', color: colors.gray[500], marginBottom: '48px', fontSize: '18px' }}>
-            All the tools you need in one place
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
-            {features.map((feature, index) => (
-              <div key={index} style={{
-                backgroundColor: feature.bg,
-                borderRadius: '16px',
-                padding: '28px',
-                border: `1px solid ${feature.bg}`
-              }}>
-                <div style={{
-                  width: '48px',
-                  height: '48px',
-                  backgroundColor: `${feature.color}20`,
-                  borderRadius: '12px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginBottom: '16px'
-                }}>
-                  <feature.icon size={24} color={feature.color} />
-                </div>
-                <h3 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '8px', color: colors.gray[900] }}>
-                  {feature.title}
-                </h3>
-                <p style={{ color: colors.gray[600], lineHeight: '1.6', fontSize: '15px', margin: 0 }}>
-                  {feature.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* See It In Action — replaced by hero video */}
-
       {/* Free Guide Lead Magnet */}
       <section id="free-guide" style={{
         padding: '80px 0',
@@ -729,6 +639,47 @@ export default function LandingPage() {
               </p>
             </form>
           )}
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section id="features" style={{ padding: '80px 0', backgroundColor: colors.white }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+          <h2 style={{ fontSize: '32px', fontWeight: '700', textAlign: 'center', marginBottom: '16px', color: colors.gray[900] }}>
+            Everything You Need for Stress-Free Caravan Travel
+          </h2>
+          <p style={{ textAlign: 'center', color: colors.gray[500], marginBottom: '48px', fontSize: '18px' }}>
+            All the tools you need in one place
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
+            {features.map((feature, index) => (
+              <div key={index} style={{
+                backgroundColor: feature.bg,
+                borderRadius: '16px',
+                padding: '28px',
+                border: `1px solid ${feature.bg}`
+              }}>
+                <div style={{
+                  width: '48px',
+                  height: '48px',
+                  backgroundColor: `${feature.color}20`,
+                  borderRadius: '12px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: '16px'
+                }}>
+                  <feature.icon size={24} color={feature.color} />
+                </div>
+                <h3 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '8px', color: colors.gray[900] }}>
+                  {feature.title}
+                </h3>
+                <p style={{ color: colors.gray[600], lineHeight: '1.6', fontSize: '15px', margin: 0 }}>
+                  {feature.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -953,17 +904,19 @@ export default function LandingPage() {
                     </li>
                   ))}
                 </ul>
-                <div style={{
+                <a href={`${APP_URL}/signup`} style={{
+                  display: 'block',
                   padding: '10px 14px',
                   backgroundColor: pack.bg,
                   color: pack.color,
                   textAlign: 'center',
                   fontWeight: '600',
                   borderRadius: '10px',
-                  fontSize: '13px'
+                  fontSize: '13px',
+                  textDecoration: 'none',
                 }}>
                   Add to Explorer
-                </div>
+                </a>
               </div>
             ))}
           </div>
@@ -1090,6 +1043,7 @@ export default function LandingPage() {
                 <a href={`${APP_URL}/contact`} style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Contact Us</a>
                 <a href="mailto:info@kamperhub.com" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>info@kamperhub.com</a>
                 <a href="https://www.facebook.com/profile.php?id=61577280351290" target="_blank" rel="noopener noreferrer" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Facebook</a>
+                <a href="https://www.instagram.com/kamperhub" target="_blank" rel="noopener noreferrer" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Instagram</a>
               </div>
             </div>
           </div>
