@@ -550,8 +550,10 @@ export default function LandingPage() {
 
       {/* Free Guide Lead Magnet */}
       <section id="free-guide" style={{
-        padding: '64px 0',
-        background: `linear-gradient(135deg, ${colors.primary} 0%, ${colors.secondary} 100%)`,
+        padding: '80px 0',
+        background: colors.darkEarth,
+        borderTop: `4px solid ${colors.accent}`,
+        borderBottom: `4px solid ${colors.accent}`,
       }}>
         <div style={{
           maxWidth: '700px',
@@ -560,28 +562,31 @@ export default function LandingPage() {
           textAlign: 'center',
         }}>
           <div style={{
-            width: '64px',
-            height: '64px',
-            backgroundColor: 'rgba(255,255,255,0.15)',
-            borderRadius: '16px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            margin: '0 auto 20px',
+            display: 'inline-block',
+            padding: '8px 20px',
+            backgroundColor: colors.accent,
+            color: colors.white,
+            borderRadius: '100px',
+            fontSize: '13px',
+            fontWeight: '700',
+            textTransform: 'uppercase',
+            letterSpacing: '1px',
+            marginBottom: '20px',
           }}>
-            <Scale size={32} color={colors.white} />
+            Free Download
           </div>
           <h2 style={{
-            fontSize: '30px',
-            fontWeight: '700',
+            fontSize: '36px',
+            fontWeight: '800',
             color: colors.white,
-            marginBottom: '12px',
+            marginBottom: '16px',
+            lineHeight: '1.2',
           }}>
-            Free Guide: Weight Compliance Made Simple
+            Weight Compliance<br />Made Simple
           </h2>
           <p style={{
-            fontSize: '17px',
-            color: 'rgba(255,255,255,0.85)',
+            fontSize: '18px',
+            color: 'rgba(255,255,255,0.9)',
             marginBottom: '8px',
             lineHeight: '1.6',
           }}>
@@ -589,41 +594,41 @@ export default function LandingPage() {
           </p>
           <p style={{
             fontSize: '15px',
-            color: 'rgba(255,255,255,0.7)',
-            marginBottom: '28px',
+            color: 'rgba(255,255,255,0.6)',
+            marginBottom: '32px',
             lineHeight: '1.5',
           }}>
-            No signup required. Enter your email and we&apos;ll send you the guide instantly.
+            No signup required. Enter your email and start reading instantly.
           </p>
 
           {guideStatus === 'success' ? (
             <div style={{
-              backgroundColor: 'rgba(255,255,255,0.15)',
+              backgroundColor: 'rgba(255,255,255,0.08)',
               borderRadius: '16px',
               padding: '32px',
-              border: '1px solid rgba(255,255,255,0.2)',
+              border: `2px solid ${colors.accent}`,
             }}>
               <Check size={48} color="#4ade80" style={{ marginBottom: '12px' }} />
-              <p style={{ fontSize: '20px', fontWeight: '600', color: colors.white, marginBottom: '8px' }}>
+              <p style={{ fontSize: '22px', fontWeight: '700', color: colors.white, marginBottom: '8px' }}>
                 You&apos;re in!
               </p>
-              <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.85)', marginBottom: '20px' }}>
+              <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.85)', marginBottom: '24px' }}>
                 Your free weight compliance guide is ready. Click below to start reading.
               </p>
               <a href={`${APP_URL}/shop/ebooks/weight-compliance-made-simple`} style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
-                padding: '12px 28px',
-                backgroundColor: colors.white,
-                color: colors.primary,
+                padding: '14px 32px',
+                backgroundColor: colors.accent,
+                color: colors.white,
                 textDecoration: 'none',
-                fontWeight: '600',
+                fontWeight: '700',
                 borderRadius: '10px',
-                fontSize: '15px',
+                fontSize: '16px',
               }}>
                 Read Chapter 1 Now
-                <ArrowRight size={16} />
+                <ArrowRight size={18} />
               </a>
             </div>
           ) : (
@@ -631,21 +636,21 @@ export default function LandingPage() {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              gap: '12px',
-              maxWidth: '440px',
+              gap: '16px',
+              maxWidth: '480px',
               margin: '0 auto',
             }}>
               <div style={{
                 display: 'flex',
                 width: '100%',
-                gap: '8px',
+                gap: '10px',
                 flexWrap: 'wrap',
                 justifyContent: 'center',
               }}>
                 <div style={{ position: 'relative', flex: '1 1 260px', minWidth: '260px' }}>
-                  <Mail size={18} color={colors.gray[400]} style={{
+                  <Mail size={18} color="#999" style={{
                     position: 'absolute',
-                    left: '14px',
+                    left: '16px',
                     top: '50%',
                     transform: 'translateY(-50%)',
                     pointerEvents: 'none',
@@ -658,11 +663,11 @@ export default function LandingPage() {
                     required
                     style={{
                       width: '100%',
-                      padding: '14px 14px 14px 42px',
+                      padding: '16px 16px 16px 46px',
                       borderRadius: '10px',
-                      border: '2px solid rgba(255,255,255,0.3)',
-                      backgroundColor: 'rgba(255,255,255,0.1)',
-                      color: colors.white,
+                      border: '2px solid rgba(255,255,255,0.2)',
+                      backgroundColor: colors.white,
+                      color: colors.darkEarth,
                       fontSize: '16px',
                       outline: 'none',
                       boxSizing: 'border-box',
@@ -673,29 +678,30 @@ export default function LandingPage() {
                   type="submit"
                   disabled={guideStatus === 'loading'}
                   style={{
-                    padding: '14px 28px',
-                    backgroundColor: colors.white,
-                    color: colors.primary,
+                    padding: '16px 32px',
+                    backgroundColor: colors.accent,
+                    color: colors.white,
                     border: 'none',
                     borderRadius: '10px',
-                    fontWeight: '600',
-                    fontSize: '15px',
+                    fontWeight: '700',
+                    fontSize: '16px',
                     cursor: guideStatus === 'loading' ? 'wait' : 'pointer',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '8px',
                     opacity: guideStatus === 'loading' ? 0.7 : 1,
                     whiteSpace: 'nowrap',
+                    boxShadow: '0 4px 14px rgba(201, 123, 93, 0.4)',
                   }}
                 >
-                  <Download size={16} />
+                  <Download size={18} />
                   {guideStatus === 'loading' ? 'Sending...' : 'Get Free Guide'}
                 </button>
               </div>
               {guideStatus === 'error' && (
                 <p style={{ color: '#fca5a5', fontSize: '14px', margin: 0 }}>{guideError}</p>
               )}
-              <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', margin: 0 }}>
+              <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.45)', margin: 0 }}>
                 No spam, ever. Just one helpful guide for your towing setup.
               </p>
             </form>
