@@ -615,7 +615,7 @@ export default function LandingPage() {
               <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.85)', marginBottom: '24px' }}>
                 Your free weight compliance guide is ready. Click below to start reading.
               </p>
-              <a href={`${APP_URL}/shop/ebooks/weight-compliance-made-simple`} style={{
+              <a href="/guides/weight-compliance.html" target="_blank" rel="noopener noreferrer" style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
@@ -627,8 +627,8 @@ export default function LandingPage() {
                 borderRadius: '10px',
                 fontSize: '16px',
               }}>
-                Read Chapter 1 Now
-                <ArrowRight size={18} />
+                <Download size={18} />
+                Read Your Free Guide
               </a>
             </div>
           ) : (
