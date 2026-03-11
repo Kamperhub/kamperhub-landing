@@ -382,7 +382,7 @@ export default function LandingPage() {
           <div className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
             <a href="#features" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500' }}>Features</a>
             <a href="#pricing" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500' }}>Pricing</a>
-            <a href="#faq" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500' }}>FAQ</a>
+            <a href="#free-guide" style={{ color: '#fcd34d', textDecoration: 'none', fontWeight: '600' }}>Free Guide</a>
             <a href={`${APP_URL}/blog`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500' }}>Blog</a>
             <a href={`${APP_URL}/free-camping`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500' }}>Free Camping</a>
             <a href={`${APP_URL}/shop`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500' }}>Shop</a>
@@ -419,7 +419,7 @@ export default function LandingPage() {
           <div style={{ padding: '16px 24px', borderTop: '1px solid rgba(255,255,255,0.2)', backgroundColor: colors.primary }}>
             <a href="#features" style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Features</a>
             <a href="#pricing" style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Pricing</a>
-            <a href="#faq" style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>FAQ</a>
+            <a href="#free-guide" style={{ display: 'block', padding: '12px 0', color: '#fcd34d', textDecoration: 'none', fontWeight: '600' }}>Free Guide</a>
             <a href={`${APP_URL}/blog`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Blog</a>
             <a href={`${APP_URL}/free-camping`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Free Camping</a>
             <a href={`${APP_URL}/shop`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Shop</a>
@@ -442,8 +442,8 @@ export default function LandingPage() {
             marginBottom: '24px',
             lineHeight: '1.1'
           }}>
-            Your Caravan Trip Planner +<br />
-            <span style={{ color: colors.primary }}>Towing Weights Tracker</span>
+            Plan Your Trip.<br />
+            <span style={{ color: colors.primary }}>Hit the Road with Confidence.</span>
           </h1>
           <p style={{
             fontSize: '18px',
@@ -452,8 +452,7 @@ export default function LandingPage() {
             margin: '0 auto 40px',
             lineHeight: '1.6'
           }}>
-            Plan routes, check weight compliance, and get your rig road-ready — all in one app.
-            Built for Australian caravan and RV travellers.
+            Route planning, packing lists, fuel stops, budgets, and safety checks — everything you need for stress-free caravan travel. Built for Australians.
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
             <a href={`${APP_URL}/signup`} style={{
@@ -480,6 +479,30 @@ export default function LandingPage() {
                 <Check size={16} color={colors.primary} /> Cancel anytime
               </span>
             </div>
+          </div>
+
+          {/* Social Proof */}
+          <div style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            gap: '24px',
+            marginTop: '40px',
+            padding: '20px 0',
+            borderTop: `1px solid ${colors.sand}`,
+            borderBottom: `1px solid ${colors.sand}`,
+          }}>
+            {[
+              { value: '150+', label: 'Tow Vehicles' },
+              { value: '160+', label: 'Caravans' },
+              { value: '11', label: 'Calculator Tools' },
+              { value: '60+', label: 'Safety Checks' },
+            ].map((stat, i) => (
+              <div key={i} style={{ textAlign: 'center', minWidth: '100px' }}>
+                <div style={{ fontSize: '24px', fontWeight: '800', color: colors.primary }}>{stat.value}</div>
+                <div style={{ fontSize: '13px', color: colors.gray[500] }}>{stat.label}</div>
+              </div>
+            ))}
           </div>
 
           {/* Hero Video */}
