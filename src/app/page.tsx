@@ -114,8 +114,8 @@ export default function LandingPage() {
     },
     {
       icon: Scale,
-      title: 'Weight Compliance Made Easy',
-      description: 'Know your limits before you leave. Calculate tow ball weight, ATM, GVM, and GCM with our Trip Weight Calculator.',
+      title: 'Towing Safety Checks',
+      description: 'Get a clear pass/fail safety score for your vehicle and caravan combo before you leave. Know your limits, tow with confidence.',
       color: '#3b82f6',
       bg: '#eff6ff'
     },
@@ -199,7 +199,7 @@ export default function LandingPage() {
   ];
 
   const calculators = [
-    { name: 'Weight Distribution', icon: Scale, color: '#3b82f6', bg: '#eff6ff' },
+    { name: 'Towing Safety', icon: Scale, color: '#3b82f6', bg: '#eff6ff' },
     { name: 'Towing Capacity', icon: Car, color: '#64748b', bg: '#f1f5f9' },
     { name: 'Fuel Cost', icon: Fuel, color: '#f59e0b', bg: '#fef9c3' },
     { name: 'Tyre Pressure', icon: Gauge, color: '#ec4899', bg: '#fdf2f8' },
