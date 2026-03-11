@@ -21,6 +21,8 @@ import {
   Clock,
   Gauge,
   ArrowRight,
+  Mail,
+  Download,
   LayoutDashboard,
   ClipboardCheck,
   Shield,
@@ -61,6 +63,39 @@ const colors = {
 export default function LandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [guideEmail, setGuideEmail] = useState('');
+  const [guideStatus, setGuideStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [guideError, setGuideError] = useState('');
+
+  const handleGuideSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!guideEmail || guideStatus === 'loading') return;
+
+    setGuideStatus('loading');
+    setGuideError('');
+
+    try {
+      const res = await fetch('https://app.kamperhub.com/api/ebooks/preview', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: guideEmail,
+          slug: 'weight-compliance-made-simple',
+          source: 'landing-page',
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || 'Something went wrong');
+      }
+
+      setGuideStatus('success');
+    } catch (err) {
+      setGuideStatus('error');
+      setGuideError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+    }
+  };
 
   const features = [
     {
@@ -513,49 +548,158 @@ export default function LandingPage() {
 
       {/* See It In Action — replaced by hero video */}
 
-      {/* Mid-Page CTA */}
-      <section style={{
+      {/* Free Guide Lead Magnet */}
+      <section id="free-guide" style={{
         padding: '64px 0',
         background: `linear-gradient(135deg, ${colors.primary} 0%, ${colors.secondary} 100%)`,
       }}>
         <div style={{
-          maxWidth: '800px',
+          maxWidth: '700px',
           margin: '0 auto',
           padding: '0 24px',
           textAlign: 'center',
         }}>
+          <div style={{
+            width: '64px',
+            height: '64px',
+            backgroundColor: 'rgba(255,255,255,0.15)',
+            borderRadius: '16px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            margin: '0 auto 20px',
+          }}>
+            <Scale size={32} color={colors.white} />
+          </div>
           <h2 style={{
             fontSize: '30px',
             fontWeight: '700',
             color: colors.white,
             marginBottom: '12px',
           }}>
-            Plan Smarter. Tow Safer. Travel Further.
+            Free Guide: Weight Compliance Made Simple
           </h2>
           <p style={{
             fontSize: '17px',
             color: 'rgba(255,255,255,0.85)',
-            marginBottom: '28px',
+            marginBottom: '8px',
             lineHeight: '1.6',
           }}>
-            Join Australian caravanners who use KamperHub to plan trips, track weights, and hit the road with confidence.
+            Understand GVM, ATM, GCM, towball weight, and payload — in plain English.
           </p>
-          <a href={`${APP_URL}/signup`} style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '8px',
-            padding: '14px 36px',
-            backgroundColor: colors.white,
-            color: colors.primary,
-            textDecoration: 'none',
-            fontWeight: '600',
-            borderRadius: '12px',
-            fontSize: '16px',
-            boxShadow: '0 4px 14px rgba(0,0,0,0.15)',
+          <p style={{
+            fontSize: '15px',
+            color: 'rgba(255,255,255,0.7)',
+            marginBottom: '28px',
+            lineHeight: '1.5',
           }}>
-            Try Free for 3 Days
-            <ArrowRight size={18} />
-          </a>
+            No signup required. Enter your email and we&apos;ll send you the guide instantly.
+          </p>
+
+          {guideStatus === 'success' ? (
+            <div style={{
+              backgroundColor: 'rgba(255,255,255,0.15)',
+              borderRadius: '16px',
+              padding: '32px',
+              border: '1px solid rgba(255,255,255,0.2)',
+            }}>
+              <Check size={48} color="#4ade80" style={{ marginBottom: '12px' }} />
+              <p style={{ fontSize: '20px', fontWeight: '600', color: colors.white, marginBottom: '8px' }}>
+                You&apos;re in!
+              </p>
+              <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.85)', marginBottom: '20px' }}>
+                Your free weight compliance guide is ready. Click below to start reading.
+              </p>
+              <a href={`${APP_URL}/shop/ebooks/weight-compliance-made-simple`} style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '12px 28px',
+                backgroundColor: colors.white,
+                color: colors.primary,
+                textDecoration: 'none',
+                fontWeight: '600',
+                borderRadius: '10px',
+                fontSize: '15px',
+              }}>
+                Read Chapter 1 Now
+                <ArrowRight size={16} />
+              </a>
+            </div>
+          ) : (
+            <form onSubmit={handleGuideSubmit} style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '12px',
+              maxWidth: '440px',
+              margin: '0 auto',
+            }}>
+              <div style={{
+                display: 'flex',
+                width: '100%',
+                gap: '8px',
+                flexWrap: 'wrap',
+                justifyContent: 'center',
+              }}>
+                <div style={{ position: 'relative', flex: '1 1 260px', minWidth: '260px' }}>
+                  <Mail size={18} color={colors.gray[400]} style={{
+                    position: 'absolute',
+                    left: '14px',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    pointerEvents: 'none',
+                  }} />
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    value={guideEmail}
+                    onChange={(e) => setGuideEmail(e.target.value)}
+                    required
+                    style={{
+                      width: '100%',
+                      padding: '14px 14px 14px 42px',
+                      borderRadius: '10px',
+                      border: '2px solid rgba(255,255,255,0.3)',
+                      backgroundColor: 'rgba(255,255,255,0.1)',
+                      color: colors.white,
+                      fontSize: '16px',
+                      outline: 'none',
+                      boxSizing: 'border-box',
+                    }}
+                  />
+                </div>
+                <button
+                  type="submit"
+                  disabled={guideStatus === 'loading'}
+                  style={{
+                    padding: '14px 28px',
+                    backgroundColor: colors.white,
+                    color: colors.primary,
+                    border: 'none',
+                    borderRadius: '10px',
+                    fontWeight: '600',
+                    fontSize: '15px',
+                    cursor: guideStatus === 'loading' ? 'wait' : 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    opacity: guideStatus === 'loading' ? 0.7 : 1,
+                    whiteSpace: 'nowrap',
+                  }}
+                >
+                  <Download size={16} />
+                  {guideStatus === 'loading' ? 'Sending...' : 'Get Free Guide'}
+                </button>
+              </div>
+              {guideStatus === 'error' && (
+                <p style={{ color: '#fca5a5', fontSize: '14px', margin: 0 }}>{guideError}</p>
+              )}
+              <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', margin: 0 }}>
+                No spam, ever. Just one helpful guide for your towing setup.
+              </p>
+            </form>
+          )}
         </div>
       </section>
 
