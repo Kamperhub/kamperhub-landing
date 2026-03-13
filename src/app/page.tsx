@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import {
   Map,
@@ -61,6 +61,20 @@ export default function LandingPage() {
   const [guideEmail, setGuideEmail] = useState('');
   const [guideStatus, setGuideStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [guideError, setGuideError] = useState('');
+
+  // Handle #hash scrolling for client-side rendered page
+  useEffect(() => {
+    if (window.location.hash) {
+      const id = window.location.hash.substring(1);
+      // Small delay to ensure DOM is rendered
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 300);
+    }
+  }, []);
 
   const handleGuideSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
