@@ -21,7 +21,7 @@ export default function TermsOfServicePage() {
           <Link href="/"><Image src="/logo.png" alt="KamperHub" width={140} height={50} priority /></Link>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             <a href="https://app.kamperhub.com/login" style={{ padding: '10px 20px', color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500' }}>Log In</a>
-            <a href="https://app.kamperhub.com/signup" style={{ padding: '10px 24px', backgroundColor: colors.white, color: colors.primary, textDecoration: 'none', fontWeight: '600', borderRadius: '10px', fontSize: '14px' }}>Start Free Trial</a>
+            <a href="https://app.kamperhub.com/signup" style={{ padding: '10px 24px', backgroundColor: colors.white, color: colors.primary, textDecoration: 'none', fontWeight: '600', borderRadius: '10px', fontSize: '14px' }}>Get Started Free</a>
           </div>
         </div>
       </nav>

@@ -265,11 +265,11 @@ export default function LandingPage() {
   const faqs = [
     {
       q: 'Is there a free plan?',
-      a: 'We offer a 3-day free trial with Explorer. After that, Explorer is just $0.99/month (billed yearly at $11.88). Add optional packs like TowReady, Crew, Logbook, or Shed for $4.99/quarter each.'
+      a: 'Yes! KamperHub has a free plan with core features like trip planning, free camping finder, and basic tools. Upgrade to Explorer ($10/year) for the full experience, or Pro ($49/year) for everything including weight compliance, household sharing, expense tracking, and full inventory management.'
     },
     {
-      q: 'Do I need a credit card to start the trial?',
-      a: 'No! You can start your trial without entering any payment details. We\'ll only ask for payment when you\'re ready to subscribe.'
+      q: 'Do I need a credit card to sign up?',
+      a: 'No! Sign up for free without entering any payment details. We\'ll only ask for payment if you choose to upgrade.'
     },
     {
       q: 'Can I cancel anytime?',
@@ -369,7 +369,7 @@ export default function LandingPage() {
               borderRadius: '10px',
               fontSize: '14px'
             }}>
-              Start Free Trial
+              Get Started Free
             </a>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -435,7 +435,7 @@ export default function LandingPage() {
               gap: '8px',
               boxShadow: '0 4px 14px rgba(56, 102, 65, 0.3)'
             }}>
-              Start Your Free 3-Day Trial
+              Get Started Free
               <ArrowRight size={20} />
             </a>
             <div style={{ display: 'flex', alignItems: 'center', gap: '24px', color: colors.gray[500], fontSize: '14px' }}>
@@ -850,7 +850,7 @@ export default function LandingPage() {
                 borderRadius: '12px',
                 fontSize: '16px'
               }}>
-                Start 3-Day Free Trial
+                Get Started Free
               </a>
             </div>
           </div>
@@ -936,7 +936,7 @@ export default function LandingPage() {
           </div>
 
           <p style={{ textAlign: 'center', color: colors.gray[500], fontSize: '14px', marginTop: '32px' }}>
-            Explorer includes a 3-day free trial · No credit card required · Cancel anytime
+            Free plan available · No credit card required · Cancel anytime
           </p>
         </div>
       </section>
@@ -999,7 +999,7 @@ export default function LandingPage() {
             Ready to Plan Your Next Adventure?
           </h2>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.85)', marginBottom: '32px' }}>
-            Start your free 3-day trial — no credit card required
+            Sign up free — no credit card required
           </p>
           <a href={`${APP_URL}/signup`} style={{
             display: 'inline-flex',
@@ -1013,7 +1013,7 @@ export default function LandingPage() {
             borderRadius: '12px',
             fontSize: '18px'
           }}>
-            Start Your Free Trial
+            Get Started Free
             <ArrowRight size={20} />
           </a>
         </div>
