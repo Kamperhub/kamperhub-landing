@@ -107,21 +107,21 @@ export default function TermsOfServicePage() {
             </h2>
 
             <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#111827', marginBottom: '12px' }}>
-              2.1 Free Trial
+              2.1 Free Plan
             </h3>
             <p style={{ color: '#374151', lineHeight: '1.7', margin: '0 0 16px 0' }}>
-              New users receive a <strong>3-day free trial</strong> of the Explorer plan with access to core KamperHub features. Your trial begins immediately upon account creation. No payment is required during the trial period.
+              KamperHub offers a <strong>free plan</strong> with access to basic features including trip planning, free camping finder, and calculators. No payment or credit card is required.
             </p>
 
             <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#111827', marginBottom: '12px' }}>
-              2.2 Premium Subscription
+              2.2 Paid Subscriptions
             </h3>
             <p style={{ color: '#374151', lineHeight: '1.7', margin: '0 0 12px 0' }}>
-              After your free trial expires, you may subscribe to KamperHub:
+              You may upgrade to a paid subscription for additional features:
             </p>
             <ul style={{ color: '#374151', lineHeight: '1.7', margin: '0 0 16px 0', paddingLeft: '24px' }}>
-              <li><strong>Explorer</strong> — $0.99 AUD per month (billed yearly at $11.88)</li>
-              <li><strong>Optional Packs</strong> (TowReady, Crew, Logbook, Shed) — $4.99 AUD per quarter each</li>
+              <li><strong>Explorer</strong> — $10 AUD per year</li>
+              <li><strong>Pro</strong> — $49 AUD per year (full access to all features)</li>
               <li>No long-term contract required</li>
             </ul>
 
@@ -299,7 +299,7 @@ export default function TermsOfServicePage() {
               To the maximum extent permitted by Australian law, Scott Carlton and KamperHub shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits, revenue, data, or use arising out of or related to your use of the Service.
             </p>
             <p style={{ color: '#374151', lineHeight: '1.7', margin: 0 }}>
-              Our total liability to you for any claims arising from these Terms or your use of the Service shall not exceed the amount you paid us in the 12 months preceding the claim, or $11.88 AUD, whichever is greater.
+              Our total liability to you for any claims arising from these Terms or your use of the Service shall not exceed the amount you paid us in the 12 months preceding the claim, or $49 AUD, whichever is greater.
             </p>
           </section>
 

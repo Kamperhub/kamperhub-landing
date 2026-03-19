@@ -92,21 +92,21 @@ export default function RefundPolicyPage() {
             </p>
           </section>
 
-          {/* 1. Free Trial */}
+          {/* 1. Free Plan */}
           <section>
             <h2 style={{ fontSize: '20px', fontWeight: '600', color: '#111827', marginBottom: '16px' }}>
-              1. 3-Day Free Trial
+              1. Free Plan
             </h2>
             <p style={{ color: '#374151', lineHeight: '1.7', margin: '0 0 12px 0' }}>
-              All new users receive a <strong>3-day free trial</strong> of the Explorer plan with access to core KamperHub features. This trial period allows you to:
+              KamperHub offers a <strong>free plan</strong> with access to basic features. This allows you to:
             </p>
             <ul style={{ color: '#374151', lineHeight: '1.7', margin: '0 0 16px 0', paddingLeft: '24px' }}>
-              <li>Explore all features without payment</li>
+              <li>Explore core features without payment</li>
               <li>Test the platform to ensure it meets your needs</li>
-              <li>Decide whether to continue with a paid subscription</li>
+              <li>Decide whether to upgrade to a paid subscription</li>
             </ul>
             <p style={{ color: '#374151', lineHeight: '1.7', margin: 0 }}>
-              <strong>No payment is required during the trial period.</strong> You may cancel at any time during the trial without being charged.
+              <strong>No payment is required for the free plan.</strong> You may use it indefinitely without being charged.
             </p>
           </section>
 
@@ -116,11 +116,11 @@ export default function RefundPolicyPage() {
               2. Subscription Charges Are Non-Refundable
             </h2>
             <p style={{ color: '#374151', lineHeight: '1.7', margin: '0 0 16px 0' }}>
-              Once you subscribe to KamperHub (Explorer at $0.99/month billed yearly, or optional packs at $4.99/quarter each), all subscription fees are <strong>final and non-refundable</strong>. This includes:
+              Once you subscribe to KamperHub (Explorer at $10/year or Pro at $49/year), all subscription fees are <strong>final and non-refundable</strong>. This includes:
             </p>
             <ul style={{ color: '#374151', lineHeight: '1.7', margin: 0, paddingLeft: '24px' }}>
               <li>Initial subscription payments</li>
-              <li>Recurring monthly charges</li>
+              <li>Recurring yearly charges</li>
               <li>Partial months or unused subscription time</li>
               <li>Subscriptions cancelled mid-billing cycle</li>
               <li>Cases where you choose not to use the Service</li>
@@ -133,11 +133,11 @@ export default function RefundPolicyPage() {
               3. Why We Do Not Offer Refunds
             </h2>
             <p style={{ color: '#374151', lineHeight: '1.7', margin: '0 0 12px 0' }}>
-              We provide a free 3-day trial so you can evaluate KamperHub before committing to a paid subscription. Because:
+              We provide a free plan so you can evaluate KamperHub before committing to a paid subscription. Because:
             </p>
             <ul style={{ color: '#374151', lineHeight: '1.7', margin: 0, paddingLeft: '24px' }}>
-              <li>You have access to all features during the trial period</li>
-              <li>The subscription cost is low (from $0.99/month)</li>
+              <li>You have access to core features on the free plan</li>
+              <li>The subscription costs are affordable ($10/year for Explorer, $49/year for Pro)</li>
               <li>You can cancel at any time to avoid future charges</li>
               <li>Our infrastructure and operating costs are incurred immediately upon subscription</li>
             </ul>
@@ -238,8 +238,8 @@ export default function RefundPolicyPage() {
                 Best Practices:
               </p>
               <ul style={{ color: '#374151', lineHeight: '1.7', margin: 0, paddingLeft: '24px' }}>
-                <li><strong>Use the free trial</strong> - Take advantage of the 3-day trial to test features</li>
-                <li><strong>Set a calendar reminder</strong> - Mark your trial end date to decide before being charged</li>
+                <li><strong>Use the free plan</strong> - Test features before upgrading</li>
+                <li><strong>Review before upgrading</strong> - Make sure KamperHub meets your needs on the free plan first</li>
                 <li><strong>Cancel before renewal</strong> - Cancel at least 1 day before your next billing date if you don't wish to continue</li>
                 <li><strong>Monitor your email</strong> - We send payment receipts and subscription notifications</li>
                 <li><strong>Check your billing date</strong> - Review your account settings to see when your next charge will occur</li>
@@ -306,7 +306,7 @@ export default function RefundPolicyPage() {
             </h3>
             <ul style={{ color: '#991b1b', lineHeight: '1.7', margin: 0, paddingLeft: '24px' }}>
               <li>All subscription fees are <strong>non-refundable</strong></li>
-              <li>Use the 3-day free trial to test before subscribing</li>
+              <li>Use the free plan to test before subscribing</li>
               <li>Cancel anytime to stop future charges (but no refund for current period)</li>
               <li>Contact us if you believe there's a billing error</li>
             </ul>
