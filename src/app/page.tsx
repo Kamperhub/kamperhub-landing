@@ -25,7 +25,6 @@ import {
   Tent,
   Refrigerator,
   MapPin,
-  Warehouse
 } from 'lucide-react';
 
 // Brand Colors - Bush Meets Coast palette
@@ -197,68 +196,68 @@ export default function LandingPage() {
     }
   ];
 
-  const explorerFeatures = [
-    'Unlimited trip planning',
-    'Route planner with Trip Advisor',
-    'Free camping finder',
-    'Explore & POI search',
-    'Packing lists & 50+ templates',
-    'Blog & guides',
-    'Basic garage (1 vehicle + 1 caravan)',
-    '8 calculator tools (fridge, solar, gas, tanks, tyres, travel time & more)',
-    'Travel statistics',
-    'Traveller profiles (up to 2)',
-  ];
-
-  const packs = [
+  const plans = [
     {
-      name: 'TowReady',
-      icon: Scale,
-      color: '#3b82f6',
-      bg: '#eff6ff',
+      name: 'Free',
+      price: '$0',
+      priceDetail: 'Free forever',
+      color: '#6b7280',
+      bg: '#f9fafb',
+      border: '#e5e7eb',
+      badge: null,
       features: [
-        'Weight compliance calculator',
-        'Towing capacity calculator',
-        'Tow simulator',
-        'Trip weight tracking',
+        'Trip planning (1 active trip)',
+        'Free camping finder',
+        'Explore & POI search',
+        'Blog & guides',
+        'Basic garage (1 vehicle + 1 caravan)',
+        '6 calculator tools',
+      ],
+      cta: 'Get Started Free',
+      ctaBg: '#6b7280',
+    },
+    {
+      name: 'Explorer',
+      price: '$10',
+      priceDetail: '$10/year — less than $1/month',
+      color: colors.primary,
+      bg: colors.white,
+      border: colors.primary,
+      badge: 'Most Popular',
+      features: [
+        'Everything in Free, plus:',
+        'Unlimited trip planning',
+        'Route planner with Trip Advisor',
+        'Packing lists & 50+ templates',
+        'Weight dashboard (view only)',
+        'Travel statistics',
+        'Traveller profiles (up to 2)',
+        'All 11 calculator tools',
+      ],
+      cta: 'Get Explorer — $10/yr',
+      ctaBg: colors.primary,
+    },
+    {
+      name: 'Pro',
+      price: '$49',
+      priceDetail: '$49/year — full access to everything',
+      color: '#7c3aed',
+      bg: colors.white,
+      border: '#e5e7eb',
+      badge: null,
+      features: [
+        'Everything in Explorer, plus:',
+        'Full weight compliance (TowSafe)',
+        'Cargo distribution simulator',
+        'Towing & weight calculators',
         'Pre-departure checklists',
-      ],
-    },
-    {
-      name: 'Crew',
-      icon: Users,
-      color: '#0891b2',
-      bg: '#ecfeff',
-      features: [
+        'Expense tracking & budgets',
         'Household members (up to 5)',
-        'Multi-user shared access',
-        'Invite family members',
-      ],
-    },
-    {
-      name: 'Logbook',
-      icon: DollarSign,
-      color: '#22c55e',
-      bg: '#f0fdf4',
-      features: [
-        'Expense tracking',
-        'Trip budgets',
-        'Fuel cost calculator',
-        'Fuel stop planner',
-        'Trip cost estimator',
-      ],
-    },
-    {
-      name: 'Shed',
-      icon: Warehouse,
-      color: '#f59e0b',
-      bg: '#fef9c3',
-      features: [
-        'Full inventory management',
         'Unlimited vehicles & caravans',
-        'Aftermarket accessories',
-        'Cargo weight distribution',
+        'Full inventory management',
       ],
+      cta: 'Get Pro — $49/yr',
+      ctaBg: '#7c3aed',
     },
   ];
 
@@ -277,11 +276,11 @@ export default function LandingPage() {
     },
     {
       q: 'How does trip sharing work?',
-      a: 'Add the Crew pack ($4.99/quarter) to invite up to 5 household members. They get full app access. Trip owners can share individual trips — shared trips appear in each member\'s trip list.'
+      a: 'With the Pro plan ($49/year), you can invite up to 5 household members. They get full app access. Trip owners can share individual trips — shared trips appear in each member\'s trip list.'
     },
     {
-      q: 'What are packs and how do they work?',
-      a: 'Packs are optional add-ons that unlock extra features on top of your Explorer base plan. Choose TowReady for weight compliance, Crew for household sharing, Logbook for expense tracking, or Shed for full inventory management. Each pack is $4.99/quarter — only pay for what you need.'
+      q: 'What\'s the difference between Explorer and Pro?',
+      a: 'Explorer ($10/year) gives you unlimited trips, packing lists, all calculators, and travel stats. Pro ($49/year) adds full weight compliance with TowSafe scoring, expense tracking and budgets, household sharing (up to 5 members), unlimited vehicles and caravans, and full inventory management.'
     },
     {
       q: 'What vehicles and caravans are supported?',
@@ -289,7 +288,7 @@ export default function LandingPage() {
     },
     {
       q: 'What\'s included in the pre-departure checklist?',
-      a: 'Pre-departure checklists are part of the TowReady pack. We\'ve compiled 60+ industry-standard checks across 12 categories: tyres, coupling & hitch, lights, brakes, gas, water, interior security, external security, vehicle checks, safety equipment, documents, and personal items.'
+      a: 'Pre-departure checklists are included in the Pro plan. We\'ve compiled 60+ industry-standard checks across 12 categories: tyres, coupling & hitch, lights, brakes, gas, water, interior security, external security, vehicle checks, safety equipment, documents, and personal items.'
     },
     {
       q: 'How does the Utilities finder work?',
@@ -767,176 +766,109 @@ export default function LandingPage() {
       <section id="pricing" style={{ padding: '80px 0', backgroundColor: colors.cream }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 24px' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', textAlign: 'center', marginBottom: '16px', color: colors.gray[900] }}>
-            Flexible, Affordable Pricing
+            Simple, Transparent Pricing
           </h2>
           <p style={{ textAlign: 'center', color: colors.gray[500], marginBottom: '48px', fontSize: '18px' }}>
-            Start with Explorer, add packs as you need them
+            Start free, upgrade when you need more
           </p>
 
-          {/* Explorer Card - Full Width */}
-          <div style={{
-            backgroundColor: colors.white,
-            borderRadius: '24px',
-            padding: '40px',
-            boxShadow: '0 10px 40px rgba(56, 102, 65, 0.2)',
-            border: `3px solid ${colors.primary}`,
-            position: 'relative',
-            marginBottom: '32px'
-          }}>
-            <div style={{
-              position: 'absolute',
-              top: '-14px',
-              left: '50%',
-              transform: 'translateX(-50%)',
-              backgroundColor: colors.primary,
-              color: colors.white,
-              padding: '6px 20px',
-              borderRadius: '100px',
-              fontSize: '12px',
-              fontWeight: '700',
-              textTransform: 'uppercase',
-              letterSpacing: '0.5px'
-            }}>
-              Base Plan
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '24px' }}>
-              <div style={{ textAlign: 'center' }}>
-                <p style={{
-                  fontSize: '14px',
-                  fontWeight: '600',
-                  color: colors.primary,
-                  textTransform: 'uppercase',
-                  letterSpacing: '1px',
-                  marginBottom: '4px'
-                }}>
-                  Explorer
-                </p>
-                <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'center', gap: '4px' }}>
-                  <span style={{ fontSize: '48px', fontWeight: '800', color: colors.gray[900] }}>$0.99</span>
-                  <span style={{ fontSize: '16px', color: colors.gray[500] }}>/month</span>
-                </div>
-                <p style={{ color: colors.gray[500], fontSize: '14px', marginTop: '4px' }}>
-                  Billed yearly at $11.88
-                </p>
-              </div>
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-                gap: '8px 32px',
-                width: '100%',
-                maxWidth: '700px'
-              }}>
-                {explorerFeatures.map((feature, index) => (
-                  <div key={index} style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '10px',
-                    padding: '6px 0',
-                    fontSize: '14px'
-                  }}>
-                    <Check size={18} color={colors.primary} style={{ flexShrink: 0 }} />
-                    <span style={{ color: colors.gray[700] }}>{feature}</span>
-                  </div>
-                ))}
-              </div>
-              <a href={`${APP_URL}/signup`} style={{
-                display: 'inline-block',
-                padding: '14px 40px',
-                backgroundColor: colors.primary,
-                color: colors.white,
-                textAlign: 'center',
-                textDecoration: 'none',
-                fontWeight: '600',
-                borderRadius: '12px',
-                fontSize: '16px'
-              }}>
-                Get Started Free
-              </a>
-            </div>
-          </div>
-
-          {/* Pack Cards - Grid */}
+          {/* 3-Tier Pricing Cards */}
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-            gap: '20px',
-            alignItems: 'stretch'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '24px',
+            alignItems: 'stretch',
           }}>
-            {packs.map((pack, packIndex) => (
+            {plans.map((plan, i) => (
               <div
-                key={packIndex}
+                key={i}
                 style={{
-                  backgroundColor: colors.white,
+                  backgroundColor: plan.bg,
                   borderRadius: '24px',
                   padding: '32px',
-                  boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
-                  border: `1px solid ${colors.gray[200]}`,
+                  boxShadow: plan.badge ? '0 10px 40px rgba(56, 102, 65, 0.2)' : '0 4px 20px rgba(0,0,0,0.08)',
+                  border: plan.badge ? `3px solid ${plan.border}` : `1px solid ${plan.border}`,
                   display: 'flex',
-                  flexDirection: 'column'
+                  flexDirection: 'column',
+                  position: 'relative',
                 }}
               >
-                <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+                {plan.badge && (
                   <div style={{
-                    width: '48px',
-                    height: '48px',
-                    borderRadius: '12px',
-                    backgroundColor: pack.bg,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    margin: '0 auto 12px'
-                  }}>
-                    <pack.icon size={24} color={pack.color} />
-                  </div>
-                  <p style={{
-                    fontSize: '16px',
+                    position: 'absolute',
+                    top: '-14px',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    backgroundColor: plan.color,
+                    color: colors.white,
+                    padding: '6px 20px',
+                    borderRadius: '100px',
+                    fontSize: '12px',
                     fontWeight: '700',
-                    color: colors.gray[900],
-                    marginBottom: '4px'
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.5px',
                   }}>
-                    {pack.name}
+                    {plan.badge}
+                  </div>
+                )}
+                <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+                  <p style={{
+                    fontSize: '14px',
+                    fontWeight: '600',
+                    color: plan.color,
+                    textTransform: 'uppercase',
+                    letterSpacing: '1px',
+                    marginBottom: '4px',
+                  }}>
+                    {plan.name}
                   </p>
                   <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'center', gap: '4px' }}>
-                    <span style={{ fontSize: '32px', fontWeight: '800', color: colors.gray[900] }}>$1.66</span>
-                    <span style={{ fontSize: '14px', color: colors.gray[500] }}>/month</span>
+                    <span style={{ fontSize: '48px', fontWeight: '800', color: colors.gray[900] }}>{plan.price}</span>
+                    {plan.name !== 'Free' && <span style={{ fontSize: '16px', color: colors.gray[500] }}>/year</span>}
                   </div>
-                  <p style={{ color: colors.gray[500], fontSize: '13px', marginTop: '2px' }}>
-                    Billed quarterly at $4.99
+                  <p style={{ color: colors.gray[500], fontSize: '14px', marginTop: '4px' }}>
+                    {plan.priceDetail}
                   </p>
                 </div>
-                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 20px', flex: 1 }}>
-                  {pack.features.map((feature, index) => (
-                    <li key={index} style={{
+                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px', flex: 1 }}>
+                  {plan.features.map((feature, fi) => (
+                    <li key={fi} style={{
                       display: 'flex',
                       alignItems: 'center',
                       gap: '10px',
                       padding: '6px 0',
-                      fontSize: '14px'
+                      fontSize: '14px',
                     }}>
-                      <Check size={16} color={pack.color} style={{ flexShrink: 0 }} />
-                      <span style={{ color: colors.gray[700] }}>{feature}</span>
+                      {fi === 0 && feature.startsWith('Everything') ? (
+                        <span style={{ color: plan.color, fontWeight: '600', fontSize: '13px' }}>{feature}</span>
+                      ) : (
+                        <>
+                          <Check size={16} color={plan.color} style={{ flexShrink: 0 }} />
+                          <span style={{ color: colors.gray[700] }}>{feature}</span>
+                        </>
+                      )}
                     </li>
                   ))}
                 </ul>
                 <a href={`${APP_URL}/signup`} style={{
                   display: 'block',
-                  padding: '10px 14px',
-                  backgroundColor: pack.bg,
-                  color: pack.color,
+                  padding: '14px 20px',
+                  backgroundColor: plan.ctaBg,
+                  color: colors.white,
                   textAlign: 'center',
-                  fontWeight: '600',
-                  borderRadius: '10px',
-                  fontSize: '13px',
                   textDecoration: 'none',
+                  fontWeight: '600',
+                  borderRadius: '12px',
+                  fontSize: '15px',
                 }}>
-                  Add to Explorer
+                  {plan.cta}
                 </a>
               </div>
             ))}
           </div>
 
           <p style={{ textAlign: 'center', color: colors.gray[500], fontSize: '14px', marginTop: '32px' }}>
-            Free plan available · No credit card required · Cancel anytime
+            No credit card required · Cancel anytime · AUD
           </p>
         </div>
       </section>
