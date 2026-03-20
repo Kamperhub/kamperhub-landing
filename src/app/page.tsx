@@ -350,7 +350,7 @@ export default function LandingPage() {
             <a href="#pricing" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Pricing</a>
             <a href="#free-guide" style={{ color: '#fcd34d', textDecoration: 'none', fontWeight: '600', fontSize: '15px' }}>Free Guide</a>
             <a href={`${APP_URL}/blog`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Blog</a>
-            <a href={`${APP_URL}/library`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Library</a>
+            <a href={`${APP_URL}/library`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Bookshelf</a>
             <a href={`${APP_URL}/shop`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Shop</a>
             <a href={`${APP_URL}/login`} style={{
               padding: '8px 20px',
@@ -385,7 +385,7 @@ export default function LandingPage() {
             <a href="#pricing" style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Pricing</a>
             <a href="#free-guide" style={{ display: 'block', padding: '12px 0', color: '#fcd34d', textDecoration: 'none', fontWeight: '600' }}>Free Guide</a>
             <a href={`${APP_URL}/blog`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Blog</a>
-            <a href={`${APP_URL}/library`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Library</a>
+            <a href={`${APP_URL}/library`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Bookshelf</a>
             <a href={`${APP_URL}/shop`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Shop</a>
             <a href={`${APP_URL}/login`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Log In</a>
           </div>
