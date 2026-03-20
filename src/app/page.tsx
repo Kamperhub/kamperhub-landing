@@ -345,31 +345,29 @@ export default function LandingPage() {
           </div>
 
           {/* Desktop Nav */}
-          <div className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
-            <a href="#features" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500' }}>Features</a>
-            <a href="#pricing" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500' }}>Pricing</a>
-            <a href="#free-guide" style={{ color: '#fcd34d', textDecoration: 'none', fontWeight: '600' }}>Free Guide</a>
-            <a href={`${APP_URL}/blog`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500' }}>Blog</a>
-            <a href={`${APP_URL}/free-camping`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500' }}>Free Camping</a>
-            <a href={`${APP_URL}/shop`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500' }}>Shop</a>
-          </div>
-
-          {/* CTA Buttons */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <a href={`${APP_URL}/login`} className="desktop-nav" style={{ padding: '10px 20px', color: colors.white, textDecoration: 'none', fontWeight: '500' }}>
-              Log In
-            </a>
-            <a href={`${APP_URL}/signup`} style={{
-              padding: '10px 24px',
-              backgroundColor: colors.white,
-              color: colors.primary,
+          <div className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
+            <a href="#features" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Features</a>
+            <a href="#pricing" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Pricing</a>
+            <a href="#free-guide" style={{ color: '#fcd34d', textDecoration: 'none', fontWeight: '600', fontSize: '15px' }}>Free Guide</a>
+            <a href={`${APP_URL}/blog`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Blog</a>
+            <a href={`${APP_URL}/library`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Library</a>
+            <a href={`${APP_URL}/shop`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Shop</a>
+            <a href={`${APP_URL}/login`} style={{
+              padding: '8px 20px',
+              backgroundColor: 'rgba(255,255,255,0.15)',
+              color: colors.white,
               textDecoration: 'none',
               fontWeight: '600',
-              borderRadius: '10px',
-              fontSize: '14px'
+              borderRadius: '8px',
+              fontSize: '15px',
+              border: '1px solid rgba(255,255,255,0.3)',
             }}>
-              Get Started Free
+              Log In
             </a>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div style={{ display: 'flex', alignItems: 'center' }}>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="mobile-menu-btn"
@@ -387,7 +385,7 @@ export default function LandingPage() {
             <a href="#pricing" style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Pricing</a>
             <a href="#free-guide" style={{ display: 'block', padding: '12px 0', color: '#fcd34d', textDecoration: 'none', fontWeight: '600' }}>Free Guide</a>
             <a href={`${APP_URL}/blog`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Blog</a>
-            <a href={`${APP_URL}/free-camping`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Free Camping</a>
+            <a href={`${APP_URL}/library`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Library</a>
             <a href={`${APP_URL}/shop`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Shop</a>
             <a href={`${APP_URL}/login`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Log In</a>
           </div>
