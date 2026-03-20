@@ -469,6 +469,38 @@ export default function LandingPage() {
             ))}
           </div>
 
+          {/* Value Pillars */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+            gap: '16px',
+            marginTop: '48px',
+          }}>
+            {[
+              { icon: Map, title: 'Plan Smarter', desc: 'Routes, fuel stops, overnight stays — all calculated for your rig.', color: '#3b82f6', bg: '#eff6ff' },
+              { icon: Scale, title: 'Tow Safer', desc: 'Weight checks, tyre pressures, and compliance scoring before you leave.', color: colors.accent, bg: '#fef7f3' },
+              { icon: CheckSquare, title: 'Travel Further', desc: 'Budgets, packing lists, and pre-departure checklists sorted.', color: '#059669', bg: '#ecfdf5' },
+            ].map((pillar, i) => (
+              <div key={i} style={{
+                padding: '20px 20px 20px 24px',
+                backgroundColor: pillar.bg,
+                borderRadius: '12px',
+                borderLeft: `4px solid ${pillar.color}`,
+                textAlign: 'left',
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
+                  <pillar.icon size={22} color={pillar.color} />
+                  <h3 style={{ margin: 0, fontSize: '16px', fontWeight: '700', color: colors.gray[900] }}>
+                    {pillar.title}
+                  </h3>
+                </div>
+                <p style={{ margin: 0, fontSize: '14px', color: colors.gray[500], lineHeight: '1.5' }}>
+                  {pillar.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
           {/* Hero Video */}
           <div style={{
             marginTop: '48px',
