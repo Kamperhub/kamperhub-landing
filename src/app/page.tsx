@@ -346,12 +346,12 @@ export default function LandingPage() {
 
           {/* Desktop Nav */}
           <div className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
-            <a href="#features" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Features</a>
-            <a href="#pricing" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Pricing</a>
-            <a href="#free-guide" style={{ color: '#fcd34d', textDecoration: 'none', fontWeight: '600', fontSize: '15px' }}>Free Guide</a>
-            <a href={`${APP_URL}/blog`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Blog</a>
-            <a href={`${APP_URL}/library`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Bookshelf</a>
-            <a href={`${APP_URL}/shop`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Shop</a>
+            <a href="#features" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '20px' }}>Features</a>
+            <a href="#pricing" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '20px' }}>Pricing</a>
+            <a href="#free-guide" style={{ color: '#fcd34d', textDecoration: 'none', fontWeight: '600', fontSize: '20px' }}>Free Guide</a>
+            <a href={`${APP_URL}/blog`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '20px' }}>Blog</a>
+            <a href={`${APP_URL}/library`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '20px' }}>Bookshelf</a>
+            <a href={`${APP_URL}/shop`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '20px' }}>Shop</a>
             <a href={`${APP_URL}/login`} style={{
               padding: '8px 20px',
               backgroundColor: 'rgba(255,255,255,0.15)',
@@ -359,7 +359,7 @@ export default function LandingPage() {
               textDecoration: 'none',
               fontWeight: '600',
               borderRadius: '8px',
-              fontSize: '15px',
+              fontSize: '20px',
               border: '1px solid rgba(255,255,255,0.3)',
             }}>
               Log In
@@ -994,7 +994,7 @@ export default function LandingPage() {
                 height={56}
                 style={{ marginBottom: '16px' }}
               />
-              <p style={{ color: 'rgba(255,255,255,0.8)', lineHeight: '1.6', fontSize: '14px' }}>
+              <p style={{ color: 'rgba(255,255,255,0.8)', lineHeight: '1.6', fontSize: '16px' }}>
                 The all-in-one app for caravan travellers. Plan smarter, tow safer, travel further.
               </p>
             </div>
@@ -1002,24 +1002,24 @@ export default function LandingPage() {
             {/* Links */}
             <div style={{ display: 'flex', gap: '64px', flexWrap: 'wrap' }}>
               <div>
-                <h4 style={{ color: colors.white, fontSize: '14px', fontWeight: '600', marginBottom: '16px' }}>Product</h4>
-                <a href="#features" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Features</a>
-                <a href="#pricing" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Pricing</a>
-                <a href={`${APP_URL}/free-camping`} style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Free Camping</a>
-                <a href={`${APP_URL}/shop`} style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Shop</a>
+                <h4 style={{ color: colors.white, fontSize: '16px', fontWeight: '600', marginBottom: '16px' }}>Product</h4>
+                <a href="#features" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '16px' }}>Features</a>
+                <a href="#pricing" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '16px' }}>Pricing</a>
+                <a href={`${APP_URL}/free-camping`} style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '16px' }}>Free Camping</a>
+                <a href={`${APP_URL}/shop`} style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '16px' }}>Shop</a>
               </div>
               <div>
-                <h4 style={{ color: colors.white, fontSize: '14px', fontWeight: '600', marginBottom: '16px' }}>Legal</h4>
-                <a href="/legal/privacy" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Privacy Policy</a>
-                <a href="/legal/terms" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Terms of Service</a>
-                <a href="/legal/refunds" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Refund Policy</a>
+                <h4 style={{ color: colors.white, fontSize: '16px', fontWeight: '600', marginBottom: '16px' }}>Legal</h4>
+                <a href="/legal/privacy" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '16px' }}>Privacy Policy</a>
+                <a href="/legal/terms" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '16px' }}>Terms of Service</a>
+                <a href="/legal/refunds" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '16px' }}>Refund Policy</a>
               </div>
               <div>
-                <h4 style={{ color: colors.white, fontSize: '14px', fontWeight: '600', marginBottom: '16px' }}>Contact</h4>
-                <a href={`${APP_URL}/contact`} style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Contact Us</a>
-                <a href="mailto:info@kamperhub.com" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>info@kamperhub.com</a>
-                <a href="https://www.facebook.com/profile.php?id=61577280351290" target="_blank" rel="noopener noreferrer" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Facebook</a>
-                <a href="https://www.instagram.com/kamperhub" target="_blank" rel="noopener noreferrer" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '14px' }}>Instagram</a>
+                <h4 style={{ color: colors.white, fontSize: '16px', fontWeight: '600', marginBottom: '16px' }}>Contact</h4>
+                <a href={`${APP_URL}/contact`} style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '16px' }}>Contact Us</a>
+                <a href="mailto:info@kamperhub.com" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '16px' }}>info@kamperhub.com</a>
+                <a href="https://www.facebook.com/profile.php?id=61577280351290" target="_blank" rel="noopener noreferrer" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '16px' }}>Facebook</a>
+                <a href="https://www.instagram.com/kamperhub" target="_blank" rel="noopener noreferrer" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '16px' }}>Instagram</a>
               </div>
             </div>
           </div>
@@ -1028,7 +1028,7 @@ export default function LandingPage() {
             paddingTop: '24px',
             textAlign: 'center',
             color: 'rgba(255,255,255,0.7)',
-            fontSize: '14px'
+            fontSize: '16px'
           }}>
             © {new Date().getFullYear()} KamperHub. All rights reserved.
           </div>
