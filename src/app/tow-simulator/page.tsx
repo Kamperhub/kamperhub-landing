@@ -161,7 +161,7 @@ export default function TowSimulatorPage() {
             marginBottom: '16px',
             lineHeight: '1.2',
           }}>
-            Tow Simulator: Check If Your Car Can Tow Your Caravan Safely
+            Tow Simulator — Can My Car Tow My Caravan Safely and Legally?
           </h1>
           <p style={{
             fontSize: '20px',
@@ -210,7 +210,7 @@ export default function TowSimulatorPage() {
             marginBottom: '16px',
             textAlign: 'center',
           }}>
-            What the Tow Simulator Shows You
+            What the Tow Simulator Checks (GVM, GCM, Payload and Towball Weight)
           </h2>
           <p style={{
             fontSize: '18px',
@@ -219,7 +219,7 @@ export default function TowSimulatorPage() {
             marginBottom: '48px',
             lineHeight: '1.6',
           }}>
-            A complete picture of your tow setup — not just the numbers, but what they mean for your safety on the road.
+            A towing capacity check goes beyond a single number. Here&apos;s everything the simulator analyses for your safety on the road.
           </p>
 
           {[
@@ -286,7 +286,7 @@ export default function TowSimulatorPage() {
             marginBottom: '48px',
             textAlign: 'center',
           }}>
-            Tow Simulator vs Basic Weight Calculator
+            Why Towing Capacity Alone Is Not Enough
           </h2>
 
           <div style={{
@@ -349,7 +349,7 @@ export default function TowSimulatorPage() {
             marginBottom: '48px',
             textAlign: 'center',
           }}>
-            When to Use the Tow Simulator
+            What Happens If Your Setup Fails the Simulation?
           </h2>
 
           <div style={{
@@ -441,7 +441,7 @@ export default function TowSimulatorPage() {
             color: colors.white,
             marginBottom: '16px',
           }}>
-            Know Your Load Before You Hit the Road
+            Run a Full Weight Check in KamperHub
           </h2>
           <p style={{
             fontSize: '18px',

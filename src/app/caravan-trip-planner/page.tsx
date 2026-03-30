@@ -106,7 +106,7 @@ export default function CaravanTripPlannerPage() {
       <section style={{ backgroundColor: colors.cream, padding: '80px 24px', textAlign: 'center' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <h1 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: '800', color: colors.darkEarth, marginBottom: '16px', lineHeight: '1.2' }}>
-            Plan Your Caravan Trip Across Australia
+            Caravan Trip Planner — Plan Safe Routes, Fuel Stops and Travel Days
           </h1>
           <p style={{ fontSize: '20px', color: colors.slate, marginBottom: '32px', lineHeight: '1.6' }}>
             Route planning, fuel stops, weather forecasts, free camping, packing lists and trip budgets — everything
@@ -128,7 +128,7 @@ export default function CaravanTripPlannerPage() {
       <section style={{ padding: '80px 24px', backgroundColor: colors.white }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '48px', textAlign: 'center' }}>
-            Everything You Need to Plan a Caravan Trip
+            Route Planning With Fuel Stops and Realistic Travel Times
           </h2>
 
           {[
@@ -191,7 +191,7 @@ export default function CaravanTripPlannerPage() {
       <section style={{ padding: '80px 24px', backgroundColor: colors.cream }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '16px', textAlign: 'center' }}>
-            Built for Caravans — Not Just Cars
+            Why Caravan Trips Need Different Planning to Car Trips
           </h2>
           <p style={{ fontSize: '18px', color: colors.slate, textAlign: 'center', marginBottom: '48px', lineHeight: '1.6' }}>
             Generic trip planners don&apos;t account for towing. KamperHub does. Here&apos;s what makes caravan trip planning different.
@@ -236,7 +236,7 @@ export default function CaravanTripPlannerPage() {
       <section style={{ padding: '80px 24px', backgroundColor: colors.cream }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '48px', textAlign: 'center' }}>
-            How Trip Planning Works
+            Avoid Long or Unsafe Days When Towing
           </h2>
 
           {[
@@ -325,7 +325,7 @@ export default function CaravanTripPlannerPage() {
       <section style={{ padding: '80px 24px', backgroundColor: colors.primary, textAlign: 'center' }}>
         <div style={{ maxWidth: '700px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.white, marginBottom: '16px' }}>
-            Plan Your Next Adventure
+            Plan Your Next Caravan Trip With KamperHub
           </h2>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.85)', marginBottom: '32px', lineHeight: '1.6' }}>
             Route planning, fuel stops, free camping, weather, packing lists and budgets — all in one app.

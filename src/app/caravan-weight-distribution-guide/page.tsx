@@ -150,7 +150,7 @@ export default function CaravanWeightDistributionGuidePage() {
       <section style={{ backgroundColor: colors.cream, padding: '80px 24px', textAlign: 'center' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <h1 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: '800', color: colors.darkEarth, marginBottom: '16px', lineHeight: '1.2' }}>
-            Caravan Weight Distribution Guide
+            Caravan Weight Distribution Guide — How to Load Your Van for Safe Towing
           </h1>
           <p style={{ fontSize: '20px', color: colors.slate, marginBottom: '32px', lineHeight: '1.6' }}>
             How you load your caravan matters more than how much you load it. Poor weight distribution is the leading
@@ -164,7 +164,7 @@ export default function CaravanWeightDistributionGuidePage() {
       <section style={{ padding: '80px 24px', backgroundColor: colors.white }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '16px', textAlign: 'center' }}>
-            Why Weight Distribution Matters
+            How Weight Distribution Affects Towing Stability and Control
           </h2>
           <p style={{ fontSize: '18px', color: colors.slate, textAlign: 'center', marginBottom: '48px', lineHeight: '1.6' }}>
             Two caravans can weigh exactly the same but behave completely differently on the road. The difference is where the weight sits.
@@ -207,7 +207,7 @@ export default function CaravanWeightDistributionGuidePage() {
       <section style={{ padding: '80px 24px', backgroundColor: colors.cream }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '16px', textAlign: 'center' }}>
-            The Three Loading Zones
+            Where to Load Heavy Items in a Caravan
           </h2>
           <p style={{ fontSize: '18px', color: colors.slate, textAlign: 'center', marginBottom: '48px', lineHeight: '1.6' }}>
             Think of your caravan as three zones: front, middle (over the axle), and rear. Each zone has a role in keeping your setup balanced and safe.
@@ -336,7 +336,7 @@ export default function CaravanWeightDistributionGuidePage() {
       <section style={{ padding: '80px 24px', backgroundColor: colors.white }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '48px', textAlign: 'center' }}>
-            How to Load Your Caravan — Step by Step
+            How to Load Your Caravan for Safe Towing — Step by Step
           </h2>
 
           {[
@@ -366,7 +366,7 @@ export default function CaravanWeightDistributionGuidePage() {
       <section style={{ padding: '80px 24px', backgroundColor: colors.cream }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '48px', textAlign: 'center' }}>
-            Common Loading Mistakes
+            Common Weight Distribution Mistakes That Cause Sway
           </h2>
 
           {[
@@ -513,7 +513,7 @@ export default function CaravanWeightDistributionGuidePage() {
       <section style={{ padding: '80px 24px', backgroundColor: colors.primary, textAlign: 'center' }}>
         <div style={{ maxWidth: '700px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.white, marginBottom: '16px' }}>
-            Track Your Caravan Weight Distribution Digitally
+            Check Your Weight Distribution With a Towing Calculator
           </h2>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.85)', marginBottom: '32px', lineHeight: '1.6' }}>
             KamperHub&apos;s tow simulator lets you place cargo in loading zones and see the effect on towball weight,

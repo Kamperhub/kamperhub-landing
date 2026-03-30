@@ -90,7 +90,7 @@ export default function CaravanOverweightFinesPage() {
       <section style={{ backgroundColor: '#fef2f2', padding: '80px 24px', textAlign: 'center' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <h1 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: '800', color: colors.darkEarth, marginBottom: '16px', lineHeight: '1.2' }}>
-            Caravan Overweight Fines in Australia
+            Caravan Overweight Fines in Australia — Penalties, Demerit Points and Risks
           </h1>
           <p style={{ fontSize: '20px', color: colors.slate, marginBottom: '32px', lineHeight: '1.6' }}>
             Overloading your caravan or tow vehicle can result in on-the-spot fines, defect notices, loss of licence points,
@@ -109,7 +109,7 @@ export default function CaravanOverweightFinesPage() {
       <section style={{ padding: '80px 24px', backgroundColor: colors.white }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '16px', textAlign: 'center' }}>
-            Overweight Fines by State &amp; Territory
+            Caravan Overweight Fines by State
           </h2>
           <p style={{ fontSize: '18px', color: colors.slate, textAlign: 'center', marginBottom: '16px', lineHeight: '1.6' }}>
             Each Australian state and territory has its own penalties for overloaded vehicles and trailers.
@@ -158,7 +158,7 @@ export default function CaravanOverweightFinesPage() {
       <section style={{ padding: '80px 24px', backgroundColor: colors.cream }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '48px', textAlign: 'center' }}>
-            What Happens at a Roadside Inspection
+            How Police Check Caravan Weights
           </h2>
 
           {[
@@ -186,7 +186,7 @@ export default function CaravanOverweightFinesPage() {
       <section style={{ padding: '80px 24px', backgroundColor: colors.white }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '16px', textAlign: 'center' }}>
-            The Insurance Risk Most People Don&apos;t Know About
+            Can Towing Overweight Void Your Insurance?
           </h2>
           <p style={{ fontSize: '18px', color: colors.slate, textAlign: 'center', marginBottom: '48px', lineHeight: '1.6' }}>
             Fines are painful. Voided insurance is catastrophic.
@@ -223,7 +223,7 @@ export default function CaravanOverweightFinesPage() {
       <section style={{ padding: '80px 24px', backgroundColor: colors.cream }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '48px', textAlign: 'center' }}>
-            How to Avoid Overweight Fines
+            Why Most Caravans Are Overweight Without Realising
           </h2>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px' }}>
