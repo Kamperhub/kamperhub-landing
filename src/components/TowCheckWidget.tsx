@@ -57,6 +57,8 @@ export default function TowCheckWidget({ region = 'au' }: { region?: 'au' | 'us'
   const isUS = region === 'us';
   const trailerLabel = isUS ? 'Trailer' : 'Caravan';
   const vehicleLabel = isUS ? 'Truck' : 'Vehicle';
+  const vehicleSectionLabel = isUS ? 'Your Truck or SUV' : 'Your Vehicle';
+  const trailerSectionLabel = isUS ? 'RV or Trailer You\'re Considering' : 'Your Caravan';
 
   useEffect(() => {
     Promise.all([
@@ -126,14 +128,10 @@ export default function TowCheckWidget({ region = 'au' }: { region?: 'au' | 'us'
       borderRadius: '16px',
       boxShadow: '0 4px 24px rgba(0,0,0,0.1)',
     }}>
-      <h3 style={{ fontSize: '20px', fontWeight: '700', color: colors.darkEarth, marginBottom: '24px', marginTop: 0, textAlign: 'center' }}>
-        Quick Tow Compatibility Check
-      </h3>
-
       {/* Vehicle selection */}
       <div style={{ marginBottom: '16px' }}>
-        <label style={{ display: 'block', fontSize: '14px', fontWeight: '600', color: colors.slate, marginBottom: '6px' }}>
-          {vehicleLabel} Make
+        <label style={{ display: 'block', fontSize: '15px', fontWeight: '700', color: colors.darkEarth, marginBottom: '6px' }}>
+          {vehicleSectionLabel}
         </label>
         <select
           style={selectStyle}
@@ -161,10 +159,10 @@ export default function TowCheckWidget({ region = 'au' }: { region?: 'au' | 'us'
         </div>
       )}
 
-      {/* Caravan selection */}
+      {/* Caravan/Trailer selection */}
       <div style={{ marginBottom: '16px' }}>
-        <label style={{ display: 'block', fontSize: '14px', fontWeight: '600', color: colors.slate, marginBottom: '6px' }}>
-          {trailerLabel} Brand
+        <label style={{ display: 'block', fontSize: '15px', fontWeight: '700', color: colors.darkEarth, marginBottom: '6px' }}>
+          {trailerSectionLabel}
         </label>
         <select
           style={selectStyle}

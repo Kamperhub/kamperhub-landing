@@ -389,6 +389,20 @@ export default function CaravanWeightDistributionGuidePage() {
       {/* Axle weights */}
       <section style={{ padding: '80px 24px', backgroundColor: colors.white }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+          {/* Sway under ATM — long-tail snippet target */}
+          <div style={{ marginBottom: '48px', padding: '24px', backgroundColor: '#fef2f2', borderRadius: '12px', borderLeft: '4px solid #ef4444' }}>
+            <h3 style={{ fontSize: '20px', fontWeight: '700', color: colors.darkEarth, marginBottom: '12px', marginTop: 0 }}>
+              Can Weight Distribution Cause Caravan Sway Even Under ATM?
+            </h3>
+            <p style={{ fontSize: '16px', color: colors.slate, lineHeight: '1.7', margin: 0 }}>
+              Yes. A caravan can be well under its ATM and still experience dangerous sway if weight is loaded too far
+              behind the axle. Sway is caused by insufficient towball download, not just excess total weight. Even a lightly
+              loaded caravan with gear stacked in the rear can become unstable at highway speeds. This is why weight
+              distribution matters as much as total weight — and why checking towball percentage is essential
+              even when you&apos;re under all published limits.
+            </p>
+          </div>
+
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '16px', textAlign: 'center' }}>
             Understanding Axle Weights
           </h2>

@@ -199,7 +199,7 @@ export default function TowSimulatorPage() {
             lineHeight: '1.5',
             fontStyle: 'italic',
           }}>
-            Built for trailer owners who want to know if their setup is safe and legal — not for entertainment.
+            This is not a driving simulator and does not rely on advertised tow ratings alone. Built for trailer owners who want to know if their setup is safe and legal — not for entertainment.
           </p>
           <a href={`${APP_URL}/signup?redirect=/tow-simulator`} style={{
             display: 'inline-block',

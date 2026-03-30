@@ -372,7 +372,8 @@ export default function RvTripPlannerPage() {
             Plan the Trip. Check the Weight. Hit the Road.
           </h2>
           <p style={{ fontSize: '18px', color: colors.slate, textAlign: 'center', marginBottom: '48px', lineHeight: '1.6' }}>
-            Trip planning is step one. Make sure your setup is safe and legal before you leave.
+            Trip planning works best after you&apos;ve verified your towing setup is safe and legal.
+            Check your weights first, then plan your route with confidence.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px' }}>
             <Link href="/us/towing-weight-calculator" style={{ textDecoration: 'none' }}>
