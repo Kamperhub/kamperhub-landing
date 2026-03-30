@@ -6,7 +6,7 @@ const APP_URL = 'https://app.kamperhub.com';
 
 export const metadata: Metadata = {
   title: 'Tow Simulator: Check If Your Car Can Tow Your Caravan Safely | Weight Distribution & Compliance — KamperHub',
-  description: 'Not a game — a towing compliance simulator. Check if your car can safely tow your caravan with KamperHub\'s weight distribution simulator. See towball load, sway risk, cargo zones, and GCM compliance for your actual vehicle and caravan combination.',
+  description: 'Not a game — a towing compliance simulator. Check towball load, sway risk, cargo zones and GCM compliance for your vehicle and caravan.',
   keywords: 'tow capacity calculator, can my car tow my caravan, caravan towing compliance check, caravan weight distribution simulator, towing setup check, towball weight calculator, caravan sway risk checker',
   openGraph: {
     title: 'Tow Simulator: Check If Your Car Can Tow Your Caravan Safely — KamperHub',
@@ -200,6 +200,9 @@ export default function TowSimulatorPage() {
             fontStyle: 'italic',
           }}>
             This is not a driving simulator and does not rely on advertised tow ratings alone. Built for caravan owners who want to know if their setup is safe and legal — not for entertainment.
+          </p>
+          <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '32px' }}>
+            Last updated: March 2026 · Reviewed by the KamperHub towing compliance team
           </p>
           <a href={`${APP_URL}/signup?redirect=/tow-simulator`} style={{
             display: 'inline-block',

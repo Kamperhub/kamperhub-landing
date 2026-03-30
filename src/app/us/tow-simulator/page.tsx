@@ -6,7 +6,7 @@ const APP_URL = 'https://app.kamperhub.com';
 
 export const metadata: Metadata = {
   title: 'Tow Simulator: Check If Your Truck Can Tow Your Trailer Safely | Weight Distribution & Compliance — KamperHub',
-  description: 'Not a game — a towing compliance simulator. Check if your truck can safely tow your trailer with KamperHub\'s weight distribution simulator. See tongue weight, sway risk, cargo zones, and GCWR compliance for your actual truck and trailer combination.',
+  description: 'Not a game — a towing compliance simulator. Check tongue weight, sway risk, cargo zones and GCWR compliance for your truck and trailer.',
   keywords: 'tow capacity calculator, can my truck tow my trailer, towing compliance check, trailer weight distribution simulator, towing setup check, tongue weight calculator, trailer sway risk checker',
   openGraph: {
     title: 'Tow Simulator: Check If Your Truck Can Tow Your Trailer Safely — KamperHub',
@@ -182,6 +182,9 @@ export default function TowSimulatorPage() {
           }}>
             Tow Simulator — Check If Your Truck Can Safely Tow Your RV or Trailer
           </h1>
+          <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '32px' }}>
+            Last updated: March 2026 · Reviewed by the KamperHub towing compliance team
+          </p>
           <p style={{
             fontSize: '20px',
             color: colors.slate,

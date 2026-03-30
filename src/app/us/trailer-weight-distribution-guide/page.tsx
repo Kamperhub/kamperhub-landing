@@ -6,7 +6,7 @@ const APP_URL = 'https://app.kamperhub.com';
 
 export const metadata: Metadata = {
   title: 'Trailer Weight Distribution Guide | How to Load a Travel Trailer Safely — KamperHub',
-  description: 'Learn how to distribute weight in your travel trailer for safe, stable towing. Covers loading zones, heavy item placement, tongue weight, sway prevention, and common mistakes American RV owners make.',
+  description: 'How to distribute weight in your travel trailer for safe towing. Loading zones, tongue weight, sway prevention and common mistakes.',
   keywords: 'trailer weight distribution guide, how to load a travel trailer safely, trailer loading zones, heavy items trailer placement, trailer sway prevention, trailer axle weight, tongue weight percentage',
   openGraph: {
     title: 'Trailer Weight Distribution Guide — KamperHub',
@@ -145,6 +145,9 @@ export default function TrailerWeightDistributionGuidePage() {
           <h1 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: '800', color: colors.darkEarth, marginBottom: '16px', lineHeight: '1.2' }}>
             RV Weight Distribution Guide — How to Load Your Trailer for Safe Towing
           </h1>
+          <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '32px' }}>
+            Last updated: March 2026 · Reviewed by the KamperHub towing compliance team
+          </p>
           <p style={{ fontSize: '20px', color: colors.slate, marginBottom: '32px', lineHeight: '1.6' }}>
             How you load your travel trailer matters more than how much you load it. Poor weight distribution is the leading
             cause of trailer sway — and it&apos;s entirely preventable. This guide shows you exactly where to put your

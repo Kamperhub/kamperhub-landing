@@ -316,6 +316,24 @@ export default function LandingPage() {
 
   return (
     <div style={{ minHeight: '100vh', backgroundColor: colors.white }}>
+      {/* FAQPage Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqs.map(faq => ({
+              '@type': 'Question',
+              name: faq.q,
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.a
+              }
+            }))
+          })
+        }}
+      />
       {/* Navigation */}
       <nav style={{
         position: 'fixed',
@@ -979,6 +997,9 @@ export default function LandingPage() {
               </div>
             ))}
           </div>
+          <p style={{ fontSize: '14px', color: '#6b7280', textAlign: 'center', marginTop: '16px' }}>
+            Last updated: March 2026
+          </p>
         </div>
       </section>
 

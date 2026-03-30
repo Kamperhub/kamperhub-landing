@@ -6,7 +6,7 @@ const APP_URL = 'https://app.kamperhub.com';
 
 export const metadata: Metadata = {
   title: 'Caravan Overweight Fines Australia | State-by-State Penalties & How to Avoid Them — KamperHub',
-  description: 'Australian caravan overweight fines by state — QLD, NSW, VIC, SA, WA, TAS, NT, ACT. Learn the penalties for overloaded caravans, what happens at a roadside inspection, and how to avoid fines and voided insurance.',
+  description: 'Caravan overweight fines by Australian state — QLD, NSW, VIC, SA, WA, TAS. Penalties, roadside inspections and how to avoid them.',
   keywords: 'caravan overweight fine australia, overloaded caravan penalty, caravan weight fine QLD, defect notice caravan, caravan roadside inspection, overweight caravan insurance',
   openGraph: {
     title: 'Caravan Overweight Fines Australia — KamperHub',
@@ -87,6 +87,30 @@ const faqJsonLd = {
         text: 'Police use mobile scales and roadside weighing stations to check caravan and vehicle weights, including axle loads and towball download.',
       },
     },
+    {
+      '@type': 'Question',
+      name: 'Can I get fined for an overloaded tow vehicle even if my caravan is within limits?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Your tow vehicle has its own GVM limit, and towball download from your caravan counts toward it. Police check the vehicle and caravan independently.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How can I check if my caravan is overweight before a trip?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Visit a public weighbridge or use a free weight compliance calculator that checks GVM, ATM, GCM, towing capacity, and towball percentage based on your vehicle and caravan specs.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Are caravan weight inspections common in Australia?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Inspections are becoming more frequent, particularly during school holidays and on major touring routes. Queensland, New South Wales, and Victoria have all increased enforcement in recent years.',
+      },
+    },
   ],
 };
 
@@ -114,10 +138,13 @@ export default function CaravanOverweightFinesPage() {
           <h1 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: '800', color: colors.darkEarth, marginBottom: '16px', lineHeight: '1.2' }}>
             Caravan Overweight Fines in Australia — Penalties, Demerit Points and Risks
           </h1>
-          <p style={{ fontSize: '20px', color: colors.slate, marginBottom: '32px', lineHeight: '1.6' }}>
+          <p style={{ fontSize: '20px', color: colors.slate, marginBottom: '16px', lineHeight: '1.6' }}>
             Yes, it is illegal to tow an overweight caravan in Australia. If your vehicle or caravan exceeds GVM, ATM, GCM,
             or axle limits, you can be fined, lose demerit points, and be ordered off the road. Even small overloads can
             result in penalties during roadside weight checks.
+          </p>
+          <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '32px' }}>
+            Last updated: March 2026 · Reviewed by the KamperHub towing compliance team
           </p>
           <a href={`${APP_URL}/signup?redirect=/weights`} style={{
             display: 'inline-block', padding: '16px 40px', backgroundColor: colors.primary, color: colors.white,

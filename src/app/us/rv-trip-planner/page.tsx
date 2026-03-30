@@ -6,7 +6,7 @@ const APP_URL = 'https://app.kamperhub.com';
 
 export const metadata: Metadata = {
   title: 'RV Trip Planner USA | Route Planning, Fuel Stops & Boondocking — KamperHub',
-  description: 'Plan your RV trip across the USA with KamperHub. Smart route planning with fuel stops, weather forecasts, boondocking finder, fatigue management, packing lists, and trip budgets — all in one app.',
+  description: 'Plan your RV trip across the USA. Route planning with fuel stops, weather, boondocking, fatigue management and trip budgets.',
   keywords: 'rv trip planner usa, road trip planner rv, camping trip planner, rv route planner, rv fuel planner, boondocking finder usa, free camping finder usa, travel trailer trip planner',
   openGraph: {
     title: 'RV Trip Planner USA — KamperHub',
@@ -130,6 +130,9 @@ export default function RvTripPlannerPage() {
           <h1 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: '800', color: colors.darkEarth, marginBottom: '16px', lineHeight: '1.2' }}>
             RV Trip Planner — Plan Routes, Fuel Stops, and Safe Travel Days
           </h1>
+          <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '32px' }}>
+            Last updated: March 2026 · Reviewed by the KamperHub towing compliance team
+          </p>
           <p style={{ fontSize: '20px', color: colors.slate, marginBottom: '32px', lineHeight: '1.6' }}>
             Planning RV trips around towing limits helps prevent fatigue, overheating, and fuel issues.
             Towing increases fuel consumption and reduces comfortable daily driving distances. A towing-aware trip plan

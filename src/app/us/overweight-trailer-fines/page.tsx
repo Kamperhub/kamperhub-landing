@@ -6,7 +6,7 @@ const APP_URL = 'https://app.kamperhub.com';
 
 export const metadata: Metadata = {
   title: 'Overweight Trailer Fines USA | State-by-State Penalties & How to Avoid Them — KamperHub',
-  description: 'Overweight trailer and RV fines by US state — California, Texas, Florida, Arizona, Colorado, Oregon, Montana, Utah, Michigan, New York. Learn the penalties for exceeding GVWR, what happens at a DOT weigh station, and how to avoid fines and voided insurance.',
+  description: 'Overweight trailer and RV fines by US state. DOT weigh station process, penalties for exceeding GVWR, and how to avoid fines.',
   keywords: 'overweight trailer fine USA, overloaded trailer penalty, GVWR fine, DOT weigh station, overweight RV penalty, trailer weight fine California, trailer weight fine Texas, FMCSA overweight',
   openGraph: {
     title: 'Overweight Trailer Fines USA — KamperHub',
@@ -87,6 +87,30 @@ const faqJsonLd = {
         text: 'Yes. If you are towing an overweight RV, insurance companies may deny coverage after an accident, even if the excess weight was not the direct cause of the crash.',
       },
     },
+    {
+      '@type': 'Question',
+      name: 'What happens at a DOT weigh station for RVs?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'At a DOT weigh station, officers weigh your truck and trailer on platform scales and check GVWR, GCWR, and axle weights against manufacturer ratings. If any limit is exceeded, you may be placed out of service until the load is reduced and fined via citation.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do RVs and travel trailers have to stop at weigh stations?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Requirements vary by state. Most personal-use RVs and travel trailers are not required to stop, but larger RVs over 10,000 lbs GVWR or 26,001 lbs GCWR may be subject to FMCSA regulations. Law enforcement can pull over and weigh any vehicle suspected of being overloaded.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How can I check if my trailer is overweight before a trip?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Visit a public truck scale or CAT Scale location for the most accurate measurement. You can also use a free towing weight calculator to check GVWR, GCWR, towing capacity, and tongue weight based on your truck and trailer specs plus cargo.',
+      },
+    },
   ],
 };
 
@@ -114,6 +138,9 @@ export default function OverweightTrailerFinesPage() {
           <h1 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: '800', color: colors.darkEarth, marginBottom: '16px', lineHeight: '1.2' }}>
             RV and Trailer Weight Laws in the United States — What You Need to Know
           </h1>
+          <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '32px' }}>
+            Last updated: March 2026 · Reviewed by the KamperHub towing compliance team
+          </p>
           <p style={{ fontSize: '20px', color: colors.slate, marginBottom: '32px', lineHeight: '1.6' }}>
             Yes, towing an overweight RV or trailer can be illegal in the United States. While enforcement varies
             by state, exceeding manufacturer weight ratings or axle limits can result in citations, forced off-loading,

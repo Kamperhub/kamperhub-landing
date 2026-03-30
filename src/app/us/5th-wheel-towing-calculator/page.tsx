@@ -7,7 +7,7 @@ const APP_URL = 'https://app.kamperhub.com';
 
 export const metadata: Metadata = {
   title: '5th Wheel Towing Calculator | Can My Truck Tow a 5th Wheel? Check Pin Weight & Payload — KamperHub',
-  description: 'Free 5th wheel towing calculator. Check if your truck can tow a 5th wheel by verifying pin weight, payload capacity, GVWR, GCWR, and rear axle load. Pin weight is the #1 limiting factor most buyers miss.',
+  description: 'Free 5th wheel towing calculator. Check pin weight, payload, GVWR and GCWR to see if your truck can safely tow a 5th wheel.',
   keywords: '5th wheel towing calculator, can my truck tow a 5th wheel, pin weight calculator, 5th wheel payload check, GVWR calculator 5th wheel, 5th wheel weight limits, pin weight vs tongue weight',
   openGraph: {
     title: '5th Wheel Towing Calculator — KamperHub',
@@ -100,6 +100,9 @@ export default function FifthWheelTowingCalculatorPage() {
           <h1 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: '800', color: colors.darkEarth, marginBottom: '16px', lineHeight: '1.2' }}>
             Can My Truck Tow a 5th Wheel? Check Payload and Pin Weight First
           </h1>
+          <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '32px' }}>
+            Last updated: March 2026 · Reviewed by the KamperHub towing compliance team
+          </p>
           <p style={{ fontSize: '20px', color: colors.slate, marginBottom: '32px', lineHeight: '1.6' }}>
             Towing a 5th wheel is different because a much larger portion of the trailer&apos;s weight is carried directly
             by the truck. Instead of a 10–15% tongue weight like a travel trailer, a 5th wheel typically places 15–25%

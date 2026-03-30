@@ -215,11 +215,14 @@ export default function CaravanTowingWeightCalculatorPage() {
           <p style={{
             fontSize: '20px',
             color: colors.slate,
-            marginBottom: '32px',
+            marginBottom: '16px',
             lineHeight: '1.6',
           }}>
             Enter your vehicle and caravan weights below to check GVM, ATM, GCM,
             towing capacity and towball weight against Australian legal limits — for free, in under two minutes.
+          </p>
+          <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '32px' }}>
+            Last updated: March 2026 · Reviewed by the KamperHub towing compliance team
           </p>
           {/* Embedded tow check widget — prominent placement */}
           <div style={{

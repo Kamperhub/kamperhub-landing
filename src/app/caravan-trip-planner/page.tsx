@@ -6,7 +6,7 @@ const APP_URL = 'https://app.kamperhub.com';
 
 export const metadata: Metadata = {
   title: 'Caravan Trip Planner Australia | Route Planning, Fuel Stops & Free Camping — KamperHub',
-  description: 'Plan your caravan trip across Australia with KamperHub. Smart route planning with fuel stops, weather forecasts, free camping finder, fatigue management, packing lists, and trip budgets — all in one app.',
+  description: 'Plan your caravan trip across Australia. Route planning with fuel stops, weather, free camping, fatigue management and trip budgets.',
   keywords: 'caravan trip planner australia, road trip planner caravan, camping trip planner, caravan route planner, caravan fuel planner, free camping finder australia',
   openGraph: {
     title: 'Caravan Trip Planner Australia — KamperHub',
@@ -130,11 +130,14 @@ export default function CaravanTripPlannerPage() {
           <h1 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: '800', color: colors.darkEarth, marginBottom: '16px', lineHeight: '1.2' }}>
             Caravan Trip Planner — Plan Safe Routes, Fuel Stops and Travel Days
           </h1>
-          <p style={{ fontSize: '20px', color: colors.slate, marginBottom: '32px', lineHeight: '1.6' }}>
+          <p style={{ fontSize: '20px', color: colors.slate, marginBottom: '16px', lineHeight: '1.6' }}>
             Planning a caravan trip around towing limits helps prevent fatigue, breakdowns, and safety risks.
             Towing increases fuel use, braking distance, and travel time, which means routes and daily distances need
             to be shorter than normal car trips. KamperHub accounts for these towing constraints — fuel stops, weather,
             free camping, packing lists and budgets, all in one app.
+          </p>
+          <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '32px' }}>
+            Last updated: March 2026 · Reviewed by the KamperHub towing compliance team
           </p>
           <a href={`${APP_URL}/signup?redirect=/route-planner`} style={{
             display: 'inline-block', padding: '16px 40px', backgroundColor: colors.primary, color: colors.white,

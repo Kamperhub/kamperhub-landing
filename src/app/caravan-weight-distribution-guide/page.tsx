@@ -6,7 +6,7 @@ const APP_URL = 'https://app.kamperhub.com';
 
 export const metadata: Metadata = {
   title: 'Caravan Weight Distribution Guide | How to Load a Caravan Safely — KamperHub',
-  description: 'Learn how to distribute weight in your caravan for safe, stable towing. Covers loading zones, heavy item placement, towball weight, sway prevention, and common mistakes Australian caravan owners make.',
+  description: 'How to distribute weight in your caravan for safe towing. Covers loading zones, heavy item placement, towball weight and sway prevention.',
   keywords: 'caravan weight distribution guide, how to load a caravan safely, caravan loading zones, heavy items caravan placement, caravan sway prevention, caravan axle weight',
   openGraph: {
     title: 'Caravan Weight Distribution Guide — KamperHub',
@@ -145,10 +145,13 @@ export default function CaravanWeightDistributionGuidePage() {
           <h1 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: '800', color: colors.darkEarth, marginBottom: '16px', lineHeight: '1.2' }}>
             Caravan Weight Distribution Guide — How to Load Your Van for Safe Towing
           </h1>
-          <p style={{ fontSize: '20px', color: colors.slate, marginBottom: '32px', lineHeight: '1.6' }}>
+          <p style={{ fontSize: '20px', color: colors.slate, marginBottom: '16px', lineHeight: '1.6' }}>
             How you load your caravan matters more than how much you load it. Poor weight distribution is the leading
             cause of caravan sway — and it&apos;s entirely preventable. This guide shows you exactly where to put your
             gear for safe, stable towing.
+          </p>
+          <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '32px' }}>
+            Last updated: March 2026 · Reviewed by the KamperHub towing compliance team
           </p>
         </div>
       </section>

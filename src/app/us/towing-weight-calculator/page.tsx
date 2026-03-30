@@ -7,7 +7,7 @@ const APP_URL = 'https://app.kamperhub.com';
 
 export const metadata: Metadata = {
   title: 'Towing Weight Calculator | Free GVWR, GCWR & Tongue Weight Check — KamperHub',
-  description: 'Free towing weight calculator for RV and travel trailer owners. Check your GVWR, GCWR, towing capacity and tongue weight in minutes. Find out if your truck can safely tow your trailer.',
+  description: 'Free towing weight calculator for RV and trailer owners. Check GVWR, GCWR, towing capacity and tongue weight in minutes.',
   keywords: 'towing weight calculator, GVWR calculator, GCWR calculator, tongue weight calculator, towing capacity check, can my truck tow my trailer, trailer weight check, RV weight calculator',
   openGraph: {
     title: 'Towing Weight Calculator — KamperHub',
@@ -155,6 +155,9 @@ export default function USTowingWeightCalculatorPage() {
           <h1 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: '800', color: colors.darkEarth, marginBottom: '16px', lineHeight: '1.2' }}>
             RV Towing Weight Calculator — Can My Truck or SUV Tow This Trailer?
           </h1>
+          <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '32px' }}>
+            Last updated: March 2026 · Reviewed by the KamperHub towing compliance team
+          </p>
           <p style={{ fontSize: '20px', color: colors.slate, marginBottom: '32px', lineHeight: '1.6' }}>
             Check if your truck can safely tow your trailer — for free. Our calculator checks your GVWR, GCWR,
             towing capacity and tongue weight in under two minutes.
