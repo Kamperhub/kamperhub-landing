@@ -132,7 +132,7 @@ export default function TowSimulatorPage() {
             <Link href="/" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontSize: '20px', fontWeight: '500' }}>Home</Link>
             <Link href="/caravan-towing-weight-calculator" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontSize: '20px', fontWeight: '500' }}>Weight Calculator</Link>
             <a href={`${APP_URL}/blog`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontSize: '20px', fontWeight: '500' }}>Blog</a>
-            <a href={`${APP_URL}/signup`} style={{
+            <a href={`${APP_URL}/signup?redirect=/tow-simulator`} style={{
               padding: '10px 24px',
               backgroundColor: colors.accent,
               color: colors.white,
@@ -172,7 +172,7 @@ export default function TowSimulatorPage() {
             KamperHub&apos;s tow simulator models your complete vehicle and caravan combination — showing weight distribution,
             sway risk, towball load and compliance in one visual dashboard. Experiment with your loading before you pack a single item.
           </p>
-          <a href={`${APP_URL}/tow-simulator`} style={{
+          <a href={`${APP_URL}/signup?redirect=/tow-simulator`} style={{
             display: 'inline-block',
             padding: '16px 40px',
             backgroundColor: colors.primary,
@@ -442,7 +442,7 @@ export default function TowSimulatorPage() {
             The only tow simulator built specifically for Australian caravan owners. Simulate your setup, optimise your loading, and tow with confidence.
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href={`${APP_URL}/tow-simulator`} style={{
+            <a href={`${APP_URL}/signup?redirect=/tow-simulator`} style={{
               display: 'inline-block',
               padding: '16px 40px',
               backgroundColor: colors.accent,
@@ -454,7 +454,7 @@ export default function TowSimulatorPage() {
             }}>
               Open the Tow Simulator →
             </a>
-            <a href={`${APP_URL}/weights`} style={{
+            <a href={`${APP_URL}/signup?redirect=/weights`} style={{
               display: 'inline-block',
               padding: '16px 40px',
               backgroundColor: 'rgba(255,255,255,0.15)',

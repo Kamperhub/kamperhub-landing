@@ -140,7 +140,7 @@ export default function CaravanTowingWeightCalculatorPage() {
             <Link href="/" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontSize: '20px', fontWeight: '500' }}>Home</Link>
             <Link href="/tow-simulator" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontSize: '20px', fontWeight: '500' }}>Tow Simulator</Link>
             <a href={`${APP_URL}/blog`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontSize: '20px', fontWeight: '500' }}>Blog</a>
-            <a href={`${APP_URL}/signup`} style={{
+            <a href={`${APP_URL}/signup?redirect=/weights`} style={{
               padding: '10px 24px',
               backgroundColor: colors.accent,
               color: colors.white,
@@ -180,7 +180,7 @@ export default function CaravanTowingWeightCalculatorPage() {
             Check if your car can safely tow your caravan — for free. Our calculator checks your GVM, ATM, GCM,
             towing capacity and towball weight against Australian legal limits in under two minutes.
           </p>
-          <a href={`${APP_URL}/weights`} style={{
+          <a href={`${APP_URL}/signup?redirect=/weights`} style={{
             display: 'inline-block',
             padding: '16px 40px',
             backgroundColor: colors.primary,
@@ -347,7 +347,7 @@ export default function CaravanTowingWeightCalculatorPage() {
           ))}
 
           <div style={{ textAlign: 'center', marginTop: '40px' }}>
-            <a href={`${APP_URL}/weights`} style={{
+            <a href={`${APP_URL}/signup?redirect=/weights`} style={{
               display: 'inline-block',
               padding: '16px 40px',
               backgroundColor: colors.primary,
@@ -540,7 +540,7 @@ export default function CaravanTowingWeightCalculatorPage() {
           }}>
             The only app that checks what the inspectors actually check. Free to use, no credit card required.
           </p>
-          <a href={`${APP_URL}/signup`} style={{
+          <a href={`${APP_URL}/signup?redirect=/weights`} style={{
             display: 'inline-block',
             padding: '16px 48px',
             backgroundColor: colors.accent,
