@@ -63,6 +63,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="p:domain_verify" content="4d429f3d699c275f37e9fc85bdb0cabe" />
+        <meta name="google-site-verification" content="O7KkimQZCL5hV0vEDSWkGOM_qMybCfei2vPi2OYoh7w" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
