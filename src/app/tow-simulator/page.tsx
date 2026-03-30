@@ -72,17 +72,36 @@ const faqs = [
   },
 ];
 
+// Snippet-optimised FAQ schema — tightly phrased for featured snippets and PAA
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: faqs.map((faq) => ({
-    '@type': 'Question',
-    name: faq.question,
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: faq.answer,
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is a tow simulator?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A tow simulator checks whether your car can safely and legally tow a caravan by comparing real-world weights against manufacturer and legal limits. It is not a driving game or animation.',
+      },
     },
-  })),
+    {
+      '@type': 'Question',
+      name: 'Why does the tow simulator fail even when towing capacity is not exceeded?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Tow simulations often fail because payload, GVM, or towball weight limits are exceeded before towing capacity. These limits are commonly reached first in real-world towing setups.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What does the tow simulator check?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The tow simulator checks GVM, GCM, payload, towball weight, and towing capacity together to determine whether your towing setup is safe and compliant.',
+      },
+    },
+  ],
 };
 
 const softwareJsonLd = {

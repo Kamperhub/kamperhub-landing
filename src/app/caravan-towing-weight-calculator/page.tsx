@@ -93,17 +93,44 @@ const faqs = [
   },
 ];
 
+// Snippet-optimised FAQ schema — tightly phrased for featured snippets and PAA
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: faqs.map((faq) => ({
-    '@type': 'Question',
-    name: faq.question,
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: faq.answer,
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Can my car tow my caravan legally?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Your car can legally tow your caravan only if all weight limits are met, including GVM, ATM, GCM, payload, and towball weight. Being under towing capacity alone does not guarantee legal compliance.',
+      },
     },
-  })),
+    {
+      '@type': 'Question',
+      name: 'What weights do I need to use a caravan towing weight calculator?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "To use a caravan towing weight calculator accurately, you need your vehicle's GVM, GCM, kerb weight, and towing capacity, plus your caravan's ATM and towball weight. Real weighbridge measurements provide the most accurate results.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is a caravan towing calculator accurate?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A caravan towing calculator is accurate when you enter real, measured weights rather than brochure figures. Manufacturer specifications assume empty vehicles, while real setups include passengers, accessories, and cargo.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What happens if my caravan is overweight?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'If your caravan is overweight, you may be fined, lose demerit points, have your insurance voided, or be ordered off the road. Overweight setups also reduce braking performance and towing stability.',
+      },
+    },
+  ],
 };
 
 const softwareJsonLd = {

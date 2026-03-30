@@ -58,14 +58,36 @@ const faqs = [
   },
 ];
 
+// Snippet-optimised FAQ schema — tightly phrased for featured snippets and PAA
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: faqs.map((faq) => ({
-    '@type': 'Question',
-    name: faq.question,
-    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
-  })),
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Why does caravan trip planning differ from car trip planning?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Caravan trip planning differs because towing increases fuel consumption, braking distance, and travel time. Routes and daily distances must be shorter and safer.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can a caravan trip planner help avoid unsafe driving days?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. A caravan-specific trip planner helps space fuel stops, limit long driving days, and account for towing constraints.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Should I check weights before planning a caravan trip?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Checking weights before planning ensures your caravan setup is legal and prevents route or fuel planning issues caused by overweight or unsafe configurations.',
+      },
+    },
+  ],
 };
 
 const softwareJsonLd = {

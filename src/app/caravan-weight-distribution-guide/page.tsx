@@ -82,40 +82,33 @@ const howToJsonLd = {
   ],
 };
 
+// Snippet-optimised FAQ schema — tightly phrased for featured snippets and PAA
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Where should heavy items go in a caravan?',
+      name: 'What is caravan weight distribution?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Heavy items should be placed as low as possible and centred over or just forward of the axle. This keeps the centre of gravity low, maintains safe towball download, and minimises sway risk. Never place heavy items in the rear overhang area behind the axle.',
+        text: 'Caravan weight distribution refers to how weight is spread across the caravan and tow vehicle. Proper distribution improves stability, braking, and steering while reducing sway.',
       },
     },
     {
       '@type': 'Question',
-      name: 'What causes caravan sway?',
+      name: 'Can poor weight distribution make my caravan illegal?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Caravan sway is primarily caused by insufficient towball download — usually because too much weight is loaded behind the axle. Other contributing factors include excessive speed, crosswinds, passing trucks, and uneven side-to-side loading. Maintaining 8–14% towball download is the most effective prevention.',
+        text: 'Yes. Poor weight distribution can overload axles or towball limits, causing your setup to exceed GVM or axle ratings even if total caravan weight appears legal.',
       },
     },
     {
       '@type': 'Question',
-      name: 'How much should my towball weight be?',
+      name: 'Where should heavy items be loaded in a caravan?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'In Australia, your towball download should be between 8% and 14% of your caravan\'s total loaded weight. For example, if your caravan weighs 2,000 kg loaded, the towball download should be between 160 kg and 280 kg. Below 8% significantly increases sway risk.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What is the difference between load-sharing and non-load-sharing suspension?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Load-sharing (independent) suspension distributes weight more evenly across multiple axles, allowing each wheel to respond to bumps independently. Non-load-sharing (beam axle) suspension connects the wheels rigidly, so a bump on one side affects the other. Load-sharing is generally better for weight distribution and ride quality, especially on unsealed roads.',
+        text: "Heavy items should be loaded low and close to the caravan's axles. Loading weight too far forward or rearward increases sway risk and towball load.",
       },
     },
   ],

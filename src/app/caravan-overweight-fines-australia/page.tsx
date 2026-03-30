@@ -58,14 +58,36 @@ const faqs = [
   },
 ];
 
+// Snippet-optimised FAQ schema — tightly phrased for featured snippets and PAA
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: faqs.map((faq) => ({
-    '@type': 'Question',
-    name: faq.question,
-    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
-  })),
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Is it illegal to tow an overweight caravan in Australia?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Towing an overweight caravan is illegal in Australia and can result in fines, demerit points, and being ordered off the road.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can towing overweight void my insurance?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. If you are towing an overweight caravan, insurers may refuse to pay out a claim even if weight was not the direct cause of an accident.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do police check caravan weights?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Police use mobile scales and roadside weighing stations to check caravan and vehicle weights, including axle loads and towball download.',
+      },
+    },
+  ],
 };
 
 export default function CaravanOverweightFinesPage() {
