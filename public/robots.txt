@@ -1,0 +1,5 @@
+# KamperHub Landing Page
+User-agent: *
+Allow: /
+
+Sitemap: https://kamperhub.com/sitemap.xml

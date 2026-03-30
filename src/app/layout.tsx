@@ -36,6 +36,24 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'KamperHub',
+  url: 'https://kamperhub.com',
+  logo: 'https://kamperhub.com/logo.png',
+  description: 'The all-in-one app for Australian caravan and RV travellers. Plan trips, manage vehicles, track weights, and tow safely.',
+  sameAs: [
+    'https://www.facebook.com/profile.php?id=61577280351290',
+    'https://www.instagram.com/kamperhub',
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'info@kamperhub.com',
+    contactType: 'customer support',
+  },
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -45,6 +63,10 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="p:domain_verify" content="4d429f3d699c275f37e9fc85bdb0cabe" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
       </head>
       <body>
         {children}
