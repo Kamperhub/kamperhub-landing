@@ -82,40 +82,33 @@ const howToJsonLd = {
   ],
 };
 
+// Snippet-optimised FAQ schema for US market
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Where should heavy items go in a travel trailer?',
+      name: 'What is weight distribution when towing an RV?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Heavy items should be placed as low as possible and centered over or just forward of the axle. This keeps the center of gravity low, maintains safe tongue weight, and minimizes sway risk. Never place heavy items in the rear overhang area behind the axle.',
+        text: 'Weight distribution refers to how cargo and tongue weight are balanced between the tow vehicle and the trailer. Proper distribution improves stability, braking, and steering while reducing sway and axle overload.',
       },
     },
     {
       '@type': 'Question',
-      name: 'What causes trailer sway?',
+      name: 'Can poor weight distribution make my towing setup illegal?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Trailer sway is primarily caused by insufficient tongue weight — usually because too much weight is loaded behind the axle. Other contributing factors include excessive speed, crosswinds, passing semi-trucks, and uneven side-to-side loading. Maintaining 10–15% tongue weight is the most effective prevention.',
+        text: "Yes. Poor weight distribution can overload axles or exceed GVWR or payload limits even when the trailer's total weight is below its GVWR, making the setup unsafe or non-compliant.",
       },
     },
     {
       '@type': 'Question',
-      name: 'How much should my tongue weight be?',
+      name: 'Where should heavy items be loaded in an RV or trailer?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'In the United States, your tongue weight should be between 10% and 15% of your trailer\'s total loaded weight. For example, if your trailer weighs 5,000 lbs loaded, the tongue weight should be between 500 lbs and 750 lbs. Below 10% significantly increases sway risk.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What is the difference between load-equalizing and standard suspension?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Load-equalizing (independent) suspension distributes weight more evenly across multiple axles, allowing each wheel to respond to bumps independently. Standard (beam axle) suspension connects the wheels rigidly, so a bump on one side affects the other. Load-equalizing is generally better for weight distribution and ride quality, especially on unpaved roads.',
+        text: 'Heavy items should be loaded low and close to the trailer axles. Loading weight too far forward increases tongue weight, while loading weight too far rearward increases sway risk.',
       },
     },
   ],

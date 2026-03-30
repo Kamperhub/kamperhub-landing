@@ -72,17 +72,36 @@ const faqs = [
   },
 ];
 
+// Snippet-optimised FAQ schema for US market
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: faqs.map((faq) => ({
-    '@type': 'Question',
-    name: faq.question,
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: faq.answer,
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is a tow simulator?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A tow simulator evaluates whether your truck or SUV can safely tow a specific RV or trailer by checking GVWR, GCWR, payload, axle limits, and tongue weight together. It is a compliance and safety tool, not a driving simulation.',
+      },
     },
-  })),
+    {
+      '@type': 'Question',
+      name: 'Why does my setup fail even though it is under the tow rating?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Many US towing setups fail because payload capacity or GVWR is exceeded before the maximum tow rating is reached. Tongue weight, passengers, and cargo all count against payload and often become the limiting factor.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What does a tow simulator check in the United States?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A US tow simulator checks manufacturer ratings including GVWR, GCWR, payload capacity, axle ratings, and tongue weight to determine whether a towing setup is safe and compliant under real-world conditions.',
+      },
+    },
+  ],
 };
 
 const softwareJsonLd = {

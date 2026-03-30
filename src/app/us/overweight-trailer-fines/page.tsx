@@ -58,14 +58,36 @@ const faqs = [
   },
 ];
 
+// Snippet-optimised FAQ schema for US market
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: faqs.map((faq) => ({
-    '@type': 'Question',
-    name: faq.question,
-    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
-  })),
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Is it illegal to tow an overweight RV in the United States?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Towing an overweight RV or trailer is illegal in the United States. Weight limits are enforced at both federal and state levels, and violations can result in fines or being ordered off the road.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do RV weight laws vary by state?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. While federal guidelines set baseline limits, individual states enforce their own towing, axle, and trailer brake laws. Weight limits, fines, and enforcement practices vary by state.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can towing overweight affect my insurance in the US?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. If you are towing an overweight RV, insurance companies may deny coverage after an accident, even if the excess weight was not the direct cause of the crash.',
+      },
+    },
+  ],
 };
 
 export default function OverweightTrailerFinesPage() {

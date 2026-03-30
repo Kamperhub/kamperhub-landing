@@ -58,14 +58,36 @@ const faqs = [
   },
 ];
 
+// Snippet-optimised FAQ schema for US market
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: faqs.map((faq) => ({
-    '@type': 'Question',
-    name: faq.question,
-    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
-  })),
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Why does RV trip planning differ from car trip planning?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'RV trip planning differs because towing affects fuel consumption, braking distance, and daily travel limits. Routes, fuel stops, and rest days must account for the reduced performance of a loaded tow vehicle.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Should I check weights before planning an RV trip?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Checking weights before planning ensures your RV and tow vehicle are within legal and manufacturer limits, reducing the risk of fines, breakdowns, or unsafe driving conditions.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can an RV trip planner help avoid unsafe towing days?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. An RV-specific trip planner helps manage daily distances, fuel range, and terrain considerations that affect towing safety and driver fatigue.',
+      },
+    },
+  ],
 };
 
 const softwareJsonLd = {

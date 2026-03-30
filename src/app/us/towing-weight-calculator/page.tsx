@@ -79,14 +79,44 @@ const faqs = [
   },
 ];
 
+// Snippet-optimised FAQ schema for US market
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: faqs.map((faq) => ({
-    '@type': 'Question',
-    name: faq.question,
-    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
-  })),
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Can my truck or SUV tow my RV legally in the United States?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Your truck or SUV can legally tow an RV in the United States only if all manufacturer weight ratings are met, including GVWR, GCWR, payload capacity, axle ratings, and tongue weight. Staying under the advertised tow rating alone does not guarantee compliance.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What weights do I need to use an RV towing calculator?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "To use an RV towing calculator accurately, you need your vehicle's GVWR, GCWR, curb weight, payload capacity, and maximum tow rating, plus your trailer's GVWR and tongue weight. Actual scale weights provide the most reliable results.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is an RV towing calculator accurate?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'An RV towing calculator is accurate when you enter real-world weights rather than brochure or dry weights. Passengers, gear, accessories, water, and fuel all reduce your available towing and payload capacity.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What happens if my RV or trailer is overweight?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'If your RV or trailer is overweight, you may face fines, be required to reduce weight before continuing, or have your insurance coverage denied after an accident. Overweight setups also increase braking distance and reduce vehicle control.',
+      },
+    },
+  ],
 };
 
 const softwareJsonLd = {
