@@ -79,6 +79,18 @@ const faqs = [
     question: 'Is the KamperHub weight calculator free?',
     answer: 'Yes. KamperHub\'s weight compliance dashboard is available on the free plan. It checks your GVM, ATM, GCM, towing capacity, and towball percentage. For advanced features like the tow simulator, weight distribution analysis, and cargo zone tracking, you can upgrade to the Pro plan.',
   },
+  {
+    question: 'How accurate are caravan weight calculators?',
+    answer: 'KamperHub uses manufacturer-published specs for vehicle and caravan weights (GVM, ATM, GCM, tare, kerb weight). The calculator is as accurate as the data you provide — if you enter your actual cargo, water, fuel and passenger weights, the results closely match what a weighbridge would show. For the most precise result, weigh your loaded setup at a public weighbridge and compare.',
+  },
+  {
+    question: 'Do I need to visit a weighbridge?',
+    answer: 'A weighbridge gives the most accurate measurement, and we recommend it for your first trip with a new setup. However, you can use KamperHub\'s calculator for ongoing checks — enter your known cargo weights and it will tell you if you\'re within limits. Many experienced towers use the calculator for routine checks and a weighbridge for annual verification.',
+  },
+  {
+    question: 'Is towing overweight illegal in Australia?',
+    answer: 'Yes. Exceeding any rated weight limit (GVM, ATM, or GCM) is illegal in all Australian states and territories. Penalties include on-the-spot fines from $400 to over $5,000, defect notices that ground your vehicle until rectified, loss of licence points, and critically — voided insurance. If you cause an accident while overweight, you could be personally liable for all damages.',
+  },
 ];
 
 const faqJsonLd = {
@@ -181,25 +193,40 @@ export default function CaravanTowingWeightCalculatorPage() {
             Check if your car can safely tow your caravan — for free. Our calculator checks your GVM, ATM, GCM,
             towing capacity and towball weight against Australian legal limits in under two minutes.
           </p>
-          <a href={`${APP_URL}/signup?redirect=/weights`} style={{
-            display: 'inline-block',
-            padding: '16px 40px',
-            backgroundColor: colors.primary,
-            color: colors.white,
-            textDecoration: 'none',
-            fontWeight: '700',
-            borderRadius: '12px',
-            fontSize: '20px',
+          {/* Embedded tow check widget — prominent placement */}
+          <div style={{
+            marginTop: '32px',
+            padding: '24px',
+            backgroundColor: colors.white,
+            borderRadius: '16px',
+            boxShadow: '0 4px 24px rgba(0,0,0,0.08)',
+            border: `2px solid ${colors.primary}`,
           }}>
-            Check Your Weights Free →
-          </a>
-          <p style={{ fontSize: '14px', color: colors.slate, marginTop: '12px' }}>
-            No credit card required. Free plan includes full weight compliance checks.
-          </p>
-
-          {/* Embedded tow check widget */}
-          <div style={{ marginTop: '40px' }}>
+            <h2 style={{ fontSize: '22px', fontWeight: '700', color: colors.darkEarth, marginBottom: '4px', marginTop: 0 }}>
+              Quick Tow Compatibility Check
+            </h2>
+            <p style={{ fontSize: '15px', color: colors.slate, marginBottom: '16px' }}>
+              Select your vehicle and caravan below to see if they&apos;re compatible. For a full compliance check with cargo, passengers and towball weight, sign up free.
+            </p>
             <TowCheckWidget region="au" />
+          </div>
+
+          <div style={{ marginTop: '24px' }}>
+            <a href={`${APP_URL}/signup?redirect=/weights`} style={{
+              display: 'inline-block',
+              padding: '16px 40px',
+              backgroundColor: colors.primary,
+              color: colors.white,
+              textDecoration: 'none',
+              fontWeight: '700',
+              borderRadius: '12px',
+              fontSize: '20px',
+            }}>
+              Full Weight Compliance Check →
+            </a>
+            <p style={{ fontSize: '14px', color: colors.slate, marginTop: '12px' }}>
+              No credit card required. Free plan includes full weight compliance dashboard.
+            </p>
           </div>
         </div>
       </section>
@@ -561,24 +588,47 @@ export default function CaravanTowingWeightCalculatorPage() {
         </div>
       </section>
 
-      {/* Internal links */}
-      <section style={{ padding: '48px 24px', backgroundColor: colors.cream }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
-          <h3 style={{ fontSize: '18px', fontWeight: '600', color: colors.darkEarth, marginBottom: '16px' }}>
-            More Towing &amp; Weight Resources
-          </h3>
-          <div style={{ display: 'flex', gap: '24px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/tow-simulator" style={{ color: colors.primary, textDecoration: 'none', fontSize: '16px', fontWeight: '500' }}>
-              Tow Simulator →
+      {/* Contextual cross-links — pillar page linking to support pages */}
+      <section style={{ padding: '80px 24px', backgroundColor: colors.cream }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <h2 style={{ fontSize: '28px', fontWeight: '700', color: colors.darkEarth, marginBottom: '16px', textAlign: 'center' }}>
+            Go Deeper: Weight Compliance Resources
+          </h2>
+          <p style={{ fontSize: '18px', color: colors.slate, textAlign: 'center', marginBottom: '48px', lineHeight: '1.6' }}>
+            The calculator tells you if you&apos;re compliant. These guides help you understand why — and what to do if you&apos;re not.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px' }}>
+            <Link href="/tow-simulator" style={{ textDecoration: 'none' }}>
+              <div style={{ padding: '24px', backgroundColor: colors.white, borderRadius: '12px', borderLeft: `4px solid ${colors.primary}`, height: '100%' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: '700', color: colors.darkEarth, marginBottom: '8px', marginTop: 0 }}>Tow Simulator</h3>
+                <p style={{ fontSize: '15px', color: colors.slate, lineHeight: '1.6', margin: 0 }}>
+                  Go beyond pass/fail. Visualise weight distribution across cargo zones, see sway risk, and experiment with loading — all before you pack.
+                </p>
+              </div>
             </Link>
-            <Link href="/caravan-weight-distribution-guide" style={{ color: colors.primary, textDecoration: 'none', fontSize: '16px', fontWeight: '500' }}>
-              Weight Distribution Guide →
+            <Link href="/caravan-weight-distribution-guide" style={{ textDecoration: 'none' }}>
+              <div style={{ padding: '24px', backgroundColor: colors.white, borderRadius: '12px', borderLeft: `4px solid ${colors.primary}`, height: '100%' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: '700', color: colors.darkEarth, marginBottom: '8px', marginTop: 0 }}>Weight Distribution Guide</h3>
+                <p style={{ fontSize: '15px', color: colors.slate, lineHeight: '1.6', margin: 0 }}>
+                  Where should heavy items go? What causes sway? The complete guide to loading your caravan safely, with diagrams.
+                </p>
+              </div>
             </Link>
-            <Link href="/caravan-overweight-fines-australia" style={{ color: colors.primary, textDecoration: 'none', fontSize: '16px', fontWeight: '500' }}>
-              Overweight Fines by State →
+            <Link href="/caravan-overweight-fines-australia" style={{ textDecoration: 'none' }}>
+              <div style={{ padding: '24px', backgroundColor: colors.white, borderRadius: '12px', borderLeft: '4px solid #ef4444', height: '100%' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: '700', color: colors.darkEarth, marginBottom: '8px', marginTop: 0 }}>Overweight Fines by State</h3>
+                <p style={{ fontSize: '15px', color: colors.slate, lineHeight: '1.6', margin: 0 }}>
+                  Penalties from $400 to $5,000+, defect notices, and voided insurance. State-by-state breakdown of what happens when you get caught.
+                </p>
+              </div>
             </Link>
-            <Link href="/caravan-trip-planner" style={{ color: colors.primary, textDecoration: 'none', fontSize: '16px', fontWeight: '500' }}>
-              Trip Planner →
+            <Link href="/caravan-trip-planner" style={{ textDecoration: 'none' }}>
+              <div style={{ padding: '24px', backgroundColor: colors.white, borderRadius: '12px', borderLeft: `4px solid ${colors.accent}`, height: '100%' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: '700', color: colors.darkEarth, marginBottom: '8px', marginTop: 0 }}>Trip Planner</h3>
+                <p style={{ fontSize: '15px', color: colors.slate, lineHeight: '1.6', margin: 0 }}>
+                  Plan your route with fuel stops, free camping, weather and fatigue management — all built for vehicles towing caravans.
+                </p>
+              </div>
             </Link>
           </div>
         </div>

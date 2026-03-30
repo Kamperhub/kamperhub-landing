@@ -5,12 +5,12 @@ import Link from 'next/link';
 const APP_URL = 'https://app.kamperhub.com';
 
 export const metadata: Metadata = {
-  title: 'Trailer Tow Simulator USA | Virtual Tow Test Before You Hit the Road — KamperHub',
-  description: 'Simulate your tow setup before you leave. KamperHub\'s tow simulator shows weight distribution, sway risk, tongue weight, and compliance across your entire truck and trailer combination. Built for American RV and trailer owners.',
-  keywords: 'tow simulator trailer usa, trailer tow simulator, towing simulation tool, virtual tow test, trailer weight distribution simulator, towing setup simulator, tongue weight calculator',
+  title: 'Tow Simulator: Check If Your Truck Can Tow Your Trailer Safely | Weight Distribution & Compliance — KamperHub',
+  description: 'Not a game — a towing compliance simulator. Check if your truck can safely tow your trailer with KamperHub\'s weight distribution simulator. See tongue weight, sway risk, cargo zones, and GCWR compliance for your actual truck and trailer combination.',
+  keywords: 'tow capacity calculator, can my truck tow my trailer, towing compliance check, trailer weight distribution simulator, towing setup check, tongue weight calculator, trailer sway risk checker',
   openGraph: {
-    title: 'Trailer Tow Simulator — KamperHub',
-    description: 'Simulate your tow setup before you leave. See weight distribution, sway risk, and compliance for your truck and trailer combination.',
+    title: 'Tow Simulator: Check If Your Truck Can Tow Your Trailer Safely — KamperHub',
+    description: 'Towing compliance simulator — not a game. Check weight distribution, sway risk, tongue weight and GCWR compliance for your truck and trailer combination.',
     url: 'https://kamperhub.com/us/tow-simulator',
     siteName: 'KamperHub',
     locale: 'en_US',
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Trailer Tow Simulator — KamperHub',
-    description: 'Simulate your tow setup before you leave. Weight distribution, sway risk, and compliance — all in one view.',
+    title: 'Tow Simulator: Can Your Truck Tow Your Trailer Safely? — KamperHub',
+    description: 'Towing compliance simulator. Check weight distribution, sway risk, tongue weight and GCWR compliance — all in one view.',
     images: ['https://kamperhub.com/logo-banner.jpg'],
   },
   alternates: {
@@ -161,16 +161,26 @@ export default function TowSimulatorPage() {
             marginBottom: '16px',
             lineHeight: '1.2',
           }}>
-            Simulate Your Tow Setup Before You Hit the Road
+            Tow Simulator: Check If Your Truck Can Tow Your Trailer Safely
           </h1>
           <p style={{
             fontSize: '20px',
             color: colors.slate,
-            marginBottom: '32px',
+            marginBottom: '12px',
             lineHeight: '1.6',
           }}>
-            KamperHub&apos;s tow simulator models your complete truck and trailer combination — showing weight distribution,
-            sway risk, tongue weight and compliance in one visual dashboard. Experiment with your loading before you pack a single item.
+            This is not a driving game or animation — it&apos;s a <strong>towing compliance simulator</strong> that models
+            your real truck and trailer combination. See weight distribution, sway risk, tongue weight and legal compliance
+            in one visual dashboard before you pack a single item.
+          </p>
+          <p style={{
+            fontSize: '15px',
+            color: colors.slate,
+            marginBottom: '32px',
+            lineHeight: '1.5',
+            fontStyle: 'italic',
+          }}>
+            Built for trailer owners who want to know if their setup is safe and legal — not for entertainment.
           </p>
           <a href={`${APP_URL}/signup?redirect=/tow-simulator`} style={{
             display: 'inline-block',
@@ -471,12 +481,50 @@ export default function TowSimulatorPage() {
         </div>
       </section>
 
-      {/* Internal links */}
+      {/* Contextual cross-links */}
+      <section style={{ padding: '80px 24px', backgroundColor: colors.white }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '48px', textAlign: 'center' }}>
+            Related Weight &amp; Towing Tools
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px' }}>
+            <Link href="/us/towing-weight-calculator" style={{ textDecoration: 'none' }}>
+              <div style={{ padding: '24px', backgroundColor: colors.cream, borderRadius: '12px', borderLeft: `4px solid ${colors.primary}`, height: '100%' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: '700', color: colors.darkEarth, marginBottom: '8px', marginTop: 0 }}>
+                  Free Weight Calculator
+                </h3>
+                <p style={{ fontSize: '15px', color: colors.slate, lineHeight: '1.6', margin: 0 }}>
+                  Quick pass/fail check on your GVWR, GCWR, towing capacity and tongue weight. Start here if you just need to know whether your combination is legal.
+                </p>
+              </div>
+            </Link>
+            <Link href="/us/trailer-weight-distribution-guide" style={{ textDecoration: 'none' }}>
+              <div style={{ padding: '24px', backgroundColor: colors.cream, borderRadius: '12px', borderLeft: `4px solid ${colors.primary}`, height: '100%' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: '700', color: colors.darkEarth, marginBottom: '8px', marginTop: 0 }}>
+                  Weight Distribution Guide
+                </h3>
+                <p style={{ fontSize: '15px', color: colors.slate, lineHeight: '1.6', margin: 0 }}>
+                  Learn the theory behind loading zones — where heavy, medium and light items should go, and why. The guide behind the simulator.
+                </p>
+              </div>
+            </Link>
+            <Link href="/us/overweight-trailer-fines" style={{ textDecoration: 'none' }}>
+              <div style={{ padding: '24px', backgroundColor: colors.cream, borderRadius: '12px', borderLeft: '4px solid #ef4444', height: '100%' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: '700', color: colors.darkEarth, marginBottom: '8px', marginTop: 0 }}>
+                  Overweight Fines by State
+                </h3>
+                <p style={{ fontSize: '15px', color: colors.slate, lineHeight: '1.6', margin: 0 }}>
+                  What happens when you get it wrong. State-by-state fines, DOT weigh station process, and why your insurance might not cover you.
+                </p>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer links */}
       <section style={{ padding: '48px 24px', backgroundColor: colors.cream }}>
         <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
-          <h3 style={{ fontSize: '18px', fontWeight: '600', color: colors.darkEarth, marginBottom: '16px' }}>
-            More Towing &amp; Weight Resources
-          </h3>
           <div style={{ display: 'flex', gap: '24px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/us/towing-weight-calculator" style={{ color: colors.primary, textDecoration: 'none', fontSize: '16px', fontWeight: '500' }}>
               Weight Calculator →

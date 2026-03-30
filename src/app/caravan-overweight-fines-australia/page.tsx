@@ -262,25 +262,59 @@ export default function CaravanOverweightFinesPage() {
       <section style={{ padding: '80px 24px', backgroundColor: colors.primary, textAlign: 'center' }}>
         <div style={{ maxWidth: '700px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.white, marginBottom: '16px' }}>
-            Don&apos;t Risk a Fine — Check Before You Go
+            Check Your Setup Before You Get Fined
           </h2>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.85)', marginBottom: '32px', lineHeight: '1.6' }}>
             KamperHub checks what the inspectors check — GVM, ATM, GCM, towing capacity and towball weight.
-            Free to use, takes under two minutes.
+            Use the free weight calculator and know you&apos;re legal before you leave the driveway.
           </p>
           <a href={`${APP_URL}/signup?redirect=/weights`} style={{
             display: 'inline-block', padding: '16px 48px', backgroundColor: colors.accent, color: colors.white,
             textDecoration: 'none', fontWeight: '700', borderRadius: '12px', fontSize: '20px',
           }}>
-            Check Your Compliance Free →
+            Check Your Weights Free →
           </a>
         </div>
       </section>
 
-      {/* Internal links */}
+      {/* Contextual cross-links */}
+      <section style={{ padding: '80px 24px', backgroundColor: colors.white }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <h2 style={{ fontSize: '28px', fontWeight: '700', color: colors.darkEarth, marginBottom: '48px', textAlign: 'center' }}>
+            Prevention Is Cheaper Than a Fine
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px' }}>
+            <Link href="/caravan-towing-weight-calculator" style={{ textDecoration: 'none' }}>
+              <div style={{ padding: '24px', backgroundColor: colors.cream, borderRadius: '12px', borderLeft: `4px solid ${colors.primary}`, height: '100%' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: '700', color: colors.darkEarth, marginBottom: '8px', marginTop: 0 }}>Free Weight Calculator</h3>
+                <p style={{ fontSize: '15px', color: colors.slate, lineHeight: '1.6', margin: 0 }}>
+                  Check your GVM, ATM, GCM, towing capacity and towball weight in under 2 minutes. The same checks roadside inspectors run — free.
+                </p>
+              </div>
+            </Link>
+            <Link href="/caravan-weight-distribution-guide" style={{ textDecoration: 'none' }}>
+              <div style={{ padding: '24px', backgroundColor: colors.cream, borderRadius: '12px', borderLeft: `4px solid ${colors.primary}`, height: '100%' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: '700', color: colors.darkEarth, marginBottom: '8px', marginTop: 0 }}>Weight Distribution Guide</h3>
+                <p style={{ fontSize: '15px', color: colors.slate, lineHeight: '1.6', margin: 0 }}>
+                  Learn where to place heavy, medium and light items. Proper distribution prevents sway and keeps you within legal limits.
+                </p>
+              </div>
+            </Link>
+            <Link href="/tow-simulator" style={{ textDecoration: 'none' }}>
+              <div style={{ padding: '24px', backgroundColor: colors.cream, borderRadius: '12px', borderLeft: `4px solid ${colors.primary}`, height: '100%' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: '700', color: colors.darkEarth, marginBottom: '8px', marginTop: 0 }}>Tow Simulator</h3>
+                <p style={{ fontSize: '15px', color: colors.slate, lineHeight: '1.6', margin: 0 }}>
+                  Visualise your complete tow setup — weight distribution, sway risk, and towball load — before you pack.
+                </p>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer links */}
       <section style={{ padding: '48px 24px', backgroundColor: colors.cream }}>
         <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
-          <h3 style={{ fontSize: '18px', fontWeight: '600', color: colors.darkEarth, marginBottom: '16px' }}>More Towing &amp; Weight Resources</h3>
           <div style={{ display: 'flex', gap: '24px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/caravan-towing-weight-calculator" style={{ color: colors.primary, textDecoration: 'none', fontSize: '16px', fontWeight: '500' }}>Weight Calculator →</Link>
             <Link href="/tow-simulator" style={{ color: colors.primary, textDecoration: 'none', fontSize: '16px', fontWeight: '500' }}>Tow Simulator →</Link>

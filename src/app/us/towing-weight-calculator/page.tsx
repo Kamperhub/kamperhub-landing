@@ -65,6 +65,18 @@ const faqs = [
     question: 'Is the KamperHub weight calculator free?',
     answer: 'Yes. KamperHub\'s weight compliance dashboard is available on the free plan. It checks your GVWR, GCWR, towing capacity, and tongue weight percentage. For advanced features like the tow simulator, weight distribution analysis, and cargo zone tracking, you can upgrade to the Pro plan.',
   },
+  {
+    question: 'How accurate are towing weight calculators?',
+    answer: 'KamperHub uses manufacturer-published specs for vehicle and trailer weights (GVWR, GCWR, curb weight, dry weight). The calculator is as accurate as the data you provide — if you enter your actual cargo, water, propane and passenger weights, the results closely match what a CAT scale would show. For the most precise result, weigh your loaded setup at a truck scale and compare.',
+  },
+  {
+    question: 'Do I need to visit a CAT scale?',
+    answer: 'A CAT scale or certified truck scale gives the most accurate measurement, and we recommend it for your first trip with a new setup. However, you can use KamperHub\'s calculator for ongoing checks — enter your known cargo weights and it will tell you if you\'re within limits. Many experienced towers use the calculator for routine checks and a truck scale for annual verification.',
+  },
+  {
+    question: 'Is towing overweight illegal in the USA?',
+    answer: 'Yes. Exceeding any rated weight limit (GVWR or GCWR) violates federal motor vehicle safety standards. States enforce these limits through DOT weigh stations and roadside inspections, with fines ranging from $200 to over $10,000 depending on the state and severity. More critically, your insurer can deny claims if your vehicle or trailer was overweight at the time of an accident — leaving you personally liable for all damages.',
+  },
 ];
 
 const faqJsonLd = {
@@ -117,17 +129,34 @@ export default function USTowingWeightCalculatorPage() {
             Check if your truck can safely tow your trailer — for free. Our calculator checks your GVWR, GCWR,
             towing capacity and tongue weight in under two minutes.
           </p>
-          <a href={`${APP_URL}/signup?redirect=/weights`} style={{
-            display: 'inline-block', padding: '16px 40px', backgroundColor: colors.primary, color: colors.white,
-            textDecoration: 'none', fontWeight: '700', borderRadius: '12px', fontSize: '20px',
+          {/* Embedded tow check widget — prominent placement */}
+          <div style={{
+            marginTop: '32px',
+            padding: '24px',
+            backgroundColor: colors.white,
+            borderRadius: '16px',
+            boxShadow: '0 4px 24px rgba(0,0,0,0.08)',
+            border: `2px solid ${colors.primary}`,
           }}>
-            Check Your Weights Free →
-          </a>
-          <p style={{ fontSize: '14px', color: colors.slate, marginTop: '12px' }}>No credit card required. Free plan includes full weight compliance checks.</p>
-
-          {/* Embedded tow check widget */}
-          <div style={{ marginTop: '40px' }}>
+            <h2 style={{ fontSize: '22px', fontWeight: '700', color: colors.darkEarth, marginBottom: '4px', marginTop: 0 }}>
+              Quick Tow Compatibility Check
+            </h2>
+            <p style={{ fontSize: '15px', color: colors.slate, marginBottom: '16px' }}>
+              Select your vehicle and trailer below to see if they&apos;re compatible. For a full compliance check with cargo, passengers and tongue weight, sign up free.
+            </p>
             <TowCheckWidget region="us" />
+          </div>
+
+          <div style={{ marginTop: '24px' }}>
+            <a href={`${APP_URL}/signup?redirect=/weights`} style={{
+              display: 'inline-block', padding: '16px 40px', backgroundColor: colors.primary, color: colors.white,
+              textDecoration: 'none', fontWeight: '700', borderRadius: '12px', fontSize: '20px',
+            }}>
+              Full Weight Compliance Check →
+            </a>
+            <p style={{ fontSize: '14px', color: colors.slate, marginTop: '12px' }}>
+              No credit card required. Free plan includes full weight compliance dashboard.
+            </p>
           </div>
         </div>
       </section>
@@ -267,15 +296,48 @@ export default function USTowingWeightCalculatorPage() {
         </div>
       </section>
 
-      {/* Internal links */}
-      <section style={{ padding: '48px 24px', backgroundColor: colors.cream }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
-          <h3 style={{ fontSize: '18px', fontWeight: '600', color: colors.darkEarth, marginBottom: '16px' }}>More Towing Resources</h3>
-          <div style={{ display: 'flex', gap: '24px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/us/tow-simulator" style={{ color: colors.primary, textDecoration: 'none', fontSize: '16px', fontWeight: '500' }}>Tow Simulator →</Link>
-            <Link href="/us/trailer-weight-distribution-guide" style={{ color: colors.primary, textDecoration: 'none', fontSize: '16px', fontWeight: '500' }}>Weight Distribution Guide →</Link>
-            <Link href="/us/overweight-trailer-fines" style={{ color: colors.primary, textDecoration: 'none', fontSize: '16px', fontWeight: '500' }}>Overweight Fines by State →</Link>
-            <Link href="/us/rv-trip-planner" style={{ color: colors.primary, textDecoration: 'none', fontSize: '16px', fontWeight: '500' }}>RV Trip Planner →</Link>
+      {/* Contextual cross-links — pillar page */}
+      <section style={{ padding: '80px 24px', backgroundColor: colors.cream }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <h2 style={{ fontSize: '28px', fontWeight: '700', color: colors.darkEarth, marginBottom: '16px', textAlign: 'center' }}>
+            Go Deeper: Weight Compliance Resources
+          </h2>
+          <p style={{ fontSize: '18px', color: colors.slate, textAlign: 'center', marginBottom: '48px', lineHeight: '1.6' }}>
+            The calculator tells you if you&apos;re compliant. These guides help you understand why — and what to do if you&apos;re not.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px' }}>
+            <Link href="/us/tow-simulator" style={{ textDecoration: 'none' }}>
+              <div style={{ padding: '24px', backgroundColor: colors.white, borderRadius: '12px', borderLeft: `4px solid ${colors.primary}`, height: '100%' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: '700', color: colors.darkEarth, marginBottom: '8px', marginTop: 0 }}>Tow Simulator</h3>
+                <p style={{ fontSize: '15px', color: colors.slate, lineHeight: '1.6', margin: 0 }}>
+                  Go beyond pass/fail. Visualize weight distribution across cargo zones, see sway risk, and experiment with loading — all before you pack.
+                </p>
+              </div>
+            </Link>
+            <Link href="/us/trailer-weight-distribution-guide" style={{ textDecoration: 'none' }}>
+              <div style={{ padding: '24px', backgroundColor: colors.white, borderRadius: '12px', borderLeft: `4px solid ${colors.primary}`, height: '100%' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: '700', color: colors.darkEarth, marginBottom: '8px', marginTop: 0 }}>Weight Distribution Guide</h3>
+                <p style={{ fontSize: '15px', color: colors.slate, lineHeight: '1.6', margin: 0 }}>
+                  Where should heavy items go? What causes sway? The complete guide to loading your trailer safely, with diagrams.
+                </p>
+              </div>
+            </Link>
+            <Link href="/us/overweight-trailer-fines" style={{ textDecoration: 'none' }}>
+              <div style={{ padding: '24px', backgroundColor: colors.white, borderRadius: '12px', borderLeft: '4px solid #ef4444', height: '100%' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: '700', color: colors.darkEarth, marginBottom: '8px', marginTop: 0 }}>Overweight Fines by State</h3>
+                <p style={{ fontSize: '15px', color: colors.slate, lineHeight: '1.6', margin: 0 }}>
+                  Fines from $200 to $10,000+, DOT citations, and voided insurance. State-by-state breakdown of what happens when you get caught.
+                </p>
+              </div>
+            </Link>
+            <Link href="/us/rv-trip-planner" style={{ textDecoration: 'none' }}>
+              <div style={{ padding: '24px', backgroundColor: colors.white, borderRadius: '12px', borderLeft: `4px solid ${colors.accent}`, height: '100%' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: '700', color: colors.darkEarth, marginBottom: '8px', marginTop: 0 }}>RV Trip Planner</h3>
+                <p style={{ fontSize: '15px', color: colors.slate, lineHeight: '1.6', margin: 0 }}>
+                  Plan your route with fuel stops, boondocking, weather and fatigue management — all built for trucks towing trailers.
+                </p>
+              </div>
+            </Link>
           </div>
         </div>
       </section>

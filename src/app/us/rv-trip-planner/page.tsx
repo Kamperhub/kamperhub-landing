@@ -187,6 +187,51 @@ export default function RvTripPlannerPage() {
         </div>
       </section>
 
+      {/* Why this isn't a generic trip planner */}
+      <section style={{ padding: '80px 24px', backgroundColor: colors.cream }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '16px', textAlign: 'center' }}>
+            Built for RVs — Not Just Cars
+          </h2>
+          <p style={{ fontSize: '18px', color: colors.slate, textAlign: 'center', marginBottom: '48px', lineHeight: '1.6' }}>
+            Generic trip planners don&apos;t account for towing. KamperHub does. Here&apos;s what makes RV trip planning different.
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
+            <div style={{ padding: '24px', backgroundColor: colors.white, borderRadius: '12px', borderLeft: `4px solid ${colors.primary}` }}>
+              <h3 style={{ fontSize: '18px', fontWeight: '700', color: colors.darkEarth, marginBottom: '8px', marginTop: 0 }}>
+                Fuel Range While Towing
+              </h3>
+              <p style={{ fontSize: '15px', color: colors.slate, lineHeight: '1.6', margin: 0 }}>
+                Towing a trailer increases fuel consumption by 30–50%. KamperHub calculates fuel stops based on your
+                actual towing consumption rate — not your truck&apos;s highway MPG. Critical for crossing deserts,
+                mountain passes, and remote stretches between major interstates.
+              </p>
+            </div>
+            <div style={{ padding: '24px', backgroundColor: colors.white, borderRadius: '12px', borderLeft: `4px solid ${colors.primary}` }}>
+              <h3 style={{ fontSize: '18px', fontWeight: '700', color: colors.darkEarth, marginBottom: '8px', marginTop: 0 }}>
+                Weight-Aware Route Planning
+              </h3>
+              <p style={{ fontSize: '15px', color: colors.slate, lineHeight: '1.6', margin: 0 }}>
+                Your vehicle and trailer specs travel with your trip. KamperHub knows your combination&apos;s weight limits,
+                fuel tank size, and towing capacity — so trip planning starts from your actual setup, not assumptions.
+                Pair with the <Link href="/us/towing-weight-calculator" style={{ color: colors.primary, fontWeight: '600' }}>weight calculator</Link> to check compliance before you leave.
+              </p>
+            </div>
+            <div style={{ padding: '24px', backgroundColor: colors.white, borderRadius: '12px', borderLeft: `4px solid ${colors.primary}` }}>
+              <h3 style={{ fontSize: '18px', fontWeight: '700', color: colors.darkEarth, marginBottom: '8px', marginTop: 0 }}>
+                RV-Friendly Stops
+              </h3>
+              <p style={{ fontSize: '15px', color: colors.slate, lineHeight: '1.6', margin: 0 }}>
+                Not every rest stop or campground can fit a truck and trailer. KamperHub&apos;s boondocking finder filters
+                for RV access, and overnight stop suggestions account for the fact that you&apos;re not driving a sedan.
+                Find RV parks, BLM land, and rest areas that actually work for your rig.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* How it works */}
       <section style={{ padding: '80px 24px', backgroundColor: colors.cream }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
@@ -295,10 +340,47 @@ export default function RvTripPlannerPage() {
         </div>
       </section>
 
-      {/* Internal links */}
+      {/* Contextual cross-links */}
+      <section style={{ padding: '80px 24px', backgroundColor: colors.white }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <h2 style={{ fontSize: '28px', fontWeight: '700', color: colors.darkEarth, marginBottom: '16px', textAlign: 'center' }}>
+            Plan the Trip. Check the Weight. Hit the Road.
+          </h2>
+          <p style={{ fontSize: '18px', color: colors.slate, textAlign: 'center', marginBottom: '48px', lineHeight: '1.6' }}>
+            Trip planning is step one. Make sure your setup is safe and legal before you leave.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px' }}>
+            <Link href="/us/towing-weight-calculator" style={{ textDecoration: 'none' }}>
+              <div style={{ padding: '24px', backgroundColor: colors.cream, borderRadius: '12px', borderLeft: `4px solid ${colors.primary}`, height: '100%' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: '700', color: colors.darkEarth, marginBottom: '8px', marginTop: 0 }}>Free Weight Calculator</h3>
+                <p style={{ fontSize: '15px', color: colors.slate, lineHeight: '1.6', margin: 0 }}>
+                  Check your GVWR, GCWR, towing capacity and tongue weight before you leave. Free to use.
+                </p>
+              </div>
+            </Link>
+            <Link href="/us/tow-simulator" style={{ textDecoration: 'none' }}>
+              <div style={{ padding: '24px', backgroundColor: colors.cream, borderRadius: '12px', borderLeft: `4px solid ${colors.primary}`, height: '100%' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: '700', color: colors.darkEarth, marginBottom: '8px', marginTop: 0 }}>Tow Simulator</h3>
+                <p style={{ fontSize: '15px', color: colors.slate, lineHeight: '1.6', margin: 0 }}>
+                  Visualize your weight distribution and sway risk. Experiment with loading before you pack.
+                </p>
+              </div>
+            </Link>
+            <Link href="/us/overweight-trailer-fines" style={{ textDecoration: 'none' }}>
+              <div style={{ padding: '24px', backgroundColor: colors.cream, borderRadius: '12px', borderLeft: '4px solid #ef4444', height: '100%' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: '700', color: colors.darkEarth, marginBottom: '8px', marginTop: 0 }}>Overweight Fines</h3>
+                <p style={{ fontSize: '15px', color: colors.slate, lineHeight: '1.6', margin: 0 }}>
+                  State-by-state penalties for overloaded trailers. Know the risks before you travel.
+                </p>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer links */}
       <section style={{ padding: '48px 24px', backgroundColor: colors.cream }}>
         <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
-          <h3 style={{ fontSize: '18px', fontWeight: '600', color: colors.darkEarth, marginBottom: '16px' }}>More KamperHub Tools</h3>
           <div style={{ display: 'flex', gap: '24px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/us/towing-weight-calculator" style={{ color: colors.primary, textDecoration: 'none', fontSize: '16px', fontWeight: '500' }}>Weight Calculator →</Link>
             <Link href="/us/tow-simulator" style={{ color: colors.primary, textDecoration: 'none', fontSize: '16px', fontWeight: '500' }}>Tow Simulator →</Link>

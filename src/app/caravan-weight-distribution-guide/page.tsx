@@ -213,6 +213,75 @@ export default function CaravanWeightDistributionGuidePage() {
             Think of your caravan as three zones: front, middle (over the axle), and rear. Each zone has a role in keeping your setup balanced and safe.
           </p>
 
+          {/* SVG diagram */}
+          <div style={{ marginBottom: '48px', textAlign: 'center' }}>
+            <svg viewBox="0 0 800 280" style={{ maxWidth: '100%', height: 'auto' }} role="img" aria-label="Caravan weight distribution diagram showing front, middle, and rear loading zones">
+              {/* Caravan body */}
+              <rect x="100" y="60" width="600" height="120" rx="12" fill="#f5f0eb" stroke="#3d3229" strokeWidth="2" />
+              {/* A-frame / drawbar */}
+              <polygon points="100,100 30,115 100,130" fill="#f5f0eb" stroke="#3d3229" strokeWidth="2" />
+              {/* Towball circle */}
+              <circle cx="30" cy="115" r="8" fill="#3d3229" />
+              <text x="30" y="145" textAnchor="middle" fontSize="11" fill="#5a6672" fontWeight="600">Towball</text>
+
+              {/* Zone dividers */}
+              <line x1="333" y1="55" x2="333" y2="185" stroke="#3d3229" strokeWidth="1" strokeDasharray="6,4" />
+              <line x1="533" y1="55" x2="533" y2="185" stroke="#3d3229" strokeWidth="1" strokeDasharray="6,4" />
+
+              {/* Front zone fill */}
+              <rect x="101" y="61" width="231" height="118" rx="0" fill="rgba(34,197,94,0.15)" />
+              {/* Middle zone fill */}
+              <rect x="334" y="61" width="198" height="118" rx="0" fill="rgba(59,130,246,0.15)" />
+              {/* Rear zone fill */}
+              <rect x="534" y="61" width="165" height="118" rx="0" fill="rgba(239,68,68,0.15)" />
+
+              {/* Zone labels */}
+              <text x="216" y="95" textAnchor="middle" fontSize="16" fill="#22c55e" fontWeight="700">FRONT</text>
+              <text x="216" y="115" textAnchor="middle" fontSize="12" fill="#5a6672">Medium items</text>
+              <text x="216" y="132" textAnchor="middle" fontSize="12" fill="#5a6672">Clothes, bedding</text>
+
+              <text x="433" y="95" textAnchor="middle" fontSize="16" fill="#3b82f6" fontWeight="700">OVER AXLE</text>
+              <text x="433" y="115" textAnchor="middle" fontSize="12" fill="#5a6672">Heavy items LOW</text>
+              <text x="433" y="132" textAnchor="middle" fontSize="12" fill="#5a6672">Water, tools, batteries</text>
+
+              <text x="616" y="95" textAnchor="middle" fontSize="16" fill="#ef4444" fontWeight="700">REAR</text>
+              <text x="616" y="115" textAnchor="middle" fontSize="12" fill="#5a6672">Light items ONLY</text>
+              <text x="616" y="132" textAnchor="middle" fontSize="12" fill="#5a6672">Pillows, soft bags</text>
+
+              {/* Axle */}
+              <rect x="400" y="180" width="66" height="8" rx="4" fill="#3d3229" />
+              {/* Wheels */}
+              <circle cx="410" cy="200" r="18" fill="#5a6672" stroke="#3d3229" strokeWidth="2" />
+              <circle cx="410" cy="200" r="6" fill="#3d3229" />
+              <circle cx="456" cy="200" r="18" fill="#5a6672" stroke="#3d3229" strokeWidth="2" />
+              <circle cx="456" cy="200" r="6" fill="#3d3229" />
+              <text x="433" y="240" textAnchor="middle" fontSize="12" fill="#5a6672" fontWeight="600">Axle</text>
+
+              {/* Sway risk arrow at rear */}
+              <path d="M 700,90 Q 740,120 700,150" fill="none" stroke="#ef4444" strokeWidth="2" markerEnd="url(#arrowRed)" />
+              <path d="M 700,150 Q 660,120 700,90" fill="none" stroke="#ef4444" strokeWidth="2" />
+              <text x="755" y="125" textAnchor="start" fontSize="12" fill="#ef4444" fontWeight="700">SWAY</text>
+              <text x="755" y="140" textAnchor="start" fontSize="11" fill="#ef4444">RISK</text>
+
+              {/* Towball download arrow */}
+              <line x1="30" y1="155" x2="30" y2="190" stroke="#22c55e" strokeWidth="3" markerEnd="url(#arrowGreen)" />
+              <text x="30" y="210" textAnchor="middle" fontSize="11" fill="#22c55e" fontWeight="700">8–14%</text>
+
+              {/* Arrow markers */}
+              <defs>
+                <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                  <polygon points="0 0, 10 3.5, 0 7" fill="#22c55e" />
+                </marker>
+                <marker id="arrowRed" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                  <polygon points="0 0, 10 3.5, 0 7" fill="#ef4444" />
+                </marker>
+              </defs>
+            </svg>
+            <p style={{ fontSize: '13px', color: colors.slate, marginTop: '8px', fontStyle: 'italic' }}>
+              Side view: weight forward of the axle increases towball download (stability). Weight behind the axle increases sway risk.
+            </p>
+          </div>
+
           {[
             {
               zone: 'Front Zone',
@@ -365,8 +434,63 @@ export default function CaravanWeightDistributionGuidePage() {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* Tool bridge — how distribution affects legal limits */}
       <section style={{ padding: '80px 24px', backgroundColor: colors.cream }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '16px', textAlign: 'center' }}>
+            How Weight Distribution Affects Your Legal Towing Limits
+          </h2>
+          <p style={{ fontSize: '18px', color: colors.slate, textAlign: 'center', marginBottom: '48px', lineHeight: '1.6' }}>
+            Distribution doesn&apos;t just affect handling — it changes which legal limits you&apos;re hitting.
+            The same total weight can pass or fail compliance depending on where it sits.
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', marginBottom: '48px' }}>
+            <div style={{ padding: '24px', backgroundColor: colors.white, borderRadius: '12px', borderLeft: `4px solid ${colors.primary}` }}>
+              <h3 style={{ fontSize: '18px', fontWeight: '700', color: colors.darkEarth, marginBottom: '8px', marginTop: 0 }}>
+                Towball Weight → Vehicle GVM
+              </h3>
+              <p style={{ fontSize: '15px', color: colors.slate, lineHeight: '1.6', margin: 0 }}>
+                Loading the front of your caravan increases towball download — which adds to your
+                tow vehicle&apos;s weight. This can push your vehicle over its GVM even when the caravan is under its ATM.
+                The <Link href="/caravan-towing-weight-calculator" style={{ color: colors.primary, fontWeight: '600' }}>weight calculator</Link> checks both simultaneously.
+              </p>
+            </div>
+            <div style={{ padding: '24px', backgroundColor: colors.white, borderRadius: '12px', borderLeft: '4px solid #ef4444' }}>
+              <h3 style={{ fontSize: '18px', fontWeight: '700', color: colors.darkEarth, marginBottom: '8px', marginTop: 0 }}>
+                Rear Loading → Sway Risk
+              </h3>
+              <p style={{ fontSize: '15px', color: colors.slate, lineHeight: '1.6', margin: 0 }}>
+                Weight behind the axle reduces towball percentage. Drop below 8% and you enter dangerous sway territory —
+                the leading cause of caravan accidents. The <Link href="/tow-simulator" style={{ color: colors.primary, fontWeight: '600' }}>tow simulator</Link> shows
+                your sway risk in real time as you move cargo between zones.
+              </p>
+            </div>
+            <div style={{ padding: '24px', backgroundColor: colors.white, borderRadius: '12px', borderLeft: `4px solid ${colors.accent}` }}>
+              <h3 style={{ fontSize: '18px', fontWeight: '700', color: colors.darkEarth, marginBottom: '8px', marginTop: 0 }}>
+                Overloading → Fines &amp; Voided Insurance
+              </h3>
+              <p style={{ fontSize: '15px', color: colors.slate, lineHeight: '1.6', margin: 0 }}>
+                Exceeding any weight limit — GVM, ATM, or GCM — can result in on-the-spot fines up to $5,000+
+                and voided insurance cover. See the <Link href="/caravan-overweight-fines-australia" style={{ color: colors.primary, fontWeight: '600' }}>state-by-state fines</Link> to
+                understand the penalties.
+              </p>
+            </div>
+          </div>
+
+          <div style={{ textAlign: 'center' }}>
+            <a href={`${APP_URL}/signup?redirect=/weights`} style={{
+              display: 'inline-block', padding: '16px 40px', backgroundColor: colors.primary, color: colors.white,
+              textDecoration: 'none', fontWeight: '700', borderRadius: '12px', fontSize: '20px',
+            }}>
+              Check Your Weight Compliance Free →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section style={{ padding: '80px 24px', backgroundColor: colors.white }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '48px', textAlign: 'center' }}>
             Frequently Asked Questions
@@ -406,10 +530,9 @@ export default function CaravanWeightDistributionGuidePage() {
         </div>
       </section>
 
-      {/* Internal links */}
+      {/* Footer links */}
       <section style={{ padding: '48px 24px', backgroundColor: colors.cream }}>
         <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
-          <h3 style={{ fontSize: '18px', fontWeight: '600', color: colors.darkEarth, marginBottom: '16px' }}>More Towing &amp; Weight Resources</h3>
           <div style={{ display: 'flex', gap: '24px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/caravan-towing-weight-calculator" style={{ color: colors.primary, textDecoration: 'none', fontSize: '16px', fontWeight: '500' }}>Weight Calculator →</Link>
             <Link href="/tow-simulator" style={{ color: colors.primary, textDecoration: 'none', fontSize: '16px', fontWeight: '500' }}>Tow Simulator →</Link>
