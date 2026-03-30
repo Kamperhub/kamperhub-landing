@@ -792,8 +792,39 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Tools & Guides Section */}
+      <section style={{ padding: '80px 0', backgroundColor: colors.cream }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 24px' }}>
+          <h2 style={{ fontSize: '32px', fontWeight: '700', textAlign: 'center', marginBottom: '16px', color: colors.gray[900] }}>
+            Free Tools &amp; Guides
+          </h2>
+          <p style={{ textAlign: 'center', color: colors.gray[500], marginBottom: '48px', fontSize: '18px' }}>
+            Expert resources to help you tow safely and travel with confidence.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
+            {[
+              { title: 'Weight Calculator', description: 'Check your GVM, ATM, GCM, towing capacity and towball weight against Australian legal limits — free.', href: '/caravan-towing-weight-calculator', icon: '⚖️' },
+              { title: 'Tow Simulator', description: 'Model your complete tow setup. See weight distribution, sway risk, and compliance in one visual dashboard.', href: '/tow-simulator', icon: '🚗' },
+              { title: 'Trip Planner', description: 'Plan routes with fuel stops, weather forecasts, free camping, packing lists and budgets.', href: '/caravan-trip-planner', icon: '🗺️' },
+              { title: 'Weight Distribution Guide', description: 'Learn where to place heavy, medium and light items in your caravan for safe, stable towing.', href: '/caravan-weight-distribution-guide', icon: '📦' },
+              { title: 'Overweight Fines by State', description: 'State-by-state penalties, roadside inspection process, and the insurance risk most people don\'t know about.', href: '/caravan-overweight-fines-australia', icon: '🚨' },
+            ].map((tool, i) => (
+              <a key={i} href={tool.href} style={{
+                display: 'block', padding: '24px', backgroundColor: colors.white, borderRadius: '12px',
+                textDecoration: 'none', transition: 'box-shadow 0.2s',
+                boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+              }}>
+                <div style={{ fontSize: '28px', marginBottom: '12px' }}>{tool.icon}</div>
+                <h3 style={{ fontSize: '18px', fontWeight: '700', color: colors.gray[900], marginBottom: '8px' }}>{tool.title}</h3>
+                <p style={{ fontSize: '15px', color: colors.gray[500], lineHeight: '1.6', margin: 0 }}>{tool.description}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Pricing Section */}
-      <section id="pricing" style={{ padding: '80px 0', backgroundColor: colors.cream }}>
+      <section id="pricing" style={{ padding: '80px 0', backgroundColor: colors.white }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 24px' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', textAlign: 'center', marginBottom: '16px', color: colors.gray[900] }}>
             Simple, Transparent Pricing
@@ -1007,6 +1038,14 @@ export default function LandingPage() {
                 <a href="#pricing" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '16px' }}>Pricing</a>
                 <a href={`${APP_URL}/free-camping`} style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '16px' }}>Free Camping</a>
                 <a href={`${APP_URL}/shop`} style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '16px' }}>Shop</a>
+              </div>
+              <div>
+                <h4 style={{ color: colors.white, fontSize: '16px', fontWeight: '600', marginBottom: '16px' }}>Tools &amp; Guides</h4>
+                <a href="/caravan-towing-weight-calculator" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '16px' }}>Weight Calculator</a>
+                <a href="/tow-simulator" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '16px' }}>Tow Simulator</a>
+                <a href="/caravan-trip-planner" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '16px' }}>Trip Planner</a>
+                <a href="/caravan-weight-distribution-guide" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '16px' }}>Weight Distribution Guide</a>
+                <a href="/caravan-overweight-fines-australia" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '16px' }}>Overweight Fines</a>
               </div>
               <div>
                 <h4 style={{ color: colors.white, fontSize: '16px', fontWeight: '600', marginBottom: '16px' }}>Legal</h4>
