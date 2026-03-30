@@ -251,8 +251,9 @@ export default function CaravanTowingWeightCalculatorPage() {
             marginBottom: '48px',
             lineHeight: '1.6',
           }}>
-            KamperHub checks the same weight limits that roadside inspectors check. If any limit is exceeded,
-            you&apos;ll know before you leave — not when you&apos;re pulled over.
+            This caravan towing weight calculator checks whether your vehicle and caravan are within legal towing limits.
+            It compares your inputs against GVM, ATM, GCM, payload, and towball weight to show if your setup is compliant.
+            The result makes it clear whether your combination is safe, borderline, or overweight before you hit the road.
           </p>
 
           {[
@@ -416,7 +417,9 @@ export default function CaravanTowingWeightCalculatorPage() {
             marginBottom: '48px',
             lineHeight: '1.6',
           }}>
-            Caravan weight terms can be confusing. Here&apos;s what each one means in plain English.
+            GVM is the maximum your vehicle can weigh when loaded, while ATM is the fully loaded weight of your caravan.
+            GCM is the combined maximum weight of both together. Payload is how much weight your vehicle can carry, and towball
+            weight is the downward force applied by the caravan onto the vehicle&apos;s towbar.
           </p>
 
           <div style={{
@@ -527,8 +530,9 @@ export default function CaravanTowingWeightCalculatorPage() {
             Is This Caravan Towing Calculator Accurate?
           </h2>
           <p style={{ fontSize: '18px', color: colors.slate, textAlign: 'center', marginBottom: '32px', lineHeight: '1.6', maxWidth: '700px', margin: '0 auto 32px' }}>
-            KamperHub uses manufacturer-published specs for every vehicle and caravan in our database — the same
-            numbers stamped on your compliance plate. The calculator is as accurate as the weights you enter.
+            A caravan towing calculator is accurate when you enter real, measured weights rather than brochure figures.
+            Manufacturer numbers assume an empty vehicle and caravan, while real setups include passengers, gear, accessories,
+            and water. For best accuracy, use weighbridge measurements and treat the calculator as a compliance check, not a rough estimate.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
             <div style={{ padding: '20px', backgroundColor: colors.cream, borderRadius: '12px', borderLeft: `4px solid ${colors.primary}` }}>

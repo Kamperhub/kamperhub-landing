@@ -167,7 +167,9 @@ export default function CaravanWeightDistributionGuidePage() {
             How Weight Distribution Affects Towing Stability and Control
           </h2>
           <p style={{ fontSize: '18px', color: colors.slate, textAlign: 'center', marginBottom: '48px', lineHeight: '1.6' }}>
-            Two caravans can weigh exactly the same but behave completely differently on the road. The difference is where the weight sits.
+            Caravan weight distribution refers to how weight is spread across your caravan and tow vehicle. Correct distribution
+            keeps the centre of gravity low and balanced, improving stability and braking. Poor weight distribution can cause sway,
+            reduced steering control, and increased stopping distances even when total weight limits are not exceeded.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px' }}>
@@ -441,8 +443,9 @@ export default function CaravanWeightDistributionGuidePage() {
             How Weight Distribution Affects Your Legal Towing Limits
           </h2>
           <p style={{ fontSize: '18px', color: colors.slate, textAlign: 'center', marginBottom: '48px', lineHeight: '1.6' }}>
-            Distribution doesn&apos;t just affect handling — it changes which legal limits you&apos;re hitting.
-            The same total weight can pass or fail compliance depending on where it sits.
+            Weight distribution directly affects legal towing limits because it changes axle loads and towball weight.
+            Placing heavy items too far forward or rearward can push your vehicle over its GVM or rear axle limit.
+            This means a setup can become illegal even when the caravan&apos;s total weight appears acceptable.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', marginBottom: '48px' }}>

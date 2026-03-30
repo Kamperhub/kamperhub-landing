@@ -109,8 +109,10 @@ export default function CaravanTripPlannerPage() {
             Caravan Trip Planner — Plan Safe Routes, Fuel Stops and Travel Days
           </h1>
           <p style={{ fontSize: '20px', color: colors.slate, marginBottom: '32px', lineHeight: '1.6' }}>
-            Route planning, fuel stops, weather forecasts, free camping, packing lists and trip budgets — everything
-            you need to plan a caravan trip, in one app. Built by Australian travellers, for Australian travellers.
+            Planning a caravan trip around towing limits helps prevent fatigue, breakdowns, and safety risks.
+            Towing increases fuel use, braking distance, and travel time, which means routes and daily distances need
+            to be shorter than normal car trips. KamperHub accounts for these towing constraints — fuel stops, weather,
+            free camping, packing lists and budgets, all in one app.
           </p>
           <a href={`${APP_URL}/signup?redirect=/route-planner`} style={{
             display: 'inline-block', padding: '16px 40px', backgroundColor: colors.primary, color: colors.white,
@@ -194,7 +196,10 @@ export default function CaravanTripPlannerPage() {
             Why Caravan Trips Need Different Planning to Car Trips
           </h2>
           <p style={{ fontSize: '18px', color: colors.slate, textAlign: 'center', marginBottom: '48px', lineHeight: '1.6' }}>
-            Generic trip planners don&apos;t account for towing. KamperHub does. Here&apos;s what makes caravan trip planning different.
+            Caravan trips require different planning because towing changes how your vehicle performs.
+            Acceleration is slower, fuel consumption is higher, and safe stopping distances increase.
+            Ignoring these factors can lead to rushed days, unsafe driving conditions, and increased
+            mechanical stress on your vehicle and caravan.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>

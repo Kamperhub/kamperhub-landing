@@ -219,7 +219,10 @@ export default function TowSimulatorPage() {
             marginBottom: '48px',
             lineHeight: '1.6',
           }}>
-            A towing capacity check goes beyond a single number. Here&apos;s everything the simulator analyses for your safety on the road.
+            The tow simulator checks whether your car can tow your caravan by comparing your real-world weights against
+            legal and manufacturer limits. It looks beyond advertised towing capacity and evaluates GVM, GCM, payload, and
+            towball weight together. This shows whether your setup is safe and compliant, not just whether the engine can
+            physically pull the load.
           </p>
 
           {[
@@ -288,6 +291,12 @@ export default function TowSimulatorPage() {
           }}>
             Why Towing Capacity Alone Is Not Enough
           </h2>
+          <p style={{ fontSize: '18px', color: colors.slate, textAlign: 'center', marginBottom: '48px', lineHeight: '1.6', maxWidth: '800px', margin: '0 auto 48px' }}>
+            Towing capacity alone does not tell you if your car can legally tow a caravan. Most vehicles reach their
+            payload or GVM limit before hitting maximum towing capacity. Passengers, accessories, fuel, and towball weight
+            all count toward these limits, which is why many caravans are technically overweight despite being under the
+            towing capacity figure.
+          </p>
 
           <div style={{
             backgroundColor: colors.white,
@@ -351,6 +360,12 @@ export default function TowSimulatorPage() {
           }}>
             What Happens If Your Setup Fails the Simulation?
           </h2>
+          <p style={{ fontSize: '18px', color: colors.slate, textAlign: 'center', marginBottom: '48px', lineHeight: '1.6', maxWidth: '800px', margin: '0 auto 48px' }}>
+            If your setup fails the tow simulation, it means one or more legal weight limits are exceeded.
+            This can result in unsafe handling, increased braking distance, voided insurance, and fines if stopped
+            by police. The simulation highlights exactly which limit is exceeded so you know what needs to change
+            before towing.
+          </p>
 
           <div style={{
             display: 'grid',

@@ -93,8 +93,9 @@ export default function CaravanOverweightFinesPage() {
             Caravan Overweight Fines in Australia — Penalties, Demerit Points and Risks
           </h1>
           <p style={{ fontSize: '20px', color: colors.slate, marginBottom: '32px', lineHeight: '1.6' }}>
-            Overloading your caravan or tow vehicle can result in on-the-spot fines, defect notices, loss of licence points,
-            and — most critically — voided insurance. Here&apos;s what you need to know, state by state.
+            Yes, it is illegal to tow an overweight caravan in Australia. If your vehicle or caravan exceeds GVM, ATM, GCM,
+            or axle limits, you can be fined, lose demerit points, and be ordered off the road. Even small overloads can
+            result in penalties during roadside weight checks.
           </p>
           <a href={`${APP_URL}/signup?redirect=/weights`} style={{
             display: 'inline-block', padding: '16px 40px', backgroundColor: colors.primary, color: colors.white,
@@ -189,7 +190,9 @@ export default function CaravanOverweightFinesPage() {
             Can Towing Overweight Void Your Insurance?
           </h2>
           <p style={{ fontSize: '18px', color: colors.slate, textAlign: 'center', marginBottom: '48px', lineHeight: '1.6' }}>
-            Fines are painful. Voided insurance is catastrophic.
+            Towing an overweight caravan can void your insurance. If you are involved in an accident while exceeding legal
+            weight limits, insurers may refuse to pay out a claim. This applies even if the accident was not directly caused
+            by the excess weight, leaving you financially responsible for damages.
           </p>
 
           <div style={{ padding: '32px', backgroundColor: '#fef2f2', borderRadius: '12px', borderLeft: '5px solid #ef4444' }}>
@@ -225,6 +228,11 @@ export default function CaravanOverweightFinesPage() {
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '48px', textAlign: 'center' }}>
             Why Most Caravans Are Overweight Without Realising
           </h2>
+          <p style={{ fontSize: '18px', color: colors.slate, textAlign: 'center', marginBottom: '48px', lineHeight: '1.6', maxWidth: '800px', margin: '0 auto 48px' }}>
+            Most caravans are overweight because brochure weights do not include accessories, water, food, or personal gear.
+            Items like bull bars, roof racks, batteries, and towball download quickly use up payload. Without weighing the
+            setup, many caravanners unknowingly exceed legal limits.
+          </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px' }}>
             {[
