@@ -112,11 +112,12 @@ export default function OverweightTrailerFinesPage() {
       <section style={{ backgroundColor: '#fef2f2', padding: '80px 24px', textAlign: 'center' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <h1 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: '800', color: colors.darkEarth, marginBottom: '16px', lineHeight: '1.2' }}>
-            Overweight Trailer &amp; RV Fines in the United States
+            RV and Trailer Weight Laws in the United States — What You Need to Know
           </h1>
           <p style={{ fontSize: '20px', color: colors.slate, marginBottom: '32px', lineHeight: '1.6' }}>
-            Exceeding your trailer or tow vehicle&apos;s weight rating can result in hefty fines, vehicle impoundment,
-            out-of-service orders, and — most critically — voided insurance. Here&apos;s what you need to know, state by state.
+            Yes, towing an overweight RV or trailer can be illegal in the United States. While enforcement varies
+            by state, exceeding manufacturer weight ratings or axle limits can result in citations, forced off-loading,
+            or being required to stop until the setup is brought back within limits.
           </p>
           <a href={`${APP_URL}/signup?redirect=/weights`} style={{
             display: 'inline-block', padding: '16px 40px', backgroundColor: colors.primary, color: colors.white,
@@ -131,7 +132,7 @@ export default function OverweightTrailerFinesPage() {
       <section style={{ padding: '80px 24px', backgroundColor: colors.white }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '16px', textAlign: 'center' }}>
-            Overweight Fines by State
+            Federal vs State RV Weight Laws
           </h2>
           <p style={{ fontSize: '18px', color: colors.slate, textAlign: 'center', marginBottom: '16px', lineHeight: '1.6' }}>
             Each US state sets its own penalties for overweight vehicles and trailers.
@@ -181,7 +182,7 @@ export default function OverweightTrailerFinesPage() {
       <section style={{ padding: '80px 24px', backgroundColor: colors.cream }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '48px', textAlign: 'center' }}>
-            What Happens at a DOT Weigh Station or Roadside Inspection
+            What Happens If You&apos;re Stopped Overweight
           </h2>
 
           {[
@@ -209,7 +210,7 @@ export default function OverweightTrailerFinesPage() {
       <section style={{ padding: '80px 24px', backgroundColor: colors.white }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '16px', textAlign: 'center' }}>
-            The Insurance Risk Most People Don&apos;t Know About
+            Can Towing Overweight Affect Insurance Claims?
           </h2>
           <p style={{ fontSize: '18px', color: colors.slate, textAlign: 'center', marginBottom: '48px', lineHeight: '1.6' }}>
             Fines are painful. Voided insurance is catastrophic.
@@ -248,7 +249,7 @@ export default function OverweightTrailerFinesPage() {
       <section style={{ padding: '80px 24px', backgroundColor: colors.cream }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '48px', textAlign: 'center' }}>
-            How to Avoid Overweight Fines
+            Why Many RVs Are Overweight Without Realizing It
           </h2>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px' }}>
@@ -287,7 +288,7 @@ export default function OverweightTrailerFinesPage() {
       <section style={{ padding: '80px 24px', backgroundColor: colors.primary, textAlign: 'center' }}>
         <div style={{ maxWidth: '700px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.white, marginBottom: '16px' }}>
-            Check Your Setup Before You Get Fined
+            Check Your RV Weight Before You Tow
           </h2>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.85)', marginBottom: '32px', lineHeight: '1.6' }}>
             KamperHub checks what the DOT checks — GVWR, GCWR, towing capacity, and tongue weight.

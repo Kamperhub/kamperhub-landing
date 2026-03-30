@@ -143,7 +143,7 @@ export default function TrailerWeightDistributionGuidePage() {
       <section style={{ backgroundColor: colors.cream, padding: '80px 24px', textAlign: 'center' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <h1 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: '800', color: colors.darkEarth, marginBottom: '16px', lineHeight: '1.2' }}>
-            Trailer Weight Distribution Guide
+            RV Weight Distribution Guide — How to Load Your Trailer for Safe Towing
           </h1>
           <p style={{ fontSize: '20px', color: colors.slate, marginBottom: '32px', lineHeight: '1.6' }}>
             How you load your travel trailer matters more than how much you load it. Poor weight distribution is the leading
@@ -157,10 +157,12 @@ export default function TrailerWeightDistributionGuidePage() {
       <section style={{ padding: '80px 24px', backgroundColor: colors.white }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '16px', textAlign: 'center' }}>
-            Why Weight Distribution Matters
+            How Weight Distribution Affects Stability and Braking
           </h2>
           <p style={{ fontSize: '18px', color: colors.slate, textAlign: 'center', marginBottom: '48px', lineHeight: '1.6' }}>
-            Two trailers can weigh exactly the same but behave completely differently on the road. The difference is where the weight sits.
+            Weight distribution directly affects how well your truck and trailer respond during braking and lane changes.
+            Too much rear or high-mounted weight increases sway, while excessive tongue weight overloads the rear axle.
+            Balanced loading keeps the rig predictable and easier to control at highway speeds.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px' }}>
@@ -200,7 +202,7 @@ export default function TrailerWeightDistributionGuidePage() {
       <section style={{ padding: '80px 24px', backgroundColor: colors.cream }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '16px', textAlign: 'center' }}>
-            The Three Loading Zones
+            Where to Load Heavy Gear in an RV or Trailer
           </h2>
           <p style={{ fontSize: '18px', color: colors.slate, textAlign: 'center', marginBottom: '48px', lineHeight: '1.6' }}>
             Think of your trailer as three zones: front, middle (over the axle), and rear. Each zone has a role in keeping your setup balanced and safe.
@@ -325,7 +327,7 @@ export default function TrailerWeightDistributionGuidePage() {
       <section style={{ padding: '80px 24px', backgroundColor: colors.white }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '48px', textAlign: 'center' }}>
-            How to Load Your Travel Trailer — Step by Step
+            How to Load Your RV or Trailer for Safe Towing — Step by Step
           </h2>
 
           {[
@@ -355,7 +357,7 @@ export default function TrailerWeightDistributionGuidePage() {
       <section style={{ padding: '80px 24px', backgroundColor: colors.cream }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '48px', textAlign: 'center' }}>
-            Common Loading Mistakes
+            Common Weight Distribution Mistakes That Cause Trailer Sway
           </h2>
 
           {[
@@ -427,7 +429,7 @@ export default function TrailerWeightDistributionGuidePage() {
       <section style={{ padding: '80px 24px', backgroundColor: colors.cream }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '16px', textAlign: 'center' }}>
-            How Weight Distribution Affects Your Legal Towing Limits
+            How Weight Distribution Impacts GVWR and Payload Limits
           </h2>
           <p style={{ fontSize: '18px', color: colors.slate, textAlign: 'center', marginBottom: '48px', lineHeight: '1.6' }}>
             Distribution doesn&apos;t just affect handling — it changes which legal limits you&apos;re hitting.
@@ -502,7 +504,7 @@ export default function TrailerWeightDistributionGuidePage() {
       <section style={{ padding: '80px 24px', backgroundColor: colors.primary, textAlign: 'center' }}>
         <div style={{ maxWidth: '700px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.white, marginBottom: '16px' }}>
-            Track Your Trailer Weight Distribution Digitally
+            Check Your Weight Distribution With an RV Towing Calculator
           </h2>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.85)', marginBottom: '32px', lineHeight: '1.6' }}>
             KamperHub&apos;s tow simulator lets you place cargo in loading zones and see the effect on tongue weight,

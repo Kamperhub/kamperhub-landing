@@ -128,11 +128,12 @@ export default function RvTripPlannerPage() {
       <section style={{ backgroundColor: colors.cream, padding: '80px 24px', textAlign: 'center' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <h1 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: '800', color: colors.darkEarth, marginBottom: '16px', lineHeight: '1.2' }}>
-            Plan Your RV Trip Across the USA
+            RV Trip Planner — Plan Routes, Fuel Stops, and Safe Travel Days
           </h1>
           <p style={{ fontSize: '20px', color: colors.slate, marginBottom: '32px', lineHeight: '1.6' }}>
-            Route planning, fuel stops, weather forecasts, boondocking, packing lists and trip budgets — everything
-            you need to plan an RV road trip, in one app. From national parks to interstate adventures.
+            Planning RV trips around towing limits helps prevent fatigue, overheating, and fuel issues.
+            Towing increases fuel consumption and reduces comfortable daily driving distances. A towing-aware trip plan
+            accounts for shorter days, more frequent fuel stops, and rest breaks suited to heavier rigs.
           </p>
           <a href={`${APP_URL}/signup?redirect=/route-planner`} style={{
             display: 'inline-block', padding: '16px 40px', backgroundColor: colors.primary, color: colors.white,
@@ -150,7 +151,7 @@ export default function RvTripPlannerPage() {
       <section style={{ padding: '80px 24px', backgroundColor: colors.white }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '48px', textAlign: 'center' }}>
-            Everything You Need to Plan an RV Trip
+            Route Planning With Fuel Stops and Terrain in Mind
           </h2>
 
           {[
@@ -213,10 +214,12 @@ export default function RvTripPlannerPage() {
       <section style={{ padding: '80px 24px', backgroundColor: colors.cream }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '16px', textAlign: 'center' }}>
-            Built for RVs — Not Just Cars
+            Why RV Trips Require Different Planning Than Car Trips
           </h2>
           <p style={{ fontSize: '18px', color: colors.slate, textAlign: 'center', marginBottom: '48px', lineHeight: '1.6' }}>
-            Generic trip planners don&apos;t account for towing. KamperHub does. Here&apos;s what makes RV trip planning different.
+            RV trips require different planning because towing changes how a vehicle accelerates, climbs hills,
+            and stops. Ignoring these differences can lead to rushed travel days and unsafe driving conditions.
+            Planning with towing in mind results in smoother trips and less strain on the vehicle.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
@@ -258,7 +261,7 @@ export default function RvTripPlannerPage() {
       <section style={{ padding: '80px 24px', backgroundColor: colors.cream }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '48px', textAlign: 'center' }}>
-            How Trip Planning Works
+            Avoid Long or Unsafe Driving Days When Towing
           </h2>
 
           {[
@@ -347,7 +350,7 @@ export default function RvTripPlannerPage() {
       <section style={{ padding: '80px 24px', backgroundColor: colors.primary, textAlign: 'center' }}>
         <div style={{ maxWidth: '700px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.white, marginBottom: '16px' }}>
-            Plan Your Next Adventure
+            Plan Your Next RV Trip With KamperHub
           </h2>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.85)', marginBottom: '32px', lineHeight: '1.6' }}>
             Route planning, fuel stops, boondocking, weather, packing lists and budgets — all in one app.

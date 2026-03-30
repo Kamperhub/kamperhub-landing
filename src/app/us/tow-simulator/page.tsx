@@ -180,7 +180,7 @@ export default function TowSimulatorPage() {
             marginBottom: '16px',
             lineHeight: '1.2',
           }}>
-            Tow Simulator: Check If Your Truck Can Tow Your Trailer Safely
+            Tow Simulator — Check If Your Truck Can Safely Tow Your RV or Trailer
           </h1>
           <p style={{
             fontSize: '20px',
@@ -188,9 +188,9 @@ export default function TowSimulatorPage() {
             marginBottom: '12px',
             lineHeight: '1.6',
           }}>
-            This is not a driving game or animation — it&apos;s a <strong>towing compliance simulator</strong> that models
-            your real truck and trailer combination. See weight distribution, sway risk, tongue weight and legal compliance
-            in one visual dashboard before you pack a single item.
+            The tow simulator evaluates real-world towing limits by accounting for how weight is actually carried by your truck.
+            It checks payload usage, tongue weight, GVWR, and GCWR together to show whether your setup is balanced, safe, and
+            within manufacturer ratings — not just theoretically towable. This is not a driving game or animation.
           </p>
           <p style={{
             fontSize: '15px',
@@ -229,7 +229,7 @@ export default function TowSimulatorPage() {
             marginBottom: '16px',
             textAlign: 'center',
           }}>
-            What the Tow Simulator Shows You
+            What the Tow Simulator Evaluates (GVWR, GCWR, Payload, Tongue Weight)
           </h2>
           <p style={{
             fontSize: '18px',
@@ -305,7 +305,7 @@ export default function TowSimulatorPage() {
             marginBottom: '48px',
             textAlign: 'center',
           }}>
-            Tow Simulator vs Basic Weight Calculator
+            Why Tow Ratings Don&apos;t Reflect Real-World Payload
           </h2>
 
           <div style={{
@@ -368,7 +368,7 @@ export default function TowSimulatorPage() {
             marginBottom: '48px',
             textAlign: 'center',
           }}>
-            When to Use the Tow Simulator
+            What It Means If Your Setup Fails the Simulation
           </h2>
 
           <div style={{
@@ -460,7 +460,7 @@ export default function TowSimulatorPage() {
             color: colors.white,
             marginBottom: '16px',
           }}>
-            Know Your Load Before You Hit the Road
+            Run a Complete RV Weight Check in KamperHub
           </h2>
           <p style={{
             fontSize: '18px',

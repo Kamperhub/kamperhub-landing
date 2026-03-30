@@ -153,7 +153,7 @@ export default function USTowingWeightCalculatorPage() {
       <section style={{ backgroundColor: colors.cream, padding: '80px 24px', textAlign: 'center' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <h1 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: '800', color: colors.darkEarth, marginBottom: '16px', lineHeight: '1.2' }}>
-            Towing Weight Calculator
+            RV Towing Weight Calculator — Can My Truck or SUV Tow This Trailer?
           </h1>
           <p style={{ fontSize: '20px', color: colors.slate, marginBottom: '32px', lineHeight: '1.6' }}>
             Check if your truck can safely tow your trailer — for free. Our calculator checks your GVWR, GCWR,
@@ -169,7 +169,7 @@ export default function USTowingWeightCalculatorPage() {
             border: `2px solid ${colors.primary}`,
           }}>
             <h2 style={{ fontSize: '22px', fontWeight: '700', color: colors.darkEarth, marginBottom: '4px', marginTop: 0 }}>
-              Quick Tow Compatibility Check
+              Enter Your Truck and Trailer Weights
             </h2>
             <p style={{ fontSize: '15px', color: colors.slate, marginBottom: '16px' }}>
               Select your vehicle and trailer below to see if they&apos;re compatible. For a full compliance check with cargo, passengers and tongue weight, sign up free.
@@ -195,10 +195,12 @@ export default function USTowingWeightCalculatorPage() {
       <section style={{ padding: '80px 24px', backgroundColor: colors.white }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '16px', textAlign: 'center' }}>
-            What Does the Weight Calculator Check?
+            How This RV Towing Weight Calculator Works
           </h2>
           <p style={{ fontSize: '18px', color: colors.slate, textAlign: 'center', marginBottom: '48px', lineHeight: '1.6' }}>
-            KamperHub checks the same weight ratings that DOT inspectors and weigh stations check.
+            This RV towing weight calculator shows whether your truck or SUV can safely tow a specific trailer based on real
+            weight limits. It checks GVWR, GCWR, payload capacity, and tongue weight together, not just the advertised tow rating.
+            This gives a clearer picture of real-world towing limits before you buy an RV or hit the road.
           </p>
 
           {[
@@ -223,7 +225,7 @@ export default function USTowingWeightCalculatorPage() {
       <section style={{ padding: '80px 24px', backgroundColor: colors.cream }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '48px', textAlign: 'center' }}>
-            How to Check if Your Truck Can Tow Your Trailer
+            Why Being Under the Tow Rating Is Not Enough
           </h2>
 
           {[
@@ -253,7 +255,7 @@ export default function USTowingWeightCalculatorPage() {
       <section style={{ padding: '80px 24px', backgroundColor: colors.white }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '48px', textAlign: 'center' }}>
-            Towing Weight Terms Explained
+            Understanding GVWR, GCWR, Payload, and Tongue Weight
           </h2>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
@@ -280,7 +282,7 @@ export default function USTowingWeightCalculatorPage() {
       <section style={{ padding: '80px 24px', backgroundColor: colors.cream }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '48px', textAlign: 'center' }}>
-            Why Checking Your Towing Weights Matters
+            What Happens If Your RV or Trailer Is Overweight
           </h2>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px' }}>
@@ -316,7 +318,7 @@ export default function USTowingWeightCalculatorPage() {
       {/* CTA */}
       <section style={{ padding: '80px 24px', backgroundColor: colors.primary, textAlign: 'center' }}>
         <div style={{ maxWidth: '700px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.white, marginBottom: '16px' }}>Check Your Towing Weights in Under 2 Minutes</h2>
+          <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.white, marginBottom: '16px' }}>Check Your Full Towing Setup in KamperHub</h2>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.85)', marginBottom: '32px', lineHeight: '1.6' }}>
             Free to use, no credit card required. Check GVWR, GCWR, towing capacity and tongue weight before your next trip.
           </p>
