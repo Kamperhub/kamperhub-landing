@@ -6,8 +6,8 @@ import TowCheckWidget from '../../components/TowCheckWidget';
 const APP_URL = 'https://app.kamperhub.com';
 
 export const metadata: Metadata = {
-  title: 'Caravan Towing Weight Calculator Australia | Free GVM, ATM & GCM Check — KamperHub',
-  description: 'Free caravan towing weight calculator for Australian travellers. Check your GVM, ATM, GCM, towing capacity and towball weight in minutes. Find out if your car can safely tow your caravan.',
+  title: 'Caravan Towing Weight Calculator | Can My Car Tow My Caravan? — KamperHub',
+  description: 'Free caravan towing weight calculator for Australia. Check GVM, ATM, GCM, payload and towball weight to see if your car can legally tow your caravan.',
   keywords: 'caravan towing weight calculator, caravan weight compliance, GVM calculator, ATM calculator, towing capacity check australia, towball weight calculator, caravan weight check, can my car tow my caravan',
   openGraph: {
     title: 'Caravan Towing Weight Calculator — KamperHub',
@@ -182,7 +182,8 @@ export default function CaravanTowingWeightCalculatorPage() {
             marginBottom: '16px',
             lineHeight: '1.2',
           }}>
-            Caravan Towing Weight Calculator
+
+            Caravan Towing Weight Calculator — Check If Your Car Can Tow Your Caravan
           </h1>
           <p style={{
             fontSize: '20px',
@@ -190,8 +191,8 @@ export default function CaravanTowingWeightCalculatorPage() {
             marginBottom: '32px',
             lineHeight: '1.6',
           }}>
-            Check if your car can safely tow your caravan — for free. Our calculator checks your GVM, ATM, GCM,
-            towing capacity and towball weight against Australian legal limits in under two minutes.
+            Enter your vehicle and caravan weights below to check GVM, ATM, GCM,
+            towing capacity and towball weight against Australian legal limits — for free, in under two minutes.
           </p>
           {/* Embedded tow check widget — prominent placement */}
           <div style={{
@@ -203,7 +204,7 @@ export default function CaravanTowingWeightCalculatorPage() {
             border: `2px solid ${colors.primary}`,
           }}>
             <h2 style={{ fontSize: '22px', fontWeight: '700', color: colors.darkEarth, marginBottom: '4px', marginTop: 0 }}>
-              Quick Tow Compatibility Check
+              Enter Your Vehicle and Caravan Weights
             </h2>
             <p style={{ fontSize: '15px', color: colors.slate, marginBottom: '16px' }}>
               Select your vehicle and caravan below to see if they&apos;re compatible. For a full compliance check with cargo, passengers and towball weight, sign up free.
@@ -241,7 +242,7 @@ export default function CaravanTowingWeightCalculatorPage() {
             marginBottom: '16px',
             textAlign: 'center',
           }}>
-            What Does the Weight Calculator Check?
+            How This Caravan Towing Weight Calculator Works
           </h2>
           <p style={{
             fontSize: '18px',
@@ -313,7 +314,7 @@ export default function CaravanTowingWeightCalculatorPage() {
             marginBottom: '16px',
             textAlign: 'center',
           }}>
-            How to Check if Your Car Can Tow Your Caravan
+            How to Check Your Caravan Towing Weights — Step by Step
           </h2>
           <p style={{
             fontSize: '18px',
@@ -406,7 +407,7 @@ export default function CaravanTowingWeightCalculatorPage() {
             marginBottom: '16px',
             textAlign: 'center',
           }}>
-            Caravan Weight Terms Explained
+            Understanding GVM, ATM, GCM, Payload and Towball Weight
           </h2>
           <p style={{
             fontSize: '18px',
@@ -461,7 +462,7 @@ export default function CaravanTowingWeightCalculatorPage() {
             marginBottom: '16px',
             textAlign: 'center',
           }}>
-            Why Checking Your Towing Weights Matters
+            What Happens If Your Caravan Is Overweight?
           </h2>
           <p style={{
             fontSize: '18px',
@@ -470,7 +471,7 @@ export default function CaravanTowingWeightCalculatorPage() {
             marginBottom: '48px',
             lineHeight: '1.6',
           }}>
-            It&apos;s not just about following the rules — it&apos;s about getting home safely.
+            Exceeding weight limits has real consequences — fines, voided insurance, and dangerous towing. Here&apos;s what&apos;s at stake.
           </p>
 
           <div style={{
@@ -519,8 +520,50 @@ export default function CaravanTowingWeightCalculatorPage() {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* Accuracy & trust */}
       <section style={{ padding: '80px 24px', backgroundColor: colors.white }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '16px', textAlign: 'center' }}>
+            Is This Caravan Towing Calculator Accurate?
+          </h2>
+          <p style={{ fontSize: '18px', color: colors.slate, textAlign: 'center', marginBottom: '32px', lineHeight: '1.6', maxWidth: '700px', margin: '0 auto 32px' }}>
+            KamperHub uses manufacturer-published specs for every vehicle and caravan in our database — the same
+            numbers stamped on your compliance plate. The calculator is as accurate as the weights you enter.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
+            <div style={{ padding: '20px', backgroundColor: colors.cream, borderRadius: '12px', borderLeft: `4px solid ${colors.primary}` }}>
+              <h3 style={{ fontSize: '18px', fontWeight: '700', color: colors.darkEarth, marginBottom: '8px', marginTop: 0 }}>
+                What weights you need before using the calculator
+              </h3>
+              <p style={{ fontSize: '15px', color: colors.slate, lineHeight: '1.6', margin: 0 }}>
+                Your vehicle&apos;s GVM, GCM, and towing capacity (owner&apos;s manual or door sticker). Your caravan&apos;s
+                tare weight and ATM (compliance plate). KamperHub loads these automatically if your model is in our database.
+              </p>
+            </div>
+            <div style={{ padding: '20px', backgroundColor: colors.cream, borderRadius: '12px', borderLeft: `4px solid ${colors.primary}` }}>
+              <h3 style={{ fontSize: '18px', fontWeight: '700', color: colors.darkEarth, marginBottom: '8px', marginTop: 0 }}>
+                Why towing capacity alone is misleading
+              </h3>
+              <p style={{ fontSize: '15px', color: colors.slate, lineHeight: '1.6', margin: 0 }}>
+                Your vehicle might have a 3,500 kg towing capacity — but if your GCM or GVM is exceeded first, you&apos;re
+                still overweight. KamperHub checks all five limits simultaneously, not just one.
+              </p>
+            </div>
+            <div style={{ padding: '20px', backgroundColor: colors.cream, borderRadius: '12px', borderLeft: `4px solid ${colors.primary}` }}>
+              <h3 style={{ fontSize: '18px', fontWeight: '700', color: colors.darkEarth, marginBottom: '8px', marginTop: 0 }}>
+                Do I need a weighbridge to be compliant?
+              </h3>
+              <p style={{ fontSize: '15px', color: colors.slate, lineHeight: '1.6', margin: 0 }}>
+                A weighbridge gives the most precise reading. But for routine checks, enter your known cargo weights
+                into KamperHub and you&apos;ll know if you&apos;re within limits — without leaving the driveway.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section style={{ padding: '80px 24px', backgroundColor: colors.cream }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 style={{
             fontSize: '32px',
@@ -563,7 +606,7 @@ export default function CaravanTowingWeightCalculatorPage() {
             color: colors.white,
             marginBottom: '16px',
           }}>
-            Check Your Towing Weights in Under 2 Minutes
+            Check Your Full Towing Setup in KamperHub
           </h2>
           <p style={{
             fontSize: '18px',
