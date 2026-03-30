@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import TowCheckWidget from '../../../components/TowCheckWidget';
 
 const APP_URL = 'https://app.kamperhub.com';
 
@@ -123,6 +124,11 @@ export default function USTowingWeightCalculatorPage() {
             Check Your Weights Free →
           </a>
           <p style={{ fontSize: '14px', color: colors.slate, marginTop: '12px' }}>No credit card required. Free plan includes full weight compliance checks.</p>
+
+          {/* Embedded tow check widget */}
+          <div style={{ marginTop: '40px' }}>
+            <TowCheckWidget region="us" />
+          </div>
         </div>
       </section>
 
