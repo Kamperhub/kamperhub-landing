@@ -370,6 +370,19 @@ export default function LandingPage() {
             <a href={`${APP_URL}/blog`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '20px' }}>Blog</a>
             <a href={`${APP_URL}/library`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '20px' }}>Bookshelf</a>
             <a href={`${APP_URL}/shop`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '20px' }}>Shop</a>
+            <a href={`${APP_URL}/kids`} style={{
+              padding: '8px 20px',
+              background: 'linear-gradient(135deg, #3b82f6, #2563eb)',
+              color: colors.white,
+              textDecoration: 'none',
+              fontWeight: '700',
+              borderRadius: '8px',
+              fontSize: '20px',
+              border: 'none',
+              boxShadow: '0 2px 8px rgba(37, 99, 235, 0.4)',
+            }}>
+              Kids Zone
+            </a>
             <a href={`${APP_URL}/login`} style={{
               padding: '8px 20px',
               backgroundColor: 'rgba(255,255,255,0.15)',
@@ -405,6 +418,7 @@ export default function LandingPage() {
             <a href={`${APP_URL}/blog`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Blog</a>
             <a href={`${APP_URL}/library`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Bookshelf</a>
             <a href={`${APP_URL}/shop`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Shop</a>
+            <a href={`${APP_URL}/kids`} style={{ display: 'block', padding: '12px 16px', marginTop: '8px', background: 'linear-gradient(135deg, #3b82f6, #2563eb)', color: colors.white, textDecoration: 'none', fontWeight: '700', borderRadius: '8px', textAlign: 'center' as const, boxShadow: '0 2px 8px rgba(37, 99, 235, 0.4)' }}>Kids Zone</a>
             <a href={`${APP_URL}/login`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Log In</a>
           </div>
         )}
