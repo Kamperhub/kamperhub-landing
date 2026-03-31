@@ -25,6 +25,12 @@ import {
   Tent,
   Refrigerator,
   MapPin,
+  BookOpen,
+  Eye,
+  Pencil,
+  Trophy,
+  Star,
+  Lock,
 } from 'lucide-react';
 
 // Brand Colors - Bush Meets Coast palette
@@ -259,6 +265,27 @@ export default function LandingPage() {
       cta: 'Get Pro — $49/yr',
       ctaBg: '#7c3aed',
     },
+    {
+      name: 'Family',
+      price: '$99',
+      priceDetail: '$99/year — includes Kids Zone',
+      color: '#3b82f6',
+      bg: colors.white,
+      border: '#e5e7eb',
+      badge: 'New',
+      features: [
+        'Everything in Pro, plus:',
+        'KamperHub Kids Zone (ages 3–12)',
+        "Kip's Storybooks & learning games",
+        'Wildlife spotting & state collector',
+        'Road trip challenges & bingo',
+        'Travel journal for kids',
+        'Kid profiles & age groups',
+        'Trip countdown & activities',
+      ],
+      cta: 'Get Family — $99/yr',
+      ctaBg: '#3b82f6',
+    },
   ];
 
   const faqs = [
@@ -281,6 +308,10 @@ export default function LandingPage() {
     {
       q: 'What\'s the difference between Explorer and Pro?',
       a: 'Explorer ($10/year) gives you unlimited trips, packing lists, all calculators, and travel stats. Pro ($49/year) adds full weight compliance with TowSafe scoring, expense tracking and budgets, household sharing (up to 5 members), unlimited vehicles and caravans, and full inventory management.'
+    },
+    {
+      q: 'What is the Kids Zone?',
+      a: 'KamperHub Kids Zone is a collection of educational games and activities designed for kids aged 3–12. It includes storybooks, wildlife spotting, a state collector map, travel journals, road trip challenges, and more. Two activities are free for all users. The full Kids Zone (9 activities) is included with the Family Plan ($99/year).'
     },
     {
       q: 'What vehicles and caravans are supported?',
@@ -370,7 +401,7 @@ export default function LandingPage() {
             <a href={`${APP_URL}/blog`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '20px' }}>Blog</a>
             <a href={`${APP_URL}/library`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '20px' }}>Bookshelf</a>
             <a href={`${APP_URL}/shop`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '20px' }}>Shop</a>
-            <a href={`${APP_URL}/kids`} style={{
+            <a href="#kids-zone" style={{
               padding: '8px 20px',
               background: 'linear-gradient(135deg, #3b82f6, #2563eb)',
               color: colors.white,
@@ -418,7 +449,7 @@ export default function LandingPage() {
             <a href={`${APP_URL}/blog`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Blog</a>
             <a href={`${APP_URL}/library`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Bookshelf</a>
             <a href={`${APP_URL}/shop`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Shop</a>
-            <a href={`${APP_URL}/kids`} style={{ display: 'block', padding: '12px 16px', marginTop: '8px', background: 'linear-gradient(135deg, #3b82f6, #2563eb)', color: colors.white, textDecoration: 'none', fontWeight: '700', borderRadius: '8px', textAlign: 'center' as const, boxShadow: '0 2px 8px rgba(37, 99, 235, 0.4)' }}>Kids Zone</a>
+            <a href="#kids-zone" onClick={() => setMobileMenuOpen(false)} style={{ display: 'block', padding: '12px 16px', marginTop: '8px', background: 'linear-gradient(135deg, #3b82f6, #2563eb)', color: colors.white, textDecoration: 'none', fontWeight: '700', borderRadius: '8px', textAlign: 'center' as const, boxShadow: '0 2px 8px rgba(37, 99, 235, 0.4)' }}>Kids Zone</a>
             <a href={`${APP_URL}/login`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Log In</a>
           </div>
         )}
@@ -851,6 +882,204 @@ export default function LandingPage() {
                 <p style={{ fontSize: '15px', color: colors.gray[500], lineHeight: '1.6', margin: 0 }}>{tool.description}</p>
               </a>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Kids Zone Showcase */}
+      <section id="kids-zone" style={{
+        padding: '80px 0',
+        background: 'linear-gradient(180deg, #eef2ff 0%, #f5f3ff 50%, #ffffff 100%)',
+      }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 24px' }}>
+          {/* Header */}
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <div style={{
+              display: 'inline-block',
+              padding: '8px 20px',
+              backgroundColor: '#3b82f6',
+              color: '#ffffff',
+              borderRadius: '100px',
+              fontSize: '13px',
+              fontWeight: '700',
+              textTransform: 'uppercase',
+              letterSpacing: '1px',
+              marginBottom: '20px',
+            }}>
+              Family Plan Feature
+            </div>
+            <h2 style={{
+              fontSize: '36px',
+              fontWeight: '800',
+              color: colors.gray[900],
+              marginBottom: '16px',
+              lineHeight: '1.2',
+            }}>
+              KamperHub Kids Zone
+            </h2>
+            <p style={{
+              fontSize: '18px',
+              color: colors.gray[500],
+              maxWidth: '600px',
+              margin: '0 auto',
+              lineHeight: '1.6',
+            }}>
+              Keep the kids entertained and learning on every road trip. Educational games, stories, and activities designed for ages 3–12.
+            </p>
+          </div>
+
+          {/* Activity Cards */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+            gap: '20px',
+            marginBottom: '48px',
+          }}>
+            {[
+              { icon: BookOpen, title: "Kip's Storybooks", desc: 'Illustrated adventure stories that teach values like patience, bravery, and helping others.', color: '#22c55e', bg: '#f0fdf4', free: true },
+              { icon: Star, title: 'Learn & Play', desc: 'Times tables, spelling bees, maths challenges, and counting games — learning made fun.', color: '#f59e0b', bg: '#fefce8', free: true },
+              { icon: Eye, title: 'Wildlife Spotting', desc: 'Spot and log Australian animals on your trip. Track sightings with location data.', color: '#3b82f6', bg: '#eff6ff', free: false },
+              { icon: Map, title: 'State Collector', desc: "Colour in the states you've visited and build your Australia map as you travel.", color: '#6366f1', bg: '#eef2ff', free: false },
+              { icon: Pencil, title: 'Travel Journal', desc: 'Kids write about their daily adventures with drawings, mood stickers, and photos.', color: '#ec4899', bg: '#fdf2f8', free: false },
+              { icon: Trophy, title: 'Road Trip Challenge', desc: 'Timed spotting game with family leaderboard — play together on multiple devices.', color: '#f97316', bg: '#fff7ed', free: false },
+            ].map((activity, i) => (
+              <div key={i} style={{
+                backgroundColor: '#ffffff',
+                borderRadius: '16px',
+                padding: '24px',
+                boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
+                border: `1px solid ${activity.free ? `${activity.color}30` : '#e5e7eb'}`,
+                position: 'relative',
+              }}>
+                {activity.free ? (
+                  <div style={{
+                    position: 'absolute',
+                    top: '12px',
+                    right: '12px',
+                    background: '#22c55e',
+                    color: '#fff',
+                    fontSize: '11px',
+                    fontWeight: '700',
+                    padding: '3px 10px',
+                    borderRadius: '8px',
+                  }}>
+                    Free Preview
+                  </div>
+                ) : (
+                  <div style={{
+                    position: 'absolute',
+                    top: '12px',
+                    right: '12px',
+                    background: '#6366f1',
+                    color: '#fff',
+                    fontSize: '11px',
+                    fontWeight: '700',
+                    padding: '3px 10px',
+                    borderRadius: '8px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '4px',
+                  }}>
+                    <Lock size={10} />
+                    Family Plan
+                  </div>
+                )}
+                <div style={{
+                  width: '48px',
+                  height: '48px',
+                  backgroundColor: activity.bg,
+                  borderRadius: '12px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: '16px',
+                }}>
+                  <activity.icon size={24} color={activity.color} />
+                </div>
+                <h3 style={{
+                  fontSize: '17px',
+                  fontWeight: '700',
+                  color: colors.gray[900],
+                  marginBottom: '8px',
+                }}>
+                  {activity.title}
+                </h3>
+                <p style={{
+                  fontSize: '14px',
+                  color: colors.gray[500],
+                  lineHeight: '1.5',
+                  margin: 0,
+                }}>
+                  {activity.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Age Group Badges */}
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            gap: '16px',
+            flexWrap: 'wrap',
+            marginBottom: '40px',
+          }}>
+            {[
+              { label: 'Little Explorers', ages: '3–5', color: '#f59e0b' },
+              { label: 'Junior Rangers', ages: '6–8', color: '#22c55e' },
+              { label: 'Trail Blazers', ages: '9–12', color: '#6366f1' },
+            ].map((group, i) => (
+              <div key={i} style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '10px 20px',
+                backgroundColor: '#ffffff',
+                borderRadius: '100px',
+                border: `2px solid ${group.color}`,
+                boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
+              }}>
+                <div style={{
+                  width: '10px',
+                  height: '10px',
+                  borderRadius: '50%',
+                  backgroundColor: group.color,
+                }} />
+                <span style={{ fontWeight: '700', color: colors.gray[900], fontSize: '14px' }}>
+                  {group.label}
+                </span>
+                <span style={{ color: colors.gray[500], fontSize: '13px' }}>
+                  ({group.ages})
+                </span>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div style={{ textAlign: 'center' }}>
+            <a href={`${APP_URL}/signup`} style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              padding: '16px 40px',
+              background: 'linear-gradient(135deg, #3b82f6, #2563eb)',
+              color: '#ffffff',
+              textDecoration: 'none',
+              fontWeight: '700',
+              borderRadius: '12px',
+              fontSize: '18px',
+              boxShadow: '0 4px 14px rgba(37, 99, 235, 0.3)',
+            }}>
+              Try Kids Zone Free
+              <ArrowRight size={20} />
+            </a>
+            <p style={{
+              color: colors.gray[500],
+              fontSize: '14px',
+              marginTop: '16px',
+            }}>
+              2 free activities included · Family Plan unlocks all 9 activities — $99/year
+            </p>
           </div>
         </div>
       </section>
