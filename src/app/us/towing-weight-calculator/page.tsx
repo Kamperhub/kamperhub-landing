@@ -4,6 +4,7 @@ import Link from 'next/link';
 import TowCheckWidget from '../../../components/TowCheckWidget';
 
 const APP_URL = 'https://app.kamperhub.com';
+const UTM = 'utm_source=kamperhub&utm_medium=landing&utm_campaign=us-towing-calculator';
 
 export const metadata: Metadata = {
   title: 'Towing Weight Calculator | Free GVWR, GCWR & Tongue Weight Check — KamperHub',
@@ -144,7 +145,7 @@ export default function USTowingWeightCalculatorPage() {
             <Link href="/" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontSize: '20px', fontWeight: '500' }}>Home</Link>
             <Link href="/us/tow-simulator" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontSize: '20px', fontWeight: '500' }}>Tow Simulator</Link>
             <a href={`${APP_URL}/blog`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontSize: '20px', fontWeight: '500' }}>Blog</a>
-            <a href={`${APP_URL}/signup?redirect=/weights`} style={{ padding: '10px 24px', backgroundColor: colors.accent, color: colors.white, textDecoration: 'none', fontWeight: '600', borderRadius: '8px', fontSize: '20px' }}>Try Free</a>
+            <a href={`${APP_URL}/signup?redirect=/weights&region=us&${UTM}`} style={{ padding: '10px 24px', backgroundColor: colors.accent, color: colors.white, textDecoration: 'none', fontWeight: '600', borderRadius: '8px', fontSize: '20px' }}>Try Free</a>
           </div>
         </div>
       </nav>
@@ -181,7 +182,7 @@ export default function USTowingWeightCalculatorPage() {
           </div>
 
           <div style={{ marginTop: '24px' }}>
-            <a href={`${APP_URL}/signup?redirect=/weights`} style={{
+            <a href={`${APP_URL}/signup?redirect=/weights&region=us&${UTM}`} style={{
               display: 'inline-block', padding: '16px 40px', backgroundColor: colors.primary, color: colors.white,
               textDecoration: 'none', fontWeight: '700', borderRadius: '12px', fontSize: '20px',
             }}>
@@ -247,7 +248,7 @@ export default function USTowingWeightCalculatorPage() {
           ))}
 
           <div style={{ textAlign: 'center', marginTop: '40px' }}>
-            <a href={`${APP_URL}/signup?redirect=/weights`} style={{ display: 'inline-block', padding: '16px 40px', backgroundColor: colors.primary, color: colors.white, textDecoration: 'none', fontWeight: '700', borderRadius: '12px', fontSize: '20px' }}>
+            <a href={`${APP_URL}/signup?redirect=/weights&region=us&${UTM}`} style={{ display: 'inline-block', padding: '16px 40px', backgroundColor: colors.primary, color: colors.white, textDecoration: 'none', fontWeight: '700', borderRadius: '12px', fontSize: '20px' }}>
               Check Your Weights Free →
             </a>
           </div>
@@ -325,7 +326,7 @@ export default function USTowingWeightCalculatorPage() {
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.85)', marginBottom: '32px', lineHeight: '1.6' }}>
             Free to use, no credit card required. Check GVWR, GCWR, towing capacity and tongue weight before your next trip.
           </p>
-          <a href={`${APP_URL}/signup?redirect=/weights`} style={{ display: 'inline-block', padding: '16px 48px', backgroundColor: colors.accent, color: colors.white, textDecoration: 'none', fontWeight: '700', borderRadius: '12px', fontSize: '20px' }}>
+          <a href={`${APP_URL}/signup?redirect=/weights&region=us&${UTM}`} style={{ display: 'inline-block', padding: '16px 48px', backgroundColor: colors.accent, color: colors.white, textDecoration: 'none', fontWeight: '700', borderRadius: '12px', fontSize: '20px' }}>
             Get Started Free →
           </a>
         </div>
