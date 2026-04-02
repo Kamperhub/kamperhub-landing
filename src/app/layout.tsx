@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     icon: '/logo.png',
     apple: '/logo.png',
   },
+  alternates: {
+    canonical: 'https://kamperhub.com',
+  },
   openGraph: {
     title: 'KamperHub - Your Caravan Travel Companion',
     description: 'Plan trips, manage your rig, track weights, and hit the road with confidence. Built by Aussie travellers, for Aussie travellers.',
