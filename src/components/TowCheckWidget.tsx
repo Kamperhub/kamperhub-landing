@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 
 const API_BASE = 'https://app.kamperhub.com/api/public/tow-check';
+const LEAD_API = 'https://app.kamperhub.com/api/public/lead-capture';
 const APP_URL = 'https://app.kamperhub.com';
 
 interface Vehicle {
@@ -54,11 +55,18 @@ export default function TowCheckWidget({ region = 'au' }: { region?: 'au' | 'us'
   const [loading, setLoading] = useState(false);
   const [dataLoading, setDataLoading] = useState(true);
 
+  // Email capture state
+  const [email, setEmail] = useState('');
+  const [emailSending, setEmailSending] = useState(false);
+  const [emailSent, setEmailSent] = useState(false);
+  const [emailError, setEmailError] = useState('');
+
   const isUS = region === 'us';
   const trailerLabel = isUS ? 'Trailer' : 'Caravan';
   const vehicleLabel = isUS ? 'Truck' : 'Vehicle';
   const vehicleSectionLabel = isUS ? 'Your Truck or SUV' : 'Your Vehicle';
   const trailerSectionLabel = isUS ? 'RV or Trailer You\'re Considering' : 'Your Caravan';
+  const tongueLabel = isUS ? 'Tongue' : 'Towball';
 
   useEffect(() => {
     Promise.all([
@@ -85,6 +93,8 @@ export default function TowCheckWidget({ region = 'au' }: { region?: 'au' | 'us'
     if (!selectedVehicleId || !selectedCaravanId) return;
     setLoading(true);
     setResult(null);
+    setEmailSent(false);
+    setEmailError('');
     try {
       const res = await fetch(`${API_BASE}?action=check&vehicleId=${selectedVehicleId}&caravanId=${selectedCaravanId}`);
       const data = await res.json();
@@ -93,6 +103,38 @@ export default function TowCheckWidget({ region = 'au' }: { region?: 'au' | 'us'
       // silently fail
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleEmailReport = async () => {
+    if (!email || !result) return;
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setEmailError('Please enter a valid email address');
+      return;
+    }
+    setEmailSending(true);
+    setEmailError('');
+    try {
+      const res = await fetch(LEAD_API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email,
+          vehicle: result.vehicle,
+          caravan: result.caravan,
+          result: result.result,
+          region,
+        }),
+      });
+      if (res.ok) {
+        setEmailSent(true);
+      } else {
+        setEmailError('Something went wrong. Please try again.');
+      }
+    } catch {
+      setEmailError('Something went wrong. Please try again.');
+    } finally {
+      setEmailSending(false);
     }
   };
 
@@ -118,6 +160,9 @@ export default function TowCheckWidget({ region = 'au' }: { region?: 'au' | 'us'
       </div>
     );
   }
+
+  const UTM = 'utm_source=kamperhub&utm_medium=landing&utm_campaign=us-towing-calculator';
+  const signupUrl = `${APP_URL}/signup?redirect=/weights&region=${region}&${UTM}`;
 
   return (
     <div style={{
@@ -222,7 +267,7 @@ export default function TowCheckWidget({ region = 'au' }: { region?: 'au' | 'us'
             marginBottom: '16px',
           }}>
             <div style={{ fontSize: '28px', marginBottom: '8px' }}>
-              {result.result.canTow ? '✅' : '❌'}
+              {result.result.canTow ? '\u2705' : '\u274C'}
             </div>
             <div style={{ fontSize: '20px', fontWeight: '700', color: result.result.canTow ? '#16a34a' : '#dc2626', marginBottom: '8px' }}>
               {result.result.canTow
@@ -248,7 +293,7 @@ export default function TowCheckWidget({ region = 'au' }: { region?: 'au' | 'us'
             marginBottom: '20px',
           }}>
             <p style={{ fontSize: '14px', color: '#92400e', margin: 0, lineHeight: '1.6' }}>
-              <strong>⚠️ This is a basic towing capacity check only.</strong> Your actual compliance depends on
+              <strong>This is a basic towing capacity check only.</strong> Your actual compliance depends on
               passengers, cargo, water, fuel, and how you load your {trailerLabel.toLowerCase()}.
               {result.result.canTow
                 ? ` Having ${formatWeight(result.result.marginKg)} of margin doesn't mean you can load ${formatWeight(result.result.marginKg)} of gear — your ${isUS ? 'GVWR' : 'GVM'}, ${isUS ? 'GCWR' : 'GCM'}, and ${isUS ? 'tongue' : 'towball'} weight all have separate limits.`
@@ -258,13 +303,140 @@ export default function TowCheckWidget({ region = 'au' }: { region?: 'au' | 'us'
             </p>
           </div>
 
-          {/* CTA */}
+          {/* Locked Insights — what they're missing */}
+          <div style={{ marginBottom: '20px' }}>
+            <p style={{ fontSize: '16px', fontWeight: '700', color: colors.darkEarth, marginBottom: '12px' }}>
+              What the full compliance check also covers:
+            </p>
+
+            {[
+              {
+                label: `${tongueLabel} Weight Analysis`,
+                teaser: `Is your ${tongueLabel.toLowerCase()} weight in the safe 10–15% range? Too low = sway. Too high = rear axle overload.`,
+                value: '??%',
+              },
+              {
+                label: `${isUS ? 'GVWR' : 'GVM'} & ${isUS ? 'GCWR' : 'GCM'} Check`,
+                teaser: `Your vehicle's total loaded weight and combined weight — the limits most people don't know about.`,
+                value: '?? / ??',
+              },
+              {
+                label: 'Payload Remaining',
+                teaser: `How much cargo capacity do you actually have left after passengers, water, and fuel?`,
+                value: `?? ${isUS ? 'lbs' : 'kg'}`,
+              },
+              {
+                label: 'Sway Risk Assessment',
+                teaser: `Based on your weight distribution, are you at risk of dangerous trailer sway at highway speeds?`,
+                value: '??',
+              },
+            ].map((insight, i) => (
+              <div key={i} style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '12px 16px',
+                backgroundColor: '#f3f4f6',
+                borderRadius: i === 0 ? '10px 10px 0 0' : i === 3 ? '0 0 10px 10px' : '0',
+                borderBottom: i < 3 ? '1px solid #e5e7eb' : 'none',
+              }}>
+                <div style={{ flex: 1 }}>
+                  <div style={{ fontSize: '15px', fontWeight: '600', color: colors.darkEarth }}>{insight.label}</div>
+                  <div style={{ fontSize: '13px', color: '#9ca3af', marginTop: '2px' }}>{insight.teaser}</div>
+                </div>
+                <div style={{
+                  fontSize: '16px',
+                  fontWeight: '700',
+                  color: '#d1d5db',
+                  marginLeft: '16px',
+                  whiteSpace: 'nowrap',
+                  filter: 'blur(4px)',
+                  userSelect: 'none',
+                }}>
+                  {insight.value}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Email Capture */}
+          {!emailSent ? (
+            <div style={{
+              padding: '20px',
+              backgroundColor: '#f0f9ff',
+              border: '1px solid #bae6fd',
+              borderRadius: '12px',
+              marginBottom: '16px',
+            }}>
+              <p style={{ fontSize: '16px', fontWeight: '700', color: colors.darkEarth, margin: '0 0 4px 0' }}>
+                Save your results
+              </p>
+              <p style={{ fontSize: '14px', color: colors.slate, margin: '0 0 12px 0' }}>
+                Get this report emailed to you — handy to reference at the dealer or before your next trip.
+              </p>
+              <div style={{ display: 'flex', gap: '8px' }}>
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  value={email}
+                  onChange={(e) => { setEmail(e.target.value); setEmailError(''); }}
+                  onKeyDown={(e) => { if (e.key === 'Enter') handleEmailReport(); }}
+                  style={{
+                    flex: 1,
+                    padding: '12px 16px',
+                    fontSize: '16px',
+                    borderRadius: '8px',
+                    border: emailError ? '2px solid #ef4444' : '2px solid #d4c9b0',
+                    backgroundColor: colors.white,
+                    color: colors.darkEarth,
+                    outline: 'none',
+                  }}
+                />
+                <button
+                  onClick={handleEmailReport}
+                  disabled={emailSending || !email}
+                  style={{
+                    padding: '12px 20px',
+                    fontSize: '16px',
+                    fontWeight: '600',
+                    backgroundColor: colors.accent,
+                    color: colors.white,
+                    border: 'none',
+                    borderRadius: '8px',
+                    cursor: emailSending || !email ? 'not-allowed' : 'pointer',
+                    opacity: emailSending || !email ? 0.6 : 1,
+                    whiteSpace: 'nowrap',
+                  }}
+                >
+                  {emailSending ? 'Sending...' : 'Email Me'}
+                </button>
+              </div>
+              {emailError && (
+                <p style={{ fontSize: '13px', color: '#ef4444', margin: '8px 0 0 0' }}>{emailError}</p>
+              )}
+            </div>
+          ) : (
+            <div style={{
+              padding: '20px',
+              backgroundColor: '#f0fdf4',
+              border: '1px solid #22c55e',
+              borderRadius: '12px',
+              marginBottom: '16px',
+              textAlign: 'center',
+            }}>
+              <p style={{ fontSize: '16px', fontWeight: '600', color: '#166534', margin: 0 }}>
+                Report sent! Check your inbox.
+              </p>
+            </div>
+          )}
+
+          {/* Signup CTA */}
           <a
-            href={`${APP_URL}/signup?redirect=/weights`}
+            href={signupUrl}
             style={{
               display: 'block',
               padding: '16px',
-              backgroundColor: colors.accent,
+              backgroundColor: colors.primary,
               color: colors.white,
               textDecoration: 'none',
               fontWeight: '700',
@@ -273,10 +445,10 @@ export default function TowCheckWidget({ region = 'au' }: { region?: 'au' | 'us'
               textAlign: 'center',
             }}
           >
-            Check Your Full Compliance Free →
+            Get Your Full Compliance Report Free
           </a>
           <p style={{ fontSize: '13px', color: colors.slate, textAlign: 'center', marginTop: '8px', marginBottom: 0 }}>
-            {isUS ? 'GVWR, GCWR, towing capacity, tongue weight' : 'GVM, ATM, GCM, towing capacity, towball weight'} — all checked in under 2 minutes.
+            {isUS ? 'GVWR, GCWR, towing capacity, tongue weight' : 'GVM, ATM, GCM, towing capacity, towball weight'} — all checked in under 2 minutes. No credit card required.
           </p>
         </div>
       )}
