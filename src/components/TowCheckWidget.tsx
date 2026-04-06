@@ -51,6 +51,8 @@ export default function TowCheckWidget({ region = 'au' }: { region?: 'au' | 'us'
   const [selectedBrand, setSelectedBrand] = useState('');
   const [selectedCaravanId, setSelectedCaravanId] = useState('');
 
+  // Two-phase result: pendingResult holds data before email gate, result shows after
+  const [pendingResult, setPendingResult] = useState<CheckResult | null>(null);
   const [result, setResult] = useState<CheckResult | null>(null);
   const [loading, setLoading] = useState(false);
   const [dataLoading, setDataLoading] = useState(true);
@@ -89,16 +91,18 @@ export default function TowCheckWidget({ region = 'au' }: { region?: 'au' | 'us'
     ? caravans.filter(c => c.brand === selectedBrand)
     : [];
 
+  // Fetch result but hold it behind the email gate
   const handleCheck = async () => {
     if (!selectedVehicleId || !selectedCaravanId) return;
     setLoading(true);
+    setPendingResult(null);
     setResult(null);
     setEmailSent(false);
     setEmailError('');
     try {
       const res = await fetch(`${API_BASE}?action=check&vehicleId=${selectedVehicleId}&caravanId=${selectedCaravanId}`);
       const data = await res.json();
-      setResult(data);
+      setPendingResult(data);
     } catch {
       // silently fail
     } finally {
@@ -106,8 +110,10 @@ export default function TowCheckWidget({ region = 'au' }: { region?: 'au' | 'us'
     }
   };
 
-  const handleEmailReport = async () => {
-    if (!email || !result) return;
+  // Submit email → store lead → reveal result
+  const handleEmailSubmit = async () => {
+    const checkData = pendingResult;
+    if (!email || !checkData) return;
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       setEmailError('Please enter a valid email address');
       return;
@@ -120,13 +126,14 @@ export default function TowCheckWidget({ region = 'au' }: { region?: 'au' | 'us'
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           email,
-          vehicle: result.vehicle,
-          caravan: result.caravan,
-          result: result.result,
+          vehicle: checkData.vehicle,
+          caravan: checkData.caravan,
+          result: checkData.result,
           region,
         }),
       });
       if (res.ok) {
+        setResult(checkData);
         setEmailSent(true);
       } else {
         setEmailError('Something went wrong. Please try again.');
@@ -181,7 +188,7 @@ export default function TowCheckWidget({ region = 'au' }: { region?: 'au' | 'us'
         <select
           style={selectStyle}
           value={selectedMake}
-          onChange={(e) => { setSelectedMake(e.target.value); setSelectedVehicleId(''); setResult(null); }}
+          onChange={(e) => { setSelectedMake(e.target.value); setSelectedVehicleId(''); setPendingResult(null); setResult(null); }}
         >
           <option value="">Select make...</option>
           {makes.map(make => <option key={make} value={make}>{make}</option>)}
@@ -196,7 +203,7 @@ export default function TowCheckWidget({ region = 'au' }: { region?: 'au' | 'us'
           <select
             style={selectStyle}
             value={selectedVehicleId}
-            onChange={(e) => { setSelectedVehicleId(e.target.value); setResult(null); }}
+            onChange={(e) => { setSelectedVehicleId(e.target.value); setPendingResult(null); setResult(null); }}
           >
             <option value="">Select model...</option>
             {filteredVehicles.map(v => <option key={v.id} value={v.id}>{v.label}</option>)}
@@ -212,7 +219,7 @@ export default function TowCheckWidget({ region = 'au' }: { region?: 'au' | 'us'
         <select
           style={selectStyle}
           value={selectedBrand}
-          onChange={(e) => { setSelectedBrand(e.target.value); setSelectedCaravanId(''); setResult(null); }}
+          onChange={(e) => { setSelectedBrand(e.target.value); setSelectedCaravanId(''); setPendingResult(null); setResult(null); }}
         >
           <option value="">Select brand...</option>
           {brands.map(brand => <option key={brand} value={brand}>{brand}</option>)}
@@ -227,7 +234,7 @@ export default function TowCheckWidget({ region = 'au' }: { region?: 'au' | 'us'
           <select
             style={selectStyle}
             value={selectedCaravanId}
-            onChange={(e) => { setSelectedCaravanId(e.target.value); setResult(null); }}
+            onChange={(e) => { setSelectedCaravanId(e.target.value); setPendingResult(null); setResult(null); }}
           >
             <option value="">Select model...</option>
             {filteredCaravans.map(c => <option key={c.id} value={c.id}>{c.label}</option>)}
@@ -254,7 +261,77 @@ export default function TowCheckWidget({ region = 'au' }: { region?: 'au' | 'us'
         {loading ? 'Checking...' : 'Can I Tow This?'}
       </button>
 
-      {/* Result */}
+      {/* Email Gate — shows after check, before result */}
+      {pendingResult && !result && (
+        <div style={{ marginTop: '24px' }}>
+          <div style={{
+            padding: '28px 24px',
+            backgroundColor: '#f8faf8',
+            border: '2px solid #6b8e6b',
+            borderRadius: '12px',
+            textAlign: 'center',
+          }}>
+            <div style={{ fontSize: '32px', marginBottom: '12px' }}>
+              {pendingResult.result.canTow ? '✅' : '⚠️'}
+            </div>
+            <p style={{ fontSize: '20px', fontWeight: '700', color: colors.darkEarth, margin: '0 0 8px 0' }}>
+              Your result is ready
+            </p>
+            <p style={{ fontSize: '15px', color: colors.slate, margin: '0 0 20px 0', lineHeight: '1.5' }}>
+              Enter your email to see your towing compatibility result.
+              {' '}We&apos;ll also send you a copy for reference.
+            </p>
+
+            <div style={{ display: 'flex', gap: '8px', maxWidth: '420px', margin: '0 auto' }}>
+              <input
+                type="email"
+                placeholder="Your email address"
+                value={email}
+                onChange={(e) => { setEmail(e.target.value); setEmailError(''); }}
+                onKeyDown={(e) => { if (e.key === 'Enter') handleEmailSubmit(); }}
+                style={{
+                  flex: 1,
+                  padding: '14px 16px',
+                  fontSize: '16px',
+                  borderRadius: '8px',
+                  border: emailError ? '2px solid #ef4444' : '2px solid #d4c9b0',
+                  backgroundColor: colors.white,
+                  color: colors.darkEarth,
+                  outline: 'none',
+                }}
+              />
+              <button
+                onClick={handleEmailSubmit}
+                disabled={emailSending || !email}
+                style={{
+                  padding: '14px 24px',
+                  fontSize: '16px',
+                  fontWeight: '700',
+                  backgroundColor: colors.accent,
+                  color: colors.white,
+                  border: 'none',
+                  borderRadius: '8px',
+                  cursor: emailSending || !email ? 'not-allowed' : 'pointer',
+                  opacity: emailSending || !email ? 0.6 : 1,
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                {emailSending ? 'Loading...' : 'Show Result'}
+              </button>
+            </div>
+
+            {emailError && (
+              <p style={{ fontSize: '13px', color: '#ef4444', margin: '8px 0 0 0' }}>{emailError}</p>
+            )}
+
+            <p style={{ fontSize: '13px', color: '#9ca3af', margin: '16px 0 0 0' }}>
+              No account needed. No credit card. No spam.
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* Result — shows after email submitted */}
       {result && (
         <div style={{ marginTop: '24px' }}>
           {/* Pass/Fail banner */}
@@ -283,6 +360,22 @@ export default function TowCheckWidget({ region = 'au' }: { region?: 'au' | 'us'
               }
             </div>
           </div>
+
+          {/* Email sent confirmation */}
+          {emailSent && (
+            <div style={{
+              padding: '12px 16px',
+              backgroundColor: '#f0fdf4',
+              border: '1px solid #22c55e',
+              borderRadius: '8px',
+              marginBottom: '16px',
+              textAlign: 'center',
+            }}>
+              <p style={{ fontSize: '14px', color: '#166534', margin: 0 }}>
+                A copy of this report has been sent to <strong>{email}</strong>
+              </p>
+            </div>
+          )}
 
           {/* Caveat */}
           <div style={{
@@ -358,77 +451,6 @@ export default function TowCheckWidget({ region = 'au' }: { region?: 'au' | 'us'
               </div>
             ))}
           </div>
-
-          {/* Email Capture */}
-          {!emailSent ? (
-            <div style={{
-              padding: '20px',
-              backgroundColor: '#f0f9ff',
-              border: '1px solid #bae6fd',
-              borderRadius: '12px',
-              marginBottom: '16px',
-            }}>
-              <p style={{ fontSize: '16px', fontWeight: '700', color: colors.darkEarth, margin: '0 0 4px 0' }}>
-                Save your results
-              </p>
-              <p style={{ fontSize: '14px', color: colors.slate, margin: '0 0 12px 0' }}>
-                Get this report emailed to you — handy to reference at the dealer or before your next trip.
-              </p>
-              <div style={{ display: 'flex', gap: '8px' }}>
-                <input
-                  type="email"
-                  placeholder="Your email address"
-                  value={email}
-                  onChange={(e) => { setEmail(e.target.value); setEmailError(''); }}
-                  onKeyDown={(e) => { if (e.key === 'Enter') handleEmailReport(); }}
-                  style={{
-                    flex: 1,
-                    padding: '12px 16px',
-                    fontSize: '16px',
-                    borderRadius: '8px',
-                    border: emailError ? '2px solid #ef4444' : '2px solid #d4c9b0',
-                    backgroundColor: colors.white,
-                    color: colors.darkEarth,
-                    outline: 'none',
-                  }}
-                />
-                <button
-                  onClick={handleEmailReport}
-                  disabled={emailSending || !email}
-                  style={{
-                    padding: '12px 20px',
-                    fontSize: '16px',
-                    fontWeight: '600',
-                    backgroundColor: colors.accent,
-                    color: colors.white,
-                    border: 'none',
-                    borderRadius: '8px',
-                    cursor: emailSending || !email ? 'not-allowed' : 'pointer',
-                    opacity: emailSending || !email ? 0.6 : 1,
-                    whiteSpace: 'nowrap',
-                  }}
-                >
-                  {emailSending ? 'Sending...' : 'Email Me'}
-                </button>
-              </div>
-              {emailError && (
-                <p style={{ fontSize: '13px', color: '#ef4444', margin: '8px 0 0 0' }}>{emailError}</p>
-              )}
-            </div>
-          ) : (
-            <div style={{
-              padding: '20px',
-              backgroundColor: '#f0fdf4',
-              border: '1px solid #22c55e',
-              borderRadius: '12px',
-              marginBottom: '16px',
-              textAlign: 'center',
-            }}>
-              <p style={{ fontSize: '16px', fontWeight: '600', color: '#166534', margin: 0 }}>
-                Report sent! Check your inbox.
-              </p>
-            </div>
-          )}
 
           {/* Signup CTA */}
           <a
