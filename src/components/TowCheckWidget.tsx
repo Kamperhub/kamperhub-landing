@@ -62,6 +62,8 @@ export default function TowCheckWidget({ region = 'au' }: { region?: 'au' | 'us'
   const [emailSending, setEmailSending] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
   const [emailError, setEmailError] = useState('');
+  const [limitReached, setLimitReached] = useState(false);
+  const [limitSignupUrl, setLimitSignupUrl] = useState('');
 
   const isUS = region === 'us';
   const trailerLabel = isUS ? 'Trailer' : 'Caravan';
@@ -136,7 +138,13 @@ export default function TowCheckWidget({ region = 'au' }: { region?: 'au' | 'us'
         setResult(checkData);
         setEmailSent(true);
       } else {
-        setEmailError('Something went wrong. Please try again.');
+        const data = await res.json().catch(() => null);
+        if (data?.error === 'limit_reached') {
+          setLimitReached(true);
+          setLimitSignupUrl(data.signupUrl || `https://app.kamperhub.com/signup?email=${encodeURIComponent(email)}`);
+        } else {
+          setEmailError('Something went wrong. Please try again.');
+        }
       }
     } catch {
       setEmailError('Something went wrong. Please try again.');
@@ -266,67 +274,102 @@ export default function TowCheckWidget({ region = 'au' }: { region?: 'au' | 'us'
         <div style={{ marginTop: '24px' }}>
           <div style={{
             padding: '28px 24px',
-            backgroundColor: '#f8faf8',
-            border: '2px solid #6b8e6b',
+            backgroundColor: limitReached ? '#fffbeb' : '#f8faf8',
+            border: `2px solid ${limitReached ? '#f59e0b' : '#6b8e6b'}`,
             borderRadius: '12px',
             textAlign: 'center',
           }}>
-            <div style={{ fontSize: '32px', marginBottom: '12px' }}>
-              {pendingResult.result.canTow ? '✅' : '⚠️'}
-            </div>
-            <p style={{ fontSize: '20px', fontWeight: '700', color: colors.darkEarth, margin: '0 0 8px 0' }}>
-              Your result is ready
-            </p>
-            <p style={{ fontSize: '15px', color: colors.slate, margin: '0 0 20px 0', lineHeight: '1.5' }}>
-              Enter your email to see your towing compatibility result.
-              {' '}We&apos;ll also send you a copy for reference.
-            </p>
+            {limitReached ? (
+              <>
+                <div style={{ fontSize: '32px', marginBottom: '12px' }}>🔒</div>
+                <p style={{ fontSize: '20px', fontWeight: '700', color: colors.darkEarth, margin: '0 0 8px 0' }}>
+                  You&apos;ve used your free tow check
+                </p>
+                <p style={{ fontSize: '15px', color: colors.slate, margin: '0 0 20px 0', lineHeight: '1.5' }}>
+                  Sign up for a free account to check unlimited vehicle and {isUS ? 'trailer' : 'caravan'} combinations,
+                  plus get access to the full tow simulator, weight gauges, and more.
+                </p>
+                <a
+                  href={limitSignupUrl}
+                  style={{
+                    display: 'inline-block',
+                    padding: '14px 32px',
+                    fontSize: '16px',
+                    fontWeight: '700',
+                    backgroundColor: colors.accent,
+                    color: colors.white,
+                    border: 'none',
+                    borderRadius: '8px',
+                    textDecoration: 'none',
+                    cursor: 'pointer',
+                  }}
+                >
+                  Sign Up Free — Unlimited Checks
+                </a>
+                <p style={{ fontSize: '13px', color: '#9ca3af', margin: '16px 0 0 0' }}>
+                  No credit card required. Takes 30 seconds.
+                </p>
+              </>
+            ) : (
+              <>
+                <div style={{ fontSize: '32px', marginBottom: '12px' }}>
+                  {pendingResult.result.canTow ? '✅' : '⚠️'}
+                </div>
+                <p style={{ fontSize: '20px', fontWeight: '700', color: colors.darkEarth, margin: '0 0 8px 0' }}>
+                  Your result is ready
+                </p>
+                <p style={{ fontSize: '15px', color: colors.slate, margin: '0 0 20px 0', lineHeight: '1.5' }}>
+                  Enter your email to see your towing compatibility result.
+                  {' '}We&apos;ll also send you a copy for reference.
+                </p>
 
-            <div style={{ display: 'flex', gap: '8px', maxWidth: '420px', margin: '0 auto' }}>
-              <input
-                type="email"
-                placeholder="Your email address"
-                value={email}
-                onChange={(e) => { setEmail(e.target.value); setEmailError(''); }}
-                onKeyDown={(e) => { if (e.key === 'Enter') handleEmailSubmit(); }}
-                style={{
-                  flex: 1,
-                  padding: '14px 16px',
-                  fontSize: '16px',
-                  borderRadius: '8px',
-                  border: emailError ? '2px solid #ef4444' : '2px solid #d4c9b0',
-                  backgroundColor: colors.white,
-                  color: colors.darkEarth,
-                  outline: 'none',
-                }}
-              />
-              <button
-                onClick={handleEmailSubmit}
-                disabled={emailSending || !email}
-                style={{
-                  padding: '14px 24px',
-                  fontSize: '16px',
-                  fontWeight: '700',
-                  backgroundColor: colors.accent,
-                  color: colors.white,
-                  border: 'none',
-                  borderRadius: '8px',
-                  cursor: emailSending || !email ? 'not-allowed' : 'pointer',
-                  opacity: emailSending || !email ? 0.6 : 1,
-                  whiteSpace: 'nowrap',
-                }}
-              >
-                {emailSending ? 'Loading...' : 'Show Result'}
-              </button>
-            </div>
+                <div style={{ display: 'flex', gap: '8px', maxWidth: '420px', margin: '0 auto' }}>
+                  <input
+                    type="email"
+                    placeholder="Your email address"
+                    value={email}
+                    onChange={(e) => { setEmail(e.target.value); setEmailError(''); }}
+                    onKeyDown={(e) => { if (e.key === 'Enter') handleEmailSubmit(); }}
+                    style={{
+                      flex: 1,
+                      padding: '14px 16px',
+                      fontSize: '16px',
+                      borderRadius: '8px',
+                      border: emailError ? '2px solid #ef4444' : '2px solid #d4c9b0',
+                      backgroundColor: colors.white,
+                      color: colors.darkEarth,
+                      outline: 'none',
+                    }}
+                  />
+                  <button
+                    onClick={handleEmailSubmit}
+                    disabled={emailSending || !email}
+                    style={{
+                      padding: '14px 24px',
+                      fontSize: '16px',
+                      fontWeight: '700',
+                      backgroundColor: colors.accent,
+                      color: colors.white,
+                      border: 'none',
+                      borderRadius: '8px',
+                      cursor: emailSending || !email ? 'not-allowed' : 'pointer',
+                      opacity: emailSending || !email ? 0.6 : 1,
+                      whiteSpace: 'nowrap',
+                    }}
+                  >
+                    {emailSending ? 'Loading...' : 'Show Result'}
+                  </button>
+                </div>
 
-            {emailError && (
-              <p style={{ fontSize: '13px', color: '#ef4444', margin: '8px 0 0 0' }}>{emailError}</p>
+                {emailError && (
+                  <p style={{ fontSize: '13px', color: '#ef4444', margin: '8px 0 0 0' }}>{emailError}</p>
+                )}
+
+                <p style={{ fontSize: '13px', color: '#9ca3af', margin: '16px 0 0 0' }}>
+                  No account needed. No credit card. No spam.
+                </p>
+              </>
             )}
-
-            <p style={{ fontSize: '13px', color: '#9ca3af', margin: '16px 0 0 0' }}>
-              No account needed. No credit card. No spam.
-            </p>
           </div>
         </div>
       )}
