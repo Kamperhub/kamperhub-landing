@@ -176,7 +176,7 @@ export default function LandingPage() {
     { name: 'Fuel Cost', icon: Fuel, color: '#f59e0b', bg: '#fef9c3' },
     { name: 'Tyre Pressure', icon: Gauge, color: '#ec4899', bg: '#fdf2f8' },
     { name: 'Water Tank', icon: Droplets, color: '#0891b2', bg: '#ecfeff' },
-    { name: 'Solar & Battery', icon: Battery, color: '#22c55e', bg: '#f0fdf4' },
+    { name: 'Power System Planner', icon: Battery, color: '#22c55e', bg: '#f0fdf4' },
     { name: 'Gas/LPG Usage', icon: Thermometer, color: '#f97316', bg: '#fff7ed' },
     { name: 'Fridge Runtime', icon: Refrigerator, color: '#06b6d4', bg: '#ecfeff' },
     { name: 'Trip Cost', icon: DollarSign, color: '#10b981', bg: '#ecfdf5' },
@@ -871,6 +871,7 @@ export default function LandingPage() {
               { title: 'Trip Planner', description: 'Plan routes with fuel stops, weather forecasts, free camping, packing lists and budgets.', href: '/caravan-trip-planner', icon: '🗺️' },
               { title: 'Weight Distribution Guide', description: 'Learn where to place heavy, medium and light items in your caravan for safe, stable towing.', href: '/caravan-weight-distribution-guide', icon: '📦' },
               { title: 'Overweight Fines by State', description: 'State-by-state penalties, roadside inspection process, and the insurance risk most people don\'t know about.', href: '/caravan-overweight-fines-australia', icon: '🚨' },
+              { title: 'Power System Planner', description: 'Calculate your daily power usage, size solar panels and batteries, and design a complete off-grid electrical system for your caravan.', href: 'https://app.kamperhub.com/tools/solar', icon: '🔋' },
             ].map((tool, i) => (
               <a key={i} href={tool.href} style={{
                 display: 'block', padding: '24px', backgroundColor: colors.white, borderRadius: '12px',
