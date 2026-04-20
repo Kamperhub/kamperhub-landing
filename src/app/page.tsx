@@ -9,7 +9,6 @@ import {
   Fuel,
   CheckSquare,
   DollarSign,
-  Users,
   ChevronDown,
   Check,
   Menu,
@@ -20,7 +19,6 @@ import {
   Clock,
   Gauge,
   ArrowRight,
-  Mail,
   Download,
   Tent,
   Refrigerator,
@@ -122,21 +120,28 @@ export default function LandingPage() {
     {
       icon: Scale,
       title: 'Towing Safety Checks',
-      description: 'Get a clear pass/fail safety score for your vehicle and caravan combo before you leave. Know your limits, tow with confidence.',
+      description: 'More than a pass/fail score. Simulate your full load, and get specific fixes — "shift 20kg forward, drop 10L of water" — until your rig is compliant.',
       color: '#3b82f6',
       bg: '#eff6ff'
     },
     {
+      icon: Gauge,
+      title: 'Live Tow Simulator',
+      description: 'Drag items between front, middle, and rear of your rig. Towball weight, axle loads, and sway risk update in real time — know what to move before you pack.',
+      color: '#c97b5d',
+      bg: '#fef7f3'
+    },
+    {
       icon: Car,
       title: 'Your Digital Garage',
-      description: 'Store vehicle and caravan specs, track kit items and standard gear, and monitor rego and insurance expiry dates.',
+      description: 'Store vehicle + caravan specs and your full gear inventory. Every item\'s weight flows straight into the tow simulator — no double entry.',
       color: '#64748b',
       bg: '#f1f5f9'
     },
     {
       icon: Fuel,
       title: 'Never Run Dry',
-      description: 'Get low fuel warnings for outback travel with our Fuel Gap Warning System. Find stations and auto-calculate fuel budgets.',
+      description: 'Plan fuel stops with live pump prices along your route. Set fuel budgets that adjust to real-world costs, plus Fuel Gap Warnings for outback legs.',
       color: '#f59e0b',
       bg: '#fef9c3'
     },
@@ -153,6 +158,13 @@ export default function LandingPage() {
       description: 'Set trip budgets by category with auto fuel estimates. Track expenses and see where your money goes.',
       color: '#22c55e',
       bg: '#f0fdf4'
+    },
+    {
+      icon: Clock,
+      title: 'Sync & Reminders',
+      description: 'Pre-trip reminders by email and calendar sync for departure dates. Packing checklist emails to travellers 5 days out — never miss a critical window.',
+      color: '#0891b2',
+      bg: '#ecfeff'
     },
     {
       icon: Tent,
@@ -182,24 +194,6 @@ export default function LandingPage() {
     { name: 'Trip Cost', icon: DollarSign, color: '#10b981', bg: '#ecfdf5' },
     { name: 'Travel Time', icon: Clock, color: '#8b5cf6', bg: '#f5f3ff' },
     { name: 'Fuel Stops', icon: MapPin, color: '#ef4444', bg: '#fef2f2' },
-  ];
-
-  const steps = [
-    {
-      number: '1',
-      title: 'Set Up Your Garage',
-      description: "Add your tow vehicle and caravan. We'll store all the specs so you don't have to remember them."
-    },
-    {
-      number: '2',
-      title: 'Plan Your Trip',
-      description: "Enter your destinations, select your rig, and we'll calculate fuel stops, travel times, and costs."
-    },
-    {
-      number: '3',
-      title: 'Hit the Road',
-      description: 'Access your trip details, checklists, and packing lists on the go. Travel with confidence.'
-    }
   ];
 
   const plans = [
@@ -394,38 +388,37 @@ export default function LandingPage() {
           </div>
 
           {/* Desktop Nav */}
-          <div className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
-            <a href="#features" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '20px' }}>Features</a>
-            <a href="#pricing" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '20px' }}>Pricing</a>
-            <a href="#free-guide" style={{ color: '#fcd34d', textDecoration: 'none', fontWeight: '600', fontSize: '20px' }}>Free Guide</a>
-            <a href={`${APP_URL}/blog`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '20px' }}>Blog</a>
-            <a href={`${APP_URL}/library`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '20px' }}>Bookshelf</a>
-            <a href={`${APP_URL}/shop`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '20px' }}>Shop</a>
-            <a href="#kids-zone" style={{
-              padding: '8px 20px',
-              background: 'linear-gradient(135deg, #3b82f6, #2563eb)',
-              color: colors.white,
-              textDecoration: 'none',
-              fontWeight: '700',
-              borderRadius: '8px',
-              fontSize: '20px',
-              border: 'none',
-              boxShadow: '0 2px 8px rgba(37, 99, 235, 0.4)',
-            }}>
-              Kids Zone
-            </a>
-            <a href={`${APP_URL}/login`} style={{
-              padding: '8px 20px',
-              backgroundColor: 'rgba(255,255,255,0.15)',
-              color: colors.white,
-              textDecoration: 'none',
-              fontWeight: '600',
-              borderRadius: '8px',
-              fontSize: '20px',
-              border: '1px solid rgba(255,255,255,0.3)',
-            }}>
-              Log In
-            </a>
+          <div className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: '22px' }}>
+            <a href="#features" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Features</a>
+            <a href="#pricing" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Pricing</a>
+            <a href={`${APP_URL}/blog`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Blog</a>
+            <a href={`${APP_URL}/shop`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Shop</a>
+            <a href={`${APP_URL}/library`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Bookshelf</a>
+            <a href="#kids-zone" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Kids Zone</a>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginLeft: '8px' }}>
+              <a href={`${APP_URL}/login`} style={{
+                padding: '8px 18px',
+                color: colors.white,
+                textDecoration: 'none',
+                fontWeight: '600',
+                fontSize: '15px',
+                borderRadius: '8px',
+                border: '1px solid rgba(255,255,255,0.35)',
+              }}>
+                Log In
+              </a>
+              <a href={`${APP_URL}/signup`} style={{
+                padding: '8px 18px',
+                backgroundColor: colors.white,
+                color: colors.primary,
+                textDecoration: 'none',
+                fontWeight: '700',
+                fontSize: '15px',
+                borderRadius: '8px',
+              }}>
+                Sign Up
+              </a>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -443,14 +436,34 @@ export default function LandingPage() {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div style={{ padding: '16px 24px', borderTop: '1px solid rgba(255,255,255,0.2)', backgroundColor: colors.primary }}>
-            <a href="#features" style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Features</a>
-            <a href="#pricing" style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Pricing</a>
-            <a href="#free-guide" style={{ display: 'block', padding: '12px 0', color: '#fcd34d', textDecoration: 'none', fontWeight: '600' }}>Free Guide</a>
+            <a href="#features" onClick={() => setMobileMenuOpen(false)} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Features</a>
+            <a href="#pricing" onClick={() => setMobileMenuOpen(false)} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Pricing</a>
             <a href={`${APP_URL}/blog`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Blog</a>
-            <a href={`${APP_URL}/library`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Bookshelf</a>
             <a href={`${APP_URL}/shop`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Shop</a>
-            <a href="#kids-zone" onClick={() => setMobileMenuOpen(false)} style={{ display: 'block', padding: '12px 16px', marginTop: '8px', background: 'linear-gradient(135deg, #3b82f6, #2563eb)', color: colors.white, textDecoration: 'none', fontWeight: '700', borderRadius: '8px', textAlign: 'center' as const, boxShadow: '0 2px 8px rgba(37, 99, 235, 0.4)' }}>Kids Zone</a>
-            <a href={`${APP_URL}/login`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Log In</a>
+            <a href={`${APP_URL}/library`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Bookshelf</a>
+            <a href="#kids-zone" onClick={() => setMobileMenuOpen(false)} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Kids Zone</a>
+            <div style={{ display: 'flex', gap: '10px', marginTop: '16px' }}>
+              <a href={`${APP_URL}/login`} style={{
+                flex: 1,
+                padding: '12px',
+                textAlign: 'center' as const,
+                color: colors.white,
+                textDecoration: 'none',
+                fontWeight: '600',
+                border: '1px solid rgba(255,255,255,0.35)',
+                borderRadius: '8px',
+              }}>Log In</a>
+              <a href={`${APP_URL}/signup`} style={{
+                flex: 1,
+                padding: '12px',
+                textAlign: 'center' as const,
+                backgroundColor: colors.white,
+                color: colors.primary,
+                textDecoration: 'none',
+                fontWeight: '700',
+                borderRadius: '8px',
+              }}>Sign Up</a>
+            </div>
           </div>
         )}
       </nav>
@@ -479,7 +492,7 @@ export default function LandingPage() {
             margin: '0 auto 40px',
             lineHeight: '1.6'
           }}>
-            Route planning, packing lists, fuel stops, budgets, and safety checks — everything you need for stress-free caravan travel. Built for Australians.
+            The only Aussie caravan app with a live tow simulator, step-by-step weight fixes, and real-time fuel pricing along your route. Built for people who tow.
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
             <a href={`${APP_URL}/signup`} style={{
@@ -522,44 +535,12 @@ export default function LandingPage() {
             {[
               { value: '150+', label: 'Tow Vehicles' },
               { value: '160+', label: 'Caravans' },
-              { value: '11', label: 'Calculator Tools' },
+              { value: 'LIVE', label: 'Fuel Pricing' },
               { value: '60+', label: 'Safety Checks' },
             ].map((stat, i) => (
               <div key={i} style={{ textAlign: 'center', minWidth: '100px' }}>
                 <div style={{ fontSize: '24px', fontWeight: '800', color: colors.primary }}>{stat.value}</div>
                 <div style={{ fontSize: '13px', color: colors.gray[500] }}>{stat.label}</div>
-              </div>
-            ))}
-          </div>
-
-          {/* Value Pillars */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-            gap: '16px',
-            marginTop: '48px',
-          }}>
-            {[
-              { icon: Map, title: 'Plan Smarter', desc: 'Routes, fuel stops, overnight stays — all calculated for your rig.', color: '#3b82f6', bg: '#eff6ff' },
-              { icon: Scale, title: 'Tow Safer', desc: 'Weight checks, tyre pressures, and compliance scoring before you leave.', color: colors.accent, bg: '#fef7f3' },
-              { icon: CheckSquare, title: 'Travel Further', desc: 'Budgets, packing lists, and pre-departure checklists sorted.', color: '#059669', bg: '#ecfdf5' },
-            ].map((pillar, i) => (
-              <div key={i} style={{
-                padding: '20px 20px 20px 24px',
-                backgroundColor: pillar.bg,
-                borderRadius: '12px',
-                borderLeft: `4px solid ${pillar.color}`,
-                textAlign: 'left',
-              }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
-                  <pillar.icon size={22} color={pillar.color} />
-                  <h3 style={{ margin: 0, fontSize: '16px', fontWeight: '700', color: colors.gray[900] }}>
-                    {pillar.title}
-                  </h3>
-                </div>
-                <p style={{ margin: 0, fontSize: '14px', color: colors.gray[500], lineHeight: '1.5' }}>
-                  {pillar.desc}
-                </p>
               </div>
             ))}
           </div>
@@ -587,164 +568,120 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Free Guide Lead Magnet */}
-      <section id="free-guide" style={{
-        padding: '80px 0',
-        background: `linear-gradient(135deg, ${colors.primaryDark} 0%, #2d6b6b 100%)`,
-        borderTop: `4px solid ${colors.accent}`,
-        borderBottom: `4px solid ${colors.accent}`,
+      {/* Proof Strip — what the hero promises, linked to real pages */}
+      <section style={{
+        padding: '48px 0 64px',
+        backgroundColor: colors.white,
       }}>
-        <div style={{
-          maxWidth: '700px',
-          margin: '0 auto',
-          padding: '0 24px',
-          textAlign: 'center',
-        }}>
-          <div style={{
-            display: 'inline-block',
-            padding: '8px 20px',
-            backgroundColor: colors.accent,
-            color: colors.white,
-            borderRadius: '100px',
+        <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 24px' }}>
+          <p style={{
+            textAlign: 'center',
             fontSize: '13px',
             fontWeight: '700',
+            color: colors.gray[500],
             textTransform: 'uppercase',
-            letterSpacing: '1px',
-            marginBottom: '20px',
+            letterSpacing: '1.5px',
+            margin: '0 0 32px',
           }}>
-            Free Download
-          </div>
-          <h2 style={{
-            fontSize: '36px',
-            fontWeight: '800',
-            color: colors.white,
-            marginBottom: '16px',
-            lineHeight: '1.2',
-          }}>
-            Weight Compliance<br />Made Simple
-          </h2>
-          <p style={{
-            fontSize: '18px',
-            color: 'rgba(255,255,255,0.9)',
-            marginBottom: '8px',
-            lineHeight: '1.6',
-          }}>
-            Understand GVM, ATM, GCM, towball weight, and payload — in plain English.
+            What makes KamperHub different
           </p>
-          <p style={{
-            fontSize: '15px',
-            color: 'rgba(255,255,255,0.6)',
-            marginBottom: '32px',
-            lineHeight: '1.5',
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '20px',
           }}>
-            No signup required. Enter your email and start reading instantly.
-          </p>
-
-          {guideStatus === 'success' ? (
-            <div style={{
-              backgroundColor: 'rgba(255,255,255,0.08)',
-              borderRadius: '16px',
-              padding: '32px',
-              border: `2px solid ${colors.accent}`,
-            }}>
-              <Check size={48} color="#4ade80" style={{ marginBottom: '12px' }} />
-              <p style={{ fontSize: '22px', fontWeight: '700', color: colors.white, marginBottom: '8px' }}>
-                You&apos;re in!
-              </p>
-              <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.85)', marginBottom: '24px' }}>
-                Your free weight compliance guide is ready. Click below to start reading.
-              </p>
-              <a href="/guides/weight-compliance.html" target="_blank" rel="noopener noreferrer" style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                padding: '14px 32px',
-                backgroundColor: colors.accent,
-                color: colors.white,
+            {[
+              {
+                icon: Gauge,
+                color: '#c97b5d',
+                bg: '#fef7f3',
+                title: 'Live Tow Simulator',
+                caption: 'Drag inventory between the front, middle, and rear of your rig. Towball weight, axle loads, and sway risk update in real time.',
+                linkText: 'See the simulator',
+                href: '/tow-simulator',
+              },
+              {
+                icon: Scale,
+                color: '#3b82f6',
+                bg: '#eff6ff',
+                title: 'Step-by-Step Fixes',
+                caption: 'Overweight? Get specific actions — "shift 20kg forward, drop 10L of water" — until your rig is compliant. No dead-end warnings.',
+                linkText: 'Try the weight calculator',
+                href: '/caravan-towing-weight-calculator',
+              },
+              {
+                icon: Fuel,
+                color: '#f59e0b',
+                bg: '#fef9c3',
+                title: 'Real-Time Fuel Prices',
+                caption: 'Plan fuel stops with live pump prices along your route. Your budget matches what you\'ll actually pay — not yesterday\'s guess.',
+                linkText: 'See the trip planner',
+                href: '/caravan-trip-planner',
+              },
+            ].map((tile, i) => (
+              <a key={i} href={tile.href} style={{
+                display: 'block',
+                backgroundColor: colors.white,
+                borderRadius: '16px',
+                border: `1px solid ${colors.sand}`,
+                overflow: 'hidden',
                 textDecoration: 'none',
-                fontWeight: '700',
-                borderRadius: '10px',
-                fontSize: '16px',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
+                transition: 'transform 0.15s, box-shadow 0.15s',
               }}>
-                <Download size={18} />
-                Read Your Free Guide
-              </a>
-            </div>
-          ) : (
-            <form onSubmit={handleGuideSubmit} style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              gap: '16px',
-              maxWidth: '480px',
-              margin: '0 auto',
-            }}>
-              <div style={{
-                display: 'flex',
-                width: '100%',
-                gap: '10px',
-                flexWrap: 'wrap',
-                justifyContent: 'center',
-              }}>
-                <div style={{ position: 'relative', flex: '1 1 260px', minWidth: '260px' }}>
-                  <Mail size={18} color="#999" style={{
-                    position: 'absolute',
-                    left: '16px',
-                    top: '50%',
-                    transform: 'translateY(-50%)',
-                    pointerEvents: 'none',
-                  }} />
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    value={guideEmail}
-                    onChange={(e) => setGuideEmail(e.target.value)}
-                    required
-                    style={{
-                      width: '100%',
-                      padding: '16px 16px 16px 46px',
-                      borderRadius: '10px',
-                      border: '2px solid rgba(255,255,255,0.2)',
-                      backgroundColor: colors.white,
-                      color: colors.darkEarth,
-                      fontSize: '16px',
-                      outline: 'none',
-                      boxSizing: 'border-box',
-                    }}
-                  />
-                </div>
-                <button
-                  type="submit"
-                  disabled={guideStatus === 'loading'}
-                  style={{
-                    padding: '16px 32px',
-                    backgroundColor: colors.accent,
-                    color: colors.white,
-                    border: 'none',
-                    borderRadius: '10px',
-                    fontWeight: '700',
-                    fontSize: '16px',
-                    cursor: guideStatus === 'loading' ? 'wait' : 'pointer',
+                <div style={{
+                  aspectRatio: '16 / 9',
+                  backgroundColor: tile.bg,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  borderBottom: `1px solid ${colors.sand}`,
+                }}>
+                  <div style={{
+                    width: '80px',
+                    height: '80px',
+                    borderRadius: '20px',
+                    backgroundColor: colors.white,
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '8px',
-                    opacity: guideStatus === 'loading' ? 0.7 : 1,
-                    whiteSpace: 'nowrap',
-                    boxShadow: '0 4px 14px rgba(201, 123, 93, 0.4)',
-                  }}
-                >
-                  <Download size={18} />
-                  {guideStatus === 'loading' ? 'Sending...' : 'Get Free Guide'}
-                </button>
-              </div>
-              {guideStatus === 'error' && (
-                <p style={{ color: '#fca5a5', fontSize: '14px', margin: 0 }}>{guideError}</p>
-              )}
-              <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.45)', margin: 0 }}>
-                No spam, ever. Just one helpful guide for your towing setup.
-              </p>
-            </form>
-          )}
+                    justifyContent: 'center',
+                    boxShadow: '0 4px 14px rgba(0,0,0,0.08)',
+                  }}>
+                    <tile.icon size={40} color={tile.color} />
+                  </div>
+                </div>
+                <div style={{ padding: '20px 24px 22px' }}>
+                  <h3 style={{
+                    fontSize: '17px',
+                    fontWeight: '700',
+                    color: colors.gray[900],
+                    margin: '0 0 8px',
+                  }}>
+                    {tile.title}
+                  </h3>
+                  <p style={{
+                    fontSize: '14px',
+                    color: colors.gray[500],
+                    lineHeight: '1.55',
+                    margin: '0 0 14px',
+                  }}>
+                    {tile.caption}
+                  </p>
+                  <span style={{
+                    fontSize: '13px',
+                    fontWeight: '700',
+                    color: tile.color,
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '4px',
+                  }}>
+                    {tile.linkText}
+                    <ArrowRight size={14} />
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -782,42 +719,6 @@ export default function LandingPage() {
                 </h3>
                 <p style={{ color: colors.gray[600], lineHeight: '1.6', fontSize: '15px', margin: 0 }}>
                   {feature.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section style={{ padding: '80px 0', backgroundColor: colors.cream }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
-          <h2 style={{ fontSize: '32px', fontWeight: '700', textAlign: 'center', marginBottom: '48px', color: colors.gray[900] }}>
-            Get Started in 3 Simple Steps
-          </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '32px' }}>
-            {steps.map((step, index) => (
-              <div key={index} style={{ textAlign: 'center' }}>
-                <div style={{
-                  width: '64px',
-                  height: '64px',
-                  backgroundColor: colors.primary,
-                  borderRadius: '50%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  margin: '0 auto 20px',
-                  fontSize: '28px',
-                  fontWeight: '700',
-                  color: colors.white
-                }}>
-                  {step.number}
-                </div>
-                <h3 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '12px', color: colors.gray[900] }}>
-                  {step.title}
-                </h3>
-                <p style={{ color: colors.gray[600], lineHeight: '1.6', margin: 0 }}>
-                  {step.description}
                 </p>
               </div>
             ))}
@@ -1247,6 +1148,123 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Free Guide Lead Magnet — compact */}
+      <section id="free-guide" style={{
+        padding: '36px 0',
+        backgroundColor: colors.sand,
+      }}>
+        <div style={{
+          maxWidth: '960px',
+          margin: '0 auto',
+          padding: '0 24px',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '28px',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+        }}>
+          <div style={{ flex: '1 1 320px', minWidth: '280px' }}>
+            <div style={{
+              display: 'inline-block',
+              padding: '3px 12px',
+              backgroundColor: colors.accent,
+              color: colors.white,
+              borderRadius: '100px',
+              fontSize: '10px',
+              fontWeight: '700',
+              textTransform: 'uppercase',
+              letterSpacing: '1px',
+              marginBottom: '8px',
+            }}>
+              Free Download
+            </div>
+            <h3 style={{
+              fontSize: '20px',
+              fontWeight: '700',
+              color: colors.darkEarth,
+              margin: '0 0 4px',
+              lineHeight: '1.2',
+            }}>
+              Weight Compliance Made Simple
+            </h3>
+            <p style={{
+              fontSize: '14px',
+              color: colors.slate,
+              margin: 0,
+              lineHeight: '1.5',
+            }}>
+              GVM, ATM, GCM, towball weight — in plain English. Just your email.
+            </p>
+          </div>
+          {guideStatus === 'success' ? (
+            <a href="/guides/weight-compliance.html" target="_blank" rel="noopener noreferrer" style={{
+              padding: '12px 22px',
+              backgroundColor: colors.accent,
+              color: colors.white,
+              textDecoration: 'none',
+              fontWeight: '700',
+              borderRadius: '8px',
+              fontSize: '14px',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              whiteSpace: 'nowrap',
+            }}>
+              <Download size={16} /> Read Your Guide
+            </a>
+          ) : (
+            <form onSubmit={handleGuideSubmit} style={{
+              display: 'flex',
+              gap: '8px',
+              flex: '1 1 320px',
+              minWidth: '280px',
+              flexWrap: 'wrap',
+              alignItems: 'flex-start',
+            }}>
+              <input
+                type="email"
+                placeholder="Your email"
+                value={guideEmail}
+                onChange={(e) => setGuideEmail(e.target.value)}
+                required
+                style={{
+                  flex: '1 1 180px',
+                  padding: '10px 14px',
+                  borderRadius: '8px',
+                  border: `1px solid ${colors.driftwood}`,
+                  backgroundColor: colors.white,
+                  color: colors.darkEarth,
+                  fontSize: '14px',
+                  outline: 'none',
+                  minWidth: '160px',
+                }}
+              />
+              <button
+                type="submit"
+                disabled={guideStatus === 'loading'}
+                style={{
+                  padding: '10px 18px',
+                  backgroundColor: colors.accent,
+                  color: colors.white,
+                  border: 'none',
+                  borderRadius: '8px',
+                  fontWeight: '700',
+                  fontSize: '14px',
+                  cursor: guideStatus === 'loading' ? 'wait' : 'pointer',
+                  whiteSpace: 'nowrap',
+                  opacity: guideStatus === 'loading' ? 0.7 : 1,
+                }}
+              >
+                {guideStatus === 'loading' ? 'Sending...' : 'Get Free Guide'}
+              </button>
+              {guideStatus === 'error' && (
+                <p style={{ color: '#b91c1c', fontSize: '13px', margin: '4px 0 0', width: '100%' }}>{guideError}</p>
+              )}
+            </form>
+          )}
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section style={{
         padding: '80px 0',
@@ -1273,6 +1291,62 @@ export default function LandingPage() {
           }}>
             Get Started Free
             <ArrowRight size={20} />
+          </a>
+        </div>
+      </section>
+
+      {/* Podcast Strip */}
+      <section style={{
+        padding: '40px 0',
+        backgroundColor: colors.darkEarth,
+      }}>
+        <div style={{
+          maxWidth: '1100px',
+          margin: '0 auto',
+          padding: '0 24px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          gap: '24px',
+        }}>
+          <div style={{ flex: '1 1 400px' }}>
+            <div style={{
+              display: 'inline-block',
+              padding: '4px 14px',
+              backgroundColor: colors.accent,
+              color: colors.white,
+              borderRadius: '100px',
+              fontSize: '11px',
+              fontWeight: '700',
+              textTransform: 'uppercase',
+              letterSpacing: '1px',
+              marginBottom: '10px',
+            }}>
+              New Podcast
+            </div>
+            <h3 style={{ color: colors.white, fontSize: '22px', fontWeight: '700', margin: '0 0 6px' }}>
+              The KamperHub Podcast
+            </h3>
+            <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '15px', margin: 0, lineHeight: '1.5' }}>
+              App walkthroughs, towing safety tips, and real traveller stories. Plays in your browser — no Spotify account needed.
+            </p>
+          </div>
+          <a href={`${APP_URL}/podcast`} style={{
+            padding: '12px 24px',
+            backgroundColor: colors.accent,
+            color: colors.white,
+            textDecoration: 'none',
+            fontWeight: '700',
+            borderRadius: '10px',
+            fontSize: '15px',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '6px',
+            whiteSpace: 'nowrap',
+          }}>
+            Listen Now
+            <ArrowRight size={16} />
           </a>
         </div>
       </section>
