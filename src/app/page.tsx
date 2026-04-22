@@ -222,8 +222,8 @@ export default function LandingPage() {
       priceDetail: '$10/year — less than $1/month',
       color: colors.primary,
       bg: colors.white,
-      border: colors.primary,
-      badge: 'Most Popular',
+      border: '#e5e7eb',
+      badge: null,
       features: [
         'Everything in Free, plus:',
         'Unlimited trip planning',
@@ -243,8 +243,8 @@ export default function LandingPage() {
       priceDetail: '$49/year — full access to everything',
       color: '#7c3aed',
       bg: colors.white,
-      border: '#e5e7eb',
-      badge: null,
+      border: '#7c3aed',
+      badge: 'Most Popular',
       features: [
         'Everything in Explorer, plus:',
         'Full weight compliance (TowSafe)',
