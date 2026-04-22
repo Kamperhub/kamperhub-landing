@@ -390,6 +390,7 @@ export default function LandingPage() {
           {/* Desktop Nav */}
           <div className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: '22px' }}>
             <a href="#features" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Features</a>
+            <a href={`${APP_URL}/find-my-plan`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Find My Plan</a>
             <a href="#pricing" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Pricing</a>
             <a href={`${APP_URL}/blog`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Blog</a>
             <a href={`${APP_URL}/shop`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Shop</a>
@@ -437,6 +438,7 @@ export default function LandingPage() {
         {mobileMenuOpen && (
           <div style={{ padding: '16px 24px', borderTop: '1px solid rgba(255,255,255,0.2)', backgroundColor: colors.primary }}>
             <a href="#features" onClick={() => setMobileMenuOpen(false)} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Features</a>
+            <a href={`${APP_URL}/find-my-plan`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Find My Plan</a>
             <a href="#pricing" onClick={() => setMobileMenuOpen(false)} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Pricing</a>
             <a href={`${APP_URL}/blog`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Blog</a>
             <a href={`${APP_URL}/shop`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Shop</a>
@@ -519,6 +521,16 @@ export default function LandingPage() {
                 <Check size={16} color={colors.primary} /> Cancel anytime
               </span>
             </div>
+            <a href={`${APP_URL}/find-my-plan`} style={{
+              color: colors.primary,
+              fontSize: '14px',
+              fontWeight: '600',
+              textDecoration: 'none',
+              borderBottom: `1px dashed ${colors.primary}`,
+              paddingBottom: '2px',
+            }}>
+              Not sure which plan fits? Take the 60-second quiz →
+            </a>
           </div>
 
           {/* Social Proof */}
