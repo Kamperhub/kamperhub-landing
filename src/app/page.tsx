@@ -390,7 +390,20 @@ export default function LandingPage() {
           {/* Desktop Nav */}
           <div className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: '22px' }}>
             <a href="#features" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Features</a>
-            <a href={`${APP_URL}/find-my-plan`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Find My Plan</a>
+            <a href={`${APP_URL}/find-my-plan`} style={{
+              color: colors.primary,
+              backgroundColor: colors.white,
+              textDecoration: 'none',
+              fontWeight: '700',
+              fontSize: '14px',
+              padding: '6px 14px',
+              borderRadius: '100px',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+            }}>
+              <span style={{ fontSize: '12px' }}>⏱</span> 60-Sec Quiz
+            </a>
             <a href="#pricing" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Pricing</a>
             <a href={`${APP_URL}/blog`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Blog</a>
             <a href={`${APP_URL}/shop`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Shop</a>
@@ -438,7 +451,21 @@ export default function LandingPage() {
         {mobileMenuOpen && (
           <div style={{ padding: '16px 24px', borderTop: '1px solid rgba(255,255,255,0.2)', backgroundColor: colors.primary }}>
             <a href="#features" onClick={() => setMobileMenuOpen(false)} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Features</a>
-            <a href={`${APP_URL}/find-my-plan`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Find My Plan</a>
+            <a href={`${APP_URL}/find-my-plan`} style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              margin: '8px 0',
+              padding: '8px 16px',
+              color: colors.primary,
+              backgroundColor: colors.white,
+              textDecoration: 'none',
+              fontWeight: '700',
+              borderRadius: '100px',
+              fontSize: '14px',
+            }}>
+              <span>⏱</span> 60-Sec Quiz
+            </a>
             <a href="#pricing" onClick={() => setMobileMenuOpen(false)} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Pricing</a>
             <a href={`${APP_URL}/blog`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Blog</a>
             <a href={`${APP_URL}/shop`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Shop</a>
@@ -497,23 +524,53 @@ export default function LandingPage() {
             The only Aussie caravan app with a live tow simulator, step-by-step weight fixes, and real-time fuel pricing along your route. Built for people who tow.
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
-            <a href={`${APP_URL}/signup`} style={{
-              padding: '16px 40px',
-              backgroundColor: colors.primary,
-              color: colors.white,
-              textDecoration: 'none',
-              fontWeight: '600',
-              borderRadius: '12px',
-              fontSize: '18px',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              boxShadow: '0 4px 14px rgba(56, 102, 65, 0.3)'
+            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
+              <a href={`${APP_URL}/find-my-plan`} style={{
+                padding: '16px 32px',
+                backgroundColor: colors.accent,
+                color: colors.white,
+                textDecoration: 'none',
+                fontWeight: '700',
+                borderRadius: '12px',
+                fontSize: '18px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '10px',
+                boxShadow: '0 6px 20px rgba(201, 123, 93, 0.35)',
+                position: 'relative',
+              }}>
+                <span style={{ fontSize: '22px' }}>⏱</span>
+                Take the 60-Second Quiz
+                <ArrowRight size={20} />
+              </a>
+              <a href={`${APP_URL}/signup`} style={{
+                padding: '16px 32px',
+                backgroundColor: colors.primary,
+                color: colors.white,
+                textDecoration: 'none',
+                fontWeight: '600',
+                borderRadius: '12px',
+                fontSize: '18px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                boxShadow: '0 4px 14px rgba(56, 102, 65, 0.3)',
+              }}>
+                Get Started Free
+                <ArrowRight size={20} />
+              </a>
+            </div>
+            <p style={{
+              color: colors.gray[500],
+              fontSize: '14px',
+              margin: '0',
+              maxWidth: '520px',
+              textAlign: 'center',
+              lineHeight: '1.5',
             }}>
-              Get Started Free
-              <ArrowRight size={20} />
-            </a>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '24px', color: colors.gray[500], fontSize: '14px' }}>
+              KamperHub is a wizard-style app — we walk you through each decision. Start with a quick quiz to see the plan that fits your setup.
+            </p>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '24px', color: colors.gray[500], fontSize: '14px', flexWrap: 'wrap', justifyContent: 'center' }}>
               <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                 <Check size={16} color={colors.primary} /> No credit card required
               </span>
@@ -521,16 +578,6 @@ export default function LandingPage() {
                 <Check size={16} color={colors.primary} /> Cancel anytime
               </span>
             </div>
-            <a href={`${APP_URL}/find-my-plan`} style={{
-              color: colors.primary,
-              fontSize: '14px',
-              fontWeight: '600',
-              textDecoration: 'none',
-              borderBottom: `1px dashed ${colors.primary}`,
-              paddingBottom: '2px',
-            }}>
-              Not sure which plan fits? Take the 60-second quiz →
-            </a>
           </div>
 
           {/* Social Proof */}
@@ -1004,9 +1051,55 @@ export default function LandingPage() {
           <h2 style={{ fontSize: '32px', fontWeight: '700', textAlign: 'center', marginBottom: '16px', color: colors.gray[900] }}>
             Simple, Transparent Pricing
           </h2>
-          <p style={{ textAlign: 'center', color: colors.gray[500], marginBottom: '48px', fontSize: '18px' }}>
+          <p style={{ textAlign: 'center', color: colors.gray[500], marginBottom: '24px', fontSize: '18px' }}>
             Start free, upgrade when you need more
           </p>
+
+          {/* 60-sec quiz nudge — wizard-style onboarding */}
+          <div style={{
+            maxWidth: '640px',
+            margin: '0 auto 48px',
+            padding: '16px 24px',
+            backgroundColor: colors.cream,
+            borderRadius: '12px',
+            border: `1px solid ${colors.sand}`,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '16px',
+            flexWrap: 'wrap',
+          }}>
+            <div style={{ flex: '1 1 280px', minWidth: '240px' }}>
+              <p style={{
+                fontSize: '15px',
+                fontWeight: '700',
+                color: colors.darkEarth,
+                margin: '0 0 2px',
+              }}>
+                Not sure which plan fits your setup?
+              </p>
+              <p style={{ fontSize: '13px', color: colors.slate, margin: 0, lineHeight: '1.4' }}>
+                Answer 6 quick questions — we'll match you to the right plan.
+              </p>
+            </div>
+            <a href={`${APP_URL}/find-my-plan`} style={{
+              padding: '12px 22px',
+              backgroundColor: colors.accent,
+              color: colors.white,
+              textDecoration: 'none',
+              fontWeight: '700',
+              borderRadius: '10px',
+              fontSize: '14px',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              whiteSpace: 'nowrap',
+            }}>
+              <span style={{ fontSize: '16px' }}>⏱</span>
+              Take the 60-Sec Quiz
+              <ArrowRight size={16} />
+            </a>
+          </div>
 
           {/* 3-Tier Pricing Cards */}
           <div style={{
