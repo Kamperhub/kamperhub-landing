@@ -118,20 +118,6 @@ export default function LandingPage() {
       bg: '#fdf2f8'
     },
     {
-      icon: Scale,
-      title: 'Towing Safety Checks',
-      description: 'More than a pass/fail score. Simulate your full load, and get specific fixes — "shift 20kg forward, drop 10L of water" — until your rig is compliant.',
-      color: '#3b82f6',
-      bg: '#eff6ff'
-    },
-    {
-      icon: Gauge,
-      title: 'Tow Simulator',
-      description: 'Set up your full rig and run scenarios. Move cargo between zones, adjust fuel and water, and see towball weight, axle loads, and sway risk update as you change things. Free preview on a sample rig — full setup with Pro.',
-      color: '#c97b5d',
-      bg: '#fef7f3'
-    },
-    {
       icon: Car,
       title: 'Your Digital Garage',
       description: 'Store vehicle + caravan specs and your full gear inventory. Every item\'s weight flows straight into the tow simulator — no double entry.',
@@ -140,8 +126,8 @@ export default function LandingPage() {
     },
     {
       icon: Fuel,
-      title: 'Never Run Dry',
-      description: 'Plan fuel stops with live pump prices along your route. Set fuel budgets that adjust to real-world costs, plus Fuel Gap Warnings for outback legs.',
+      title: 'Fuel Gap Warnings',
+      description: 'Outback leg with no fuel for 400km? KamperHub flags it before you leave, so you know whether you need a jerry can or a different route.',
       color: '#f59e0b',
       bg: '#fef9c3'
     },
@@ -651,22 +637,22 @@ export default function LandingPage() {
           }}>
             {[
               {
-                icon: Gauge,
-                color: '#c97b5d',
-                bg: '#fef7f3',
-                title: 'Tow Simulator',
-                caption: 'Configure your rig, move cargo between zones, and run what-if scenarios. Free preview on a sample rig — full setup with Pro.',
-                linkText: 'See the simulator',
-                href: '/tow-simulator',
-              },
-              {
                 icon: Scale,
                 color: '#3b82f6',
                 bg: '#eff6ff',
-                title: 'Step-by-Step Fixes',
-                caption: 'Overweight? Get specific actions — "shift 20kg forward, drop 10L of water" — until your rig is compliant. No dead-end warnings.',
+                title: 'Free Weight Safety Check',
+                caption: 'Check whether your rig is within its weight limits — free, on your own vehicle and caravan. Gauges, axle loads, tyre pressures, and the why behind every number.',
                 linkText: 'Try the weight calculator',
                 href: '/caravan-towing-weight-calculator',
+              },
+              {
+                icon: Gauge,
+                color: '#c97b5d',
+                bg: '#fef7f3',
+                title: 'Tow Simulator (Pro)',
+                caption: "Need to find a setup that passes? Move cargo between zones, set fuel and water levels, run what-if scenarios. Free preview on a sample rig.",
+                linkText: 'See the simulator',
+                href: '/tow-simulator',
               },
               {
                 icon: Fuel,

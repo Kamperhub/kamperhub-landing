@@ -204,20 +204,34 @@ export default function TowSimulatorPage() {
           <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '32px' }}>
             Last updated: March 2026 · Reviewed by the KamperHub towing compliance team
           </p>
-          <a href={`${APP_URL}/signup?redirect=/tow-simulator`} style={{
-            display: 'inline-block',
-            padding: '16px 40px',
-            backgroundColor: colors.primary,
-            color: colors.white,
-            textDecoration: 'none',
-            fontWeight: '700',
-            borderRadius: '12px',
-            fontSize: '20px',
-          }}>
-            Open the Tow Simulator →
-          </a>
+          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <a href={`${APP_URL}/signup?redirect=/weights`} style={{
+              display: 'inline-block',
+              padding: '16px 40px',
+              backgroundColor: colors.primary,
+              color: colors.white,
+              textDecoration: 'none',
+              fontWeight: '700',
+              borderRadius: '12px',
+              fontSize: '20px',
+            }}>
+              Free Weight Check →
+            </a>
+            <a href={`${APP_URL}/signup?redirect=/tow-simulator`} style={{
+              display: 'inline-block',
+              padding: '16px 40px',
+              backgroundColor: colors.accent,
+              color: colors.white,
+              textDecoration: 'none',
+              fontWeight: '700',
+              borderRadius: '12px',
+              fontSize: '20px',
+            }}>
+              Open the Tow Simulator →
+            </a>
+          </div>
           <p style={{ fontSize: '14px', color: colors.slate, marginTop: '12px' }}>
-            Available on the Pro plan. Free weight compliance checks included on all plans.
+            Start with the free weight check on your own rig. The Tow Simulator (Pro) is for owners who need to move cargo, run scenarios, and find a setup that passes.
           </p>
         </div>
       </section>
@@ -489,6 +503,18 @@ export default function TowSimulatorPage() {
             The only tow simulator built specifically for Australian caravan owners. Simulate your setup, optimise your loading, and tow with confidence.
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <a href={`${APP_URL}/signup?redirect=/weights`} style={{
+              display: 'inline-block',
+              padding: '16px 40px',
+              backgroundColor: colors.white,
+              color: colors.primary,
+              textDecoration: 'none',
+              fontWeight: '700',
+              borderRadius: '12px',
+              fontSize: '20px',
+            }}>
+              Free Weight Check →
+            </a>
             <a href={`${APP_URL}/signup?redirect=/tow-simulator`} style={{
               display: 'inline-block',
               padding: '16px 40px',
@@ -500,19 +526,6 @@ export default function TowSimulatorPage() {
               fontSize: '20px',
             }}>
               Open the Tow Simulator →
-            </a>
-            <a href={`${APP_URL}/signup?redirect=/weights`} style={{
-              display: 'inline-block',
-              padding: '16px 40px',
-              backgroundColor: 'rgba(255,255,255,0.15)',
-              color: colors.white,
-              textDecoration: 'none',
-              fontWeight: '700',
-              borderRadius: '12px',
-              fontSize: '20px',
-              border: '2px solid rgba(255,255,255,0.3)',
-            }}>
-              Free Weight Check →
             </a>
           </div>
         </div>

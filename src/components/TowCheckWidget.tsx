@@ -141,7 +141,7 @@ export default function TowCheckWidget({ region = 'au' }: { region?: 'au' | 'us'
         const data = await res.json().catch(() => null);
         if (data?.error === 'limit_reached') {
           setLimitReached(true);
-          setLimitSignupUrl(data.signupUrl || `https://app.kamperhub.com/signup?email=${encodeURIComponent(email)}`);
+          setLimitSignupUrl(data.signupUrl || `https://app.kamperhub.com/signup?redirect=/weights&email=${encodeURIComponent(email)}`);
         } else {
           setEmailError('Something went wrong. Please try again.');
         }
