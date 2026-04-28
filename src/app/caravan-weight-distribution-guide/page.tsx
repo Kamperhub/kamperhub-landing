@@ -42,7 +42,7 @@ const howToJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   name: 'How to Distribute Weight in a Caravan for Safe Towing',
-  description: 'A step-by-step guide to loading your caravan correctly for stable, legal towing in Australia.',
+  description: 'A step-by-step guide to loading your caravan correctly for stable, compliant towing in Australia.',
   step: [
     {
       '@type': 'HowToStep',

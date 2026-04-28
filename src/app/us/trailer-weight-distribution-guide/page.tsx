@@ -42,7 +42,7 @@ const howToJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   name: 'How to Distribute Weight in a Travel Trailer for Safe Towing',
-  description: 'A step-by-step guide to loading your travel trailer correctly for stable, legal towing in the United States.',
+  description: 'A step-by-step guide to loading your travel trailer correctly for stable, compliant towing in the United States.',
   step: [
     {
       '@type': 'HowToStep',

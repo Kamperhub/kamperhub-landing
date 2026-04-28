@@ -281,7 +281,7 @@ export default function CaravanTowingWeightCalculatorPage() {
             marginBottom: '48px',
             lineHeight: '1.6',
           }}>
-            This caravan towing weight calculator checks whether your vehicle and caravan are within legal towing limits.
+            This caravan towing weight calculator checks whether your vehicle and caravan are within their manufacturer weight limits.
             It compares your inputs against GVM, ATM, GCM, payload, and towball weight to show if your setup is compliant.
             The result makes it clear whether your combination is safe, borderline, or overweight before you hit the road.
           </p>
