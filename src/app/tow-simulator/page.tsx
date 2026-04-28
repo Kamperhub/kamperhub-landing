@@ -270,7 +270,7 @@ export default function TowSimulatorPage() {
             },
             {
               title: 'Cargo Zone Management (Pro)',
-              description: 'Add, move, and remove cargo items across your caravan\'s loading zones. Each zone has a weight total and the simulator recalculates everything instantly — towball percentage, sway risk, axle loads — as you make changes. Free users see the zones on a sample rig; live cargo edits unlock with Pro.',
+              description: 'Add, move, and remove cargo items across your caravan\'s loading zones. Each zone has a weight total and the simulator recalculates everything instantly — towball percentage, sway risk, axle loads — as you make changes. Free users see the sample rig\'s compliance output; loading-zone overlays and live cargo edits unlock with Pro.',
               icon: '📦',
             },
             {
