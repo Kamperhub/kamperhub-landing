@@ -402,7 +402,7 @@ export default function LandingPage() {
               alignItems: 'center',
               gap: '6px',
             }}>
-              <span style={{ fontSize: '12px' }}>⏱</span> 60-Sec Quiz
+              <span style={{ fontSize: '12px' }}>⏱</span> 30-Sec Quiz
             </a>
             <a href="#pricing" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Pricing</a>
             <a href={`${APP_URL}/blog`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Blog</a>
@@ -464,7 +464,7 @@ export default function LandingPage() {
               borderRadius: '100px',
               fontSize: '14px',
             }}>
-              <span>⏱</span> 60-Sec Quiz
+              <span>⏱</span> 30-Sec Quiz
             </a>
             <a href="#pricing" onClick={() => setMobileMenuOpen(false)} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Pricing</a>
             <a href={`${APP_URL}/blog`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Blog</a>
@@ -540,7 +540,7 @@ export default function LandingPage() {
                 position: 'relative',
               }}>
                 <span style={{ fontSize: '22px' }}>⏱</span>
-                Take the 60-Second Quiz
+                Take the 30-Second Quiz
                 <ArrowRight size={20} />
               </a>
               <a href={`${APP_URL}/signup?redirect=/weights`} style={{
@@ -1055,7 +1055,7 @@ export default function LandingPage() {
             Start free, upgrade when you need more
           </p>
 
-          {/* 60-sec quiz nudge — wizard-style onboarding */}
+          {/* 30-sec quiz nudge — wizard-style onboarding */}
           <div style={{
             maxWidth: '640px',
             margin: '0 auto 48px',
@@ -1096,7 +1096,7 @@ export default function LandingPage() {
               whiteSpace: 'nowrap',
             }}>
               <span style={{ fontSize: '16px' }}>⏱</span>
-              Take the 60-Sec Quiz
+              Take the 30-Sec Quiz
               <ArrowRight size={16} />
             </a>
           </div>
