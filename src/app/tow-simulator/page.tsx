@@ -52,7 +52,7 @@ const faqs = [
   },
   {
     question: 'How is the tow simulator different from a weight calculator?',
-    answer: 'A weight calculator checks whether your totals (GVM, ATM, GCM) are within limits — it gives you a pass or fail. The tow simulator goes deeper: it models weight distribution across cargo zones (front, middle, rear of the caravan), shows how your loading affects towball percentage, displays sway risk indicators, and lets you drag items between zones to see the impact in real time. Think of the calculator as a weighbridge check, and the simulator as a full loading analysis.',
+    answer: 'A weight calculator checks whether your totals (GVM, ATM, GCM) are within limits — it gives you a pass or fail. The tow simulator goes deeper: it models weight distribution across cargo zones (front, middle, rear of the caravan), shows how your loading affects towball percentage, displays sway risk indicators, and lets you move items between zones to see the impact in real time. Think of the calculator as a weighbridge check, and the simulator as a full loading analysis. Free users see a sample rig; full setup unlocks with Pro.',
   },
   {
     question: 'When should I use the tow simulator?',
@@ -60,7 +60,7 @@ const faqs = [
   },
   {
     question: 'What does the tow simulator check?',
-    answer: 'The simulator checks and visualises: total vehicle and caravan weights against legal limits (GVM, ATM, GCM), towball download as a percentage of caravan loaded weight (8-14% safe range in Australia), weight distribution across caravan loading zones, sway risk based on your towball percentage and rear overhang loading, and a GCM donut chart showing how close you are to your combined mass limit.',
+    answer: 'The simulator checks and visualises: total vehicle and caravan weights against manufacturer limits (GVM, ATM, GCM), towball download as a percentage of caravan loaded weight (8-14% safe range in Australia), weight distribution across caravan loading zones, sway risk based on your towball percentage and rear overhang loading, and a GCM donut chart showing how close you are to your combined mass limit.',
   },
   {
     question: 'Can I load my actual vehicle and caravan specs into the simulator?',
@@ -82,7 +82,7 @@ const faqJsonLd = {
       name: 'What is a tow simulator?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A tow simulator checks whether your car can safely and legally tow a caravan by comparing real-world weights against manufacturer and legal limits. It is not a driving game or animation.',
+        text: 'A tow simulator checks whether your car can safely tow a caravan by comparing real-world weights against manufacturer limits. It is not a driving game or animation.',
       },
     },
     {
@@ -180,7 +180,7 @@ export default function TowSimulatorPage() {
             marginBottom: '16px',
             lineHeight: '1.2',
           }}>
-            Tow Simulator — Can My Car Tow My Caravan Safely and Legally?
+            Tow Simulator — Can My Car Tow My Caravan Safely and Within Limits?
           </h1>
           <p style={{
             fontSize: '20px',
@@ -189,8 +189,8 @@ export default function TowSimulatorPage() {
             lineHeight: '1.6',
           }}>
             This is not a driving game or animation — it&apos;s a <strong>towing compliance simulator</strong> that models
-            your real vehicle and caravan combination. See weight distribution, sway risk, towball load and legal compliance
-            in one visual dashboard before you pack a single item.
+            your real vehicle and caravan combination. See weight distribution, sway risk, towball load and whether each
+            weight is within its manufacturer limit — all in one visual dashboard before you pack a single item.
           </p>
           <p style={{
             fontSize: '15px',
@@ -199,7 +199,7 @@ export default function TowSimulatorPage() {
             lineHeight: '1.5',
             fontStyle: 'italic',
           }}>
-            This is not a driving simulator and does not rely on advertised tow ratings alone. Built for caravan owners who want to know if their setup is safe and legal — not for entertainment.
+            This is not a driving simulator and does not rely on advertised tow ratings alone. Built for caravan owners who want to know if their setup is safe and within manufacturer limits — not for entertainment.
           </p>
           <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '32px' }}>
             Last updated: March 2026 · Reviewed by the KamperHub towing compliance team
@@ -242,7 +242,7 @@ export default function TowSimulatorPage() {
             lineHeight: '1.6',
           }}>
             The tow simulator checks whether your car can tow your caravan by comparing your real-world weights against
-            legal and manufacturer limits. It looks beyond advertised towing capacity and evaluates GVM, GCM, payload, and
+            manufacturer limits. It looks beyond advertised towing capacity and evaluates GVM, GCM, payload, and
             towball weight together. This shows whether your setup is safe and compliant, not just whether the engine can
             physically pull the load.
           </p>
@@ -269,8 +269,8 @@ export default function TowSimulatorPage() {
               icon: '🎯',
             },
             {
-              title: 'Cargo Zone Management',
-              description: 'Add, move, and remove cargo items across your caravan\'s loading zones. Each zone has a weight total and the simulator recalculates everything instantly — towball percentage, sway risk, axle loads — as you make changes.',
+              title: 'Cargo Zone Management (Pro)',
+              description: 'Add, move, and remove cargo items across your caravan\'s loading zones. Each zone has a weight total and the simulator recalculates everything instantly — towball percentage, sway risk, axle loads — as you make changes. Free users see the zones on a sample rig; live cargo edits unlock with Pro.',
               icon: '📦',
             },
             {
@@ -314,7 +314,7 @@ export default function TowSimulatorPage() {
             Why Towing Capacity Alone Is Not Enough
           </h2>
           <p style={{ fontSize: '18px', color: colors.slate, textAlign: 'center', marginBottom: '48px', lineHeight: '1.6', maxWidth: '800px', margin: '0 auto 48px' }}>
-            Towing capacity alone does not tell you if your car can legally tow a caravan. Most vehicles reach their
+            Towing capacity alone does not tell you if your car can safely tow a caravan within all its weight limits. Most vehicles reach their
             payload or GVM limit before hitting maximum towing capacity. Passengers, accessories, fuel, and towball weight
             all count toward these limits, which is why many caravans are technically overweight despite being under the
             towing capacity figure.
@@ -531,7 +531,7 @@ export default function TowSimulatorPage() {
                   Free Weight Calculator
                 </h3>
                 <p style={{ fontSize: '15px', color: colors.slate, lineHeight: '1.6', margin: 0 }}>
-                  Quick pass/fail check on your GVM, ATM, GCM, towing capacity and towball weight. Start here if you just need to know whether your combination is legal.
+                  Quick pass/fail check on your GVM, ATM, GCM, towing capacity and towball weight. Start here if you just need to know whether your combination is within limits.
                 </p>
               </div>
             </Link>

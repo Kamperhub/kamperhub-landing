@@ -287,7 +287,7 @@ export default function TowCheckWidget({ region = 'au' }: { region?: 'au' | 'us'
                 </p>
                 <p style={{ fontSize: '15px', color: colors.slate, margin: '0 0 20px 0', lineHeight: '1.5' }}>
                   Sign up for a free account to check unlimited vehicle and {isUS ? 'trailer' : 'caravan'} combinations,
-                  plus get access to the full tow simulator, weight gauges, and more.
+                  plus get the full Weights dashboard with axle loads, tyre pressures, and the &ldquo;why&rdquo; behind every check.
                 </p>
                 <a
                   href={limitSignupUrl}

@@ -7,7 +7,7 @@ const APP_URL = 'https://app.kamperhub.com';
 
 export const metadata: Metadata = {
   title: 'Caravan Towing Weight Calculator | Can My Car Tow My Caravan? — KamperHub',
-  description: 'Free caravan towing weight calculator for Australia. Check GVM, ATM, GCM, payload and towball weight to see if your car can legally tow your caravan.',
+  description: 'Free caravan towing weight calculator for Australia. Check GVM, ATM, GCM, payload and towball weight to see if your car can tow your caravan within manufacturer limits.',
   keywords: 'caravan towing weight calculator, caravan weight compliance, GVM calculator, ATM calculator, towing capacity check australia, towball weight calculator, caravan weight check, can my car tow my caravan',
   openGraph: {
     title: 'Caravan Towing Weight Calculator — KamperHub',
@@ -100,10 +100,10 @@ const faqJsonLd = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Can my car tow my caravan legally?',
+      name: 'Can my car tow my caravan within all its weight limits?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Your car can legally tow your caravan only if all weight limits are met, including GVM, ATM, GCM, payload, and towball weight. Being under towing capacity alone does not guarantee legal compliance.',
+        text: 'Your car can tow your caravan within all manufacturer weight limits only if GVM, ATM, GCM, payload, and towball weight are each below their rating. Being under towing capacity alone does not guarantee compliance with the other limits.',
       },
     },
     {
@@ -219,7 +219,7 @@ export default function CaravanTowingWeightCalculatorPage() {
             lineHeight: '1.6',
           }}>
             Enter your vehicle and caravan weights below to check GVM, ATM, GCM,
-            towing capacity and towball weight against Australian legal limits — for free, in under two minutes.
+            towing capacity and towball weight against manufacturer limits — for free, in under two minutes.
           </p>
           <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '32px' }}>
             Last updated: March 2026 · Reviewed by the KamperHub towing compliance team

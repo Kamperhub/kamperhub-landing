@@ -126,8 +126,8 @@ export default function LandingPage() {
     },
     {
       icon: Gauge,
-      title: 'Live Tow Simulator',
-      description: 'Drag items between front, middle, and rear of your rig. Towball weight, axle loads, and sway risk update in real time — know what to move before you pack.',
+      title: 'Tow Simulator',
+      description: 'Set up your full rig and run scenarios. Move cargo between zones, adjust fuel and water, and see towball weight, axle loads, and sway risk update as you change things. Free preview on a sample rig — full setup with Pro.',
       color: '#c97b5d',
       bg: '#fef7f3'
     },
@@ -521,7 +521,7 @@ export default function LandingPage() {
             margin: '0 auto 40px',
             lineHeight: '1.6'
           }}>
-            The only Aussie caravan app with a live tow simulator, step-by-step weight fixes, and real-time fuel pricing along your route. Built for people who tow.
+            Check whether your rig is within its weight limits — free, on your own vehicle and caravan. Then plan trips, run scenarios, and travel with confidence.
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
@@ -543,7 +543,7 @@ export default function LandingPage() {
                 Take the 60-Second Quiz
                 <ArrowRight size={20} />
               </a>
-              <a href={`${APP_URL}/signup`} style={{
+              <a href={`${APP_URL}/signup?redirect=/weights`} style={{
                 padding: '16px 32px',
                 backgroundColor: colors.primary,
                 color: colors.white,
@@ -556,7 +556,7 @@ export default function LandingPage() {
                 gap: '8px',
                 boxShadow: '0 4px 14px rgba(56, 102, 65, 0.3)',
               }}>
-                Get Started Free
+                Check My Weights Free
                 <ArrowRight size={20} />
               </a>
             </div>
@@ -654,8 +654,8 @@ export default function LandingPage() {
                 icon: Gauge,
                 color: '#c97b5d',
                 bg: '#fef7f3',
-                title: 'Live Tow Simulator',
-                caption: 'Drag inventory between the front, middle, and rear of your rig. Towball weight, axle loads, and sway risk update in real time.',
+                title: 'Tow Simulator',
+                caption: 'Configure your rig, move cargo between zones, and run what-if scenarios. Free preview on a sample rig — full setup with Pro.',
                 linkText: 'See the simulator',
                 href: '/tow-simulator',
               },
@@ -826,7 +826,7 @@ export default function LandingPage() {
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
             {[
-              { title: 'Weight Calculator', description: 'Check your GVM, ATM, GCM, towing capacity and towball weight against Australian legal limits — free.', href: '/caravan-towing-weight-calculator', icon: '⚖️' },
+              { title: 'Weight Calculator', description: 'Check your GVM, ATM, GCM, towing capacity and towball weight against manufacturer limits — free.', href: '/caravan-towing-weight-calculator', icon: '⚖️' },
               { title: 'Tow Simulator', description: 'Model your complete tow setup. See weight distribution, sway risk, and compliance in one visual dashboard.', href: '/tow-simulator', icon: '🚗' },
               { title: 'Trip Planner', description: 'Plan routes with fuel stops, weather forecasts, free camping, packing lists and budgets.', href: '/caravan-trip-planner', icon: '🗺️' },
               { title: 'Weight Distribution Guide', description: 'Learn where to place heavy, medium and light items in your caravan for safe, stable towing.', href: '/caravan-weight-distribution-guide', icon: '📦' },
