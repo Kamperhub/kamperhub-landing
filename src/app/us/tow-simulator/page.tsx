@@ -52,7 +52,7 @@ const faqs = [
   },
   {
     question: 'How is the tow simulator different from a weight calculator?',
-    answer: 'A weight calculator checks whether your totals (GVWR, trailer GVWR, GCWR) are within limits — it gives you a pass or fail. The tow simulator goes deeper: it models weight distribution across cargo zones (front, middle, rear of the trailer), shows how your loading affects tongue weight percentage, displays sway risk indicators, and lets you drag items between zones to see the impact in real time. Think of the calculator as a scale check, and the simulator as a full loading analysis.',
+    answer: 'A weight calculator checks whether your totals (GVWR, trailer GVWR, GCWR) are within limits — it gives you a pass or fail. The tow simulator goes deeper: it models weight distribution across cargo zones (front, middle, rear of the trailer), shows how your loading affects tongue weight percentage, displays sway risk indicators, and lets you move items between zones to see the impact in real time. Think of the calculator as a scale check, and the simulator as a full loading analysis. Free users see a sample rig; full setup unlocks with Pro.',
   },
   {
     question: 'When should I use the tow simulator?',
@@ -60,7 +60,7 @@ const faqs = [
   },
   {
     question: 'What does the tow simulator check?',
-    answer: 'The simulator checks and visualizes: total truck and trailer weights against legal limits (GVWR, GCWR), tongue weight as a percentage of trailer loaded weight (10-15% safe range in the US), weight distribution across trailer loading zones, sway risk based on your tongue weight percentage and rear overhang loading, and a GCWR donut chart showing how close you are to your combined weight limit.',
+    answer: 'The simulator checks and visualizes: total truck and trailer weights against manufacturer limits (GVWR, GCWR), tongue weight as a percentage of trailer loaded weight (10-15% safe range in the US), weight distribution across trailer loading zones, sway risk based on your tongue weight percentage and rear overhang loading, and a GCWR donut chart showing how close you are to your combined weight limit.',
   },
   {
     question: 'Can I load my actual truck and trailer specs into the simulator?',
@@ -266,8 +266,8 @@ export default function TowSimulatorPage() {
               icon: '🎯',
             },
             {
-              title: 'Cargo Zone Management',
-              description: 'Add, move, and remove cargo items across your trailer\'s loading zones. Each zone has a weight total and the simulator recalculates everything instantly — tongue weight percentage, sway risk, axle loads — as you make changes.',
+              title: 'Cargo Zone Management (Pro)',
+              description: 'Add, move, and remove cargo items across your trailer\'s loading zones. Each zone has a weight total and the simulator recalculates everything instantly — tongue weight percentage, sway risk, axle loads — as you make changes. Free users see the zones on a sample rig; live cargo edits unlock with Pro.',
               icon: '📦',
             },
             {
@@ -516,7 +516,7 @@ export default function TowSimulatorPage() {
                   Free Weight Calculator
                 </h3>
                 <p style={{ fontSize: '15px', color: colors.slate, lineHeight: '1.6', margin: 0 }}>
-                  Quick pass/fail check on your GVWR, GCWR, towing capacity and tongue weight. Start here if you just need to know whether your combination is legal.
+                  Quick pass/fail check on your GVWR, GCWR, towing capacity and tongue weight. Start here if you just need to know whether your combination is within limits.
                 </p>
               </div>
             </Link>

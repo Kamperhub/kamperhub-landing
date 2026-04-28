@@ -87,10 +87,10 @@ const faqJsonLd = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Can my truck or SUV tow my RV legally in the United States?',
+      name: 'Can my truck or SUV tow my RV within all its weight limits in the United States?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Your truck or SUV can legally tow an RV in the United States only if all manufacturer weight ratings are met, including GVWR, GCWR, payload capacity, axle ratings, and tongue weight. Staying under the advertised tow rating alone does not guarantee compliance.',
+        text: 'Your truck or SUV can tow an RV within all manufacturer weight ratings only if GVWR, GCWR, payload capacity, axle ratings, and tongue weight are each below their rating. Staying under the advertised tow rating alone does not guarantee compliance with the other limits.',
       },
     },
     {

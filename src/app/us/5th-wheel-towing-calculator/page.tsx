@@ -279,7 +279,7 @@ export default function FifthWheelTowingCalculatorPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px' }}>
             {[
               { title: 'Tow Rating ≠ Safe Towing', description: 'A truck rated to tow 15,000 lbs may only have 3,000 lbs of payload. Once pin weight, passengers, and gear consume that payload, you\'re overloaded — regardless of tow rating.', icon: '🚫' },
-              { title: 'Dealer Lots Don\'t Check Payload', description: 'Most dealers match truck tow ratings to trailer weight. They rarely verify payload, pin weight, or GVWR. This is how buyers end up with trucks that "can tow it" but can\'t legally carry the load.', icon: '🏪' },
+              { title: 'Dealer Lots Don\'t Check Payload', description: 'Most dealers match truck tow ratings to trailer weight. They rarely verify payload, pin weight, or GVWR. This is how buyers end up with trucks that "can tow it" but can\'t carry the load within their weight limits.', icon: '🏪' },
               { title: 'Brochure Weights Are Dry', description: 'Manufacturer specs show dry weight and dry pin weight. Real-world loaded weights are 15–30% higher once you add water, gear, and supplies. Always calculate with loaded numbers.', icon: '📋' },
               { title: 'Rear Axle Has Its Own Limit', description: 'Even when GVWR isn\'t exceeded, the rear axle rating can be. 5th wheel pin weight loads the rear axle disproportionately. This causes squat, reduced steering, and accelerated brake wear.', icon: '⚠️' },
             ].map((item, i) => (

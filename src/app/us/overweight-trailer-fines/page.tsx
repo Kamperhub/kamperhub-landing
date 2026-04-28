@@ -349,7 +349,7 @@ export default function OverweightTrailerFinesPage() {
               <div style={{ padding: '24px', backgroundColor: colors.cream, borderRadius: '12px', borderLeft: `4px solid ${colors.primary}`, height: '100%' }}>
                 <h3 style={{ fontSize: '18px', fontWeight: '700', color: colors.darkEarth, marginBottom: '8px', marginTop: 0 }}>Weight Distribution Guide</h3>
                 <p style={{ fontSize: '15px', color: colors.slate, lineHeight: '1.6', margin: 0 }}>
-                  Learn where to place heavy, medium and light items. Proper distribution prevents sway and keeps you within legal limits.
+                  Learn where to place heavy, medium and light items. Proper distribution prevents sway and keeps you within manufacturer limits.
                 </p>
               </div>
             </Link>

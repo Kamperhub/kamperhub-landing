@@ -186,8 +186,8 @@ export default function TrailerWeightDistributionGuidePage() {
                 icon: '🔄',
               },
               {
-                title: 'Legal Compliance',
-                description: 'Individual axle weights can exceed legal limits even when total weight is fine. DOT inspections and weigh stations check axle weights — not just totals. Proper distribution keeps you legal at every measurement point.',
+                title: 'Compliance',
+                description: 'Individual axle weights can exceed manufacturer limits even when total weight is fine. DOT inspections and weigh stations check axle weights — not just totals. Proper distribution keeps you within limits at every measurement point.',
                 icon: '📋',
               },
             ].map((item, i) => (
@@ -449,7 +449,7 @@ export default function TrailerWeightDistributionGuidePage() {
             How Weight Distribution Impacts GVWR and Payload Limits
           </h2>
           <p style={{ fontSize: '18px', color: colors.slate, textAlign: 'center', marginBottom: '48px', lineHeight: '1.6' }}>
-            Distribution doesn&apos;t just affect handling — it changes which legal limits you&apos;re hitting.
+            Distribution doesn&apos;t just affect handling — it changes which manufacturer limits you&apos;re hitting.
             The same total weight can pass or fail compliance depending on where it sits.
           </p>
 
@@ -471,7 +471,7 @@ export default function TrailerWeightDistributionGuidePage() {
               <p style={{ fontSize: '15px', color: colors.slate, lineHeight: '1.6', margin: 0 }}>
                 Weight behind the axle reduces tongue weight percentage. Drop below 10% and you enter dangerous sway territory —
                 the leading cause of trailer accidents. The <Link href="/us/tow-simulator" style={{ color: colors.primary, fontWeight: '600' }}>tow simulator</Link> shows
-                your sway risk in real time as you move cargo between zones.
+                your sway risk as you experiment with cargo placement (Pro plan; Free users see a sample rig).
               </p>
             </div>
             <div style={{ padding: '24px', backgroundColor: colors.white, borderRadius: '12px', borderLeft: `4px solid ${colors.accent}` }}>
@@ -525,7 +525,7 @@ export default function TrailerWeightDistributionGuidePage() {
           </h2>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.85)', marginBottom: '32px', lineHeight: '1.6' }}>
             KamperHub&apos;s tow simulator lets you place cargo in loading zones and see the effect on tongue weight,
-            sway risk, and compliance — all before you pack the trailer.
+            sway risk, and compliance — all before you pack the trailer. Free preview on a sample rig; full setup with Pro.
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href={`${APP_URL}/signup?redirect=/tow-simulator`} style={{ display: 'inline-block', padding: '16px 40px', backgroundColor: colors.accent, color: colors.white, textDecoration: 'none', fontWeight: '700', borderRadius: '12px', fontSize: '20px' }}>
