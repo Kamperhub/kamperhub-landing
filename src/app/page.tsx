@@ -192,6 +192,7 @@ export default function LandingPage() {
       border: '#e5e7eb',
       badge: null,
       features: [
+        'Weight safety check on your rig',
         'Trip planning (1 active trip)',
         'Free camping finder',
         'Explore & POI search',
@@ -215,7 +216,7 @@ export default function LandingPage() {
         'Unlimited trip planning',
         'Route planner with Trip Advisor',
         'Packing lists & 50+ templates',
-        'Weight dashboard (view only)',
+        'Tow Simulator (own rig, axle slider)',
         'Travel statistics',
         'Traveller profiles (up to 2)',
         'All 11 calculator tools',
@@ -233,9 +234,8 @@ export default function LandingPage() {
       badge: 'Most Popular',
       features: [
         'Everything in Explorer, plus:',
-        'Full weight compliance (TowSafe)',
-        'Cargo distribution simulator',
-        'Towing & weight calculators',
+        'Tow Simulator — full edit (cargo zones, scenarios, WDH)',
+        'Weight Compliance Report (PDF + Verification Record)',
         'Pre-departure checklists',
         'Expense tracking & budgets',
         'Household members (up to 5)',
@@ -271,7 +271,7 @@ export default function LandingPage() {
   const faqs = [
     {
       q: 'Is there a free plan?',
-      a: 'Yes! KamperHub has a free plan with core features like trip planning, free camping finder, and basic tools. Upgrade to Explorer ($10/year) for the full experience, or Pro ($49/year) for everything including weight compliance, household sharing, expense tracking, and full inventory management.'
+      a: 'Yes! KamperHub has a free plan that includes the weight safety check on your own rig, trip planning (1 active trip), free camping finder, basic garage and 6 calculator tools. Upgrade to Explorer ($10/year) for unlimited trip planning, packing lists, the Tow Simulator on your own rig, and all 11 calculators — or Pro ($49/year) for the full Tow Simulator (cargo zones, scenarios, WDH), the Weight Compliance Report PDF, household sharing, expense tracking and full inventory management.'
     },
     {
       q: 'Do I need a credit card to sign up?',
@@ -287,7 +287,7 @@ export default function LandingPage() {
     },
     {
       q: 'What\'s the difference between Explorer and Pro?',
-      a: 'Explorer ($10/year) gives you unlimited trips, packing lists, all calculators, and travel stats. Pro ($49/year) adds full weight compliance with TowSafe scoring, expense tracking and budgets, household sharing (up to 5 members), unlimited vehicles and caravans, and full inventory management.'
+      a: 'Explorer ($10/year) gives you unlimited trips, packing lists, all calculators, travel stats, and the Tow Simulator on your own rig (axle-position slider, view-only on cargo). Pro ($49/year) unlocks the full Tow Simulator — interactive cargo zones, what-if scenarios, the WDH toggle — plus the Weight Compliance Report PDF and Verification Record, expense tracking and budgets, household sharing (up to 5 members), unlimited vehicles and caravans, and full inventory management. The free weight safety check on your own rig is included on every plan, including Free.'
     },
     {
       q: 'What is the Kids Zone?',
@@ -813,7 +813,7 @@ export default function LandingPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
             {[
               { title: 'Weight Calculator', description: 'Check your GVM, ATM, GCM, towing capacity and towball weight against manufacturer limits — free.', href: '/caravan-towing-weight-calculator', icon: '⚖️' },
-              { title: 'Tow Simulator', description: 'Model your complete tow setup. See weight distribution, sway risk, and compliance in one visual dashboard.', href: '/tow-simulator', icon: '🚗' },
+              { title: 'Tow Simulator (Pro)', description: 'Move cargo between zones, set fuel and water levels, slide the axle and run scenarios until your rig passes. Free preview on a sample rig; full edit unlocks with Pro.', href: '/tow-simulator', icon: '🚗' },
               { title: 'Trip Planner', description: 'Plan routes with fuel stops, weather forecasts, free camping, packing lists and budgets.', href: '/caravan-trip-planner', icon: '🗺️' },
               { title: 'Weight Distribution Guide', description: 'Learn where to place heavy, medium and light items in your caravan for safe, stable towing.', href: '/caravan-weight-distribution-guide', icon: '📦' },
               { title: 'Overweight Fines by State', description: 'State-by-state penalties, roadside inspection process, and the insurance risk most people don\'t know about.', href: '/caravan-overweight-fines-australia', icon: '🚨' },
