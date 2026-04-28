@@ -84,7 +84,7 @@ const faqJsonLd = {
       name: 'Should I check weights before planning a caravan trip?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. Checking weights before planning ensures your caravan setup is legal and prevents route or fuel planning issues caused by overweight or unsafe configurations.',
+        text: 'Yes. Checking weights before planning ensures your caravan setup is within manufacturer limits and prevents route or fuel planning issues caused by overweight or unsafe configurations.',
       },
     },
   ],

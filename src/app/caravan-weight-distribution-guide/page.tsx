@@ -186,8 +186,8 @@ export default function CaravanWeightDistributionGuidePage() {
                 icon: '🔄',
               },
               {
-                title: 'Legal Compliance',
-                description: 'Individual axle weights can exceed legal limits even when total weight is fine. Roadside inspections in some states check axle weights — not just totals. Proper distribution keeps you legal at every measurement point.',
+                title: 'Compliance',
+                description: 'Individual axle weights can exceed manufacturer limits even when total weight is fine. Roadside inspections in some states check axle weights — not just totals. Proper distribution keeps you within limits at every measurement point.',
                 icon: '📋',
               },
             ].map((item, i) => (
@@ -446,16 +446,16 @@ export default function CaravanWeightDistributionGuidePage() {
         </div>
       </section>
 
-      {/* Tool bridge — how distribution affects legal limits */}
+      {/* Tool bridge — how distribution affects manufacturer limits */}
       <section style={{ padding: '80px 24px', backgroundColor: colors.cream }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '700', color: colors.darkEarth, marginBottom: '16px', textAlign: 'center' }}>
-            How Weight Distribution Affects Your Legal Towing Limits
+            How Weight Distribution Affects Your Towing Limits
           </h2>
           <p style={{ fontSize: '18px', color: colors.slate, textAlign: 'center', marginBottom: '48px', lineHeight: '1.6' }}>
-            Weight distribution directly affects legal towing limits because it changes axle loads and towball weight.
+            Weight distribution directly affects your towing limits because it changes axle loads and towball weight.
             Placing heavy items too far forward or rearward can push your vehicle over its GVM or rear axle limit.
-            This means a setup can become illegal even when the caravan&apos;s total weight appears acceptable.
+            This means a setup can fall outside compliance even when the caravan&apos;s total weight appears acceptable.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', marginBottom: '48px' }}>
@@ -476,7 +476,7 @@ export default function CaravanWeightDistributionGuidePage() {
               <p style={{ fontSize: '15px', color: colors.slate, lineHeight: '1.6', margin: 0 }}>
                 Weight behind the axle reduces towball percentage. Drop below 8% and you enter dangerous sway territory —
                 the leading cause of caravan accidents. The <Link href="/tow-simulator" style={{ color: colors.primary, fontWeight: '600' }}>tow simulator</Link> shows
-                your sway risk in real time as you move cargo between zones.
+                your sway risk as you experiment with cargo placement (Pro plan; Free users see a sample rig).
               </p>
             </div>
             <div style={{ padding: '24px', backgroundColor: colors.white, borderRadius: '12px', borderLeft: `4px solid ${colors.accent}` }}>
@@ -530,7 +530,7 @@ export default function CaravanWeightDistributionGuidePage() {
           </h2>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.85)', marginBottom: '32px', lineHeight: '1.6' }}>
             KamperHub&apos;s tow simulator lets you place cargo in loading zones and see the effect on towball weight,
-            sway risk, and compliance — all before you pack the caravan.
+            sway risk, and compliance — all before you pack the caravan. Free preview on a sample rig; full setup with Pro.
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href={`${APP_URL}/signup?redirect=/tow-simulator`} style={{ display: 'inline-block', padding: '16px 40px', backgroundColor: colors.accent, color: colors.white, textDecoration: 'none', fontWeight: '700', borderRadius: '12px', fontSize: '20px' }}>
