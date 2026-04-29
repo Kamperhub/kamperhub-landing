@@ -323,7 +323,7 @@ export default function CaravanOverweightFinesPage() {
           </h2>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.85)', marginBottom: '32px', lineHeight: '1.6' }}>
             KamperHub checks what the inspectors check — GVM, ATM, GCM, towing capacity and towball weight.
-            Use the free weight calculator and know you&apos;re legal before you leave the driveway.
+            Use the free weight calculator and know you&apos;re within all your weight limits before you leave the driveway.
           </p>
           <a href={`${APP_URL}/signup?redirect=/weights`} style={{
             display: 'inline-block', padding: '16px 48px', backgroundColor: colors.accent, color: colors.white,

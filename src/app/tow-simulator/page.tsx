@@ -52,7 +52,7 @@ const faqs = [
   },
   {
     question: 'How is the tow simulator different from a weight calculator?',
-    answer: 'A weight calculator checks whether your totals (GVM, ATM, GCM) are within limits — it gives you a pass or fail. The tow simulator goes deeper: it models weight distribution across cargo zones (front, middle, rear of the caravan), shows how your loading affects towball percentage, displays sway risk indicators, and lets you move items between zones to see the impact in real time. Think of the calculator as a weighbridge check, and the simulator as a full loading analysis. Free users see a sample rig; full setup unlocks with Pro.',
+    answer: 'A weight calculator checks whether your totals (GVM, ATM, GCM) are within limits — it gives you a pass or fail. The tow simulator goes deeper: it models weight distribution across cargo zones (front, middle, rear of the caravan), shows how your loading affects towball percentage, displays sway risk indicators, and lets you move items between zones to see the impact in real time. Think of the calculator as a weighbridge check, and the simulator as a full loading analysis. Free users see a read-only sample rig; Explorer ($10/year) unlocks the simulator on your own rig with the axle position slider; Pro ($49/year) adds interactive cargo zone editing, scenarios and the WDH toggle.',
   },
   {
     question: 'When should I use the tow simulator?',
@@ -68,7 +68,7 @@ const faqs = [
   },
   {
     question: 'Is the tow simulator free?',
-    answer: 'The tow simulator is available on KamperHub\'s Pro plan ($49/year). The free plan includes a weight compliance dashboard that checks your GVM, ATM, GCM, towing capacity, and towball percentage. The simulator adds visual weight distribution modelling, cargo zone management, sway risk analysis, and the ability to experiment with different loading scenarios.',
+    answer: 'The tow simulator is tiered. The free plan includes the full compliance dashboard (GVM, ATM, GCM, towing capacity, towball percentage, sway risk, GCM donut) on a read-only sample rig so you can see exactly what the simulator does before subscribing. Explorer ($10/year) unlocks the simulator on your own rig — wizard setup from your garage, axle position slider, and saved scenarios. Pro ($49/year) adds interactive cargo zone editing (move items between front, middle and rear), the weight distribution hitch toggle, the Weight Compliance Report PDF, and unlimited scenarios.',
   },
 ];
 
@@ -397,7 +397,7 @@ export default function TowSimulatorPage() {
             What Happens If Your Setup Fails the Simulation?
           </h2>
           <p style={{ fontSize: '18px', color: colors.slate, textAlign: 'center', marginBottom: '48px', lineHeight: '1.6', maxWidth: '800px', margin: '0 auto 48px' }}>
-            If your setup fails the tow simulation, it means one or more legal weight limits are exceeded.
+            If your setup fails the tow simulation, it means one or more weight limits are exceeded.
             This can result in unsafe handling, increased braking distance, voided insurance, and fines if stopped
             by police. The simulation highlights exactly which limit is exceeded so you know what needs to change
             before towing.
