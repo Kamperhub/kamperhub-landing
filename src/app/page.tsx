@@ -202,6 +202,7 @@ export default function LandingPage() {
       ],
       cta: 'Get Started Free',
       ctaBg: '#6b7280',
+      maintenance: false,
     },
     {
       name: 'Explorer',
@@ -223,6 +224,7 @@ export default function LandingPage() {
       ],
       cta: 'Get Explorer — $10/yr',
       ctaBg: colors.primary,
+      maintenance: false,
     },
     {
       name: 'Pro',
@@ -244,15 +246,17 @@ export default function LandingPage() {
       ],
       cta: 'Get Pro — $49/yr',
       ctaBg: '#7c3aed',
+      maintenance: false,
     },
     {
       name: 'Family',
       price: '$99',
-      priceDetail: '$99/year — includes Kids Zone',
+      priceDetail: 'Temporarily unavailable while we rebuild the Kids Zone',
       color: '#3b82f6',
       bg: colors.white,
       border: '#e5e7eb',
-      badge: 'New',
+      badge: null,
+      maintenance: true,
       features: [
         'Everything in Pro, plus:',
         'KamperHub Kids Zone (ages 3–12)',
@@ -291,7 +295,7 @@ export default function LandingPage() {
     },
     {
       q: 'What is the Kids Zone?',
-      a: 'KamperHub Kids Zone is a collection of educational games and activities designed for kids aged 3–12. It includes storybooks, wildlife spotting, a state collector map, travel journals, road trip challenges, and more. Two activities are free for all users. The full Kids Zone (9 activities) is included with the Family Plan ($99/year).'
+      a: 'KamperHub Kids Zone is a collection of educational games and activities designed for kids aged 3–12 — storybooks, wildlife spotting, a state collector map, travel journals, road trip challenges, and more. It comes with the Family Plan, which is temporarily unavailable while we rebuild the Kids Zone. We\'ll reopen it soon.'
     },
     {
       q: 'What vehicles and caravans are supported?',
@@ -1025,7 +1029,7 @@ export default function LandingPage() {
               fontSize: '14px',
               marginTop: '16px',
             }}>
-              2 free activities included · Family Plan unlocks all 9 activities — $99/year
+              Family Plan (with the full Kids Zone) is temporarily unavailable while we rebuild it — back soon
             </p>
           </div>
         </div>
@@ -1106,6 +1110,7 @@ export default function LandingPage() {
                   display: 'flex',
                   flexDirection: 'column',
                   position: 'relative',
+                  opacity: plan.maintenance ? 0.75 : 1,
                 }}
               >
                 {plan.badge && (
@@ -1138,8 +1143,14 @@ export default function LandingPage() {
                     {plan.name}
                   </p>
                   <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'center', gap: '4px' }}>
-                    <span style={{ fontSize: '48px', fontWeight: '800', color: colors.gray[900] }}>{plan.price}</span>
-                    {plan.name !== 'Free' && <span style={{ fontSize: '16px', color: colors.gray[500] }}>/year</span>}
+                    {plan.maintenance ? (
+                      <span style={{ fontSize: '28px', fontWeight: '800', color: colors.gray[500] }}>Under Maintenance</span>
+                    ) : (
+                      <>
+                        <span style={{ fontSize: '48px', fontWeight: '800', color: colors.gray[900] }}>{plan.price}</span>
+                        {plan.name !== 'Free' && <span style={{ fontSize: '16px', color: colors.gray[500] }}>/year</span>}
+                      </>
+                    )}
                   </div>
                   <p style={{ color: colors.gray[500], fontSize: '14px', marginTop: '4px' }}>
                     {plan.priceDetail}
@@ -1165,19 +1176,38 @@ export default function LandingPage() {
                     </li>
                   ))}
                 </ul>
-                <a href={`${APP_URL}/signup`} style={{
-                  display: 'block',
-                  padding: '14px 20px',
-                  backgroundColor: plan.ctaBg,
-                  color: colors.white,
-                  textAlign: 'center',
-                  textDecoration: 'none',
-                  fontWeight: '600',
-                  borderRadius: '12px',
-                  fontSize: '15px',
-                }}>
-                  {plan.cta}
-                </a>
+                {plan.maintenance ? (
+                  <div
+                    aria-disabled="true"
+                    style={{
+                      display: 'block',
+                      padding: '14px 20px',
+                      backgroundColor: colors.gray[200],
+                      color: colors.gray[500],
+                      textAlign: 'center',
+                      fontWeight: '600',
+                      borderRadius: '12px',
+                      fontSize: '15px',
+                      cursor: 'not-allowed',
+                    }}
+                  >
+                    Under Maintenance
+                  </div>
+                ) : (
+                  <a href={`${APP_URL}/signup`} style={{
+                    display: 'block',
+                    padding: '14px 20px',
+                    backgroundColor: plan.ctaBg,
+                    color: colors.white,
+                    textAlign: 'center',
+                    textDecoration: 'none',
+                    fontWeight: '600',
+                    borderRadius: '12px',
+                    fontSize: '15px',
+                  }}>
+                    {plan.cta}
+                  </a>
+                )}
               </div>
             ))}
           </div>
