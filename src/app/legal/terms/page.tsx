@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft } from 'lucide-react';
+import { explorerPriceLabel } from '@/lib/explorerPrice';
 
 const colors = {
   primary: '#6b8e6b',
@@ -120,7 +121,7 @@ export default function TermsOfServicePage() {
               You may upgrade to a paid subscription for additional features:
             </p>
             <ul style={{ color: '#374151', lineHeight: '1.7', margin: '0 0 16px 0', paddingLeft: '24px' }}>
-              <li><strong>Explorer</strong> — $10 AUD per year</li>
+              <li><strong>Explorer</strong> — {explorerPriceLabel('bare')} per year (AUD/USD/EUR depending on your region)</li>
               <li><strong>Pro</strong> — $49 AUD per year (full access to all features)</li>
               <li>No long-term contract required</li>
             </ul>

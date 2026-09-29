@@ -30,6 +30,7 @@ import {
   Star,
   Lock,
 } from 'lucide-react';
+import { explorerPriceLabel, explorerMonthlyEquivalentLabel } from '@/lib/explorerPrice';
 
 // Brand Colors - Bush Meets Coast palette
 const colors = {
@@ -62,6 +63,12 @@ export default function LandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [guideEmail, setGuideEmail] = useState('');
+  // Explorer price switches from $10/yr to $19/yr at midnight AEST 1 Oct 2026 —
+  // see src/lib/explorerPrice.ts. Recomputed on every render so it flips live.
+  const explorerBare = explorerPriceLabel('bare');
+  const explorerYear = explorerPriceLabel('year');
+  const explorerYr = explorerPriceLabel('yr');
+  const explorerMonthly = explorerMonthlyEquivalentLabel();
   const [guideStatus, setGuideStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [guideError, setGuideError] = useState('');
 
@@ -206,8 +213,8 @@ export default function LandingPage() {
     },
     {
       name: 'Explorer',
-      price: '$10',
-      priceDetail: '$10/year — less than $1/month',
+      price: explorerBare,
+      priceDetail: `${explorerYear} — ${explorerMonthly}`,
       color: colors.primary,
       bg: colors.white,
       border: '#e5e7eb',
@@ -222,7 +229,7 @@ export default function LandingPage() {
         'Traveller profiles (up to 2)',
         'All 11 calculator tools',
       ],
-      cta: 'Get Explorer — $10/yr',
+      cta: `Get Explorer — ${explorerYr}`,
       ctaBg: colors.primary,
       maintenance: false,
     },
@@ -275,7 +282,7 @@ export default function LandingPage() {
   const faqs = [
     {
       q: 'Is there a free plan?',
-      a: 'Yes! KamperHub has a free plan that includes the weight safety check on your own rig, trip planning (1 active trip), free camping finder, basic garage and 6 calculator tools. Upgrade to Explorer ($10/year) for unlimited trip planning, packing lists, the Tow Simulator on your own rig, and all 11 calculators — or Pro ($49/year) for the full Tow Simulator (cargo zones, scenarios, WDH), the Weight Compliance Report PDF, household sharing, expense tracking and full inventory management.'
+      a: `Yes! KamperHub has a free plan that includes the weight safety check on your own rig, trip planning (1 active trip), free camping finder, basic garage and 6 calculator tools. Upgrade to Explorer (${explorerYear}) for unlimited trip planning, packing lists, the Tow Simulator on your own rig, and all 11 calculators — or Pro ($49/year) for the full Tow Simulator (cargo zones, scenarios, WDH), the Weight Compliance Report PDF, household sharing, expense tracking and full inventory management.`
     },
     {
       q: 'Do I need a credit card to sign up?',
@@ -291,7 +298,7 @@ export default function LandingPage() {
     },
     {
       q: 'What\'s the difference between Explorer and Pro?',
-      a: 'Explorer ($10/year) gives you unlimited trips, packing lists, all calculators, travel stats, and the Tow Simulator on your own rig (axle-position slider, view-only on cargo). Pro ($49/year) unlocks the full Tow Simulator — interactive cargo zones, what-if scenarios, the WDH toggle — plus the Weight Compliance Report PDF and Verification Record, expense tracking and budgets, household sharing (up to 5 members), unlimited vehicles and caravans, and full inventory management. The free weight safety check on your own rig is included on every plan, including Free.'
+      a: `Explorer (${explorerYear}) gives you unlimited trips, packing lists, all calculators, travel stats, and the Tow Simulator on your own rig (axle-position slider, view-only on cargo). Pro ($49/year) unlocks the full Tow Simulator — interactive cargo zones, what-if scenarios, the WDH toggle — plus the Weight Compliance Report PDF and Verification Record, expense tracking and budgets, household sharing (up to 5 members), unlimited vehicles and caravans, and full inventory management. The free weight safety check on your own rig is included on every plan, including Free.`
     },
     {
       q: 'What is the Kids Zone?',

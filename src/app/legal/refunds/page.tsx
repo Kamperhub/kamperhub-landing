@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft, XCircle } from 'lucide-react';
+import { explorerPriceLabel } from '@/lib/explorerPrice';
 
 const colors = {
   primary: '#6b8e6b',
@@ -116,7 +117,7 @@ export default function RefundPolicyPage() {
               2. Subscription Charges Are Non-Refundable
             </h2>
             <p style={{ color: '#374151', lineHeight: '1.7', margin: '0 0 16px 0' }}>
-              Once you subscribe to KamperHub (Explorer at $10/year or Pro at $49/year), all subscription fees are <strong>final and non-refundable</strong>. This includes:
+              Once you subscribe to KamperHub (Explorer at {explorerPriceLabel('year')} for new subscribers, or Pro at $49/year), all subscription fees are <strong>final and non-refundable</strong>. This includes:
             </p>
             <ul style={{ color: '#374151', lineHeight: '1.7', margin: 0, paddingLeft: '24px' }}>
               <li>Initial subscription payments</li>
@@ -137,7 +138,7 @@ export default function RefundPolicyPage() {
             </p>
             <ul style={{ color: '#374151', lineHeight: '1.7', margin: 0, paddingLeft: '24px' }}>
               <li>You have access to core features on the free plan</li>
-              <li>The subscription costs are affordable ($10/year for Explorer, $49/year for Pro)</li>
+              <li>The subscription costs are affordable ({explorerPriceLabel('year')} for Explorer, $49/year for Pro)</li>
               <li>You can cancel at any time to avoid future charges</li>
               <li>Our infrastructure and operating costs are incurred immediately upon subscription</li>
             </ul>
