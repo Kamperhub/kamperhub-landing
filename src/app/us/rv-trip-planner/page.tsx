@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { explorerPriceLabel } from '@/lib/explorerPrice';
+
+export const revalidate = 3600;
 
 const APP_URL = 'https://app.kamperhub.com';
 
@@ -31,10 +34,13 @@ const colors = {
   white: '#FFFFFF',
 };
 
-const faqs = [
+// Explorer's price switches $10/yr -> $19/yr at midnight AEST 1 Oct 2026 (src/lib/explorerPrice.ts).
+// Built as a function, not a module-level const, so it recomputes on every render/revalidation.
+function buildFaqs() {
+  return [
   {
     question: 'Is the KamperHub trip planner free?',
-    answer: 'The route planner is available on the free plan, including route mapping, weather forecasts, and the boondocking/free camping finder. Unlimited trip saving, packing lists, trip budgets, and expense tracking are available on the Explorer ($10/year) and Pro ($49/year) plans.',
+    answer: `The route planner is available on the free plan, including route mapping, weather forecasts, and the boondocking/free camping finder. Unlimited trip saving, packing lists, trip budgets, and expense tracking are available on the Explorer (${explorerPriceLabel('year')}) and Pro ($49/year) plans.`,
   },
   {
     question: 'Does KamperHub work for long-distance interstate road trips?',
@@ -56,7 +62,8 @@ const faqs = [
     question: 'How does fatigue management work?',
     answer: 'During the trip planning wizard, you set your preferred maximum driving time per day and break intervals. KamperHub calculates where you\'ll need to stop for the night based on these settings and suggests overnight stop locations along your route. This ensures your trip plan is realistic and accounts for driver fatigue — especially important when towing a travel trailer or fifth wheel.',
   },
-];
+  ];
+}
 
 // Snippet-optimised FAQ schema for US market
 const faqJsonLd = {
@@ -106,6 +113,7 @@ const softwareJsonLd = {
 };
 
 export default function RvTripPlannerPage() {
+  const faqs = buildFaqs();
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
@@ -302,7 +310,7 @@ export default function RvTripPlannerPage() {
                 <tr style={{ backgroundColor: colors.primary }}>
                   <th style={{ padding: '16px 20px', textAlign: 'left', color: colors.white, fontWeight: '600' }}>Feature</th>
                   <th style={{ padding: '16px 20px', textAlign: 'center', color: colors.white, fontWeight: '600' }}>Free</th>
-                  <th style={{ padding: '16px 20px', textAlign: 'center', color: colors.white, fontWeight: '600' }}>Explorer $10/yr</th>
+                  <th style={{ padding: '16px 20px', textAlign: 'center', color: colors.white, fontWeight: '600' }}>Explorer {explorerPriceLabel('yr')}</th>
                   <th style={{ padding: '16px 20px', textAlign: 'center', color: colors.white, fontWeight: '600' }}>Pro $49/yr</th>
                 </tr>
               </thead>

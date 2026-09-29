@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { explorerPriceLabel } from '@/lib/explorerPrice';
+
+export const revalidate = 3600;
 
 const APP_URL = 'https://app.kamperhub.com';
 
@@ -45,14 +48,17 @@ const colors = {
   white: '#FFFFFF',
 };
 
-const faqs = [
+// Explorer's price switches $10/yr -> $19/yr at midnight AEST 1 Oct 2026 (src/lib/explorerPrice.ts).
+// Built as a function, not a module-level const, so it recomputes on every render/revalidation.
+function buildFaqs() {
+  return [
   {
     question: 'What is a tow simulator and why do I need one?',
     answer: 'A tow simulator is a digital tool that models your complete tow setup — vehicle, caravan, cargo, passengers, and accessories — and shows you how weight is distributed across the combination. Unlike a basic weight calculator that only checks totals, a simulator shows you WHERE weight is sitting and how it affects stability, towball load, and axle weights. It lets you experiment with loading changes before you physically move anything.',
   },
   {
     question: 'How is the tow simulator different from a weight calculator?',
-    answer: 'A weight calculator checks whether your totals (GVM, ATM, GCM) are within limits — it gives you a pass or fail. The tow simulator goes deeper: it models weight distribution across cargo zones (front, middle, rear of the caravan), shows how your loading affects towball percentage, displays sway risk indicators, and lets you move items between zones to see the impact in real time. Think of the calculator as a weighbridge check, and the simulator as a full loading analysis. Free users see a read-only sample rig; Explorer ($10/year) unlocks the simulator on your own rig with the axle position slider; Pro ($49/year) adds interactive cargo zone editing, scenarios and the WDH toggle.',
+    answer: `A weight calculator checks whether your totals (GVM, ATM, GCM) are within limits — it gives you a pass or fail. The tow simulator goes deeper: it models weight distribution across cargo zones (front, middle, rear of the caravan), shows how your loading affects towball percentage, displays sway risk indicators, and lets you move items between zones to see the impact in real time. Think of the calculator as a weighbridge check, and the simulator as a full loading analysis. Free users see a read-only sample rig; Explorer (${explorerPriceLabel('year')}) unlocks the simulator on your own rig with the axle position slider; Pro ($49/year) adds interactive cargo zone editing, scenarios and the WDH toggle.`,
   },
   {
     question: 'When should I use the tow simulator?',
@@ -68,9 +74,10 @@ const faqs = [
   },
   {
     question: 'Is the tow simulator free?',
-    answer: 'The tow simulator is tiered. The free plan includes the full compliance dashboard (GVM, ATM, GCM, towing capacity, towball percentage, sway risk, GCM donut) on a read-only sample rig so you can see exactly what the simulator does before subscribing. Explorer ($10/year) unlocks the simulator on your own rig — wizard setup from your garage, axle position slider, and saved scenarios. Pro ($49/year) adds interactive cargo zone editing (move items between front, middle and rear), the weight distribution hitch toggle, the Weight Compliance Report PDF, and unlimited scenarios.',
+    answer: `The tow simulator is tiered. The free plan includes the full compliance dashboard (GVM, ATM, GCM, towing capacity, towball percentage, sway risk, GCM donut) on a read-only sample rig so you can see exactly what the simulator does before subscribing. Explorer (${explorerPriceLabel('year')}) unlocks the simulator on your own rig — wizard setup from your garage, axle position slider, and saved scenarios. Pro ($49/year) adds interactive cargo zone editing (move items between front, middle and rear), the weight distribution hitch toggle, the Weight Compliance Report PDF, and unlimited scenarios.`,
   },
-];
+  ];
+}
 
 // Snippet-optimised FAQ schema — tightly phrased for featured snippets and PAA
 const faqJsonLd = {
@@ -121,6 +128,7 @@ const softwareJsonLd = {
 };
 
 export default function TowSimulatorPage() {
+  const faqs = buildFaqs();
   return (
     <>
       <script
