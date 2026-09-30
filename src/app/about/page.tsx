@@ -57,9 +57,19 @@ export default function AboutPage() {
 
       <main style={{ padding: '40px 0 96px' }}>
         <article style={{ maxWidth: '760px', margin: '0 auto', padding: '0 24px' }}>
-          <p style={{ ...pStyle, fontSize: '22px', fontWeight: 600, color: colors.text }}>
-            I&apos;m Scott, and I built KamperHub because I needed it.
-          </p>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '22px', flexWrap: 'wrap', margin: '0 0 22px' }}>
+            {/* Cropped from a group selfie to Scott only; EXIF/GPS stripped. */}
+            <Image
+              src="/scott.jpg"
+              alt="Scott, founder of KamperHub"
+              width={120}
+              height={120}
+              style={{ borderRadius: '50%', objectFit: 'cover', border: `3px solid ${colors.sand}`, flexShrink: 0 }}
+            />
+            <p style={{ ...pStyle, fontSize: '22px', fontWeight: 600, color: colors.text, margin: 0, flex: '1 1 240px' }}>
+              I&apos;m Scott, and I built KamperHub because I needed it.
+            </p>
+          </div>
           <p style={pStyle}>
             When I started looking at caravanning, I had no background in it at all. No family who towed, no mate
             who&apos;d done the lap. And I couldn&apos;t find anything that would guide me in. Every question led to
