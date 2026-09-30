@@ -1522,6 +1522,7 @@ export default function LandingPage() {
               </div>
               <div>
                 <h4 style={{ color: colors.white, fontSize: '16px', fontWeight: '600', marginBottom: '16px' }}>Contact</h4>
+                <a href="/about" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '16px' }}>Our Story</a>
                 <a href={`${APP_URL}/contact`} style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '16px' }}>Contact Us</a>
                 <a href="mailto:info@kamperhub.com" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '16px' }}>info@kamperhub.com</a>
                 <a href="https://www.facebook.com/profile.php?id=61577280351290" target="_blank" rel="noopener noreferrer" style={{ display: 'block', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', marginBottom: '12px', fontSize: '16px' }}>Facebook</a>
