@@ -11,7 +11,7 @@ const colors = {
 };
 
 export default function PrivacyPolicyPage() {
-  const lastUpdated = '25 December 2025';
+  const lastUpdated = '7 October 2026';
 
   return (
     <div style={{ minHeight: '100vh', backgroundColor: 'white' }}>
@@ -162,7 +162,17 @@ export default function PrivacyPolicyPage() {
               Analytics
             </h3>
             <p style={{ color: '#374151', lineHeight: '1.7', margin: 0 }}>
-              We may use Google Analytics or similar services to understand how users interact with our Service. This data is anonymised and used solely to improve our platform.
+              We measure how people use our Service, including which pages are visited, so we can improve it. We do this with the third-party tool described below.
+            </p>
+
+            <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#111827', margin: '16px 0 8px 0' }}>
+              Meta Pixel (Facebook and Instagram)
+            </h3>
+            <p style={{ color: '#374151', lineHeight: '1.7', margin: '0 0 12px 0' }}>
+              We use the Meta Pixel on kamperhub.com. It tells Meta, the company behind Facebook and Instagram, when you visit our pages. We use this to measure and improve our advertising on Facebook and Instagram.
+            </p>
+            <p style={{ color: '#374151', lineHeight: '1.7', margin: 0 }}>
+              Meta receives your IP address, browser and device details, the page you are viewing and cookie identifiers, and if you are logged in to Facebook or Instagram it may link this activity to your account. We do not send your name, email address or payment details to Meta through the Pixel. Meta handles this information under its own policy at <a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener noreferrer" style={{ color: '#6b8e6b' }}>facebook.com/privacy/policy</a>. You can manage how Meta uses it in your <a href="https://www.facebook.com/adpreferences/ad_settings" target="_blank" rel="noopener noreferrer" style={{ color: '#6b8e6b' }}>Facebook ad preferences</a>, or block cookies in your browser settings.
             </p>
           </section>
 
@@ -188,6 +198,7 @@ export default function PrivacyPolicyPage() {
               <li>Keep you signed in to your account</li>
               <li>Remember your preferences</li>
               <li>Analyse how our Service is used</li>
+              <li>Measure our advertising on Facebook and Instagram (see Meta Pixel above)</li>
               <li>Improve your experience</li>
             </ul>
             <p style={{ color: '#374151', lineHeight: '1.7', margin: 0 }}>
