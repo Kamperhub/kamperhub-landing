@@ -25,6 +25,7 @@ import {
   MapPin,
 } from 'lucide-react';
 import { explorerPriceLabel, explorerMonthlyEquivalentLabel } from '@/lib/explorerPrice';
+import TutorialVideos from '@/components/TutorialVideos';
 
 // Brand Colors - Bush Meets Coast palette
 const colors = {
@@ -706,6 +707,9 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
+
+      {/* Tutorial videos — click-to-play, nothing loads from YouTube until play */}
+      <TutorialVideos />
 
       {/* Features Section */}
       <section id="features" style={{ padding: '80px 0', backgroundColor: colors.white }}>

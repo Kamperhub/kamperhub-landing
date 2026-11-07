@@ -11,7 +11,7 @@ const colors = {
 };
 
 export default function PrivacyPolicyPage() {
-  const lastUpdated = '7 October 2026';
+  const lastUpdated = '7 November 2026';
 
   return (
     <div style={{ minHeight: '100vh', backgroundColor: 'white' }}>
@@ -156,6 +156,13 @@ export default function PrivacyPolicyPage() {
             </h3>
             <p style={{ color: '#374151', lineHeight: '1.7', margin: '0 0 16px 0' }}>
               We use Google Maps for route planning and location services. View Google's privacy policy at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style={{ color: '#6b8e6b' }}>policies.google.com/privacy</a>.
+            </p>
+
+            <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#111827', marginBottom: '8px' }}>
+              YouTube (tutorial videos)
+            </h3>
+            <p style={{ color: '#374151', lineHeight: '1.7', margin: '0 0 16px 0' }}>
+              Our home page shows tutorial videos hosted on YouTube. Nothing is loaded from YouTube until you press play on a video. When you do, the video plays in YouTube&apos;s privacy-enhanced player (youtube-nocookie.com), and YouTube, which is owned by Google, receives your IP address, browser and device details and may store information on your device to play the video. Google handles this under its own policy at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style={{ color: '#6b8e6b' }}>policies.google.com/privacy</a>.
             </p>
 
             <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#111827', marginBottom: '8px' }}>
