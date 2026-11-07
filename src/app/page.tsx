@@ -23,6 +23,9 @@ import {
   Tent,
   Refrigerator,
   MapPin,
+  Timer,
+  Package,
+  AlertTriangle,
 } from 'lucide-react';
 import { explorerPriceLabel, explorerMonthlyEquivalentLabel } from '@/lib/explorerPrice';
 import TutorialVideos from '@/components/TutorialVideos';
@@ -40,6 +43,13 @@ const colors = {
   darkEarth: '#3d3229',     // Dark Earth
   slate: '#5a6672',         // Slate
   white: '#FFFFFF',
+  // Icon tones: one brand trio instead of a rainbow. `ink` is the darker shade
+  // used for text so link copy stays readable on white.
+  tone: {
+    sage: { icon: '#5a7a5a', ink: '#4f6f4f', tint: '#eef3ee' },
+    teal: { icon: '#3d8b8b', ink: '#2f6f6f', tint: '#eaf4f4' },
+    clay: { icon: '#c97b5d', ink: '#a85f43', tint: '#fbf1ec' },
+  },
   gray: {
     50: '#fdfbf7',
     100: '#e8dcc4',
@@ -116,72 +126,64 @@ export default function LandingPage() {
       icon: Map,
       title: 'Smart Trip Planning',
       description: 'Plan routes with fuel stops, weather forecasts, and realistic travel times. Save trips and access them anywhere.',
-      color: '#ec4899',
-      bg: '#fdf2f8'
+      tone: colors.tone.sage
     },
     {
       icon: Car,
       title: 'Your Digital Garage',
       description: 'Store vehicle + caravan specs and your full gear inventory. Every item\'s weight flows straight into the tow simulator — no double entry.',
-      color: '#64748b',
-      bg: '#f1f5f9'
+      tone: colors.tone.teal
     },
     {
       icon: Fuel,
       title: 'Fuel Gap Warnings',
       description: 'Outback leg with no fuel for 400km? KamperHub flags it before you leave, so you know whether you need a jerry can or a different route.',
-      color: '#f59e0b',
-      bg: '#fef9c3'
+      tone: colors.tone.clay
     },
     {
       icon: CheckSquare,
       title: 'Packing & Pre-Departure',
       description: '50+ packing templates, 60+ pre-departure checks across 12 categories. Tyres, coupling, lights, brakes — never miss a critical item.',
-      color: '#8b5cf6',
-      bg: '#f5f3ff'
+      tone: colors.tone.sage
     },
     {
       icon: DollarSign,
       title: 'Trip Budgets & Expenses',
       description: 'Set trip budgets by category with auto fuel estimates. Track expenses and see where your money goes.',
-      color: '#22c55e',
-      bg: '#f0fdf4'
+      tone: colors.tone.teal
     },
     {
       icon: Clock,
       title: 'Sync & Reminders',
       description: 'Pre-trip reminders by email and calendar sync for departure dates. Packing checklist emails to travellers 5 days out — never miss a critical window.',
-      color: '#0891b2',
-      bg: '#ecfeff'
+      tone: colors.tone.clay
     },
     {
       icon: Tent,
       title: 'Free Camping Finder',
       description: 'Discover free and low-cost campsites across Australia. Filter by amenities like toilets, water, pet-friendly, and powered sites.',
-      color: '#059669',
-      bg: '#ecfdf5'
+      tone: colors.tone.sage
     },
     {
       icon: Droplets,
       title: 'Find Utilities Anywhere',
       description: 'Locate water fill points, dump stations, LPG refills, public toilets, and laundry facilities near you or along your route.',
-      color: '#3b82f6',
-      bg: '#eff6ff'
+      tone: colors.tone.teal
     },
   ];
 
   const calculators = [
-    { name: 'Towing Safety', icon: Scale, color: '#3b82f6', bg: '#eff6ff' },
-    { name: 'Towing Capacity', icon: Car, color: '#64748b', bg: '#f1f5f9' },
-    { name: 'Fuel Cost', icon: Fuel, color: '#f59e0b', bg: '#fef9c3' },
-    { name: 'Tyre Pressure', icon: Gauge, color: '#ec4899', bg: '#fdf2f8' },
-    { name: 'Water Tank', icon: Droplets, color: '#0891b2', bg: '#ecfeff' },
-    { name: 'Power System Planner', icon: Battery, color: '#22c55e', bg: '#f0fdf4' },
-    { name: 'Gas/LPG Usage', icon: Thermometer, color: '#f97316', bg: '#fff7ed' },
-    { name: 'Fridge Runtime', icon: Refrigerator, color: '#06b6d4', bg: '#ecfeff' },
-    { name: 'Trip Cost', icon: DollarSign, color: '#10b981', bg: '#ecfdf5' },
-    { name: 'Travel Time', icon: Clock, color: '#8b5cf6', bg: '#f5f3ff' },
-    { name: 'Fuel Stops', icon: MapPin, color: '#ef4444', bg: '#fef2f2' },
+    { name: 'Towing Safety', icon: Scale },
+    { name: 'Towing Capacity', icon: Car },
+    { name: 'Fuel Cost', icon: Fuel },
+    { name: 'Tyre Pressure', icon: Gauge },
+    { name: 'Water Tank', icon: Droplets },
+    { name: 'Power System Planner', icon: Battery },
+    { name: 'Gas/LPG Usage', icon: Thermometer },
+    { name: 'Fridge Runtime', icon: Refrigerator },
+    { name: 'Trip Cost', icon: DollarSign },
+    { name: 'Travel Time', icon: Clock },
+    { name: 'Fuel Stops', icon: MapPin },
   ];
 
   const plans = [
@@ -345,10 +347,11 @@ export default function LandingPage() {
           {/* Logo */}
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <Image
-              src="/logo.png"
+              src="/logo-hd.png"
               alt="KamperHub"
               width={140}
-              height={50}
+              height={47}
+              style={{ borderRadius: '8px' }}
               priority
             />
           </div>
@@ -368,7 +371,7 @@ export default function LandingPage() {
               alignItems: 'center',
               gap: '6px',
             }}>
-              <span style={{ fontSize: '12px' }}>⏱</span> 30-Sec Quiz
+              <Timer size={14} /> 30-Sec Quiz
             </a>
             <a href="#pricing" style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Pricing</a>
             <a href={`${APP_URL}/blog`} style={{ color: 'rgba(255,255,255,0.9)', textDecoration: 'none', fontWeight: '500', fontSize: '15px' }}>Blog</a>
@@ -429,7 +432,7 @@ export default function LandingPage() {
               borderRadius: '100px',
               fontSize: '14px',
             }}>
-              <span>⏱</span> 30-Sec Quiz
+              <Timer size={16} /> 30-Sec Quiz
             </a>
             <a href="#pricing" onClick={() => setMobileMenuOpen(false)} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Pricing</a>
             <a href={`${APP_URL}/blog`} style={{ display: 'block', padding: '12px 0', color: colors.white, textDecoration: 'none' }}>Blog</a>
@@ -503,7 +506,7 @@ export default function LandingPage() {
                 boxShadow: '0 6px 20px rgba(201, 123, 93, 0.35)',
                 position: 'relative',
               }}>
-                <span style={{ fontSize: '22px' }}>⏱</span>
+                <Timer size={22} />
                 Take the 30-Second Quiz
                 <ArrowRight size={20} />
               </a>
@@ -616,8 +619,7 @@ export default function LandingPage() {
             {[
               {
                 icon: Scale,
-                color: '#3b82f6',
-                bg: '#eff6ff',
+                tone: colors.tone.sage,
                 title: 'Free Weight Safety Check',
                 caption: 'Check whether your rig is within its weight limits — free, on your own vehicle and caravan. Gauges, axle loads, tyre pressures, and the why behind every number.',
                 linkText: 'Try the weight calculator',
@@ -625,8 +627,7 @@ export default function LandingPage() {
               },
               {
                 icon: Gauge,
-                color: '#c97b5d',
-                bg: '#fef7f3',
+                tone: colors.tone.clay,
                 title: 'Tow Simulator (Pro)',
                 caption: "Need to find a setup that passes? Move cargo between zones, set fuel and water levels, run what-if scenarios. Free preview on a sample rig.",
                 linkText: 'See the simulator',
@@ -634,8 +635,7 @@ export default function LandingPage() {
               },
               {
                 icon: Fuel,
-                color: '#f59e0b',
-                bg: '#fef9c3',
+                tone: colors.tone.teal,
                 title: 'Real-Time Fuel Prices',
                 caption: 'Plan fuel stops with live pump prices along your route. Your budget matches what you\'ll actually pay — not yesterday\'s guess.',
                 linkText: 'See the trip planner',
@@ -654,7 +654,7 @@ export default function LandingPage() {
               }}>
                 <div style={{
                   aspectRatio: '16 / 9',
-                  backgroundColor: tile.bg,
+                  backgroundColor: tile.tone.tint,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -670,7 +670,7 @@ export default function LandingPage() {
                     justifyContent: 'center',
                     boxShadow: '0 4px 14px rgba(0,0,0,0.08)',
                   }}>
-                    <tile.icon size={40} color={tile.color} />
+                    <tile.icon size={40} color={tile.tone.icon} />
                   </div>
                 </div>
                 <div style={{ padding: '20px 24px 22px' }}>
@@ -693,7 +693,7 @@ export default function LandingPage() {
                   <span style={{
                     fontSize: '13px',
                     fontWeight: '700',
-                    color: tile.color,
+                    color: tile.tone.ink,
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '4px',
@@ -723,22 +723,23 @@ export default function LandingPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
             {features.map((feature, index) => (
               <div key={index} style={{
-                backgroundColor: feature.bg,
+                backgroundColor: colors.white,
                 borderRadius: '16px',
                 padding: '28px',
-                border: `1px solid ${feature.bg}`
+                border: `1px solid ${colors.sand}`,
+                boxShadow: '0 1px 3px rgba(61,50,41,0.05)',
               }}>
                 <div style={{
                   width: '48px',
                   height: '48px',
-                  backgroundColor: `${feature.color}20`,
+                  backgroundColor: feature.tone.tint,
                   borderRadius: '12px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   marginBottom: '16px'
                 }}>
-                  <feature.icon size={24} color={feature.color} />
+                  <feature.icon size={24} color={feature.tone.icon} />
                 </div>
                 <h3 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '8px', color: colors.gray[900] }}>
                   {feature.title}
@@ -768,13 +769,14 @@ export default function LandingPage() {
                 alignItems: 'center',
                 gap: '8px',
                 padding: '12px 20px',
-                backgroundColor: calc.bg,
+                backgroundColor: colors.cream,
+                border: `1px solid ${colors.sand}`,
                 borderRadius: '100px',
                 fontSize: '14px',
                 fontWeight: '500',
                 color: colors.gray[700]
               }}>
-                <calc.icon size={18} color={calc.color} />
+                <calc.icon size={18} color={colors.tone.sage.icon} />
                 {calc.name}
               </div>
             ))}
@@ -793,19 +795,25 @@ export default function LandingPage() {
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
             {[
-              { title: 'Weight Calculator', description: 'Check your GVM, ATM, GCM, towing capacity and towball weight against manufacturer limits — free.', href: '/caravan-towing-weight-calculator', icon: '⚖️' },
-              { title: 'Tow Simulator (Pro)', description: 'Move cargo between zones, set fuel and water levels, slide the axle and run scenarios until your rig passes. Free preview on a sample rig; full edit unlocks with Pro.', href: '/tow-simulator', icon: '🚗' },
-              { title: 'Trip Planner', description: 'Plan routes with fuel stops, weather forecasts, free camping, packing lists and budgets.', href: '/caravan-trip-planner', icon: '🗺️' },
-              { title: 'Weight Distribution Guide', description: 'Learn where to place heavy, medium and light items in your caravan for safe, stable towing.', href: '/caravan-weight-distribution-guide', icon: '📦' },
-              { title: 'Overweight Fines by State', description: 'State-by-state penalties, roadside inspection process, and the insurance risk most people don\'t know about.', href: '/caravan-overweight-fines-australia', icon: '🚨' },
-              { title: 'Power System Planner', description: 'Calculate your daily power usage, size solar panels and batteries, and design a complete off-grid electrical system for your caravan.', href: 'https://app.kamperhub.com/tools/solar', icon: '🔋' },
+              { title: 'Weight Calculator', description: 'Check your GVM, ATM, GCM, towing capacity and towball weight against manufacturer limits — free.', href: '/caravan-towing-weight-calculator', icon: Scale, tone: colors.tone.sage },
+              { title: 'Tow Simulator (Pro)', description: 'Move cargo between zones, set fuel and water levels, slide the axle and run scenarios until your rig passes. Free preview on a sample rig; full edit unlocks with Pro.', href: '/tow-simulator', icon: Gauge, tone: colors.tone.clay },
+              { title: 'Trip Planner', description: 'Plan routes with fuel stops, weather forecasts, free camping, packing lists and budgets.', href: '/caravan-trip-planner', icon: Map, tone: colors.tone.teal },
+              { title: 'Weight Distribution Guide', description: 'Learn where to place heavy, medium and light items in your caravan for safe, stable towing.', href: '/caravan-weight-distribution-guide', icon: Package, tone: colors.tone.sage },
+              { title: 'Overweight Fines by State', description: 'State-by-state penalties, roadside inspection process, and the insurance risk most people don\'t know about.', href: '/caravan-overweight-fines-australia', icon: AlertTriangle, tone: colors.tone.clay },
+              { title: 'Power System Planner', description: 'Calculate your daily power usage, size solar panels and batteries, and design a complete off-grid electrical system for your caravan.', href: 'https://app.kamperhub.com/tools/solar', icon: Battery, tone: colors.tone.teal },
             ].map((tool, i) => (
               <a key={i} href={tool.href} style={{
                 display: 'block', padding: '24px', backgroundColor: colors.white, borderRadius: '12px',
                 textDecoration: 'none', transition: 'box-shadow 0.2s',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                border: `1px solid ${colors.sand}`,
+                boxShadow: '0 1px 3px rgba(61,50,41,0.05)',
               }}>
-                <div style={{ fontSize: '28px', marginBottom: '12px' }}>{tool.icon}</div>
+                <div style={{
+                  width: '44px', height: '44px', borderRadius: '12px', marginBottom: '14px',
+                  backgroundColor: tool.tone.tint, display: 'flex', alignItems: 'center', justifyContent: 'center',
+                }}>
+                  <tool.icon size={22} color={tool.tone.icon} />
+                </div>
                 <h3 style={{ fontSize: '18px', fontWeight: '700', color: colors.gray[900], marginBottom: '8px' }}>{tool.title}</h3>
                 <p style={{ fontSize: '15px', color: colors.gray[500], lineHeight: '1.6', margin: 0 }}>{tool.description}</p>
               </a>
@@ -864,7 +872,7 @@ export default function LandingPage() {
               gap: '8px',
               whiteSpace: 'nowrap',
             }}>
-              <span style={{ fontSize: '16px' }}>⏱</span>
+              <Timer size={16} />
               Take the 30-Sec Quiz
               <ArrowRight size={16} />
             </a>
@@ -1258,11 +1266,11 @@ export default function LandingPage() {
             {/* Brand */}
             <div style={{ maxWidth: '300px' }}>
               <Image
-                src="/logo.png"
+                src="/logo-hd.png"
                 alt="KamperHub"
                 width={160}
-                height={56}
-                style={{ marginBottom: '16px' }}
+                height={53}
+                style={{ marginBottom: '16px', borderRadius: '8px' }}
               />
               <p style={{ color: 'rgba(255,255,255,0.8)', lineHeight: '1.6', fontSize: '16px' }}>
                 The all-in-one app for caravan travellers. Plan smarter, tow safer, travel further.
